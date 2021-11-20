@@ -1,11 +1,12 @@
 ---
 title: HTML表格
-description: 
+description: 这是讲解html中表格的文章，并没有涉及太多样式的应用。
 tags: 
 - html
 categories: 
 - web
 ---
+
 在此特地声明本文是根据 [mozilla官方教学文档](https://developer.mozilla.org/zh-CN/docs/Learn/html/Introduction_to_html) 学习的个人学习笔记，借用了大量的图片和文本内容，存在相当多的相同，但不是copy。如需查看mozilla官方文档，请点击前文链接！！
 <!--more-->
 
@@ -23,9 +24,9 @@ categories:
     - [添加表格结构](#添加表格结构)
     - [嵌套表格](#嵌套表格)
     - [表格的可读性优化](#表格的可读性优化)
-      - [使用行和列的标题](#1使用行和列的标题)
-      - [scope属性](#2scope属性)
-      - [id和标题属性](#3id和标题属性)
+      - [1.使用行和列的标题](#使用行和列的标题)
+      - [2.scope属性](#scope属性)
+      - [3.id和标题属性](#id和标题属性)
 <!-- toc -->
 
 <br>
