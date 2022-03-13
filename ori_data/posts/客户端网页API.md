@@ -10,13 +10,6 @@ categories:
 在此特地声明本文是根据 [mozilla官方教学文档](https://developer.mozilla.org/zh-CN/docs/Learn/html/Introduction_to_html) 学习的个人学习笔记，借用了大量的图片和文本内容，存在相当多的相同，但不是copy。如需查看mozilla官方文档，请点击前文链接！！
 <!--more-->
 
-<!-- toc -->
-- [Web API简介](#web-api简介)
-  - [什么是API](#什么是api)
-  - [API可以做什么](#api可以做什么)
-  - [API如何工作](#api如何工作)
-<!-- toc -->
-
 <br>
 
 # Web API简介

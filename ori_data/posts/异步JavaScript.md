@@ -10,45 +10,6 @@ categories:
 在此特地声明本文是根据 [mozilla官方教学文档](https://developer.mozilla.org/zh-CN/docs/Learn/html/Introduction_to_html) 学习的个人学习笔记，借用了大量的图片和文本内容，存在相当多的相同，但不是copy。如需查看mozilla官方文档，请点击前文链接！！
 <!--more-->
 
-<!--toc-->
-- [异步javascript简介](#异步javascript简介)
-  - [js同步和异步的区别](#js同步和异步的区别)
-  - [实现异步](#实现异步)
-    - [异步callbacks](#异步callbacks)
-    - [promises](#promises)
-  - [异步代码的本质](#异步代码的本质)
-- [合作异步javascript：超时和间隔](#合作异步javascript超时和间隔)
-  - [介绍](#介绍)
-  - [setTimeout()](#settimeout)
-  - [setInterval()](#setinterval)
-  - [递归timeouts和interval](#递归timeouts和interval)
-  - [requestAnimationFrame()](#requestanimationframe)
-- [异步处理promises](#异步处理promises)
-  - [什么是promises](#什么是promises)
-  - [回调函数的麻烦](#回调函数的麻烦)
-  - [promise的基本语法](#promise的基本语法)
-  - [响应多个promises的实现](#响应多个promises的实现)
-  - [finally()](#finally)
-  - [构建自定义promise](#构建自定义promise)
-    - [使用Promise()构造函数](#使用promise构造函数)
-    - [拒绝一个自定义promise](#拒绝一个自定义promise)
-- [async和await](#async和await)
-  - [async/await基础](#asyncawait基础)
-    - [async关键字](#async关键字)
-    - [await关键字](#await关键字)
-  - [async/await实例](#asyncawait实例)
-  - [等待Promise.all()](#等待promiseall)
-  - [async/await的缺陷](#asyncawait的缺陷)
-  - [async/await的类方法](#asyncawait的类方法)
-- [选择正确的方法](#选择正确的方法)
-  - [异步回调](#异步回调)
-  - [setTimeout()](#settimeout-1)
-  - [setInterval()](#setinterval-1)
-  - [requestAnimationFrame()](#requestanimationframe-1)
-  - [Promises](#promises-1)
-  - [async/await](#asyncawait)
-<!-- toc-->
-
 <br>
 
 # 异步javascript简介

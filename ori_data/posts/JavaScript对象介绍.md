@@ -10,48 +10,6 @@ categories:
 在此特地声明本文是根据 [mozilla官方教学文档](https://developer.mozilla.org/zh-CN/docs/Learn/html/Introduction_to_html) 学习的个人学习笔记，借用了大量的图片和文本内容，存在相当多的相同，但不是copy。如需查看mozilla官方文档，请点击前文链接！！
 <!--more-->
 
-<!--toc-->
-- [javascript对象基础](#javascript对象基础)
-  - [对象基础](#对象基础)
-  - [创建对象](#创建对象)
-    - [构造函数](#构造函数)
-    - [Object()构造函数](#object构造函数)
-    - [create()方法](#create方法)
-  - [设置对象成员](#设置对象成员)
-  - [访问对象](#访问对象)
-    - [点表示法](#点表示法)
-    - [括号表示法](#括号表示法)
-  - [this的含义](#this的含义)
-- [对象原型](#对象原型)
-  - [基于原型的语言](#基于原型的语言)
-  - [使用javascript中的原型](#使用javascript中的原型)
-  - [prototype属性](#prototype属性)
-  - [create()](#create)
-  - [constructor属性](#constructor属性)
-  - [修改原型](#修改原型)
-- [javascript中的继承](#javascript中的继承)
-  - [原型式的继承](#原型式的继承)
-  - [定义Teacher()构造器函数](#定义teacher构造器函数)
-    - [从无参构造函数继承](#从无参构造函数继承)
-  - [设置Teacher()的原型和构造器引用](#设置teacher的原型和构造器引用)
-  - [对象成员总结](#对象成员总结)
-  - [ECMAScript 2015 类](#ecmascript-2015-类)
-    - [使用类语法进行继承](#使用类语法进行继承)
-  - [getter和setter](#getter和setter)
-  - [何时在javascript中使用继承](#何时在javascript中使用继承)
-- [使用json](#使用json)
-  - [什么是json](#什么是json)
-    - [json对象](#json对象)
-    - [json数组](#json数组)
-    - [其他注意事项](#其他注意事项)
-  - [一个json示例](#一个json示例)
-    - [开始](#开始)
-    - [加载json](#加载json)
-    - [定位header](#定位header)
-    - [创建英雄信息卡片](#创建英雄信息卡片)
-  - [对象和文本间的转换](#对象和文本间的转换)
-<!--toc-->
-
 <br>
 
 # javascript对象基础
