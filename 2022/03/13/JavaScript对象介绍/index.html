@@ -1,68 +1,229 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="a simple website in order to record my study experiences!"><title>JavaScript对象介绍 | Apin</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/normalize.css/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">JavaScript对象介绍</h1><a id="logo" href="/.">Apin</a><p class="description">blogs</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">JavaScript对象介绍</h1><div class="post-meta">2022-03-13<span> | </span><span class="category"><a href="/categories/web/">web</a></span></div><div class="post-content"><p>在此特地声明本文是根据 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/html/Introduction_to_html">mozilla官方教学文档</a> 学习的个人学习笔记，借用了大量的图片和文本内容，存在相当多的相同，但不是copy。如需查看mozilla官方文档，请点击前文链接！！</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="本文将详细介绍 JavaScript 对象的理论和语法，再介绍如何创建对象。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript对象介绍">
+<meta property="og:url" content="http://example.com/2022/03/13/JavaScript%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:site_name" content="Apin">
+<meta property="og:description" content="本文将详细介绍 JavaScript 对象的理论和语法，再介绍如何创建对象。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2022/03/13/JavaScript%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D/2.png">
+<meta property="og:image" content="http://example.com/2022/03/13/JavaScript%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D/1.png">
+<meta property="og:image" content="http://example.com/2022/03/13/JavaScript%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D/4.png">
+<meta property="og:image" content="http://example.com/2022/03/13/JavaScript%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D/2.png">
+<meta property="og:image" content="http://example.com/2022/03/13/JavaScript%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D/5.png">
+<meta property="og:image" content="http://example.com/2022/03/13/JavaScript%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D/7.png">
+<meta property="og:image" content="http://example.com/2022/03/13/JavaScript%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D/6.png">
+<meta property="og:image" content="http://example.com/2022/03/13/JavaScript%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D/8.png">
+<meta property="og:image" content="http://example.com/2022/03/13/JavaScript%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D/9.png">
+<meta property="og:image" content="http://example.com/2022/03/13/JavaScript%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D/10.png">
+<meta property="article:published_time" content="2022-03-13T10:37:01.468Z">
+<meta property="article:modified_time" content="2022-03-13T15:25:47.183Z">
+<meta property="article:author" content="a-pin">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/03/13/JavaScript%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D/2.png">
+
+<link rel="canonical" href="http://example.com/2022/03/13/JavaScript%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>JavaScript对象介绍 | Apin</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Apin</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">blogs</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home       //首页 fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags           //标签 fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th         //分类 fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive        //归档 fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/13/JavaScript%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.jpg">
+      <meta itemprop="name" content="a-pin">
+      <meta itemprop="description" content="This is a blog website in order to record my study experiences!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Apin">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript对象介绍
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-03-13 18:37:01 / 修改时间：23:25:47" itemprop="dateCreated datePublished" datetime="2022-03-13T18:37:01+08:00">2022-03-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">本文将详细介绍 JavaScript 对象的理论和语法，再介绍如何创建对象。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>在此特地声明本文是根据 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/html/Introduction_to_html">mozilla官方教学文档</a> 学习的个人学习笔记，借用了大量的图片和文本内容，存在相当多的相同，但不是copy。如需查看mozilla官方文档，请点击前文链接！！</p>
 <span id="more"></span>
 
-<!--toc-->
-<ul>
-<li><a href="#javascript%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80">javascript对象基础</a><ul>
-<li><a href="#%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80">对象基础</a></li>
-<li><a href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1">创建对象</a><ul>
-<li><a href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0">构造函数</a></li>
-<li><a href="#object%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0">Object()构造函数</a></li>
-<li><a href="#create%E6%96%B9%E6%B3%95">create()方法</a></li>
-</ul>
-</li>
-<li><a href="#%E8%AE%BE%E7%BD%AE%E5%AF%B9%E8%B1%A1%E6%88%90%E5%91%98">设置对象成员</a></li>
-<li><a href="#%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1">访问对象</a><ul>
-<li><a href="#%E7%82%B9%E8%A1%A8%E7%A4%BA%E6%B3%95">点表示法</a></li>
-<li><a href="#%E6%8B%AC%E5%8F%B7%E8%A1%A8%E7%A4%BA%E6%B3%95">括号表示法</a></li>
-</ul>
-</li>
-<li><a href="#this%E7%9A%84%E5%90%AB%E4%B9%89">this的含义</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B">对象原型</a><ul>
-<li><a href="#%E5%9F%BA%E4%BA%8E%E5%8E%9F%E5%9E%8B%E7%9A%84%E8%AF%AD%E8%A8%80">基于原型的语言</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8javascript%E4%B8%AD%E7%9A%84%E5%8E%9F%E5%9E%8B">使用javascript中的原型</a></li>
-<li><a href="#prototype%E5%B1%9E%E6%80%A7">prototype属性</a></li>
-<li><a href="#create">create()</a></li>
-<li><a href="#constructor%E5%B1%9E%E6%80%A7">constructor属性</a></li>
-<li><a href="#%E4%BF%AE%E6%94%B9%E5%8E%9F%E5%9E%8B">修改原型</a></li>
-</ul>
-</li>
-<li><a href="#javascript%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF">javascript中的继承</a><ul>
-<li><a href="#%E5%8E%9F%E5%9E%8B%E5%BC%8F%E7%9A%84%E7%BB%A7%E6%89%BF">原型式的继承</a></li>
-<li><a href="#%E5%AE%9A%E4%B9%89teacher%E6%9E%84%E9%80%A0%E5%99%A8%E5%87%BD%E6%95%B0">定义Teacher()构造器函数</a><ul>
-<li><a href="#%E4%BB%8E%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%BB%A7%E6%89%BF">从无参构造函数继承</a></li>
-</ul>
-</li>
-<li><a href="#%E8%AE%BE%E7%BD%AEteacher%E7%9A%84%E5%8E%9F%E5%9E%8B%E5%92%8C%E6%9E%84%E9%80%A0%E5%99%A8%E5%BC%95%E7%94%A8">设置Teacher()的原型和构造器引用</a></li>
-<li><a href="#%E5%AF%B9%E8%B1%A1%E6%88%90%E5%91%98%E6%80%BB%E7%BB%93">对象成员总结</a></li>
-<li><a href="#ecmascript-2015-%E7%B1%BB">ECMAScript 2015 类</a><ul>
-<li><a href="#%E4%BD%BF%E7%94%A8%E7%B1%BB%E8%AF%AD%E6%B3%95%E8%BF%9B%E8%A1%8C%E7%BB%A7%E6%89%BF">使用类语法进行继承</a></li>
-</ul>
-</li>
-<li><a href="#getter%E5%92%8Csetter">getter和setter</a></li>
-<li><a href="#%E4%BD%95%E6%97%B6%E5%9C%A8javascript%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%BB%A7%E6%89%BF">何时在javascript中使用继承</a></li>
-</ul>
-</li>
-<li><a href="#%E4%BD%BF%E7%94%A8json">使用json</a><ul>
-<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFjson">什么是json</a><ul>
-<li><a href="#json%E5%AF%B9%E8%B1%A1">json对象</a></li>
-<li><a href="#json%E6%95%B0%E7%BB%84">json数组</a></li>
-<li><a href="#%E5%85%B6%E4%BB%96%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">其他注意事项</a></li>
-</ul>
-</li>
-<li><a href="#%E4%B8%80%E4%B8%AAjson%E7%A4%BA%E4%BE%8B">一个json示例</a><ul>
-<li><a href="#%E5%BC%80%E5%A7%8B">开始</a></li>
-<li><a href="#%E5%8A%A0%E8%BD%BDjson">加载json</a></li>
-<li><a href="#%E5%AE%9A%E4%BD%8Dheader">定位header</a></li>
-<li><a href="#%E5%88%9B%E5%BB%BA%E8%8B%B1%E9%9B%84%E4%BF%A1%E6%81%AF%E5%8D%A1%E7%89%87">创建英雄信息卡片</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AF%B9%E8%B1%A1%E5%92%8C%E6%96%87%E6%9C%AC%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2">对象和文本间的转换</a><!--toc--></li>
-</ul>
-</li>
-</ul>
 <br>
 
 <h1 id="javascript对象基础"><a href="#javascript对象基础" class="headerlink" title="javascript对象基础"></a>javascript对象基础</h1><p>本节将学习有关对象基础的语法，并且回顾一些之前学习过的 JavaScript 的一些特点，使你明白你所使用过的一些功能实际上是由对象提供的。</p>
@@ -547,4 +708,204 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myJSON = &#123; <span class="string">&quot;name&quot;</span> : <span class="string">&quot;Chris&quot;</span>, <span class="string">&quot;age&quot;</span> : <span class="string">&quot;38&quot;</span> &#125;;</span><br><span class="line">myJSON</span><br><span class="line"><span class="keyword">var</span> myString = <span class="built_in">JSON</span>.stringify(myJSON);</span><br><span class="line">myString</span><br></pre></td></tr></table></figure>
 
 <p>这儿我们创建了一个 JavaScript 对象，然后检查了它包含了什么，然后用 <code>stringify()</code> 将它转换成 JSON 字符串，最后保存返回值作为变量，然后再一次检查。</p>
-</div><div class="tags"><a href="/tags/JavaScript/"><i class="fa fa-tag"></i>JavaScript</a></div><div class="post-nav"><a class="pre" href="/2022/03/13/JavaScript%E5%9F%BA%E7%A1%80%E8%A6%81%E4%BB%B6/">JavaScript基础要件</a><a class="next" href="/2022/03/13/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%BD%91%E9%A1%B5API/">客户端网页API</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://example.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/others/">others</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/bat/" style="font-size: 15px;">bat</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2022/03/13/JavaScript%E5%9F%BA%E7%A1%80%E8%A6%81%E4%BB%B6/">JavaScript基础要件</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/03/13/JavaScript%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D/">JavaScript对象介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/03/13/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%BD%91%E9%A1%B5API/">客户端网页API</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/03/13/%E5%BC%82%E6%AD%A5JavaScript/">异步JavaScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/03/13/JavaScript%E7%AC%AC%E4%B8%80%E6%AD%A5/">JavaScript第一步</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/06/CSS%E7%AC%AC%E4%B8%80%E6%AD%A5/">CSS第一步</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/20/HTML%E8%A1%A8%E6%A0%BC/">HTML表格</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/14/auto_Hexo-md-Manager/">自动化hexo中.md和.yml配置文件的版本管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/07/%E5%A4%9A%E5%AA%92%E4%BD%93%E4%B8%8E%E5%B5%8C%E5%85%A5/">HTML多媒体与嵌入</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/23/HTML%E5%9F%BA%E7%A1%80/">HTML基础</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2022 <a href="/." rel="nofollow">Apin.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js" successtext="复制成功!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/03/13/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%BD%91%E9%A1%B5API/" rel="prev" title="客户端网页API">
+      <i class="fa fa-chevron-left"></i> 客户端网页API
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/03/13/JavaScript%E5%9F%BA%E7%A1%80%E8%A6%81%E4%BB%B6/" rel="next" title="JavaScript基础要件">
+      JavaScript基础要件 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80"><span class="nav-text">javascript对象基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80"><span class="nav-text">对象基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="nav-text">创建对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-text">Object()构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#create-%E6%96%B9%E6%B3%95"><span class="nav-text">create()方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%AF%B9%E8%B1%A1%E6%88%90%E5%91%98"><span class="nav-text">设置对象成员</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1"><span class="nav-text">访问对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="nav-text">点表示法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%AC%E5%8F%B7%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="nav-text">括号表示法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this%E7%9A%84%E5%90%AB%E4%B9%89"><span class="nav-text">this的含义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B"><span class="nav-text">对象原型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%8E%9F%E5%9E%8B%E7%9A%84%E8%AF%AD%E8%A8%80"><span class="nav-text">基于原型的语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8javascript%E4%B8%AD%E7%9A%84%E5%8E%9F%E5%9E%8B"><span class="nav-text">使用javascript中的原型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#prototype%E5%B1%9E%E6%80%A7"><span class="nav-text">prototype属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create"><span class="nav-text">create()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#constructor%E5%B1%9E%E6%80%A7"><span class="nav-text">constructor属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%8E%9F%E5%9E%8B"><span class="nav-text">修改原型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF"><span class="nav-text">javascript中的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E5%BC%8F%E7%9A%84%E7%BB%A7%E6%89%BF"><span class="nav-text">原型式的继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89Teacher-%E6%9E%84%E9%80%A0%E5%99%A8%E5%87%BD%E6%95%B0"><span class="nav-text">定义Teacher()构造器函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%BB%A7%E6%89%BF"><span class="nav-text">从无参构造函数继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AETeacher-%E7%9A%84%E5%8E%9F%E5%9E%8B%E5%92%8C%E6%9E%84%E9%80%A0%E5%99%A8%E5%BC%95%E7%94%A8"><span class="nav-text">设置Teacher()的原型和构造器引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%88%90%E5%91%98%E6%80%BB%E7%BB%93"><span class="nav-text">对象成员总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript-2015-%E7%B1%BB"><span class="nav-text">ECMAScript 2015 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%B1%BB%E8%AF%AD%E6%B3%95%E8%BF%9B%E8%A1%8C%E7%BB%A7%E6%89%BF"><span class="nav-text">使用类语法进行继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getter%E5%92%8Csetter"><span class="nav-text">getter和setter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%95%E6%97%B6%E5%9C%A8javascript%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%BB%A7%E6%89%BF"><span class="nav-text">何时在javascript中使用继承</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8json"><span class="nav-text">使用json</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFjson"><span class="nav-text">什么是json</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#json%E5%AF%B9%E8%B1%A1"><span class="nav-text">json对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#json%E6%95%B0%E7%BB%84"><span class="nav-text">json数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-text">其他注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AAjson%E7%A4%BA%E4%BE%8B"><span class="nav-text">一个json示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B"><span class="nav-text">开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BDjson"><span class="nav-text">加载json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8Dheader"><span class="nav-text">定位header</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%8B%B1%E9%9B%84%E4%BF%A1%E6%81%AF%E5%8D%A1%E7%89%87"><span class="nav-text">创建英雄信息卡片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%92%8C%E6%96%87%E6%9C%AC%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="nav-text">对象和文本间的转换</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="a-pin"
+      src="/images/header.jpg">
+  <p class="site-author-name" itemprop="name">a-pin</p>
+  <div class="site-description" itemprop="description">This is a blog website in order to record my study experiences!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">a-pin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
