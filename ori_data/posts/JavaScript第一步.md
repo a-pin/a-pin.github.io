@@ -151,7 +151,7 @@ JavaScript 是web前端的三支柱：
 
 结果如图：
 
-![](JavaScript第一步/1.png)
+![](1.png)
 
 <br>
 
@@ -166,7 +166,7 @@ JavaScript 是web前端的三支柱：
 
 API通常分为两类：
 
-![](JavaScript第一步/2.png)
+![](2.png)
 
 **浏览器API** 内建于 web 浏览器中，它们不仅可以将数据从周边计算机环境中筛选出来，还可以做实用的复杂工作。例如：
 - [文档对象模型 API（ DOM(Document Object Model) API ）](https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model) 能通过创建、移除和修改 HTML，为页面动态应用新样式等手段来操作 HTML 和 CSS。比如当某个页面出现一个弹窗，或者显示了一些新内容（比如上文demo），这就是 DOM 在运行。
@@ -184,7 +184,7 @@ API通常分为两类：
 ## js做了什么
 JavaScript 最普遍的用处是通过 DOM API 动态修改 HTML 和 CSS 来更新用户界面（user interface）。浏览器在读取一个网页时，代码（html、css 和 js）将在一个运行环境（浏览器标签页）中得到执行。就像一间工厂，将原材料（代码）加工为一件产品（网页）。具体来讲，在 HTML 和 CSS 集合组装成一个网页后，浏览器的 JavaScript 引擎就会执行 JavaScript 代码。保证了当 JavaScript 开始运行之前，网页的结构和样式已经就位，否则 JavaScript 在 HTML 和 CSS 就位之前加载运行，就会引发错误。
 
-![](JavaScript第一步/3.png)
+![](3.png)
 
 > 每个浏览器标签页都是其自身用来运行代码的独立容器（运行环境）。大多数情况下，每个标签页中的代码完全独立运行，而且一个标签页中的代码不能直接影响另一个标签页中的代码，使不法分子无法从其他网站盗取信息。不过，以安全的方式在不同网站/标签页中传送代码和数据的方法是存在的。
 

@@ -437,7 +437,7 @@ console.log( doSomeInstancing );
 }
 ```
 
-![](JavaScript对象介绍/2.png)
+![](2.png)
 
 所以回过头来每个实例对象（ object ）都有一个私有属性（称之为proto）指向它的构造函数的原型对象（prototype），就像上面看到的，doSomeInstancing 的 `__proto__` 属性就是 doSomething.prototype。
 
@@ -469,15 +469,15 @@ doSomething.prototype.foo:  bar
 
 > 就我个人理解来说，构造函数的 prototype 属性一开始创建的时候就是其本身，这个原型对象的所有属性供给 new doSomething() 生成实例对象继承，给构造函数添加属性会添加到构造函数实例对象的属性之中（doSomething是函数，当然也是一个对象，但它是靠new Function()生成的实例对象），而且因为不在原型之中是后来添加的所以不会被继承。给实例对象添加属性默认是私有属性而不是添加到原型之中。
 > 
-> ![](JavaScript对象介绍/1.png)
+> ![](1.png)
 > 
 > 所以如果执行doSomething.foo，它会在Function.prototype上找foo这个属性，结果没找到，自然是undefined。不过由于在上图第一个例子中添加了 foo 属性，会返回 'bar'。
 >
-> ![](JavaScript对象介绍/4.png)
+> ![](4.png)
 > 
 > 一句话：构造函数的原型对象是给构造函数生成的实例对象用的，而不是给构造函数自己用的。
 > 
-> ![](JavaScript对象介绍/2.png)
+> ![](2.png)
 
 <br>
 
@@ -527,7 +527,7 @@ person2.__proto__
 
 结果返回对象 person。
 
-![](JavaScript对象介绍/5.png)
+![](5.png)
 
 <br>
 
@@ -590,7 +590,7 @@ person.prototype.farewell = function() {
 }
 ```
 
-![](JavaScript对象介绍/7.png)
+![](7.png)
 
 这样，旧有对象实例的可用功能被自动更新了。这种继承模型下，上游对象的方法不会复制到下游的对象实例中；下游对象本身虽然没有定义这些方法。但浏览器会通过上溯原型链、从上游对象中找到它们，提供了一个强大而可扩展的功能系统。
 
@@ -604,7 +604,7 @@ person.prototype.fullName = 'Bob Smith';
 person.prototype.fullName = this.name.first + ' ' + this.name.last;
 ```
 
-![](JavaScript对象介绍/6.png)
+![](6.png)
 
 然而，这么做是无效的，因为本例中 [this](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this) 引用全局范围（无论是否在严格模式下，在全局执行环境中{在任何函数体外部}this 都指向全局对象），而非函数范围（在函数内部，this 的值取决于函数被调用的方式）。访问这个属性只会得到 undefined undefined。this 指向了原型对象，导致在构造函数中定义的属性无法和添加在原型中的属性灵活交互。但这个语句若放在 先前定义在 prototype 上的方法中则有效，因为此时语句位于函数范围内，从而能够成功地转换为对象实例范围。你可能会在 prototype 上定义常属性（不变的属性），但一般来说，在构造器内定义属性更好。
 
@@ -725,7 +725,7 @@ function BlueGlassBrick() {
 }
 ```
 
-![](JavaScript对象介绍/8.png)
+![](8.png)
 
 请注意，我们仅传入了 this 到 call() 中，因为我们不会继承那些需要参数设置的父级属性。
 
@@ -913,7 +913,7 @@ class Teacher extends Person {
   Teacher.subject="new value"
   ```
 
-![](JavaScript对象介绍/9.png)
+![](9.png)
 
 > setter 和 getter 实际上是为了检查和更新属性值而自定义的方法，不仅仅可以在 ES6 中使用。使用原型链形式编写的对象也可以定义它们。
 
@@ -1069,7 +1069,7 @@ var section = document.querySelector('section');
 
 我们准备把它加载到我们的页面中，然后使用漂亮的 DOM 操作来展示它，就像这样：
 
-![json-superheroes](JavaScript对象介绍/10.png)
+![json-superheroes](10.png)
 
 <br>
 

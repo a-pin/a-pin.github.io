@@ -324,7 +324,7 @@
 <li>浏览器检查实际点击的元素是否在冒泡阶段中注册了一个 onclick 事件处理程序，如果是，则运行它。</li>
 <li>然后它移动到下一个直接的祖先元素，并做同样的事情，然后是下一个，等等，直到它到达 <code>&lt;html&gt;</code> 元素。</li>
 </ul>
-<p><img src="JavaScript%E5%9F%BA%E7%A1%80%E8%A6%81%E4%BB%B6/1.png" alt="bubbling-capturing"></p>
+<p><img src="1.png" alt="bubbling-capturing"></p>
 <p>在现代浏览器中，默认情况下，所有事件处理程序都在<strong>冒泡机制</strong>进行注册。因此，在我们当前的示例中，当您单击视频时，这个单击事件从 <code>&lt;video&gt;</code> 元素向外冒泡直到 <code>&lt;html&gt;</code> 元素。沿着这个事件冒泡线路：</p>
 <ul>
 <li>它发现了 video.onclick…事件处理器 并且运行它，因此这个视频 <code>&lt;video&gt;</code> 第一次开始播放。</li>

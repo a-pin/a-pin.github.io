@@ -149,7 +149,7 @@
 <li>最后，加上一些 JavaScript 实现动态行为： <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> para = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;p&#x27;</span>);</span><br><span class="line"></span><br><span class="line">para.addEventListener(<span class="string">&#x27;click&#x27;</span>, updateName);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">let</span> name = prompt(<span class="string">&#x27;输入一个新的名字：&#x27;</span>);</span><br><span class="line">para.textContent = <span class="string">&#x27;标签1：&#x27;</span> + name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
 <p>结果如图：</p>
-<p><img src="JavaScript%E7%AC%AC%E4%B8%80%E6%AD%A5/1.png"></p>
+<p><img src="1.png"></p>
 <br>
 
 <h2 id="js可以做什么"><a href="#js可以做什么" class="headerlink" title="js可以做什么"></a>js可以做什么</h2><p>客户端（client-side）JavaScript 语言的核心包含一些普遍的编程特性，可以做到如下的事：</p>
@@ -161,7 +161,7 @@
 </ul>
 <p><strong>应用程序接口（ Application Programming Interfaces(API) ）</strong> 将为你的代码提供额外的超能力。API是已经建立好的一套代码组件，可以让开发者实现原本很难甚至无法实现的程序，就像现成的家具套件之于家具建设——不用从一钉一木开始。</p>
 <p>API通常分为两类：</p>
-<p><img src="JavaScript%E7%AC%AC%E4%B8%80%E6%AD%A5/2.png"></p>
+<p><img src="2.png"></p>
 <p><strong>浏览器API</strong> 内建于 web 浏览器中，它们不仅可以将数据从周边计算机环境中筛选出来，还可以做实用的复杂工作。例如：</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model">文档对象模型 API（ DOM(Document Object Model) API ）</a> 能通过创建、移除和修改 HTML，为页面动态应用新样式等手段来操作 HTML 和 CSS。比如当某个页面出现一个弹窗，或者显示了一些新内容（比如上文demo），这就是 DOM 在运行。</li>
@@ -177,7 +177,7 @@
 <br>
 
 <h2 id="js做了什么"><a href="#js做了什么" class="headerlink" title="js做了什么"></a>js做了什么</h2><p>JavaScript 最普遍的用处是通过 DOM API 动态修改 HTML 和 CSS 来更新用户界面（user interface）。浏览器在读取一个网页时，代码（html、css 和 js）将在一个运行环境（浏览器标签页）中得到执行。就像一间工厂，将原材料（代码）加工为一件产品（网页）。具体来讲，在 HTML 和 CSS 集合组装成一个网页后，浏览器的 JavaScript 引擎就会执行 JavaScript 代码。保证了当 JavaScript 开始运行之前，网页的结构和样式已经就位，否则 JavaScript 在 HTML 和 CSS 就位之前加载运行，就会引发错误。</p>
-<p><img src="JavaScript%E7%AC%AC%E4%B8%80%E6%AD%A5/3.png"></p>
+<p><img src="3.png"></p>
 <blockquote>
 <p>每个浏览器标签页都是其自身用来运行代码的独立容器（运行环境）。大多数情况下，每个标签页中的代码完全独立运行，而且一个标签页中的代码不能直接影响另一个标签页中的代码，使不法分子无法从其他网站盗取信息。不过，以安全的方式在不同网站/标签页中传送代码和数据的方法是存在的。</p>
 </blockquote>

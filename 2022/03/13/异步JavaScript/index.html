@@ -83,7 +83,7 @@
 <p>消息的具体结构实际上跟具体的实现有关。消息队列中的每条消息实际上都对应着一个事件。</p>
 </blockquote>
 <p>为简单起见，认为消息就是注册异步任务是添加的回调函数。用图表示具体异步过程：</p>
-<p><img src="%E5%BC%82%E6%AD%A5JavaScript/1.png"></p>
+<p><img src="1.png"></p>
 <p>观察异步代码执行的过程，可以发现异步过程的回调函数，一定不在当前这一轮事件循环中执行。因为消息队列的长度是未知的。</p>
 <br>
 
@@ -254,7 +254,7 @@
 <p><strong>限制（节流）requestAnimationFrame() 动画</strong></p>
 <p><code>requestAnimationFrame()</code> 的限制之一是无法选择帧率。在大多数情况下，这不是问题，因为通常希望动画尽可能流畅地运行。但是，当要创建老式的8位类型的动画时，怎么办？</p>
 <p>首先，先解释一下“精灵图序列”。图片如下：</p>
-<p><img src="%E5%BC%82%E6%AD%A5JavaScript/2.png"></p>
+<p><img src="2.png"></p>
 <p>图中包含六个精灵，它们组成了一趟完整的行走序列。每个精灵的尺寸为 102 × 148 像素。为了整齐的显示一个精灵，可以通过 drawImage() 来从序列中裁切出单独的精灵并隐藏其他部分。不断切换不同动作的精灵，就可以实现走路了。</p>
 <p>在此示例中，必须为角色在屏幕上的位置及显示的精灵设置动画。精灵动画中只有6帧。如果通过 <code>requestAnimationFrame()</code> 为屏幕上显示的每个帧显示不同的精灵帧，精灵的四肢就会移动太快，动画看起来很荒谬。因此，此示例使用以下代码限制精灵循环的帧率：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (posX % <span class="number">13</span> === <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (sprite === <span class="number">5</span>) &#123;</span><br><span class="line">    sprite = <span class="number">0</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    sprite++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -414,7 +414,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(values);</span><br><span class="line"><span class="comment">// Store each value returned from the promises in separate variables; create object URLs from the blobs</span></span><br><span class="line"><span class="keyword">let</span> objectURL1 = URL.createObjectURL(values[<span class="number">0</span>]);</span><br><span class="line"><span class="keyword">let</span> objectURL2 = URL.createObjectURL(values[<span class="number">1</span>]);</span><br><span class="line"><span class="keyword">let</span> descText = values[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// Display the images in &lt;img&gt; elements</span></span><br><span class="line"><span class="keyword">let</span> image1 = <span class="built_in">document</span>.createElement(<span class="string">&#x27;img&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> image2 = <span class="built_in">document</span>.createElement(<span class="string">&#x27;img&#x27;</span>);</span><br><span class="line">image1.src = objectURL1;</span><br><span class="line">image2.src = objectURL2;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(image1);</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(image2);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Display the text in a paragraph</span></span><br><span class="line"><span class="keyword">let</span> para = <span class="built_in">document</span>.createElement(<span class="string">&#x27;p&#x27;</span>);</span><br><span class="line">para.textContent = descText;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(para);</span><br></pre></td></tr></table></figure>
 
 <p>保存并刷新，你应该看到所有UI组件都已加载。</p>
-<p><img src="%E5%BC%82%E6%AD%A5JavaScript/3.png"></p>
+<p><img src="3.png"></p>
 <br>
 
 <h2 id="finally"><a href="#finally" class="headerlink" title="finally()"></a>finally()</h2><p>在现代浏览器中，<code>.finally()</code> 方法可用，无论 promise 是实现还是拒绝，finally 块都将运行：</p>
