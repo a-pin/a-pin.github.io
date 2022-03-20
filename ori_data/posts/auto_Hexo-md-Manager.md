@@ -2,7 +2,6 @@
 title: 自动化hexo中.md和.yml配置文件的版本管理
 description: 通过配置hexo根目录下_config.yml的 skip_render 字段实现md文件和yml配置文件的git版本管理，并通过bat批处理文件将其过程自动化
 tags: 
-- bat
 - hexo
 categories: 
 - others
