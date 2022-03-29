@@ -2,9 +2,10 @@
 title: 异步JavaScript
 description: 本文将讲解异步为什么很重要，以及怎样使用异步来有效处理潜在的阻塞操作，比如从服务器上获取资源。
 tags:
-- JavaScript
+  - JavaScript
 categories:
-- web前端
+  - mdn
+	- web前端
 ---
 
 在此特地声明本文是根据 [mozilla官方教学文档](https://developer.mozilla.org/zh-CN/docs/Learn/html/Introduction_to_html) 学习的个人学习笔记，借用了大量的图片和文本内容，存在相当多的相同，但不是copy。如需查看mozilla官方文档，请点击前文链接！！
