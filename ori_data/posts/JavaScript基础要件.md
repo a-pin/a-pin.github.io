@@ -2,10 +2,9 @@
 title: JavaScript基础要件
 description: 本文将介绍 JavaScript 的关键基本特性，条件控制语句、循环语句、函数模块、事件等通用代码块。
 tags:
-  - JavaScript
 categories:
   - mdn
-	- web前端
+	- JavaScript
 ---
 
 在此特地声明本文是根据 [mozilla官方教学文档](https://developer.mozilla.org/zh-CN/docs/Learn/html/Introduction_to_html) 学习的个人学习笔记，借用了大量的图片和文本内容，存在相当多的相同，但不是copy。如需查看mozilla官方文档，请点击前文链接！！

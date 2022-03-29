@@ -2,10 +2,9 @@
 title: JavaScript第一步
 description: 本文主要目的是让你对于JavaScript有一个大概的认识！以方便之后的学习。
 tags: 
-  - JavaScript
 categories:
   - mdn
-	- web前端
+	- JavaScript
 ---
 
 在此特地声明本文是根据 [mozilla官方教学文档](https://developer.mozilla.org/zh-CN/docs/Learn/html/Introduction_to_html) 学习的个人学习笔记，借用了大量的图片和文本内容，存在相当多的相同，但不是copy。如需查看mozilla官方文档，请点击前文链接！！
