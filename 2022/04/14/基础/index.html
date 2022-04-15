@@ -30,10 +30,10 @@
 <meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/1.png">
 <meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%5C2.png">
 <meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/4.png">
-<meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80/6.png">
-<meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80/5.png">
-<meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80/7.png">
-<meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80/8.png">
+<meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/6.png">
+<meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/5.png">
+<meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/7.png">
+<meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/8.png">
 <meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/9.png">
 <meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/10.png">
 <meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/11.png">
@@ -57,7 +57,7 @@
 <meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/29.png">
 <meta property="og:image" content="http://example.com/2022/04/14/%E5%9F%BA%E7%A1%80/30.png">
 <meta property="article:published_time" content="2022-04-14T10:10:10.044Z">
-<meta property="article:modified_time" content="2022-04-15T15:17:22.919Z">
+<meta property="article:modified_time" content="2022-04-15T15:26:38.075Z">
 <meta property="article:author" content="a-pin">
 <meta property="article:tag" content="blog,a-pin">
 <meta name="twitter:card" content="summary">
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-15 23:17:22" itemprop="dateModified" datetime="2022-04-15T23:17:22+08:00">2022-04-15</time>
+                <time title="修改时间：2022-04-15 23:26:38" itemprop="dateModified" datetime="2022-04-15T23:26:38+08:00">2022-04-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -311,20 +311,21 @@
 
 <h2 id="处理用户输入"><a href="#处理用户输入" class="headerlink" title="处理用户输入"></a>处理用户输入</h2><p>为了让用户和你的应用进行交互，我们可以用 <code>v-on</code> 指令添加一个事件监听器，通过它调用在 Vue 实例中定义的方法：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app-5&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;reverseMessage&quot;</span>&gt;</span>反转消息<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app5 = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="attr">el</span>: <span class="string">&#x27;#app-5&#x27;</span>,</span><br><span class="line">  <span class="attr">data</span>: &#123;</span><br><span class="line">    <span class="attr">message</span>: <span class="string">&#x27;Hello Vue.js!&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">methods</span>: &#123;</span><br><span class="line">    <span class="attr">reverseMessage</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">this</span>.message = <span class="built_in">this</span>.message.split(<span class="string">&#x27;&#x27;</span>).reverse().join(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<p><img src="%E5%9F%BA%E7%A1%80/6.png"></p>
+<p><img src="6.png"></p>
 <p>注意在 <code>reverseMessage</code> 方法中，我们更新了应用的状态，但没有触碰 DOM——<em>所有的 DOM 操作都由 Vue 来处理，你编写的代码只需要关注逻辑层面即可。</em></p>
 <p>Vue 还提供了 <code>v-model</code> 指令，它能轻松实现表单输入和应用状态之间的双向绑定。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app-6&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        &#123;&#123; message &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;message&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app6 = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    <span class="attr">el</span>: <span class="string">&#x27;#app-6&#x27;</span>,</span><br><span class="line">    <span class="attr">data</span>: &#123;</span><br><span class="line">        <span class="attr">message</span>: <span class="string">&#x27;Hello Vue!&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<p><img src="%E5%9F%BA%E7%A1%80/5.png"></p>
+<p><img src="5.png"></p>
 <br>
 
 <h2 id="组件化应用构建"><a href="#组件化应用构建" class="headerlink" title="组件化应用构建"></a>组件化应用构建</h2><p>组件系统是 Vue 的另一个重要概念，因为它是一种抽象，允许我们使用小型、独立和通常可复用的组件构建大型应用。仔细想想，几乎任何类型的应用界面都可以抽象为一个组件树：</p>
-<p><img src="%E5%9F%BA%E7%A1%80/7.png"></p>
+<p><img src="7.png"></p>
 <p>在 Vue 里，一个组件本质上是一个拥有预定义选项的一个 Vue 实例。在 Vue 中注册组件很简单：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义名为 todo-item 的新组件</span></span><br><span class="line">Vue.component(<span class="string">&#x27;todo-item&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">template</span>: <span class="string">&#x27;&lt;li&gt;这是个待办项&lt;/li&gt;&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(...)</span><br></pre></td></tr></table></figure>
 
@@ -404,7 +405,7 @@
 <br>
 
 <h2 id="生命周期图示"><a href="#生命周期图示" class="headerlink" title="生命周期图示"></a>生命周期图示</h2><p>下图展示了实例的生命周期：</p>
-<p><img src="%E5%9F%BA%E7%A1%80/8.png" alt="lifecycle"></p>
+<p><img src="8.png" alt="lifecycle"></p>
 <br>
 
 <h1 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h1><p>Vue.js 使用了基于 HTML 的模板语法，允许开发者声明式地将 DOM 和底层 Vue 实例中的数据绑定。所有 Vue.js 的模板都是合法的 HTML，所以能被遵循规范的浏览器和 HTML 解析器解析。</p>
