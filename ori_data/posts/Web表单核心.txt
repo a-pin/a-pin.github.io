@@ -1,0 +1,1263 @@
+---
+title: Web表单
+description: HTML表单是与用户交互的强大工具，这篇文章将介绍表单的方方面面
+tags: 
+categories:
+  - mdn
+	- Web表单
+---
+
+在此特地声明本文是根据 [mozilla官方教学文档](https://developer.mozilla.org/zh-CN/docs/Learn/html/Introduction_to_html) 学习的个人学习笔记，借用了大量的图片和文本内容，存在相当多的相同，但不是copy。如需查看mozilla官方文档，请点击前文链接！！
+<!--more-->
+
+<br>
+
+# HTML表单简介
+HTML 表单的灵活性使它们成为 HTML 中最复杂的结构之一；你可以使用专用的表单元素和属性构建任何类型的基本表单。在构建 HTML 表单时使用正确的结构将有助于确保表单可用性和可访问性。
+
+<br>
+
+## 什么是表单
+HTML 表单是用户和 web 站点或应用程序之间交互的主要内容之一。Web 表单收集用户的数据并发送到 web 站点。大多数情况下，数据被发送到 web 服务器，不过 web 页面也可以自己拦截它并使用它。
+
+<br>
+
+## 表单元素
+表单元素是允许用户在表单中输入信息的元素（文本字段、选择框、按钮、复选框或单选框），其最主要的作用就是收集信息。
+
+这些元素可以认为是表单中的部件。大多数情况下，这些小部件和描述其目的的标签配对。
+
+<br>
+
+### `<form>`元素
+`<form>` 元素按照一定的格式定义了表单和确定表单行为的属性。许多辅助技术或浏览器插件可以发现 `<form>` 元素并实现特殊的钩子，使它们更易于使用。
+
+form 元素是一个容器元素，它正式定义了一个表单，所有 HTML 表单都必须以一个 `<form>` 元素开始。它支持一些特定的属性来配置表单的行为方式：
+- action 属性定义了在提交表单时，应该把所收集的数据送给谁去处理
+- method 属性定义了发送数据的HTTP方法（get 或 post）
+
+这两个属性对 form 元素相当重要，你至少要设置这两个属性。
+
+例如：
+```html
+<form action="/my-handling-form-page" method="post">
+
+</form>
+```
+
+> 注：严格禁止在一个表单内嵌套另一个表单。嵌套会使表单的行为不可预知，而这取决于正在使用的浏览器。
+
+请注意，你可以在 `<form>` 元素之外使用表单小部件，不过这些表单小部件与任何表单都没有关系。它们自己什么也不做，你需要使用 JavaScript 定制它们的行为。
+
+<br>
+
+### `<input>`元素
+`<input>` 元素用于为基于 Web 的表单创建交互式控件，以便接受来自用户的数据，可以使用各种类型的输入数据和控件小部件。
+
+在 `<input>` 元素中，最重要的属性是 type 属性，它可以从根本上改变元素，定义了 `<input>` 属性的行为方式。
+
+以下是常见的 type 属性值：
+- **text**：默认值。单行的文本区域，输入中的换行会被自动去除
+- **checkbox**：复选框，可以设置选中或未选中
+- **submit**：用于提交表单的按钮
+- **button**：没有默认行为的按钮，上面显示 value 属性的值，默认为空
+- **password**：单行文本区域，其值会被遮盖
+
+<br>
+
+### `<button>`元素
+`<button>` 元素可以为表单添加一个按钮。例如：
+```html
+<button type="submit">Send your message</button>
+```
+
+`<button>` 元素接受一个 type 属性（submit，reset 或 button）：
+- 单击 type 属性定义为 submit 值（默认值）的按钮会发送表单的数据到 `<form>` 元素的 action 属性所定义的网页
+- 单击 type 属性定义为 reset 值的按钮将所有表单小部件重新设置为它们的默认值
+- 单击 type 属性定义为 button 值的按钮不会发生任何事！这听起来很傻，但是用 JavaScript 构建定制按钮非常有用
+
+> 注：您还可以使用相应类型的 `<input>` 元素来生成一个按钮，如 `<input type="submit">`。`<button>` 元素的主要优点是 `<input>` 元素只允许纯文本作为其标签，而 `<button>` 元素允许完整的 HTML 内容，允许更复杂、更有创意的按钮文本。
+
+<br>
+
+### `<textarea>`元素
+`<textarea>` 标签定义了多行的文本输入控件，可容纳无限数量的文本（默认等宽字体）。
+
+例如：
+```html
+<textarea></textarea>
+```
+
+你可以通过 cols 和 rows 属性来规定 textarea 的尺寸，不过更好的办法是使用 CSS 的 height 和 width 属性；你可以通过 `<textarea>` 标签的 wrap 属性设置文本输入区内的换行模式。
+
+注意，`<input>` 标签是一个空元素，它不需要关闭标签。相反，`<textarea>` 不是一个空元素，你必须使用关闭标签（`</textarea>`）来关闭它。这对 HTML 表单小部件的特性有影响，例如定义默认值的方式。
+
+- 要定义 `<input>` 的默认值，你需要使用 value 属性，如下所示：
+  ```html
+  <input type="text" value="by default this element is filled with this text" />
+  ```
+
+- 要定义 `<textarea>` 的默认值，你需要在 `<textarea>` 元素的开始和结束标记之间放置默认值：
+  ```html
+  <textarea>by default this element is filled with this text</textarea>
+  ```
+
+<br>
+
+### `<label>`元素
+`<label>` 元素是为 HTML 表单小部件定义标签的正式方法。如果你想构建可访问的表单，这是最重要的元素。
+
+例如：
+```html
+<label for="name">Name:</label>
+
+<input type="text" id="name" name="user_name">
+```
+
+`<label>` 标签与 `<input>` 通过他们各自的 for 属性和 id 属性正确相关联。
+
+<br>
+
+**点击标签以激活部件!**
+
+标签是可以点击的，正确设置标签的另一个好处是可以在所有浏览器中单击标签来激活相应的小部件。
+- 对于像文本输入这样的例子很有用，你可以通过点击标签或点击输入区来聚焦于输入
+- 对于单选框和复选框尤其有用，这种控件的可点击区域可能非常小，设置标签可以使它们可点击区域变大
+
+举个例子：
+```html
+<form>
+  <p>
+    <input type="checkbox" id="taste_1" name="taste_cherry" value="1">
+    <label for="taste_1">I like cherry</label>
+  </p>
+  <p>
+    <input type="checkbox" id="taste_2" name="taste_banana" value="2">
+    <label for="taste_2">I like banana</label>
+  </p>
+</form>
+```
+
+效果如图：
+
+![](3.png)
+
+<br>
+
+**多个标签**
+
+严格地说，你可以在一个小部件上放置多个标签，但是这不是一个好主意，因为一些辅助技术可能难以处理它们。在多个标签的情况下，你应该将一个小部件和它的标签嵌套在一个 `<label>` 元素中。
+
+让我们考虑下面这个例子：
+```html
+<p>Required fields are followed by <abbr title="required">*</abbr>.</p>
+
+<!--这样写：-->
+<div>
+  <label for="username">Name:</label>
+  <input type="text" name="username">
+  <label for="username"><abbr title="required">*</abbr></label>
+</div>
+
+<!--但是这样写会更好：-->
+<div>
+  <label for="username">
+    <span>Name:</span>
+    <input id="username" type="text" name="username">
+    <abbr title="required">*</abbr>
+  </label>
+</div>
+
+<!--但最好的可能是这样：-->
+<div>
+  <label for="username">Name: <abbr title="required">*</abbr></label>
+  <input id="username" type="text" name="username">
+</div>
+```
+
+顶部的段落内容定义了所需元素的规则（即星号在文本框之前）。它必须在开始时确保像屏幕阅读器这样的辅助技术在用户找到必需的元素之前显示或念出它们。这样，他们就知道星号表达的是什么意思了。
+
+- 在第一个例子中，标签根本没有和 input 一起被念出来——读出来的只是 “edit the blank”，和单独被念出的标签。多个 `<label>` 元素会使屏幕阅读器迷惑。
+- 在第二个例子中，事情变得清晰一点了——标签和输入一起，读出的是 “name star name edit text”，但标签仍然是单独读出的。这还是有点令人困惑，但这次还是稍微好一点了，因为 input 和 label 联系起来了。
+- 第三个例子是最好的——标签是一起读出的，标签和输入读出的是 “name star edit text”。
+
+> 注：你可能会得到一些不同的结果，这取决于你的屏幕阅读器。
+
+<br>
+
+### `<fieldset>`和`<legend>`元素
+`<fieldset>` 元素是一种方便的用于创建具有相同目的的小部件组的方式。出于样式和语义目的，你可以在 `<fieldset>` 开口标签后加上一个 `<legend>` 元素来给 `<fieldset>` 标上标签。
+
+许多辅助技术将 `<legend>` 元素作为 `<fieldset>` 元素里相应部件的标签的一部分使用。
+
+例如，在说出每个小部件的标签之前，像 Jaws 或 NVDA 这样的屏幕阅读器会朗读出 legend 的内容：
+```html
+<form>
+  <fieldset>
+    <legend>Fruit juice size</legend>
+    <p>
+      <input type="radio" name="size" id="size_1" value="small">
+      <label for="size_1">Small</label>
+    </p>
+    <p>
+      <input type="radio" name="size" id="size_2" value="medium">
+      <label for="size_2">Medium</label>
+    </p>
+    <p>
+      <input type="radio" name="size" id="size_3" value="large">
+      <label for="size_3">Large</label>
+    </p>
+  </fieldset>
+</form>
+```
+
+当阅读上述表格时，屏幕阅读器将会读第一个小部件 “Fruit juice size small”，“Fruit juice size medium” 为第二个，“Fruit juice size large” 为第三个。因为它对辅助技术的影响，`<fieldset>` 元素是构建可访问表单的关键元素之一。如果可能，每次构建表单时，尝试侦听屏幕阅读器如何解释表单。如果听起来很奇怪，你可以试着改进表单结构。
+
+![](1.png)
+
+一般来说，`<fieldset>` 元素也可以用来对表单进行分段。理想情况下，长表单应该被拆分为多个页面；但是如果表单很长，且必须在单个页面上，那么你可以将表单以不同的关联关系进行分段，分别放在不同的 fieldset 里，提高可用性。
+
+<br>
+
+## HTML 表单实例
+本文为你提供第一次创建 HTML 表单的经验，包括设计表单、使用正确的 HTML 元素实现、通过 CSS 添加一些非常简单的样式以及将数据发送到服务器。
+
+<br>
+
+第一步，设计表单。
+
+为了实现一个表单，你首先就需要设计一个合适的表单。你应该只询问必要的用户数据，保持简单，保持专注。这不仅是编写代码的问题，更涉及了表单的用户体验。
+
+我们的表单将包含三个文本字段和一个按钮。我们向用户询问他们的姓名、电子邮件和他们想要发送的信息，点击按钮将数据发送到一个 web 服务器。
+
+第二步，在 `<body>` 元素中添加 `<form>` 元素，所有HTML表单都以一个 `<form>` 元素开始：
+```html
+<form action="/my-handling-form-page" method="post">
+
+</form>
+```
+
+第三步，添加 `<label>`，`<input>` 和 `<textarea>` 元素。
+
+我们的联系人表单包含三个文本字段，每个字段都有一个标签。
+- 名称的输入字段将是一个基本的单行文本字段
+- 电子邮件的输入字段将是一个只接受电子邮件地址的单行文本字段
+- 消息的输入字段将是一个基本的多行文本字段。
+
+HTML代码如下：
+```html
+<form action="/my-handling-form-page" method="post">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name">
+  </div>
+  <div>
+    <label for="mail">E-mail:</label>
+    <input type="email" id="mail">
+  </div>
+  <div>
+    <label for="msg">Message:</label>
+    <textarea id="msg"></textarea>
+  </div>
+</form>
+```
+
+使用 `<div>` 元素可以使我们更加方便地构造我们自己的代码，代码更容易样式化。
+
+第四步，添加 `<button>` 元素，让用户可以在填写完表单后发送他们的数据：
+```html
+<div class="button">
+  <button type="submit">Send your message</button>
+</div>
+```
+
+这个 `<button>` 元素的 type 属性值是 submit，点击按钮，会将表单数据发送到 action 属性定义的位置。
+
+<br>
+
+第五步，添加基本表单样式。现在这个表单是一个简陋没有装饰的表单，我们为它添加一些 CSS 代码进行装饰。
+
+在 HTML 头部中添加一个 `<style>` 元素。并在样式标签中，添加如下的 CSS：
+```css
+<style>
+  form {
+    /* 居中表单 */
+    margin: 0 auto;
+    width: 400px;
+    /* 显示表单的轮廓 */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  form li + li {
+    margin-top: 1em;
+  }
+
+  label {
+    /* 确保所有label大小相同并正确对齐 */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+  }
+
+  input, textarea {
+    /* 确保所有文本输入框字体相同
+      textarea默认是等宽字体 */
+    font: 1em sans-serif;
+
+    /* 使所有文本输入框大小相同 */
+    width: 300px;
+    box-sizing: border-box;
+
+    /* 调整文本输入框的边框样式 */
+    border: 1px solid #999;
+  }
+
+  input:focus, textarea:focus {
+    /* 给激活的元素一点高亮效果 */
+    border-color: #000;
+  }
+
+  textarea {
+    /* 使多行文本输入框和它们的label正确对齐 */
+    vertical-align: top;
+
+    /* 给文本留下足够的空间 */
+    height: 5em;
+  }
+
+  .button {
+    /* 把按钮放到和文本输入框一样的位置 */
+    padding-left: 90px; /* 和label的大小一样 */
+  }
+
+  button {
+    /* 这个外边距的大小与label和文本输入框之间的间距差不多 */
+    margin-left: .5em;
+  }
+</style>
+```
+
+效果如图：
+
+![](2.png)
+
+<br>
+
+第六步，发送表单数据。这最后一步，在服务器端处理表单数据也许是最棘手的部分。
+
+虽然 `<form>` 元素可以通过 action 属性和 method 属性来说明发送数据的位置和方式。但这还不够，我们还需要为我们的数据提供一个 **name 属性**：在浏览器端，它告诉浏览器如何命名数据，在服务器端，它允许服务器按名称处理每个数据块。
+
+为了将数据整合发送，你需要在每个表单小部件上使用 name 属性来收集特定的数据块：
+```html
+<form action="/my-handling-form-page" method="post">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="user_name">
+  </div>
+  <div>
+    <label for="mail">E-mail:</label>
+    <input type="email" id="mail" name="user_email">
+  </div>
+  <div>
+    <label for="msg">Message:</label>
+    <textarea id="msg" name="user_message"></textarea>
+  </div>
+
+  ...
+```
+
+在这个例子里，表单会发送三个已命名的数据块 user_name，user_email 和 user_message。这些数据将用使用 HTTP POST 方法，把信息发送到 URL 为 "/my-handling-form-page" 的目录下。
+
+在服务器端，位于 URL 上的脚本将接收的数据作为 HTTP 请求中包含的3个键/值项的列表来处理这些数据。
+
+<br>
+
+# 表单部件
+本章，我们将详细研究不同表单部件的功能，查看了哪些选项可用于收集不同类型的数据。
+
+<br>
+
+## 通用属性
+大部分用来定义表单部件的元素都有一些他们自己的属性。然而，在所有表单元素中都有一组通用属性。下面是这些通用属性的列表：
+
+|**属性名称**|**默认值**|**描述**|
+|---|---|---|
+|autofocus|false|指定页面加载时元素是否自动具有输入焦点。文档中只有一个与表单相关的元素可以指定这个属性。|
+|disabled|false|表示用户能不能与元素交互。如果没有指定这个属性，元素将从包含它的元素继承设置。|
+|form||小部件与之相关联的表单元素。属性值必需是同个文档中的 `<form>` 元素的 id 属性。理论上，它允许在 `<form>` 元素之外设置一个表单部件。然而，在实践中，没有任何支持该特性的浏览器。|
+|name||元素的名称，这是跟表单数据一起提交的。|
+|value||元素的初始值。|
+
+<br>
+
+## 常用表单部件
+
+<br>
+
+### 文本输入框
+文本输入框包括 input 元素和 textarea 元素，它们都是纯文本输入控件。其中，文本输入框 `<input>` 是最基本的表单小部件，可以让用户输入任何类型的数据。
+
+所有文本框都有一些通用规范：
+- readonly 属性：用户能不能修改输入值。
+- disabled 属性：规定应该禁用 input 元素，被禁用的 input 元素既不可用，也不可点击。
+- placeholder 属性：文本输入框中出现的文本，可以用来简略描述输入框。
+- size 属性：框的物理尺寸。
+- maxlength 属性：可输入的最大字符数。
+
+<br>
+
+**E-mail 地址框**
+
+该类型的框将 type 属性设置为 email 值：
+```html
+<input type="email" id="email" name="email" multiple>
+```
+
+当使用 type 时，用户需要在框中输入有效的电子邮件地址；任何其他内容都会导致浏览器在提交表单时显示错误。这是客户端错误验证，由浏览器执行：
+
+![](4.png)
+
+通过 multiple 属性，它可以让用户将多个电子邮件地址输入（以逗号分隔）。
+
+<br>
+
+**密码框**
+
+通过设置 type 属性值为 password 来设置该类型框：
+```html
+<input type="password" id="pwd" name="pwd">
+```
+
+它不会为输入的文本添加任何特殊的约束，只会模糊输入到字段中的值，以防被其他人读取。
+
+不过注意，这只是一个用户界面特性，除非安全地提交你的表单，你的密码框数据依旧会以明文发送。保护用户不受此影响的最佳方式是在安全连接（https）上托管任何涉及表单的页面，使得数据在发送之前就已加密。
+
+<br>
+
+**搜索框**
+
+设置 type 属性值为 search：
+```html
+<input type="search" id="search" name="search">
+```
+
+文本框和搜索框之间的主要区别是浏览器的样式。通常，搜索框是渲染成圆角的，且有可能给定一个 x 来清除输入的值。除此之外，搜索框还有一个值得注意的特性：它们的值可以被自动保存，用来在同一站点上的多个页面上自动补全。
+
+<br>
+
+**电话号码栏**
+
+设置 type 属性为 tel：
+```js
+<input type="tel" id="tel" name="tel">
+```
+
+由于世界范围内各种各样的电话号码格式，这种类型的字段不会对用户输入的值执行任何限制，它主要是在语义上的区分。
+
+<br>
+
+**URL 栏**
+
+通过 type 属性的 url 值设置该类型框：
+```html
+<input type="url" id="url" name="url">
+```
+
+它为字段添加了特殊的验证约束，如果输入无效的 url，浏览器就会报告错误。
+
+<br>
+
+**单行文本框**
+
+使用 type 属性值被设置为 text（默认值）的 `<input>` 元素创建一个单行文本框。在你指定的 type 属性的值在浏览器中是未知的情况下，属性值text也是备用值。例如，你指定 type="date"，但是浏览器不支持原生日期选择器。
+
+这是一个基本的单行文本框示例：
+```html
+<input type="text" id="comment" name="comment" value="I'm a text field">
+```
+
+> 注：单行文本框只有一个约束，如果你输入带有换行符的文本，浏览器会在发送数据之前删除这些换行符。
+
+<br>
+
+**多行文本框**
+
+多行文本框专指使用 `<textarea>` 元素，它只接受文本内容，将任何 HTML 内容放入 `<textarea>` 中都呈现为纯文本内容。
+```js
+<textarea cols="30" rows="10"></textarea>
+```
+
+textarea 和常规的单行文本字段之间的主要区别是，允许用户输入包含硬换行符（即按回车）的文本。
+
+![](5.png)
+
+在大多数浏览器中，文本区域在右下角有一个拖放操作，允许用户调整它的大小。这种调整能力可以通过使用 CSS 设置文本区域的 resize 性质为 none 来关闭。
+
+`<textarea>` 还接受了一些额外的属性，以控制它呈现的效果。主要属性有：
+
+|属性名|默认值|描述|
+|---|---|---|
+|cols|20|文本控件的可见宽度，平均字符宽度。|
+|rows||控制的可见文本行数。|
+|wrap|soft|表示控件是如何包装文本的。可能的值：hard 或 soft|
+
+<br>
+
+### 下拉内容
+下拉窗口小部件是一种简单的方法，可以让用户选择众多选项中的一个，而不需要占用用户界面的太多空间。HTML 有两种类型的下拉内容：select box 和 autocomplete box。在这两种情况下，交互都是相同的，一旦控件被激活，浏览器就会显示用户可以选择的值列表。
+
+<br>
+
+#### 选择框
+一个选择框是用 `<select>` 元素创建的，其中有一个或多个 `<option>` 元素作为子元素，每个元素都指定了其中一个可能的值。
+
+<br>
+
+**单选选择框**
+
+默认情况下，`<select>` 元素创建一个单选选择框。例如：
+```html
+<select id="simple" name="simple">
+  <option>Banana</option>
+  <option>Cherry</option>
+  <option>Lemon</option>
+</select>
+```
+
+如果需要，可以使用 selected 属性在所需的 `<option>` 元素上设置选择框的默认值，在页面加载时会默认选择该选项。
+
+`<option>` 元素也可以嵌套在 `<optgroup>` 元素中，以创建视觉关联的组值。即在 `<optgroup>` 元素中，label 属性值是不可选的：
+```html
+<select id="groups" name="groups">
+  <optgroup label="fruits">
+    <option>Banana</option>
+    <option selected>Cherry</option>
+    <option>Lemon</option>
+  </optgroup>
+  <optgroup label="vegetables">
+    <option>Carrot</option>
+    <option>Eggplant</option>
+    <option>Potato</option>
+  </optgroup>
+</select>
+```
+
+效果如下：
+
+![](6.png)
+
+开始标签 `<option>` 与结束标签 `</option>` 之间的内容是浏览器显示在下拉列表中的内容；value 属性中的值才是表单提交时被发送到服务器的值。
+
+> 注意：如果没有规定 value 属性，选项的值将设置为 `<option>` 标签中的内容。
+
+<br>
+
+**多选选择框**
+
+默认情况下，选择框只允许用户选择一个值。但是通过将 multiple 属性添加到 `<select>` 元素，用户可以通过操作系统提供的默认机制来选择几个值——在 Windows，同时按下 Ctrl 并点击多个值。
+
+例如：
+```html
+<select multiple id="multi" name="multi">
+  <option>Banana</option>
+  <option>Cherry</option>
+  <option>Lemon</option>
+</select>
+```
+
+![](7.png)
+
+注意，在多选选择框的情况下，选择框不再显示值为下拉内容——相反，它们都显示在一个列表中。
+
+<br>
+
+#### 自动补全输入框
+你可以使用 `<datalist>` 元素来为表单小部件提供建议的、自动完成的值，并使用一些 `<option>` 子元素来指定要显示的值。
+
+除了完成 datalist 元素的内容，你还需要使用表单部件的 list 属性将 datalist 绑定到一个文本框。一旦数据列表与表单部件相关联，数据列表的选项就可以用来自动补全用户输入的文本；通常，它是作为一个下拉框提供给用户的，匹配在输入框中输入了的内容。
+```html
+<label for="myFruit">What's your favorite fruit?</label>
+<input type="text" name="myFruit" id="myFruit" list="mySuggestion">
+<datalist id="mySuggestion">
+  <option>Apple</option>
+  <option>Banana</option>
+  <option>Blackberry</option>
+  <option>Blueberry</option>
+  <option>Lemon</option>
+  <option>Lychee</option>
+  <option>Peach</option>
+  <option>Pear</option>
+</datalist>
+```
+
+效果如下：
+
+![](8.png)
+
+> 注意：根据 HTML 规范，list 属性和 `<datalist>` 元素可以用于任何需要用户输入的部件。但是，除了文本控件外，不同的浏览器在不同的情况下会有不同的表现。因此，除了文本字段以外，要小心使用这个特性。
+
+<br>
+
+**数据列表支持和后备**
+
+`<datalist>` 元素是 HTML 表单的最新补充，因此浏览器的支持比我们之前看到的要少一些。它在版本小于10的 IE 中不受支持，同时在版本小于12的 Safari 中不受支持。
+
+为了处理这个问题，这里有一个小技巧，可以为这些浏览器提供一个不错的备用：
+```html
+<label for="myFruit">What is your favorite fruit? (With fallback)</label>
+<input type="text" id="myFruit" name="fruit" list="fruitList">
+
+<datalist id="fruitList">
+  <label for="suggestion">or pick a fruit</label>
+  <select id="suggestion" name="altFruit">
+    <option>Apple</option>
+    <option>Banana</option>
+    <option>Blackberry</option>
+    <option>Blueberry</option>
+    <option>Lemon</option>
+    <option>Lychee</option>
+    <option>Peach</option>
+    <option>Pear</option>
+  </select>
+</datalist>
+```
+
+支持 `<datalist>` 元素的浏览器将忽略所有不是 `<option>` 元素的元素，并按照预期工作。另一方面，不支持 `<datalist>` 元素的浏览器将显示标签和选择框。
+
+<br>
+
+### 可选中项
+可选中项是可以通过单击它们来更改状态的小部件。有两种可选中项：**复选框**和**单选框**。它们都使用 checked 属性来指示该部件的默认状态：选中或未选中。
+
+注意，这两个部件与其他表单部件不一样：
+- 对于大多数表单部件，一旦表单提交，所有具有 name 属性的部件数据都会被发送，即使没有任何值被填。
+- 对于可选中项，只有在勾选时才发送它们的值。如果他们没有被勾选，就不会发送任何东西。
+
+你还需要为这些类型的输入提供 value 属性。如果没有提供任何值，则复选框和单选框被赋予一个 on 值。
+
+<br>
+
+#### 复选框
+使用 type 属性值为 checkbox 的 `<input>` 元素来创建一个复选框。
+```html
+<input type="checkbox" checked id="carrots" name="carrots" value="carrots">
+```
+
+包含 checked 属性使复选框在页面加载时自动被选中。
+
+<br>
+
+#### 单选框
+使用 type 属性值为 radio 的 `<input>` 元素来创建一个单选框。
+```html
+<input type="radio" checked id="soup" name="meal">
+```
+
+如果单选框的 name 属性是相同的，那么它们将被认为属于同一组的按钮。同一组中只有一个按钮可以被选。
+```html
+<fieldset>
+  <legend>What is your favorite meal?</legend>
+  <ul>
+    <li>
+      <label for="soup">Soup</label>
+      <input type="radio" checked id="soup" name="meal" value="soup">
+    </li>
+    <li>
+      <label for="curry">Curry</label>
+      <input type="radio" id="curry" name="meal" value="curry">
+    </li>
+    <li>
+      <label for="pizza">Pizza</label>
+      <input type="radio" id="pizza" name="meal" value="pizza">
+    </li>
+  </ul>
+</fieldset>
+```
+
+![](9.png)
+
+<br>
+
+### 按钮
+使用 `<button>` 元素或者 `<input>` 元素来创建一个按钮。在 HTML 表单中，type 属性决定按钮的类型，以下是三种按钮：
+- **Submit**
+    将表单数据发送到服务器。对于 `<button>` 元素，省略 type 属性（或是一个无效的 type 值）的结果就是一个提交按钮。
+    ```html
+    <button type="submit">
+        This a <br><strong>submit button</strong>
+    </button>
+
+    <input type="submit" value="This is a submit button">
+    ```
+- **Reset**
+    将所有表单小部件重新设置为它们的默认值。
+    ```html
+    <button type="reset">
+        This a <br><strong>reset button</strong>
+    </button>
+
+    <input type="reset" value="This is a reset button">
+    ```
+- **Anonymous**（匿名的）
+    没有自动生效的按钮，但是可以使用JavaScript代码进行定制。
+    ```html
+    <button type="button" onclick="alert('Hello World!')">
+        This an <br><strong>anonymous button</strong>
+    </button>
+
+    <input type="button" value="This is an anonymous button">
+    ```
+
+这两种按钮的行为都是一样的。不过，还是有不同的地方：
+- 在 `<input>` 元素中，按钮标签只能是字符数据
+- 在 `<button>` 元素中，按钮标签可以是 HTML，因此可以相应地进行样式化。
+
+<br>
+
+## 高级表单部件
+在本节中，我们将介绍那些让用户输入独特数据的部件，包括精确的或近似的数字，日期和时间，或颜色等。
+
+在网页上预览高级表单部件（[advanced-examples.html](https://a-pin.github.io/demo/form-widgets/advanced-example.html)）。
+
+<br>
+
+### 数字
+将 `<input>` 元素的 type 属性设置为 `number`。这个控件看起来像一个文本框，但是只允许浮点数，并且通常提供一些按钮来增加或减少小部件的值。
+
+也可以：
+- 通过设置 min 和 max 属性来约束该值。
+- 通过设置 step 属性来指定增加和减少按钮更改小部件的步进值大小。
+
+例子
+```html
+<input type="number" name="age" id="age" min="1" max="10" step="2">
+```
+
+这将创建一个数字小部件，其值被限制为1到10之间的任何值，而其增加和减少按钮的步进值将更改为2。
+
+<br>
+
+### 滑块
+另一种选择数字的方法是使用滑块。从视觉上讲，滑块没有文本字段准确，因此它们被用来选择一个确切值并不重要的数字。
+
+滑块是通过把 `<input>` 元素的 type 属性值设置为 range 来创建的。正确配置滑块是很重要的；为了达到这个目的，我们强烈建议您设置 min、max 和 step 属性。
+
+例子
+```html
+<input type="range" name="beans" id="beans" min="0" max="500" step="10">
+```
+
+这个例子创建了一个滑块，它可能的值在0到500之间，而它的递增/递减按钮以+10和-10来改变值。
+
+滑块的一个问题是，它们不提供任何形式的视觉反馈，你没办法了解当前的值。为此，你需要使用 JavaScript 来显示其他的信息。
+
+在本例中，我们添加了一个空的 `<span>` 元素，其中我们将写入滑块的当前值，并随着更改实时更新它。
+```html
+<label for="beans">How many beans can you eat?</label>
+<input type="range" name="beans" id="beans" min="0" max="500" step="10">
+<span class="beancount"></span>
+```
+
+可以使用一些简单的 JavaScript 实现：
+```js
+var beans = document.querySelector('#beans');
+var count = document.querySelector('.beancount');
+
+count.textContent = beans.value;
+
+beans.oninput = function() {
+  count.textContent = beans.value;
+}
+```
+
+首先，将滑块和 span 的引用存储在两个变量里，再把 span 的 textContent 初始化为滑块的当前 value。最后，设置一个 oninput 事件处理程序，以便每次移动范围滑块时，都会将 span textContent 更新为新的输入值。
+
+<br>
+
+### 日期时间选择器
+对于 web 开发人员来说，收集日期和时间值一直是一场噩梦。HTML5 通过提供一种特殊的控制来处理这种特殊的数据，从而带来了一些增强。
+
+使用 `<input>` 元素和一个适当的值的 type 属性来创建日期和时间控制，这取决于你是否希望收集日期和时间。
+
+**本地时间**
+
+创建一个部件来显示和选择一个日期和时间，但是没有任何特定的时区信息。
+```html
+<input type="datetime-local" name="datetime" id="datetime">
+```
+
+**日期**
+
+创建一个部件来显示和选择一个日期。
+```html
+<input type="date" name="myDate" min="2013-06-01" max="2013-08-31" id="myDate">
+```
+
+**时间**
+
+创建一个部件来显示和选择一个时间值。
+```html
+<input type="time" name="time" id="time">
+```
+
+**星期**
+
+创建一个小部件来显示并挑选一个星期号和它的年份。
+```html
+<input type="week" name="week" id="week">
+```
+
+**月**
+
+创建了一个部件来显示和选择一个月。
+```html
+<input type="month" name="month" id="month">
+```
+
+所有日期和时间控制都可以使用 min 和 max 属性来约束。
+```html
+<label for="myDate">When are you available this summer?</label>
+<input type="date" name="myDate" min="2013-06-01" max="2013-08-31" id="myDate">
+```
+
+> 警告：日期和时间窗口部件仍然很不受支持。目前，Chrome、Edge 和 Opera 都支持它们，但 IE 浏览器没有支持，Firefox 和 Safari 对这些都没有太大的支持。
+
+<br>
+
+### 拾色器
+颜色很多表示方式：RGB值、HSL值、关键字等等。在表单中，颜色部件允许用户在文本和可视的方式中选择颜色。
+
+设置 `<input>` 元素的 type 属性为 color。
+```html
+<input type="color" name="color" id="color">
+```
+
+注意，IE 和 Safari 不支持它，其他主要的浏览器支持它。
+
+<br>
+
+## 其他部件
+有一些部件，它们非常特殊和有用，不能很容易地分类。
+
+<br>
+
+### 文件选择器
+HTML 表单能够将文件发送到服务器，文件选择器部件允许用户选择文件发送。
+
+将 `<input>` 元素的 type 属性设置为 file，来创建一个文件选择器。被接受的文件类型可以使用 accept 属性来约束。此外，如果你想让用户选择多个文件，那么可以通过添加 multiple 属性来实现。
+
+例子
+
+创建一个文件选择器，请求图形图像文件，并允许用户选择多个文件。
+```html
+<input type="file" name="file" id="file" accept="image/*" multiple>
+```
+
+<br>
+
+### 隐藏内容
+有时候，我们用表单发送的数据不想显示给用户。你可以在表单中添加一个不可见的元素 —— 设置 `<input>` 元素的 type 属性为 hidden。
+
+创建了这个元素，就需要设置它的 name 和 value 属性：
+```html
+<input type="hidden" id="timestamp" name="timestamp" value="1286705410">
+```
+
+<br>
+
+### 图像按钮
+图像按钮控件是一个显示为图片的提交按钮，它的样式和 `<img>` 元素一样，被点击时的行为和提交按钮一样。
+
+设置 `<input>` 元素的 type 属性值为 image。这个元素支持 `<img>` 元素的所有属性和其他表单按钮的所有属性。
+```html
+<input type="image" name="pos" alt="" src="map.png" width="346" height="256">
+```
+
+如果使用图像按钮来提交表单，这个部件不会提交它的值；相反，提交的是在图像上单击处的 X 坐标和 Y 坐标（相对于图像），坐标被发送为两个键值对：
+- X 值键是 name 属性的值，后面是字符串 “.x”。
+- Y 值键是 name 属性的值，后面是字符串 “.y”。
+
+这是构建“热图”的一种非常方便的方式。
+
+<br>
+
+### 仪表和进度条
+仪表和进度条是数值的可视化表示。
+
+<br>
+
+**进度条**
+
+一个进度条表示一个值，它会随着时间的变化而变化到最大的值，这个最大值由 max 属性指定。它可以实现任何需要进度报告的内容，例如下载的总文件的百分比，或者问卷中填写的问题的数量。
+
+使用 `<progress>` 元素创建进度条，例如：
+```html
+<progress max="100" value="75">75/100</progress>
+```
+
+`<progress>` 元素中的内容是不支持该元素的浏览器的回退，以及辅助技术对其朗读。
+
+<br>
+
+**仪表**
+
+一个仪表表示一个固定值（条形显示），这个值由一个 min 和一个 max 值所界定。
+
+使用 `<meter>` 元素创建仪表。它可以实现任何类型的仪表，例如一个显示磁盘上使用的总空间的条，当它开始满时，它会变成红色。
+```html
+<meter min="0" max="100" value="75" low="33" high="66" optimum="50">75</meter>
+```
+
+为了实现仪表的功能，`<meter>` 需要至少设置 min、max、value、low、high 和 optimum 属性：
+- low 和 high 值范围划分为三个部分：
+  - 较低部分是在 min 和 low 值（包括那些值）之间。
+  - 中间部分是在 low 和 high 值之间（不包括那些值）。
+  - 较高部分是在 high 和 max 值（包括那些值）之间。
+- optimum 值定义了 `<meter>` 元素的最优值：
+  - 如果 optimum 值在较低部分，则较低部分被认为是优先的，中等部分被认为是一般的，而较高部分被认为是最坏的。
+  - 如果 optimum 值在中等部分，则较低部分被认为是一般的，中等部分被认为是优先的，而较高部分被认为是一般的。
+  - 如果 optimum 值在较高部分，则较低部分被认为是最坏的，中等部分被认为是一般的，而较高部分被认为是优先的。
+
+所有实现 `<meter>` 元素的浏览器都根据值所在的部分来改变米尺的颜色：
+- 如果当前值位于该范围的优先部分，则该条是绿色的。
+- 如果当前值位于该范围的平均部分，则该条是黄色的。
+- 如果当前值处于该范围的最坏范围，则该条是红色的。
+
+通过设置这些属性值，我们就可以实现显示磁盘空间的条。
+
+`<meter>` 元素中的内容是不支持该元素的浏览器的回退，以及辅助技术对其朗读。
+
+> 进度条和仪表在 IE 中没有支持，但是其他浏览器都可以很好的支持它。
+
+<br>
+
+# 表单数据校验
+表单校验可以帮助我们确保用户以正确格式填写表单数据，以便应用程序正常工作。
+
+表单校验——当你向 Web 应用输入数据时，应用会验证你输入的数据是否是正确的。如果验证通过，应用允许提交这些数据到服务器并储存到数据库中；如果验证未通过，Web 应用会提示你有错误的数据，并且一般都会明确的告诉你错误发生在哪里。
+
+进行表单数据校验有三个最主要的原因：
+- 以正确的格式获取到正确的数据 —— 如果用户没有输入正确的信息，web 应用程序将无法正常运行。
+- 保护用户 —— 强制用户输入安全的密码，有利于保护他们的账户信息。
+- 保护自己 —— 恶意用户有很多通过滥用应用中缺乏保护的表单破坏应用的方法。
+
+<br>
+
+**不同类型的表单数据校验**
+
+在 Web 中，你可能会遇见各种不同的表单校验：
+- [**客户端校验**](https://developer.mozilla.org/zh-CN/docs/Learn/Forms/Form_validation#%E4%BD%BF%E7%94%A8%E5%86%85%E7%BD%AE%E8%A1%A8%E5%8D%95%E6%95%B0%E6%8D%AE%E6%A0%A1%E9%AA%8C)发生在浏览器端，表单数据被提交到服务器之前，这种方式相较于服务器端校验来说，用户体验更好，它能实时的反馈用户的输入校验结果，这种类型的校验可以进一步细分成下面这些方式：
+  - JavaScript 校验，这是可以完全自定义的实现方式；
+  - HTML5 内置校验，这不需要 JavaScript，而且性能更好，但是不能像 JavaScript 那样可自定义。
+- [**服务器端校验**](https://developer.mozilla.org/zh-CN/docs/Learn/Forms/Form_validation#%E4%BD%BF%E7%94%A8_javascript%E6%A0%A1%E9%AA%8C%E8%A1%A8%E5%8D%95)通常发生在数据被服务器端接受之后，写入数据库之前。服务器端在整个表单都提交后才会返回错误信息。服务器端校验是你的应用对抗恶意数据的最后防线，在这之后，数据将被持久化至数据库。
+
+在真实的项目开发过程中，开发者一般都倾向于使用客户端校验与服务器端校验的组合校验方式以更好的保证数据的正确性与安全性。
+
+由于设计和实现表单数据检验不是我学习的重点，需要可以点击链接前往 mozzila 文档查看学习。
+
+<br>
+
+# 发送表单数据
+
+<br>
+
+## 原理介绍
+
+<br>
+
+### 客户端/服务器体系结构
+web 基于非常基本的客户端/服务器体系结构，可以总结如下：客户端使用 HTTP 协议向服务器发送请求（大多数情况下是 Apache、Nginx、IIS、Tomcat 等 web 服务器），服务器使用相同的协议来回答请求。
+
+<br>
+
+### 客户端：发送数据
+`<form>` 元素定义了如何发送数据。它的所有属性都是为了让您配置当用户点击提交按钮时发送的请求。两个最重要的属性是 action 和 method。
+
+<br>
+
+#### 属性
+
+**`action` 属性**
+这个属性定义了发送数据要去的位置。它的值必须是一个有效的 URL。如果没有提供此属性，则数据将被发送到包含这个表单的页面的 URL。
+
+例如：
+```html
+<form action="http://foo.com">  <!-- 绝对 URL -->
+
+<form action="/somewhere_else">  <!-- 相对 URL -->
+
+<form>  <!-- 数据被发送到表单出现的相同页面上 -->
+```
+
+HTML5 普及之前，许多较老的页面使用下面的符号表示数据应该被发送到包含表单的相同页面：
+```html
+<form action="#">
+```
+
+> 注意：表单的 action 属性可以指定为使用 HTTPS（安全HTTP）协议的 URL，表单数据将与请求的其余部分一起被加密，即使表单本身是托管在使用 HTTP 访问的不安全页面上；如果表单是在安全页面上托管的，但是你指定了一个不安全的 HTTP URL，所有的浏览器都会在每次尝试发送数据时向用户显示一个安全警告。
+
+<br>
+
+**`method` 属性**
+该属性定义了如何发送数据。HTTP 协议提供了几种执行请求的方法，最常见的是GET方法和POST方法。
+
+HTTP 请求由两个部分组成：一个包含关于浏览器功能的全局元数据集的头部，和一个包含服务器处理请求所需信息的主体。
+
+<br>
+
+#### 请求方法
+
+**GET 方法**
+
+GET 方法请求服务器返回给定的资源。当你使用 GET 方法发送数据时，浏览器会发送一个空的主体。且由于主体是空的，发送到服务器的数据将被追加到 URL。
+
+例如：
+```html
+<form action="http://foo.com" method="get">
+  <div>
+    <label for="say">What greeting do you want to say?</label>
+    <input name="say" id="say" value="Hi">
+  </div>
+  <div>
+    <label for="to">Who do you want to say it to?</label>
+    <input name="to" id="to" value="Mom">
+  </div>
+  <div>
+    <button>Send my greetings</button>
+  </div>
+</form>
+```
+
+由于已经使用了 GET 方法，当你提交表单的时候，你将看到 `www.foo.com/?say=Hi&to=Mom` 显示在在浏览器地址栏里。
+
+数据作为一系列的名称/值对被附加到 URL：在目标 URL 后添加一个问号，后面跟着由与符号（&）互相分隔开的名称/值对。
+
+在本例中，我们将两个数据传递给服务器：
+- say：值为 Hi。
+- to：值为 Mom。
+
+HTTP请求如下：
+```txt
+GET /?say=Hi&to=Mom HTTP/2.0
+Host: foo.com
+```
+
+<br>
+
+**POST 方法**
+
+POST 方法是浏览器在询问响应时使用，与服务器通信的方法。如果使用该方法发送表单，数据将被追加到 HTTP 请求的主体中。
+
+将 method 属性设置为 post：
+```html
+<form action="http://foo.com" method="post">
+  <div>
+    <label for="say">What greeting do you want to say?</label>
+    <input name="say" id="say" value="Hi">
+  </div>
+  <div>
+    <label for="to">Who do you want to say it to?</label>
+    <input name="to" id="to" value="Mom">
+  </div>
+  <div>
+    <button>Send my greetings</button>
+  </div>
+</form>
+```
+
+当使用 POST 方法提交表单时，没有数据会附加到 URL。
+
+HTTP 请求头：
+```txt
+POST / HTTP/2.0
+Host: foo.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 13
+```
+
+请求主体中包含的数据：
+```txt
+say=Hi&to=Mom
+```
+
+Content-Length 数据头表示主体的大小，Content-Type 数据头表示发送到服务器的资源类型。
+
+<br>
+
+**总结**
+
+HTTP 请求最初设定了八种方法。这八种方法本质上没有任何区别。只是让请求，更加有语义而已，就好比汤勺就是喝汤用的，但是你用它炒菜也是可以的，只是有点别扭。
+
+- **OPTIONS**：返回服务器所支持的请求方法
+- **GET**：向服务器获取指定资源
+- **HEAD**：与 GET 一致，只不过响应体不返回，只返回响应头
+- **POST**：向服务器提交数据，数据放在请求体里
+- **PUT**：与 POST 相似，只是具有幂等特性，一般用于更新
+- **DELETE**：删除服务器指定资源
+- **TRACE**：回显服务器端收到的请求，测试的时候会用到这个
+- **CONNECT**：预留，暂无使用
+
+GET 用于获取信息，是无副作用的，是幂等的，且可缓存；而 POST 用于修改服务器上的数据，有副作用，非幂等，不可缓存。
+
+使用 GET 请求，用户将在 URL 栏中看到数据；使用 POST 请求，用户将不会看到。这一点很重要，有两个原因：
+- 如果你需要发送敏感数据，不要使用 GET 方法。你的数据会在 URL 栏中显示，这非常不安全。
+- 如果你需要发送大量的数据，那么 POST 方法是首选的，因为一些浏览器或服务器限制了 URL 的大小。
+
+<br>
+
+### 服务器端：检索数据
+无论选择哪种 HTTP 方法，服务器都会接收一个字符串并解析，将数据作为键值对序列处理。
+
+你访问这个序列的方式取决于你使用的开发平台以及你可能使用的任何特定框架。你使用的技术也决定了如何处理密钥副本；通常，最近收到的密钥的值是优先的。
+
+<br>
+
+#### 原始 PHP
+
+PHP 提供了一些全局对象来访问数据，你可以使用 php 根据需要对数据进行处理，显示数据、存储数据、发送数据等。
+
+例如，表单的 `method="post" action="php-example.php"`，获取数据并将其显示给用户。
+```php
+<?php
+  // 全局变量 $_POST 允许你通过名称来访问用 POST 方法发送的数据
+  // 要访问用 GET 方法发送的数据，你可以使用 $_GET 变量
+  $say = htmlspecialchars($_POST['say']);
+  $to  = htmlspecialchars($_POST['to']);
+
+  echo  $say, ' ', $to;
+?>
+```
+
+当提交表单时，它将表单数据发送到 php-example.php，其中包含了上述代码块中所见的 php 代码。当执行此代码时，浏览器中的输出 Hi Mom。
+
+![](10.png)
+
+> 注意：浏览器无法解析 PHP 代码，因此当提交表单时，浏览器只会为你提供下载 PHP 文件。为了让它生效，你需要通过某种类型的 PHP 服务器运行这个示例，例如 MAMP（Apache, MySQL, PHP）。
+
+<br>
+
+#### Python
+
+使用 Python 在 web 页面上显示提交的数据。为此，使用 Flask framework 来呈现模板、处理表单数据提交等。
+
+什么是模板？模板简单来说就是一个其中包涵占位变量表示动态的部分的文件，模板文件在经过动态赋值后，返回给用户（可以理解为渲染）。
+
+web 服务器的 python 代码如下：
+```py
+from flask import Flask, render_template, request
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST'])
+def form():
+    return render_template('form.html')
+
+@app.route('/hello', methods=['GET', 'POST'])
+def hello():
+    return render_template('greeting.html', say=request.form['say'], to=request.form['to'])
+
+if __name__ == "__main__":
+    app.run()
+```
+
+以上代码中引用的两个模板如下：
+
+- form.html：与上文 php 示例相同的表单，只是将 action 设置为 `{{ url_for('hello') }}`。它是一个 Jinja2 模板，它基本上是 HTML，但是可以包含对 Python 代码（花括号内）的调用。`url_for('hello')` 的意思是“提交表单时重定向到 /hello”。
+- greeting.html：这个模板只包含一行，用于呈现渲染时传递给它的两个数据块。
+这是通过前面所见的 `hello()` 函数完成的，该函数在 URL 被导向时运行。
+
+> 注意：Python 的工作方式与 PHP 略有不同（在本地运行），你需要创建 flask 应用项目编写代码并运行，在浏览器 URL 栏中输入 localhost:5000 显示网页。
+> ![](11.png)
+
+<br>
+
+#### 其他语言和框架
+
+还有许多其他的服务器端技术可以用于表单处理，包括 Perl、Java、.Net、Ruby 等。不过，直接使用这些技术并不常见，更常见的是使用许多优秀的框架，这些框架使处理表单变得更容易，例如：
+
+- Django for Python （比Flask要重量级一些，但是有更多的工具和选项。）
+- Express for Node.js
+- Laravel for PHP
+- Ruby On Rails for Ruby
+- Phoenix for Elixir
+
+就算使用了这些框架，表单处理也不一定很容易。但这比从头开始编写所有功能要简单得多，会节省很多时间。
+
+<br>
+
+## 特殊案例:发送文件
+用 HTML 表单发送文件是一个特殊的例子。文件是二进制数据而所有其他数据都是文本数据。由于 HTTP 是一种文本协议，所以处理二进制数据有特殊的要求。
+
+### enctype 属性
+该属性允许你指定在提交表单时所生成的请求中的 `Content-Type` 的 HTTP 数据头的值。这个数据头非常重要，因为它告诉服务器正在发送什么样的数据。默认情况下，它的值是 `application/x-www-form-urlencoded`。它的意思是：“这是已编码为 URL 参数的表单数据”。
+
+如果你想要发送文件，你需要额外的三个步骤：
+
+- 将 method 属性设置为 POST，因为文件内容不能放入 URL 参数中。
+- 将 enctype 属性设置为 multipart/form-data，因为数据将被分成多个部分，每个文件单独占用一个部分，表单正文中包含的文本数据（如果文本也输入到表单中）也占用一个部分。
+- 包含一个或多个文件选择器（File picker）部件，允许用户选择将要上传的文件。
+
+例如：
+```html
+<form method="post" enctype="multipart/form-data">
+  <div>
+    <label for="file">Choose a file</label>
+    <input type="file" id="file" name="myFile">
+  </div>
+  <div>
+    <button>Send the file</button>
+  </div>
+</form>
+```
+
+注意：服务器如何处理这些文件取决于服务器上使用的技术。
+
+<br>
+
+## 常见的安全问题
+每次向服务器发送数据时，都需要考虑安全性。到目前为止，HTML 表单是最常见的攻击路径。这些问题从来都不是来自 HTML 表单本身，它们来自于服务器如何处理数据。
+
+根据你所做的事情，你会遇到一些非常有名的安全问题：
+
+### XSS 和 CSRF
+跨站脚本（XSS）和跨站点请求伪造（CSRF）是常见的攻击类型，它们发生在当你将用户发送的数据显示给这个用户或另一个用户时。
+
+XSS 允许攻击者将客户端脚本注入到其他用户查看的 Web 页面中。攻击者可以使用跨站点脚本攻击的漏洞来绕过诸如同源策略之类的访问控制。这些攻击的影响可能从一个小麻烦到一个重大的安全风险。
+
+CSRF 攻击类似于 XSS 攻击，因为它们以相同的方式开始攻击——向 Web 页面中注入客户端脚本——但它们的目标是不同的。CSRF 攻击者试图将权限升级到特权用户（比如站点管理员）的级别，以执行他们不应该执行的操作（例如，将数据发送给一个不受信任的用户）。
+
+XSS 攻击利用用户对 web 站点的信任，而 CSRF 攻击则利用网站对其用户的信任。
+
+为了防止这些攻击，你应该始终检查用户发送给服务器的数据，尽量不要显示用户提供的 HTML 内容。相反，你应该对用户提供的数据进行处理，这样你就不会逐字地显示它。当今市场上几乎所有的框架都实现了一个最小的过滤器，它可以从任何用户发送的数据中删除 HTML 的 `<script>`、`<iframe>` 和 `<object>` 元素。这有助于降低风险，但并不一定会消除风险。
+
+<br>
+
+### SQL注入
+SQL 注入是一种试图在目标 web 站点使用的数据库上执行操作的攻击类型。这通常包括发送一个 SQL 请求，希望服务器能够执行它（通常发生在应用服务器试图存储由用户发送的数据时）。这实际上是攻击网站的主要途径之一。 
+
+其后果可能是可怕的，从数据丢失到通过使用特权升级控制整个网站基础设施的攻击。这是一个非常严重的威胁，你应该在存储用户数据前执行一些清理工作。例如，在 php/mysql 基础设施上使用 `mysql_real_escape_string()`。
+
+<br>
+
+### 偏执:永远不要相信你的用户
+
+你如何应对这些威胁呢?最重要的原则是：永远不要相信你的用户，包括你自己，即使是一个值得信赖的用户也可能被劫持。
+
+所有到达服务器的数据都必须经过检查和消毒，没有例外。
+- 远离有潜在危险的字符转义。能不能使用特定字符取决于所使用的数据上下文和所使用的服务器平台。
+- 限制输入的数据量，只允许有必要的数据。
+- 沙箱上传文件（将它们存储在不同的服务器上，只允许通过不同的子域访问文件，或者通过完全不同的域名访问文件更好）。
+
+<br>
+
+> 总结：发送表单数据容易，但要确保应用程序的安全很难。一帮情况下，前端开发人员不需要定义数据安全模型。即使前端执行客户端数据验证是可以的，但是服务器不能信任这种验证，因为它无法真正知道客户端到底发生了什么。
+
+<br>
+
