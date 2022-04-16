@@ -1,0 +1,493 @@
+---
+title: HTML表格
+description: 这是讲解html中表格的文章，并没有涉及太多样式的应用。
+tags: 
+categories: 
+  - mdn
+	- HTML
+---
+
+在此特地声明本文是根据 [mozilla官方教学文档](https://developer.mozilla.org/zh-CN/docs/Learn/html/Introduction_to_html) 学习的个人学习笔记，借用了大量的图片和文本内容，存在相当多的相同，但不是copy。如需查看mozilla官方文档，请点击前文链接！！
+<!--more-->
+
+<br>
+
+# html表格
+在HTML中一个很普通的任务是构建表格数据，有大量的元素和属性是来满足这种需求的。
+
+<br>
+
+## html表格入门
+本文将介绍HTML表格的一些基本的内容，如 行和单元格、标题、使单元格跨越多个列和行，以及如何将列中的所有单元组合在一起进行样式化。
+
+<br>
+
+### 什么是表格
+表格是由行和列组成的结构化数据集（表格数据），能够简捷迅速地查找某个表示不同类型数据之间的某种关系的值。
+
+例如：
+
+|Person|Age|
+|---|---|
+|Chris|38|
+|Dennis|45|
+|Sarah|29|
+|Karen|47|
+
+表格在人类社会很常见。
+
+<br>
+
+**表格如何工作**<br>
+表格的一个特点就是严格。<br>
+通过在行和列的标题之间进行关联的方法，可以让信息能够很简单的被解读出来。
+
+**表格风格**<br>
+为了能够让表格在网页上有效，你需要提供一些CSS的样式信息，以及尽可能好的HTML固定结构。
+
+**什么时候你不应该使用HTML表格？**<br>
+HTML表格应该用于表格数据。在以前CSS在不同浏览器上的兼容性比较糟糕，很多人习惯使用HTML表格来实现网页布局，比如一行包含header，一行包含几列内容，一行包含footer。
+
+简单来说，使用表格布局而不使用CSS是很糟糕的：
+- 表格布局减少了视觉受损的用户的可访问性：对于屏幕阅读器来说，无法准确读出页面的内容（表格使用的标记比使用CSS布局技术更复杂）。
+- 表格会产生很多标签：表格布局通常会比正确的布局技术涉及更复杂的标签结构，这会导致代码变得更难于编写、维护和调试。
+- 表格不能自动响应：当你使用正确的布局容器（比如`<header>`、`<section>`、`<article>`、`<div>`），它们的默认宽度是父元素的100%。而表格的默认大小是根据其内容而定的。因此，需要采取额外的措施来获取表格布局样式，以便有效地在各种设备上工作。
+
+<br>
+
+### 创建一个表格
+每一个表格的内容都包含在`<table>`,`</table>`标签中，并在`<body>`中添加。
+
+<br>
+
+#### 表格的一行
+```html
+<tr>
+  <td>Hi, I'm your first cell.</td>
+  <td>I'm your second cell.</td>
+  <td>I'm your third cell.</td>
+  <td>I'm your fourth cell.</td>
+</tr>
+```
+在表格中，最小的内容容器是单元格，通过`<td>`元素创建。
+
+单元格不会放置在彼此的下方，而是会自动与同一行上的其它单元格对齐。如果你想让这一行停止增加，并让单元格从第二行开始，你需要使用`<tr>`元素（即 table row）。
+
+<br>
+
+#### 使用th元素
+表格中的标题是特殊的单元格，通常在行或列的开始处，定义行或列包含的数据类型。
+
+```html
+<table>
+  <tr>
+    <td>&nbsp;</td>
+    <th scope="col">Knocky</th>
+    <th scope="col">Flor</th>
+    <th scope="col">Ella</th>
+    <th scope="col">Juan</th>
+  </tr>
+  <tr>
+    <th scope="row">Breed</th>
+    <td>Jack Russell</td>
+    <td>Poodle</td>
+    <td>Streetdog</td>
+    <td>Cocker Spaniel</td>
+  </tr>
+  <tr>
+    <th scope="row">Age</th>
+    <td>16</td>
+    <td>9</td>
+    <td>10</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <th scope="row">Owner</th>
+    <td>Mother-in-law</td>
+    <td>Me</td>
+    <td>Me</td>
+    <td>Sister-in-law</td>
+  </tr>
+  <tr>
+    <th scope="row">Eating Habits</th>
+    <td>Eats everyone's leftovers</td>
+    <td>Nibbles at food</td>
+    <td>Hearty eater</td>
+    <td>Will eat till he explodes</td>
+  </tr>
+</table>
+```
+
+th 可以将表格的标题在视觉上和语义上都被识别为标题，th 的用法和 td 是一样的。
+
+表格标题默认自带一些样式，比如加粗、居中，可以使标题显示更加突出，用户可以更轻松的查找数据。
+
+此外，表格标题还有额外的好处，`scope` 属性（我们将在下一篇文章中了解到）允许你让表格变得更加无障碍，每个标题与相同行或列中的所有数据相关联。屏幕阅读设备能一次读出一列或一行的数据，这是非常有帮助的。
+
+<br>
+
+#### 允许单元格跨越多行和列
+在有些时候，你需要的表格不是一行对应一列的，即 希望单元格跨越多行和多列，如图：
+
+![Animals table](1.png)
+
+<br>
+
+根据上文的知识，一开始的标记写法可能会是：
+
+```html
+<table>
+  <tr>
+    <th>Animals</th>
+  </tr>
+  <tr>
+    <th>Hippopotamus</th>
+  </tr>
+  <tr>
+    <th>Horse</th>
+    <td>Mare</td>
+  </tr>
+  <tr>
+    <td>Stallion</td>
+  </tr>
+  <tr>
+    <th>Crocodile</th>
+  </tr>
+  <tr>
+    <th>Chicken</th>
+    <td>Hen</td>
+  </tr>
+  <tr>
+    <td>Rooster</td>
+  </tr>
+</table>
+```
+
+显然,输出的结果不是理想的：
+
+![a unsuitable table](2.png)
+
+<br>
+
+为了解决这个问题，表格中的标题和单元格有 `colspan`(宽) 和 `rowspan`(高) 属性，这两个属性可以帮助我们实现需要的效果。<br>
+这两个属性接受一个没有单位的数字值，数字决定了它们的宽度或高度是几个单元格。比如, colspan="2" 使一个单元格的宽度是两个单元格。
+
+```html
+<table>
+  <tr>
+    <th colspan="2">Animals</th>
+  </tr>
+  <tr>
+    <th colspan="2">Hippopotamus</th>
+  </tr>
+  <tr>
+    <th rowspan="2">Horse</th>
+    <td>Mare</td>
+  </tr>
+  <tr>
+    <td>Stallion</td>
+  </tr>
+  <tr>
+    <th colspan="2">Crocodile</th>
+  </tr>
+  <tr>
+    <th rowspan="2">Chicken</th>
+    <td>Hen</td>
+  </tr>
+  <tr>
+    <td>Rooster</td>
+  </tr>
+</table>
+```
+
+经过修改，增加 colspan 和 rowspan 属性，成功实现了上图显示的样式。
+
+<br>
+
+#### 为表格中的列提供共同的样式
+HTML中有一种方法可以定义整列数据的样式信息：`<col>`、`<colgroup>`元素。
+
+如果没有 col 和 colgroup ，我们需要为每一个 td 或 th 定义样式：
+```html
+<th style="background-color: yellow">Data 2</th>
+```
+```html
+<td style="background-color: yellow">Jazz</td>
+```
+th 包裹的是标题，td 是普通的单元格。
+
+`<colgroup>` 元素包裹 `<col>` 元素，且 colgroup 是在 table 标签的下方。
+```html
+<table>
+  <colgroup>
+    <col>
+    <col style="background-color: yellow">
+  </colgroup>
+  <tr>
+    <th>Data 1</th>
+    <th>Data 2</th>
+  </tr>
+  <tr>
+    <td>Calcutta</td>
+    <td>Orange</td>
+  </tr>
+  <tr>
+    <td>Robots</td>
+    <td>Jazz</td>
+  </tr>
+</table>
+```
+
+效果如下：
+
+![table with style](3.png)
+
+显然，col的意义是列，在colgroup中定义所有列的样式，没有样式则`<col>`，有样式就可以在col元素里定义，`<col style="background-color: yellow">，就像上文代码中一样。
+
+<br>
+
+当然，有一种情况使用这种写法依旧比较复杂，即把样式信息应用到每一列。<br>
+对于这种情况，可以只使用一个 col 元素完成——包含 span 属性。
+```html
+<colgroup>
+  <col style="background-color: yellow" span="2">
+</colgroup>
+```
+span 需要一个值，用来表示让这个样式应用到表格中多少列。
+
+<br>
+
+## html表格高级特性和可访问性
+接下来，是HTML表格中更高级的部分。
+
+<br>
+
+### caption添加表格标题
+之前，我们学习到 th 元素，th 也是标题，只不过它是表格中一行或一列的标题。caption 则是为整个表格添加一个标题，它包含着对于表格内容的描述。对于使用屏幕阅读器的人们来说，这样就可以选择听不听这个表格的内容。
+
+`<caption>`元素需要放置在`<table>`标签下，
+
+```html
+<table>
+  <caption>This is a title.</caption>
+
+  ···
+  
+</table>
+```
+
+类似于图片的备选文本 alt ，table 也有一个 summary 属性。用于它在HTML5中废除了，一般不使用它。
+
+<br>
+
+### 添加表格结构
+由于表格在有些时候会变得比较复杂，我们可以将表格定义的更加结构化。<br>
+结构化表格一个明确的方法就是使用 `<thead>`,`<tbody>`,`<tfoot>`，这些元素可以将表格的部分标记为表头、正文和页脚。
+
+虽然这些元素不会使表格更易于屏幕阅读器使用，但是，它们在应用样式和布局上会起作用，可以更好的让CSS发挥作用。
+
+- thead 需要嵌套在table元素中，放置在头部的位置，通常代表第一行。除非使用的 colgroup 元素。
+- tfoot 放置在 thead 下方，一般是底部位置。如果的 tfoot 就放在 thead 下面，浏览器仍将把它显示在表格的底部。
+- tbody 需要嵌套在表格中。他总是包含在每个表中，如果你的代码没有指定它，那就是隐式的。
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My spending record</title>
+    <link href="minimal-table.css" rel="stylesheet" type="text/css">
+    <style>
+        tbody {
+          font-size: 90%;
+          font-style: italic;
+        }
+
+        tfoot {
+          font-weight: bold;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>My spending record</h1>
+
+      <table>
+        <caption>How I chose to spend my money</caption>
+        <thead>
+          <tr>
+            <th>Purchase</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Evaluation</th>
+            <th>Cost (€)</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <td colspan="4">SUM</td>
+            <td>118</td>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td>Haircut</td>
+            <td>Hairdresser</td>
+            <td>12/09</td>
+            <td>Great idea</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>Lasagna</td>
+            <td>Restaurant</td>
+            <td>12/09</td>
+            <td>Regrets</td>
+            <td>18</td>
+          </tr>
+          <tr>
+            <td>Shoes</td>
+            <td>Shoeshop</td>
+            <td>13/09</td>
+            <td>Big regrets</td>
+            <td>65</td>
+          </tr>
+          <tr>
+            <td>Toothpaste</td>
+            <td>Supermarket</td>
+            <td>13/09</td>
+            <td>Good</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+    </table>
+
+  </body>
+</html>
+```
+
+在表格中，添加了 tbody 、tfoot、thead 结构，使用了 colspan 定义单元格宽度，还有HTML文档 head 标签中的 style 元素添加样式。
+
+效果如下：
+
+![structured table](4.png)
+
+<br>
+
+### 嵌套表格
+嵌套表格是不提倡的，除非是必须的。这样做会使标记看上去很难理解，对于使用屏幕阅读器的人来说，可访问性也下降了。
+
+
+这是一个简单的嵌套表格：
+```html
+<table id="table1">
+  <tr>
+    <th>title1</th>
+    <th>title2</th>
+    <th>title3</th>
+  </tr>
+  <tr>
+    <td id="nested">
+      <table id="table2">
+        <tr>
+          <td>cell1</td>
+          <td>cell2</td>
+          <td>cell3</td>
+        </tr>
+      </table>
+    </td>
+    <td>cell2</td>
+    <td>cell3</td>
+  </tr>
+  <tr>
+    <td>cell4</td>
+    <td>cell5</td>
+    <td>cell6</td>
+  </tr>
+</table>
+```
+
+效果如下：
+
+![nested table](5.png)
+
+<br>
+
+### 表格的可读性优化
+表格是一个便利的工具，可以使我们快速的访问数据，查找不同的值。
+
+通常的，我们在数据与列标题或行标题之间建立视觉联系。但对于一些视觉受损的用户来说，建立视觉联系是无用的。通过屏幕阅读器来简单读出内容是没问题的，但是要理解一个表格，发挥表格应有的作用就有一些难度了。即使通过使用正确的标记，我们可以用程序化关联代替视觉关联。
+
+接下来是使用进一步的技术来提高表格的可访问性。
+
+<br>
+
+#### 行和列的标题
+屏幕阅读设备会识别所有的标题，然后在它们和它们所关联的单元格之间产生编程关联。列和行标题的组合将标识和解释每个单元格中的数据，以便屏幕阅读器用户可以正常理解表格。
+
+<br>
+
+#### scope属性
+`scope`属性可以添加在 th 元素中，用来帮助屏幕阅读设备更好的理解那些标题单元格，这个标题单元格是列标题还是行标题。
+```html
+<thead>
+  <tr>
+    <th scope="col">Purchase</th>
+    <th scope="col">Location</th>
+    <th scope="col">Date</th>
+    <th scope="col">Evaluation</th>
+    <th scope="col">Cost</th>
+    <th scope="col">Cost</th>
+  </tr>
+</thead>
+```
+
+每一行都可以这样定义一个行标题。
+```html
+<tr>
+  <th scope="row">Haircut</th>
+  <td>Hairdresser</td>
+  <td>12/09</td>
+  <td>Great idea</td>
+  <td>30</td>
+</tr>
+```
+
+屏幕阅读设备会识别这种结构化的标记，并一次读出整行或整列。
+
+scope 还有两个可选的值：`colgroup`,`rowgroup`，用于位于多个列或行的顶部的标题。
+
+<br>
+
+#### id和标题属性
+如果要替代 scope 属性，可以使用 id 和 headers 属性来创建标题与单元格之间的联系。
+
+方法如下：
+1. 为每个 th 元素添加一个唯一的 id
+2. 为每个 td 元素添加一个 headers 属性。每个单元格的 headers 属性需要包含它从属的所有标题的 id，之间用空格分隔开。
+
+这会给你HTML表格中的每个单元格一个明确的定义。
+
+```html
+<thead>
+  <tr>
+    <th id="purchase">Purchase</th>
+    <th id="location">Location</th>
+    <th id="date">Date</th>
+    <th id="evaluation">Evaluation</th>
+    <th id="cost">Cost (€)</th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th id="haircut">Haircut</th>
+  <td headers="location haircut">Hairdresser</td>
+  <td headers="date haircut">12/09</td>
+  <td headers="evaluation haircut">Great idea</td>
+  <td headers="cost haircut">30</td>
+</tr>
+
+  ...
+
+</tbody>
+```
+
+> 这种方式为标题单元格和数据单元格之间创造了非常精确的联系。但是由于使用了大量的标记，容错率比较低。
