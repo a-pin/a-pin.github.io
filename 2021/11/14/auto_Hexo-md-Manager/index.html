@@ -28,12 +28,9 @@
 <meta property="og:description" content="通过配置hexo根目录下_config.yml的 skip_render 字段实现md文件和yml配置文件的git版本管理，并通过bat批处理文件将其过程自动化">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2021/11/14/auto_Hexo-md-Manager/1.png">
-<meta property="og:image" content="http://example.com/2021/11/14/auto_Hexo-md-Manager/2.png">
 <meta property="article:published_time" content="2021-11-14T12:25:20.133Z">
-<meta property="article:modified_time" content="2022-03-29T10:04:24.528Z">
+<meta property="article:modified_time" content="2022-04-16T11:47:27.817Z">
 <meta property="article:author" content="a-pin">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="自动化">
 <meta property="article:tag" content="bat">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2021/11/14/auto_Hexo-md-Manager/1.png">
@@ -197,7 +194,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-29 18:04:24" itemprop="dateModified" datetime="2022-03-29T18:04:24+08:00">2022-03-29</time>
+                <time title="修改时间：2022-04-16 19:47:27" itemprop="dateModified" datetime="2022-04-16T19:47:27+08:00">2022-04-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -205,7 +202,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/others/" itemprop="url" rel="index"><span itemprop="name">others</span></a>
+                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
                 </span>
             </span>
 
@@ -226,77 +223,73 @@
 
 <br>
 
-<p>时间是在我刚好搭建完hexo，正在总结hexo博客管理的机制和方法。看了很多网上的帖子，发现了这么一篇 <a target="_blank" rel="noopener" href="https://baurine.github.io/2015/05/10/hexo_git.html"><strong>将原始的 .md 文件纳入 hexo 的版本管理</strong></a> 文章，我感觉蛮有意思的。正巧之前也看hexo的官方文档时有看到过 _config.yml 配置文件 各字段的意义，于是也在自己的hexo文件夹里新建并配置了这么一个能把 .md 和 .yml 纳入git版本管理的文件夹ori_data。</p>
-<p>在一开始，我并没什么想法。不过，我后来发现，将这个过程自动化非常有必要。</p>
-<p>要说明一下，最先我将自己的学习笔记放在csdn上，过了一年左右，我感觉这有一点不舒服，就是记笔记不方便，整理不方便，我的笔记在csdn的服务器上——感觉不舒服。真正笔记应该是在自己手上，一下子就打开，是有实体的，我可以决定要不要把它发布在网上，但不能只在网上。于是我就打算在本地写笔记的，只不过，又有要求要将blogs发布在网上，我就开始搭hexo。也就是说，我写博客，是在一个本地的文件夹里写和保存，我要发布的话再把它复制一份到hexo文件夹里。又因为图片加载的问题，本地Markdown文件夹和Hexo文件夹的md文件内容不同（没有使用图床，感觉没必要）。</p>
-<p><img src="1.png" alt="image1"></p>
-<p>总结一下就是：同一篇博客，一份在本地Markdown文件夹，一份在hexo文件夹，两者都有必要做备份，并且将给yml配置文件做备份也十分有必要。</p>
-<p>又因为 hexo+github 的特殊性，将它们一起纳入git版本控制并发布在github上就很nice。不过这样，它又延伸了一个问题：每次手动做备份，相当复杂、麻烦。就这样，我起了写个bat来实现自动化的念头。</p>
+<p>为了记录学习过程，我在 gitpages 上搭建了一个 hexo 生成的静态博客网站。在学习过程中，我在一个本地文件夹中存储 md 文件和图片。到了要发布的时候再把它复制一份到 hexo 源文件夹里，用来渲染生成博客页面。由于图片加载的原因，本地 Markdown 文件夹和 hexo 源文件夹的 md 文件内容不同（没有使用图床）。</p>
+<p>总结：同一篇 md 笔记，一份在本地 Markdown 文件夹，一份在 hexo 的源文件夹。我希望可以利用 bat 文件自动备份专门用来给 hexo 渲染的 md 文件和一些重要的 yml 配置文件，并上传至 github 仓库进行版本管理。</p>
 <br>
 
-<p><strong>在接下来，我会一步步写下我自己设计bat的思路和过程。</strong></p>
+<p><strong>在接下来，我会一步步写下我自己设计 bat 的思路和过程。</strong></p>
 <br>
 
 <h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>在这一部分将贴出源码。</p>
-<p>我一共写了两个bat文件——<strong>ori_build,ori_keep</strong>，分别实现了创建ori_data目录，实现了备份md文件以及hexo和hexo下themes的配置文件。</p>
-<p><img src="2.png" alt="image2"></p>
+<p>我一共写了三个 bat 文件——<code>ori_build</code>，<code>ori_keep</code> 和 <code>ori_git</code>。分别实现了创建ori_data目录，实现了备份 md 文件和 hexo 的相关配置文件，提交文件到 github 远程仓库。</p>
+<p><img src="1.png"></p>
 <ul>
-<li>pause是一条命令，作用就是使程序暂停，这就是输出“请按任意键继续…”的原因</li>
-<li>@echo off执行以后，后面所有的命令均不显示，包括本条命令</li>
-<li>echo off执行以后，后面所有的命令均不显示，但本条命令是显示的</li>
+<li><code>pause</code> 是一条命令，作用就是使程序暂停，这就是输出“请按任意键继续…”的原因。</li>
+<li><code>@echo off</code> 执行以后，后面所有的命令均不显示，包括本条命令。</li>
+<li><code>echo off</code> 执行以后，后面所有的命令均不显示，但本条命令是显示的。</li>
 </ul>
 <blockquote>
-<p><strong>注意</strong>：由于在bat里用的都是相对路径，两个bat文件要放在hexo根目录下</p>
+<p><strong>注意</strong>：由于在bat里用的都是相对路径，这三个 bat 文件要放在 hexo 根目录下。</p>
 </blockquote>
 <br>
 
-<h2 id="ori-build"><a href="#ori-build" class="headerlink" title="ori_build"></a>ori_build</h2><p>在ori_build中，主要使用md创建文件夹，来构建目录结构。</p>
+<h2 id="ori-build"><a href="#ori-build" class="headerlink" title="ori_build"></a>ori_build</h2><p>在 <code>ori_build</code> 中，主要使用 md 创建文件夹，来构建目录结构。</p>
 <br>
 
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> f1=ori_data</span><br><span class="line"><span class="built_in">set</span> f2=tags</span><br><span class="line"><span class="built_in">set</span> f3=themes</span><br><span class="line"><span class="built_in">set</span> f4=posts</span><br><span class="line"><span class="built_in">set</span> f5=categories</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> source</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> <span class="variable">%f1%</span> (</span><br><span class="line">	<span class="built_in">echo</span> &quot;ori_data has <span class="keyword">exist</span>&quot;</span><br><span class="line">	<span class="built_in">cd</span> <span class="variable">%f1%</span></span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">	<span class="built_in">md</span> <span class="variable">%f1%</span></span><br><span class="line">	<span class="built_in">echo</span> &quot;ori_data built&quot;</span><br><span class="line">	<span class="built_in">cd</span> <span class="variable">%f1%</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> <span class="variable">%f2%</span> (</span><br><span class="line">	<span class="built_in">echo</span> &quot;tags has <span class="keyword">exist</span>&quot;</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">	<span class="built_in">md</span> <span class="variable">%f2%</span></span><br><span class="line">	<span class="built_in">echo</span> &quot;tags built&quot;</span><br><span class="line">)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> <span class="variable">%f3%</span> (</span><br><span class="line">	<span class="built_in">echo</span> &quot;themes has <span class="keyword">exist</span>&quot;</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">	<span class="built_in">md</span> <span class="variable">%f3%</span></span><br><span class="line">	<span class="built_in">echo</span> &quot;themes built&quot;</span><br><span class="line">)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> <span class="variable">%f4%</span> (</span><br><span class="line">	<span class="built_in">echo</span> &quot;posts has <span class="keyword">exist</span>&quot;</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">	<span class="built_in">md</span> <span class="variable">%f4%</span></span><br><span class="line">	<span class="built_in">echo</span> &quot;posts built&quot;</span><br><span class="line">)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> <span class="variable">%f5%</span> (</span><br><span class="line">	<span class="built_in">echo</span> &quot;categories has <span class="keyword">exist</span>&quot;</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">	<span class="built_in">md</span> <span class="variable">%f5%</span></span><br><span class="line">	<span class="built_in">echo</span> &quot;categories built&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h2 id="ori-keep"><a href="#ori-keep" class="headerlink" title="ori_keep"></a>ori_keep</h2><p>在ori_keep中，使用copy和xcopy实现文件复制，两者间是有区别的，将在下面解释。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">copy</span> _config.yml source\ori_data\config.yml /y /v</span><br><span class="line"><span class="built_in">xcopy</span> source\_posts\* source\ori_data\posts /y /e /f</span><br><span class="line"><span class="built_in">xcopy</span> source\categories\* source\ori_data\categories /y /e /f</span><br><span class="line"><span class="built_in">xcopy</span> source\tags\* source\ori_data\tags /y /e /f</span><br><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line"><span class="keyword">for</span> /d <span class="variable">%%i</span> <span class="keyword">in</span> (*) <span class="keyword">do</span> (</span><br><span class="line">	<span class="built_in">copy</span> <span class="variable">%%i</span>\_config.yml ..\source\ori_data\themes\&quot;<span class="variable">%%i</span>&quot;_config.yml /y /v</span><br><span class="line">)</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> f1=ori_data</span><br><span class="line"><span class="built_in">set</span> f2=tags</span><br><span class="line"><span class="built_in">set</span> f3=themes</span><br><span class="line"><span class="built_in">set</span> f4=posts</span><br><span class="line"><span class="built_in">set</span> f5=categories</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> <span class="variable">%f1%</span> (</span><br><span class="line">	<span class="built_in">echo</span> &quot;ori_data has <span class="keyword">exist</span>&quot;</span><br><span class="line">	<span class="built_in">cd</span> <span class="variable">%f1%</span></span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">	<span class="built_in">md</span> <span class="variable">%f1%</span></span><br><span class="line">	<span class="built_in">echo</span> &quot;ori_data built&quot;</span><br><span class="line">	<span class="built_in">cd</span> <span class="variable">%f1%</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> <span class="variable">%f2%</span> (</span><br><span class="line">	<span class="built_in">echo</span> &quot;tags has <span class="keyword">exist</span>&quot;</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">	<span class="built_in">md</span> <span class="variable">%f2%</span></span><br><span class="line">	<span class="built_in">echo</span> &quot;tags built&quot;</span><br><span class="line">)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> <span class="variable">%f3%</span> (</span><br><span class="line">	<span class="built_in">echo</span> &quot;themes has <span class="keyword">exist</span>&quot;</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">	<span class="built_in">md</span> <span class="variable">%f3%</span></span><br><span class="line">	<span class="built_in">echo</span> &quot;themes built&quot;</span><br><span class="line">)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> <span class="variable">%f4%</span> (</span><br><span class="line">	<span class="built_in">echo</span> &quot;posts has <span class="keyword">exist</span>&quot;</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">	<span class="built_in">md</span> <span class="variable">%f4%</span></span><br><span class="line">	<span class="built_in">echo</span> &quot;posts built&quot;</span><br><span class="line">)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> <span class="variable">%f5%</span> (</span><br><span class="line">	<span class="built_in">echo</span> &quot;categories has <span class="keyword">exist</span>&quot;</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">	<span class="built_in">md</span> <span class="variable">%f5%</span></span><br><span class="line">	<span class="built_in">echo</span> &quot;categories built&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
 
 <br>
 
-<h1 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h1><p>我会根据我一开始的设计思路进行解说，感兴趣的话可以看看。</p>
-<p>文件目录结构：</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">D:\apps\Hexo_Blog\<span class="keyword">source</span></span><br><span class="line">│  favicon.ico</span><br><span class="line">│</span><br><span class="line">├─categories</span><br><span class="line">│      <span class="built_in">index</span>.md</span><br><span class="line">│</span><br><span class="line">├─ori_data</span><br><span class="line">│  │  config.yml</span><br><span class="line">│  │</span><br><span class="line">│  ├─categories</span><br><span class="line">│  │      <span class="built_in">index</span>.md</span><br><span class="line">│  │</span><br><span class="line">│  ├─posts</span><br><span class="line">│  │      <span class="number">2013</span>-<span class="number">02</span>-<span class="number">05</span>-my-blog-in-github.md</span><br><span class="line">│  │      <span class="number">2013</span>-<span class="number">02</span>-<span class="number">06</span>-<span class="built_in">resolve</span>-goagent-cp65001.<span class="keyword">m</span></span><br><span class="line">│  │      <span class="number">2013</span>-<span class="number">03</span>-<span class="number">11</span>-c_stack.md</span><br><span class="line">│  │      <span class="number">2015</span>-<span class="number">05</span>-<span class="number">03</span>-hello-hexo.md</span><br><span class="line">│  │</span><br><span class="line">│  ├─<span class="keyword">tags</span></span><br><span class="line">│  │      <span class="built_in">index</span>.md</span><br><span class="line">│  │</span><br><span class="line">│  └─themes</span><br><span class="line">│      └─<span class="keyword">next</span></span><br><span class="line">│              config.yml</span><br><span class="line">│</span><br><span class="line">|</span><br><span class="line">|─_drafts</span><br><span class="line">|       ···</span><br><span class="line">|</span><br><span class="line">|</span><br><span class="line">├─<span class="keyword">tags</span></span><br><span class="line">│      <span class="built_in">index</span>.md</span><br><span class="line">│</span><br><span class="line">└─_posts</span><br><span class="line">        ···</span><br></pre></td></tr></table></figure>
+<h2 id="ori-keep"><a href="#ori-keep" class="headerlink" title="ori_keep"></a>ori_keep</h2><p>在 <code>ori_keep</code> 中，使用 copy 和 xcopy 实现文件复制，两者间是有区别的，将在下面解释。</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">copy</span> _config.yml ori_data\config.yml /y /v</span><br><span class="line"><span class="built_in">xcopy</span> source\_posts\* ori_data\posts /y /e /f</span><br><span class="line"></span><br><span class="line"><span class="built_in">xcopy</span> source\categories\* ori_data\categories /y /e /f</span><br><span class="line"><span class="built_in">xcopy</span> source\tags\* ori_data\tags /y /e /f</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line"><span class="keyword">for</span> /d <span class="variable">%%i</span> <span class="keyword">in</span> (*) <span class="keyword">do</span> (</span><br><span class="line">	<span class="built_in">copy</span> <span class="variable">%%i</span>\_config.yml ..\ori_data\themes\&quot;<span class="variable">%%i</span>&quot;_config.yml /y /v</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
 
 <br>
 
-<h2 id="ori-keep-1"><a href="#ori-keep-1" class="headerlink" title="ori_keep"></a>ori_keep</h2><p>keep有维护的意思，即备份维护。</p>
+<h2 id="ori-git"><a href="#ori-git" class="headerlink" title="ori_git"></a>ori_git</h2><p>在 <code>ori_git</code> 中，假设本地仓库与远程仓库一致，使用 git 命令提交更新。</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ori_data</span><br><span class="line">git add *</span><br><span class="line">git commit -m &quot;a commit&quot;</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
 <br>
 
-<h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p><strong>实现根目录下 _config.yml 的备份</strong></p>
-<p>很容易发现，源文件夹和目标文件夹有很明显的映射关系，只要遍历所有文件，将每一个目标文件复制到目的地就可以了。</p>
+<h1 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h1><p>我会根据我一开始的设计思路进行解说。</p>
+<br>
+
+<h2 id="ori-keep-1"><a href="#ori-keep-1" class="headerlink" title="ori_keep"></a>ori_keep</h2><p>keep 有维护的意思，即备份维护。</p>
+<br>
+
+<h3 id="第一步：备份-config-yml"><a href="#第一步：备份-config-yml" class="headerlink" title="第一步：备份 _config.yml"></a>第一步：备份 _config.yml</h3><p>很容易发现，源文件夹和目标文件夹有很明显的映射关系，只要遍历所有文件，将每一个目标文件复制到目的地就可以了。</p>
 <p>第一条使用的是，<code>copy</code>。</p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">copy</span> 源路径 目标路径</span><br></pre></td></tr></table></figure>
 
-<p>这里要提一点，就是copy文件过去，你绝对要面对一个问题，即文件覆盖（已经存在一个文件名一样的文件），你需要在文件复制前确认。由于我们是批文件处理，这种行为完全没必要，甚至破坏了bat文件的特性。<br><br>解决办法就是加上一个参数 <code>/y</code> ，意思就是 覆盖现有目标文件不需要确认，而参数 <code>/v</code> 的意思是 检查文件写入是否正确。</p>
-<p>这样子，第一条复制根目录 _config.yml 的copy命令完成。</p>
+<p>这里要提一点，就是 copy 文件过去，你绝对要面对一个问题，即文件覆盖（已经存在一个文件名一样的文件），你需要在文件复制前确认。由于我们是批文件处理，这种行为完全没必要，甚至破坏了 bat 文件的特性。</p>
+<p>解决办法就是加上一个参数 <code>/y</code> ，意思就是 覆盖现有目标文件不需要确认，而参数 <code>/v</code> 的意思是 检查文件写入是否正确。</p>
+<p>这样子，第一条复制根目录 _config.yml 的 copy 命令完成。</p>
 <blockquote>
-<p>你或许发现了，在copy目标路径中，最后一部分是 config.yml<br>这就是copy命令的特别之处，在复制文件的同时，重命名文件</p>
+<p>在 copy 目标路径中，最后一部分是 config.yml<br>这就是 copy 命令的特别之处，在复制文件的同时，重命名文件。</p>
 </blockquote>
 <br>
 
-<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p><strong>实现 md文件以及相应图片 的备份</strong></p>
-<p>在md和图片备份中，copy命令是不能复制文件夹的，因此要使用xcopy文件。</p>
+<h3 id="第二步：备份-md-文件和图片"><a href="#第二步：备份-md-文件和图片" class="headerlink" title="第二步：备份 md 文件和图片"></a>第二步：备份 md 文件和图片</h3><p>在 md 和图片备份中，copy 命令是不能复制文件夹的，因此要使用 xcopy 文件。</p>
 <p>命令的结构是完全相同的，只不过参数有变化。<code>/y</code>同上；<code>/e</code>复制所有的目录和子目录（包括里面的文件）；<code>/f</code>显示完整的源和目标文件。</p>
-<p>于是，实现了文章以及图片的备份，以及tags和categories模板的备份。</p>
+<p>于是，实现了文章以及图片的备份，以及 tags 和 categories 模板的备份。</p>
 <blockquote>
 <p>注意：通配符 * 表示多个字符。？ 表示一个字符。</p>
 </blockquote>
 <br>
 
-<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p><strong>实现不同主题的配置文件的备份</strong></p>
-<p>相对来说，这一部分是最复杂的一部分。</p>
+<h3 id="第三步：备份主题的配置文件"><a href="#第三步：备份主题的配置文件" class="headerlink" title="第三步：备份主题的配置文件"></a>第三步：备份主题的配置文件</h3><p>相对来说，这一部分是最复杂的一部分。</p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> /d <span class="variable">%%i</span> <span class="keyword">in</span> (*) <span class="keyword">do</span> (</span><br><span class="line">	<span class="built_in">copy</span> <span class="variable">%%i</span>\_config.yml ..\source\ori_data\themes\&quot;<span class="variable">%%i</span>&quot;_config.yml /y /v</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
-<p>首先，我们需要了解for循环:</p>
+<p>首先，我们需要了解 for 循环:</p>
 <p><code>for [参数] %%变量名 in (匹配符) do (执行的命令)</code></p>
 <ul>
 <li><code>无参</code>：遍历当前路径下的文件，可在(匹配符)中指定路径</li>
@@ -305,28 +298,31 @@
 <li><code>/l</code>：当使用参数 /l 时，需结合(匹配符)一起使用，此时 () 括号内部的用法规则为：(start, step, end)，此时的 for 命令作用等同于 java 语言中的 for 语句</li>
 <li><code>/f</code>：用于解析文件中的内容</li>
 </ul>
-<p>我的目的就是遍历themes的所有主题文件夹，并备份其配置文件。<br><br>变量名指向了每一个遍历的对象，在这里它指向了每一个主题文件。</p>
-<p>第一步，进入themes文件夹，以便使用for进行遍历。<br>第二步，使用copy命令复制主题的配置文件。文件重命名部分是<code>&quot;%%i&quot;_config.yml</code>，使用双引号将变量包裹，表示一个字符串。<code>..</code>表示返回上一目录。</p>
+<p>我的目的就是遍历 themes 的所有主题文件夹，并备份其配置文件。</p>
+<p>变量名指向了每一个遍历的对象，在这里它指向了每一个主题文件。</p>
+<p>第一步，进入 themes 文件夹，以便使用 for 进行遍历。<br>第二步，使用 copy 命令复制主题的配置文件。文件重命名部分是 <code>&quot;%%i&quot;_config.yml</code>，使用双引号将变量包裹，表示一个字符串。<code>..</code> 表示返回上一目录。</p>
 <blockquote>
-<p><strong>注意</strong>：由于重命名命令<code>ren</code>没有覆盖文件的功能，因此不使用 xcopy+ren 实现配置文件的备份。要不然会出现报错。</p>
+<p><strong>注意</strong>：由于重命名命令 <code>ren</code> 没有覆盖文件的功能，因此不使用 xcopy+ren 实现配置文件的备份，要不然会出现报错。</p>
 </blockquote>
 <br>
 
 <h2 id="ori-build-1"><a href="#ori-build-1" class="headerlink" title="ori_build"></a>ori_build</h2><p>build即建立，建立 备份文件目录结构。</p>
 <br>
 
-<h3 id="第一步-1"><a href="#第一步-1" class="headerlink" title="第一步"></a>第一步</h3><p><strong>设置变量</strong></p>
-<p><code>set 变量名 = 变量值</code></p>
-<p>在接下来的if分支结构中，要被判断 得是变量而不是字符串（实践所得）</p>
+<h3 id="第一步：设置变量"><a href="#第一步：设置变量" class="headerlink" title="第一步：设置变量"></a>第一步：设置变量</h3><p><code>set 变量名 = 变量值</code></p>
+<p>在接下来的 if 分支结构中，要被判断 得是变量而不是字符串（实践所得）</p>
 <br>
 
-<h3 id="第二步-1"><a href="#第二步-1" class="headerlink" title="第二步"></a>第二步</h3><p><strong>根据目标文件夹存在与否，选择建立文件夹</strong></p>
-<p>bat里的分支结构 if</p>
+<h3 id="第二步：建立文件夹"><a href="#第二步：建立文件夹" class="headerlink" title="第二步：建立文件夹"></a>第二步：建立文件夹</h3><p>bat里的分支结构 if：</p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> <span class="variable">%f5%</span> (</span><br><span class="line">	<span class="built_in">echo</span> &quot;categories has <span class="keyword">exist</span>&quot;</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">	<span class="built_in">md</span> <span class="variable">%f5%</span></span><br><span class="line">	<span class="built_in">echo</span> &quot;categories built&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>和很多高级编程语言相似，结构相当明确。<br><br>exist 存在的意思，之后的变量需要使用 % 包裹——表示这是一个变量，和环境配置一样。</p>
+<p>和很多高级编程语言相似，结构相当明确。</p>
+<p>exist 存在的意思，之后的变量需要使用 % 包裹——表示这是一个变量，和环境配置一样。</p>
 <br>
 
-<p>就这样，我成功实现了自动化，说实话，蛮有意思，最后成功的一瞬间跟bug被修复好的感觉一样，舒坦~</p>
+<h1 id="ori-git-1"><a href="#ori-git-1" class="headerlink" title="ori_git"></a>ori_git</h1><p>首先将所有文件放入到暂存区，接着提交暂存区的文件到本地仓库，最后同步至远程仓库。</p>
+<br>
+
+<p>就这样，我成功实现了自动化，舒坦~</p>
 
     </div>
 
@@ -336,8 +332,6 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"># hexo</a>
-              <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" rel="tag"># 自动化</a>
               <a href="/tags/bat/" rel="tag"># bat</a>
           </div>
 
@@ -412,7 +406,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A0%81"><span class="nav-text">源码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ori-build"><span class="nav-text">ori_build</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ori-keep"><span class="nav-text">ori_keep</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1"><span class="nav-text">设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ori-keep-1"><span class="nav-text">ori_keep</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5"><span class="nav-text">第二步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5"><span class="nav-text">第三步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ori-build-1"><span class="nav-text">ori_build</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-1"><span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-1"><span class="nav-text">第二步</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A0%81"><span class="nav-text">源码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ori-build"><span class="nav-text">ori_build</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ori-keep"><span class="nav-text">ori_keep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ori-git"><span class="nav-text">ori_git</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1"><span class="nav-text">设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ori-keep-1"><span class="nav-text">ori_keep</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%A4%87%E4%BB%BD-config-yml"><span class="nav-text">第一步：备份 _config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E5%A4%87%E4%BB%BD-md-%E6%96%87%E4%BB%B6%E5%92%8C%E5%9B%BE%E7%89%87"><span class="nav-text">第二步：备份 md 文件和图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E5%A4%87%E4%BB%BD%E4%B8%BB%E9%A2%98%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">第三步：备份主题的配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ori-build-1"><span class="nav-text">ori_build</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E8%AE%BE%E7%BD%AE%E5%8F%98%E9%87%8F"><span class="nav-text">第一步：设置变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E5%BB%BA%E7%AB%8B%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-text">第二步：建立文件夹</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ori-git-1"><span class="nav-text">ori_git</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -441,7 +435,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
