@@ -1,0 +1,551 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python数据采集 | Apin | blogs</title>
+
+  
+  <meta name="author" content="a-pin">
+  
+
+  
+  <meta name="description" content="This is a blog website in order to record my study experiences!">
+  
+
+  
+  <meta name="keywords" content="blog,a-pin">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Python数据采集"/>
+
+  <meta property="og:site_name" content="Apin"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Apin" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+  <link href="https://fonts.lug.ustc.edu.cn/css?family=Lato|Rubik" rel="stylesheet">
+  <script src="/js/pangu-407.min.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    pangu.autoSpacingPage();
+  });
+</script>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Apin</a>
+    </h1>
+    <p class="site-description">blogs</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Python数据采集</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2021/08/18/Python数据采集/" rel="bookmark">
+        <time class="entry-date published" datetime="2021-08-17T18:00:07.000Z">
+          2021-08-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+
+<script type="text/javascript">
+    function convertRemToPixels(rem) {    
+        return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    }
+    window.onscroll = function() {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > convertRemToPixels(40)) {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'visible';
+        } else {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'hidden';
+        }
+    }
+</script>
+
+
+<div id="toc" class="toc-article">
+      <div class="toc-content">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#XPath-%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90"><span class="toc-text">XPath 网页解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7"><span class="toc-text">网页解析工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XPath-%E8%AF%AD%E6%B3%95"><span class="toc-text">XPath 语法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Scrapy-%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E5%85%A5%E9%97%A8"><span class="toc-text">Scrapy 数据采集入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B"><span class="toc-text">框架简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrapy-%E6%9E%B6%E6%9E%84"><span class="toc-text">Scrapy 架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrapy-%E6%95%B0%E6%8D%AE%E6%B5%81"><span class="toc-text">Scrapy 数据流</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E5%8F%8A%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-text">框架安装及创建项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB"><span class="toc-text">实现爬虫</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%88%AC%E8%99%AB"><span class="toc-text">创建爬虫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%AC%E5%8F%96%E7%BD%91%E9%A1%B5"><span class="toc-text">爬取网页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93"><span class="toc-text">常用命令总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scrapy-%E5%BA%94%E5%AF%B9%E5%8F%8D%E7%88%AC%E8%99%AB"><span class="toc-text">Scrapy 应对反爬虫</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E7%88%AC%E8%99%AB%E7%AE%80%E4%BB%8B"><span class="toc-text">反爬虫简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrapy-%E5%BA%94%E5%AF%B9%E5%8F%8D%E7%88%AC%E8%99%AB-1"><span class="toc-text">Scrapy 应对反爬虫</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CrawlSpsadawdawwider-%E7%B1%BB"><span class="toc-text">CrawlSpsadawdawwider 类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="toc-text">核心概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE"><span class="toc-text">爬取网络数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB"><span class="toc-text">分布式爬虫</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB%E6%9E%B6%E6%9E%84"><span class="toc-text">分布式爬虫架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-scrapy-redis-%E6%9E%84%E5%BB%BA%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB"><span class="toc-text">使用 scrapy_redis 构建分布式爬虫</span></a></li></ol></li></ol>
+      </div>
+</div>
+<style>
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+
+
+        <p>本文是我阅读 Python 数据分析与大数据处理（朱春旭著）的学习记录，如有进一步学习需求可以自行购买阅读。</p>
+<!--more-->
+
+<br>
+
+<h1 id="XPath-网页解析"><a href="#XPath-网页解析" class="headerlink" title="XPath 网页解析"></a>XPath 网页解析</h1><p>网页解析的过程，就是从网页中提取有用的信息的过程。由于不同内容在网页上表达方式的不同，我们可以定位特定信息进行提取。</p>
+<br>
+
+<h2 id="网页解析工具"><a href="#网页解析工具" class="headerlink" title="网页解析工具"></a>网页解析工具</h2><p>从网页中提取内容一般使用两种方式：使用正则表达式做匹配、使用现成的解析工具。正则表达式功能强大，但是对于复杂的网页并不友好。解析网页的工具有很多，例如，Java 中有 HTMLParser、Jsoup，Python 中有 Lxml、BeautifulSoup，等等。</p>
+<br>
+
+<h2 id="XPath-语法"><a href="#XPath-语法" class="headerlink" title="XPath 语法"></a>XPath 语法</h2><p>XPath 是一种用来确定 XML 文档中元素位置的一种语法，同样适用于在 HTML 文档中定位元素。</p>
+<p>在使用 XPath 之前需要导入 lxml 包：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br></pre></td></tr></table></figure>
+
+<p>正常导入后，就可以定位元素，获取其中的内容了。</p>
+<br>
+
+<p><strong>1、通过路径定位元素并获取内容</strong></p>
+<img src="1.png" style="zoom:50%;" />
+
+<p>如图所示，其中 html 是一段简单的 html 字符串字段，调用 <code>etree.HTML</code> 方法，将其转化为 <code>lxml.etree._Element 类型</code>，然后就可以使用 XPath 语法定位元素了。其中字符串 “&#x2F;&#x2F;div&#x2F;ul&#x2F;li” 表示的是：先从根上查找 div 元素，在查找其中的 ul 元素，最后定位到 li 元素。</p>
+<p>最后，输出的每一个 li 都是一个 Element 对象。</p>
+<p>若只需定位 html 片段中的第一个 li 元素，可修改 XPath 如下：</p>
+<figure class="highlight xpath"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//div/ul/li[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<p>注意，多个元素的索引，下标是从 1 开始的。</p>
+<p>这里更改代码，获取第一个 li 下 p 元素的文本内容：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p_content = html_obj.xpath(<span class="string">&quot;//div/ul/li[1]/p/text()&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;获取到的内容&quot;</span>, p_content)</span><br></pre></td></tr></table></figure>
+
+<p>结果如下：</p>
+<p><img src="/2021/08/18/Python%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/2.png"></p>
+<br>
+
+<p><strong>2、通过属性定位元素并获取内容</strong></p>
+<p>给 html 添加 class 属性，可以通过该属性定位元素：</p>
+<img src="3.png" style="zoom:50%;" />
+
+<p>如上图所示，筛选 li 元素中属性 class&#x3D;’test1’ 的 p 元素。结果输出第一个 p 元素的信息。</p>
+<p>html 片段中包含两个 class&#x3D;’test4’ 的 li，可以使用 “*“ 全部取出，修改 XPath 路径如下：</p>
+<figure class="highlight xpath"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//div/ul/*[@class=<span class="string">&#x27;test4&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<p>在这些 html 元素中，class 都是以 test 字符串开头的，因此想一次性获取所有属性中包含 test 字符的 li 元素，可以使用 <code>start-with</code> 方法。修改代码如下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li_list = html_obj.xpath(<span class="string">&quot;//div/ul/li[start-with(@class,&#x27;test&#x27;)]&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> li_list:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;获取到的元素&quot;</span>, i)</span><br></pre></td></tr></table></figure>
+
+<p>结果如下，获取到两个 li 元素：</p>
+<p><img src="/2021/08/18/Python%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/4.png"></p>
+<br>
+
+<p><strong>3、提取当前层级和子层级的内容</strong></p>
+<p>如下图所示，在 XPath 中，使用 <code>text()</code> 可获取当前级别的内容，使用 <code>string()</code> 则可以获取当前级别与所有子级的内容。其中第 15 行的 “&#x2F;&#x2F;div&#x2F;text()” 表达式只能获取与 div 同一层级的文本，包括换行符等空文本，第 21 行的 “string(&#x2F;&#x2F;div)” 可以获取当前层级与嵌套的子元素的内容。</p>
+<p>代码和执行结果如图：</p>
+<img src="5.png" style="zoom:50%;" />
+
+<blockquote>
+<p>注意，html 元素间的换行符和缩进都会被提取出来。</p>
+</blockquote>
+<br>
+
+<h1 id="Scrapy-数据采集入门"><a href="#Scrapy-数据采集入门" class="headerlink" title="Scrapy 数据采集入门"></a>Scrapy 数据采集入门</h1><p>网络爬虫 通过向站点发起 HTTP 请求来获取内容。Scrapy 是 Python 中的一种爬虫框架，其丰富的功能可以为开发者节省大量的时间和精力。同时，使用 scrapy_redis 插件还可以迅速搭建分布式爬虫。</p>
+<br>
+
+<h2 id="框架简介"><a href="#框架简介" class="headerlink" title="框架简介"></a>框架简介</h2><p>Scrapy 是一个半成品的爬虫，需要用户基于 Scrapy 框架进行二次开发。Scrapy 包含队列、下载器、日志、异常管理等功能。在使用上，Scrapy 更多的是给框架配置参数，然后根据特定网站编写具体的爬取规则，其他的如并行下载，就由框架处理。</p>
+<br>
+
+<h3 id="Scrapy-架构"><a href="#Scrapy-架构" class="headerlink" title="Scrapy 架构"></a>Scrapy 架构</h3><p>如图所示，Scrapy 由多个组件构成：</p>
+<p>（1）Scrapy Engine：Scrapy 引擎是 Scrapy 的核心组件，用来处理 Scrapy 整个框架的数据流。</p>
+<p>（2）Scheduler：调度器，引擎会将请求交给调度器进行排队，由调度器决定下一个爬取的网络地址。</p>
+<p>（3）Downloader：下载器，会自动下载网页，并将网页内容传递给 Spider。</p>
+<p>（4）Spiders：开发 Scrapy 过程中最重要的部分。在这里用户可以提取网页中的数据，即实体，用 “item” 表示；也可以提取链接，让 Scrapy 继续爬取。</p>
+<p>（5）Item Pipeline：项目管道，用于处理 Spider 抽取的实体，比如数据清洗、数据持久化等。</p>
+<p>（6）Downloader Middlewares：下载器中间件，主要用于处理引擎和下载器之间的请求与响应。</p>
+<p>（7）Spider Middlewares：爬虫中间件，主要用于处理 Spider 的响应和输出。</p>
+<p>（8）Scheduler Middlewares：调度中间件，主要用于处理引擎和调度器之间的请求与响应。</p>
+<p><img src="/2021/08/18/Python%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/6.png"></p>
+<br>
+
+<h3 id="Scrapy-数据流"><a href="#Scrapy-数据流" class="headerlink" title="Scrapy 数据流"></a>Scrapy 数据流</h3><p>当爬虫启动后，数据会按照一定流程在各组件间传递，如图所示：</p>
+<p>（1）Scrapy 引擎将所有 URL 传递到调度器</p>
+<p>（2）Scrapy 引擎从调度器中请求下一个待爬取的 URL</p>
+<p>（3）Scrapy 引擎将获取到的 URL 传递到下载器</p>
+<p>（4）下载器获取到一个页面就返回给 Scrapy 引擎</p>
+<p>（5）Scrapy 引擎将收到的页面响应传递给 Spider</p>
+<p>（6）Spider 处理响应并返回给 Scrapy 引擎实体和新请求</p>
+<p>（7）Scrapy 引擎将收到的实体传递给项目管道，将新的请求传递给调度器</p>
+<p>（8）回到第 2 步继续处理下一个网址，直至处理完毕</p>
+<br>
+
+<h2 id="框架安装及创建项目"><a href="#框架安装及创建项目" class="headerlink" title="框架安装及创建项目"></a>框架安装及创建项目</h2><p><strong>框架安装</strong></p>
+<p>使用如下命令安装 Scrapy：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scrapy</span><br></pre></td></tr></table></figure>
+
+<p>注意，Scrapy 在安装过程中会自动下载并安装多个库，如 Twisted、pyOpenSSL、parsel 等。</p>
+<p>安装完成后，验证 Scrapy 安装：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy version</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>创建项目</strong></p>
+<p>使用如下命令创建 Scrapy 创建项目：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject project_name</span><br></pre></td></tr></table></figure>
+
+<p>创建的 Scrapy 项目结构，如图：</p>
+<p><img src="/2021/08/18/Python%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/8.png"></p>
+<p>（1）spiders：用来存放具体的爬虫代码。</p>
+<p>（2）items.py：存放实体类的文件，实体类需要从 scrapy.Item 继承，用来表示爬虫提取到的数据。</p>
+<p>（3）middlewares.py：用来处理 Scrapy 引擎和各组件之间的请求和响应。</p>
+<p>（4）pipelines.py：用来处理爬虫传递过来的实体。</p>
+<p>（5）settings.py：框架配置文件。</p>
+<p>（6）scrapy.cfg：项目配置文件在部署时可能需要修改，其所在目录就是根目录。</p>
+<br>
+
+<h2 id="实现爬虫"><a href="#实现爬虫" class="headerlink" title="实现爬虫"></a>实现爬虫</h2><br>
+
+<h3 id="创建爬虫"><a href="#创建爬虫" class="headerlink" title="创建爬虫"></a>创建爬虫</h3><p>在项目根目录打开终端，输入命令：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy genspider biqg bbiquge.net</span><br></pre></td></tr></table></figure>
+
+<p>在 spiders 目录下创建了一个 biqg.py 文件，代码如下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy      <span class="comment"># 引入 Scrapy 框架</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">BiqgSpider</span>(scrapy.Spider):         <span class="comment"># 从 scrapy.Spider 类继承</span></span><br><span class="line">    name = <span class="string">&#x27;biqg&#x27;</span>                   <span class="comment"># 爬虫名称</span></span><br><span class="line">    allowed_domains = [<span class="string">&#x27;bbiquge.net&#x27;</span>]        <span class="comment"># 允许爬取的网站域名列表</span></span><br><span class="line">    start_urls = [<span class="string">&#x27;http://bbiquge.net/&#x27;</span>]     <span class="comment"># 开始爬取的 URL</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">parse</span>(<span class="params">self, response</span>):      <span class="comment"># 解析爬取到的网页，参数 response 就是下载器下载网页后的响应</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="爬取网页"><a href="#爬取网页" class="headerlink" title="爬取网页"></a>爬取网页</h3><p>在这一部分将实现网页内容的爬取，我的目标是记录笔趣阁的一部小说介绍，书名及作者。</p>
+<br>
+
+<p><strong>1、导入需要的包。</strong></p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> spider.items <span class="keyword">import</span> Book</span><br></pre></td></tr></table></figure>
+
+<p><code>etree.HTML</code> 方法可以将 html 字符串转化为 lxml.etree._Element 类型，接下来就可以使用 XPath 语法定位元素（Element 对象）并使用 <code>text()</code> 方法提取元素中的文本内容。</p>
+<p>我们将在 items.py 文件中定义实体 Book，为了让 biqg 爬虫中可以将提取到的内容存储在实体中，预先导入 Book 类。</p>
+<br>
+
+<p><strong>2、确定待爬取的 URL，和元素的 XPath 路径。</strong></p>
+<img src="9.png" style="zoom:50%;" />
+
+<p>URL：<a target="_blank" rel="noopener" href="https://www.bbiquge.net/book_133303/">https://www.bbiquge.net/book_133303/</a></p>
+<img src="10.png" style="zoom:50%;" />
+
+<p>打开开发者工具，检查你需要的元素，得到该元素的 XPath 路径。</p>
+<br>
+
+<p><strong>3、重写 parse 方法来解析爬取到的网页；创建实体来定义提取的目标数据对象。</strong></p>
+<p>biqg 爬虫的 parse 方法：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">parse</span>(<span class="params">self, response</span>):</span><br><span class="line">    html = response.text     <span class="comment"># 将 response 转化为字符串</span></span><br><span class="line">    html_obj = etree.HTML(html)    <span class="comment"># 将 html 字符串转化为 lxml.etree._HTML 类型</span></span><br><span class="line">    item = Book()        <span class="comment"># </span></span><br><span class="line">    item[<span class="string">&quot;title&quot;</span>] = html_obj.xpath(</span><br><span class="line">        <span class="string">&#x27;//*[@id=&quot;info&quot;]/h1/text()&#x27;</span></span><br><span class="line">    )[<span class="number">0</span>]</span><br><span class="line">    item[<span class="string">&quot;author&quot;</span>] = html_obj.xpath(</span><br><span class="line">        <span class="string">&#x27;//*[@id=&quot;info&quot;]/h1/small/a/text()&#x27;</span></span><br><span class="line">    )[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> item</span><br></pre></td></tr></table></figure>
+
+<p>item 定义实体类：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Book</span>(scrapy.Item):</span><br><span class="line">    title = scrapy.Field()</span><br><span class="line">    author = scrapy.Field()</span><br></pre></td></tr></table></figure>
+
+<p>在终端中，输入以下命令启动爬虫：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy crawl biqg</span><br></pre></td></tr></table></figure>
+
+<p>结果如下：</p>
+<p><img src="/2021/08/18/Python%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/11.png"></p>
+<br>
+
+<p><strong>4、存储数据。</strong></p>
+<p>我计划创建一个 BiqgPipeline 实体管道。在 biqg 爬虫的 parse 方法中，<code>return item</code> 会将实体传递到管道。在 pipelines.py 文件中，添加处理实体的逻辑——将实体保存为 txt 文件：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">BiqgPipeline</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">process_item</span>(<span class="params">self, item, spider</span>):</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;book.txt&quot;</span>, <span class="string">&quot;ab&quot;</span>) <span class="keyword">as</span> file:</span><br><span class="line">            content = <span class="string">&quot;书名：&#123;0&#125; 作者：&#123;1&#125;&quot;</span>\</span><br><span class="line">            .<span class="built_in">format</span>(item[<span class="string">&quot;title&quot;</span>], item[<span class="string">&quot;author&quot;</span>])</span><br><span class="line">            file.write(content.encode(encoding=<span class="string">&#x27;utf-8&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<p>在存储数据之前， 需要在 settings.py 文件中启用实体管道：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Configure item pipelines</span></span><br><span class="line"><span class="comment"># See https://docs.scrapy.org/en/latest/topics/item-pipeline.html</span></span><br><span class="line">ITEM_PIPELINES = &#123;</span><br><span class="line">    <span class="string">&#x27;spider.pipelines.SpiderPipeline&#x27;</span>: <span class="literal">None</span>,</span><br><span class="line">    <span class="string">&#x27;spider.pipelines.BiqgPipeline&#x27;</span>: <span class="number">300</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中参数 spider.pipelines.BiqgPipeline 表示处理实体的管道类的全路径，对应值300表示管道运行优先级（0~1000），数值越小，优先级越高。</p>
+<p>注意：文件对象会占用操作系统的资源，并且操作系统同一时间能打开的文件数量也是有限的。因此，文件打开必须要关闭，即调用 <code>.close()</code> 方法。不过，由于文件打开和读写可能会出错，因此我们需要使用如下格式以保证文件打开和读写不会造成麻烦：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;/path/&#x27;</span>, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(f.read())</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    <span class="keyword">if</span> f:</span><br><span class="line">        f.close()</span><br></pre></td></tr></table></figure>
+
+<p>每次都这么写实在太繁琐，所以，Python引入了 with 语句来自动帮我们调用 close() 方法：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;/path/to/file&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="built_in">print</span>(f.read())</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>str.encode()</code> 方法可以指定字符串编码的方式，在这里我使用 utf-8 的编码方式。由于对字符串编码会导致其变成二进制格式的数据，因此我们需要将文件打开方式设置为 ab（以二进制格式打开一个文件用于追加）。</p>
+<p>启动爬虫，结果如下：</p>
+<img src="12.png" style="zoom:80%;" />
+
+<br>
+
+<h3 id="常用命令总结"><a href="#常用命令总结" class="headerlink" title="常用命令总结"></a>常用命令总结</h3><p>Scrapy 使用交互式命令来创建项目、生成爬虫、启动爬虫，同时这些命令还提供了检查 XPath 语法，查看爬虫获取到的页面等功能，你可以使用这些命令来做基本的调试。</p>
+<br>
+
+<p><strong>一、创建项目</strong></p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject spider</span><br></pre></td></tr></table></figure>
+
+<p>其中 spider 是项目名称，其项目根目录下有一个 scrapy.cfg 文件。</p>
+<br>
+
+<p><strong>二、创建爬虫</strong></p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy genspider example example.com</span><br></pre></td></tr></table></figure>
+
+<p>其中 example 表示爬虫名称，example.com 是待爬取的网站。</p>
+<br>
+
+<p><strong>三、启动爬虫</strong></p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy crawl example</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>四、检查 XPath</strong></p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy shell https://www.bbiquge.net/</span><br></pre></td></tr></table></figure>
+
+<p>该命令会启动一个 shell，同时 SCrapy 会自动下载该网站首页。在 Shell 窗口中，Scrapy 会创建几个常用对象。如图所示，其中的 response 对象就是 parse 方法中的 respponse 参数。</p>
+<p><img src="/2021/08/18/Python%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/13.png"></p>
+<p>该 Shell 工具检查 XPath 语法：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.xpath(&#x27;//*[@id=&quot;container&quot;]/div[1]/div[2]/dl/dt/a&#x27;)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>五、查看爬虫列表</strong></p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy list</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Scrapy-应对反爬虫"><a href="#Scrapy-应对反爬虫" class="headerlink" title="Scrapy 应对反爬虫"></a>Scrapy 应对反爬虫</h2><p>如果一个站点发现或怀疑请求网页的程序不是真人实际操作浏览器发起的，那么该站点就会怀疑这是一个爬虫程序。使用爬虫程序可以自动频繁的访问某个站点，如果该站点包含高质量的原创内容，那么不仅会消耗站点流量资源，还可能会被不法分子窃取有价值的内容。</p>
+<br>
+
+<h3 id="反爬虫简介"><a href="#反爬虫简介" class="headerlink" title="反爬虫简介"></a>反爬虫简介</h3><p>反爬虫程序一般基于以下几点来判断当前请求是否由一个爬虫程序发起。</p>
+<br>
+
+<p><strong>1、Headers</strong></p>
+<p>反爬虫程序一般会检查请求 Headers 信息的 User-Agent 是否为真实浏览器发起的。在爬虫中设置 User-Agent 的内容，可以绕过简单的反爬虫程序。</p>
+<p><img src="/2021/08/18/Python%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/14.png"></p>
+<br>
+
+<p><strong>2、IP 地址</strong></p>
+<p>若是同一个 IP 地址在反复请求一个站点，请求频率看起来不像是人为的，也会被认为是爬虫。因此调差爬取网页的时间间隔和 IP 地址，能应付大多数反爬虫程序。</p>
+<br>
+
+<p><strong>3、身份信息</strong><br>很多站点都需要登录才能进行下一步的操作。因此针对具有复杂验证码的站点，以及具有复杂身份验证的验证，需要使用功能强大的算法并配合自动化测试工具等技术，才能完成爬取。</p>
+<p>反爬虫的机制多种多样，其算法也会随着爬虫的调整而逐步升级。在反反爬虫的过程中，并没有一劳永逸的做法。</p>
+<br>
+
+<h3 id="Scrapy-应对反爬虫-1"><a href="#Scrapy-应对反爬虫-1" class="headerlink" title="Scrapy 应对反爬虫"></a>Scrapy 应对反爬虫</h3><p>Scrapy 提供了一些配置和扩展来应对反爬虫，这里介绍几种常见方式。</p>
+<br>
+
+<p><strong>1、配置 Headers</strong></p>
+<p>修改框架的 settings.py 文件中 USER_AGENT 节点。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Crawl responsibly by identifying yourself (and your website) on the user-agent</span></span><br><span class="line">USER_AGENT = <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) &#x27;</span>\</span><br><span class="line">    <span class="string">&#x27;AppleWebKit/537.36 (KHTML, like Gecko) &#x27;</span>\</span><br><span class="line">    <span class="string">&#x27;Chrome/99.0.4844.74 Safari/537.36 Edg/99.0.1150.46&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>这样当爬虫发起请求时，会在 Headers 中使用该配置，使请求看起来更像是浏览器发出的。</p>
+<p>除此之外，你还可以修改 DEFAULT_REQUEST_HEADERS 节点：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DEFAULT_REQUEST_HEADERS = &#123;</span><br><span class="line">    <span class="string">&#x27;Accept&#x27;</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Accept-Language&#x27;</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该节点的修改可以覆盖整个 Scrapy 的 HTTP 请求。</p>
+<br>
+
+<p><strong>2、禁用 robots 协议</strong></p>
+<p>robots 协议是网站和爬虫之间的协议，形式上是一个网站根目录下的文本文件。该文件告诉爬虫能访问的站点范围，如果没有该文件，则整个站点爬虫都可以访问。</p>
+<p>默认情况下，Scrapy 是遵循 robots 协议的，在 settings.py 中修改：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Obey robots.txt rules</span></span><br><span class="line">ROBOTSTXT_OBEY = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>3、延迟下载和自动限速</strong><br>取消 DOWNLOAD_DELAY 注释，限制爬虫的下载速度，避免被当作爬虫。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># See also autothrottle settings and docs</span></span><br><span class="line">DOWNLOAD_DELAY = <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p>延迟爬虫下载时间的算法：DOWNLOAD_DELAY 乘以一个范围在 0.5~1.5 的随机值。</p>
+<p>若不清楚下载速度具体在设置为多少，你可以让 Scrapy 自动调整下载速度：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Enable and configure the AutoThrottle extension (disabled by default)</span></span><br><span class="line"><span class="comment"># See https://docs.scrapy.org/en/latest/topics/autothrottle.html</span></span><br><span class="line">AUTOTHROTTLE_ENABLED = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>4、使用中间件</strong></p>
+<p>下载器中间件处于 Scrapy 引擎和 Scrapy 下载器之间，用来处理 Scrapy 发起的请求和下载的响应。因此，可以使用下载器中间件来修改 USER_AGENT 和请求的 IP，以迷惑反爬虫程序。</p>
+<p>接下来，我以使用中间件修改 USER_AGENT 为例。</p>
+<br>
+
+<p>（1）在 settings.py 中创建 USER_AGENTS 列表。不同浏览器的 User-Agent 字段不同，你可以收集不同的 User-Agent 字段作为列表的元素：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">USER_AGENTS = [</span><br><span class="line">  <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="string">&quot;&quot;</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>（2）创建 User-Agent 中间件。在项目的 middlewares.py 文件内，创建类继承 UserAgentMiddleware 并重写 process_request 方法。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> scrapy.downloadermiddlewares.useragent <span class="keyword">import</span> UserAgentMiddleware</span><br><span class="line"><span class="keyword">from</span> spider.settings <span class="keyword">import</span> USER_AGENTS</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CustomerDownloaderMiddleware</span>(<span class="title class_ inherited__">UserAgentMiddleware</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">process_request</span>(<span class="params">self, request, spider</span>):</span><br><span class="line">        user_agent = random.choice(USER_AGENTS)</span><br><span class="line">        request.headers.setdefault(<span class="string">&quot;User-Agent&quot;</span>, user-agent)</span><br></pre></td></tr></table></figure>
+
+<p>（3）启用中间件。在 settings.py 文件中解除 DOWNLOADER_MIDDLEWARES 节点注释，并将 CustomerDownloaderMiddleware 类的全路径作为 key 写入字典。这里需要使用自定义的中间件，停用框架内置的中间件。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Enable or disable downloader middlewares</span></span><br><span class="line"><span class="comment"># See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html</span></span><br><span class="line">DOWNLOADER_MIDDLEWARES = &#123;</span><br><span class="line">    <span class="string">&#x27;scrapy.downloadermiddlewares.useragent.UserAgentMiddleware&#x27;</span>: <span class="literal">None</span>,        <span class="comment"># 执行优先级为 None，不再使用该中间件</span></span><br><span class="line">    <span class="string">&#x27;spider.middlewares.CustomerDownloaderMiddleware&#x27;</span>: <span class="number">544</span>          <span class="comment"># 中间件的执行优先级</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（4）若要创建 HTTP 代理中间件，在项目的 middlewares.py 文件内创建类继承 HttpProxyMiddleware 并重写 process_request 方法。同样，在 settings.py 中配置 DOWNLOADER_MIDDLEWARES 节点启用 HTTP 代理中间件。</p>
+<br>
+
+<h1 id="CrawlSpsadawdawwider-类"><a href="#CrawlSpsadawdawwider-类" class="headerlink" title="CrawlSpsadawdawwider 类"></a>CrawlSpsadawdawwider 类</h1><p>大多数网站的页面链接在命名上都有一定的规则，使用 CrawlSpider 类可以根据这些规则实现全站爬取。</p>
+<br>
+
+<h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><p>CrawlSpider 是 Spider 的子类，Spider 爬取的是 start_urls 指定的链接，而 CrawlSpider 则是根据一定的规则在 start_urls 的基础上进一步跟进：在 start_url 指定的链接的页面内部，如果包含了满足 CrawlSpider 规则的链接，那么 CrawlSpider 会筛选出这些链接，继续爬取：</p>
+<p>创建 CrawlSpider 爬虫的命令格式如下：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy genspider -t crawl biqg bbiquge.net</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>CrawlSpider 的规则是一系列 Rule 对象的元组。创建 Rule 对象的重要参数含义如下：</p>
+<p>（1）link_extractor：该参数是 LinkExtractors 对象的实例，该实例指定了网页内部链接的提取规则，规则使用正则表达式表示。</p>
+<p>（2）callback：callback 指向一个回调函数。当满足 link_extractor 条件链接的网页被下载后，会自动调用 callback，并将请求的响应传递给 callback，这时可在回调函数中提取数据。注意：在 CrawlSpider 的子类中不要定义 parse 方法，因为 CrawlSpider 采用 parse 方法实现其他逻辑。</p>
+<p>（3）follow：表示提取到的内部网页是否需要跟进。若 callback 为 None，则 follow 默认为 True，否则 follow 默认为 False。因此，若指定了 callback 又需要持续跟进，在创建 Rule 时，可指定该参数如下：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Rule(link_extractor, callback=&quot;parse_item&quot;, follow=True)</span><br></pre></td></tr></table></figure>
+
+<p>（4）process_links：主要用来过滤 link_extractor 提取到的链接。</p>
+<p>（5）process_request：主要用来过滤 link_extractor 提取到的请求。</p>
+<p>在开发过程中，最常用到的三个参数是 link_extractor、callback 和 follow。</p>
+<br>
+
+<p>创建 LinkExtractor 对象的实例也需要指定几个参数。</p>
+<p>（1）allow：指定正则表达式，满足条件的链接才会被提取。若该值为空，则页面中的所有链接全部被提取。</p>
+<p>（2）deny：指定正则表达式，满足条件的链接不会被提取。</p>
+<p>（3）allow_domains：指定一个或多个域名，在该域名下的链接才会被提取。</p>
+<p>（4）deny_domains：指定一个或多个域名，在该域名下的链接不会被提取。</p>
+<p>（5）tags：指定 html 元素，默认为 ‘a’ 和 ‘area’，提取链接时会从这些元素中提取。</p>
+<p>（6）attrs：指定 html 元素属性，默认为 ‘href’，提取链接时会从这些元素属性中提取。</p>
+<p>（7）unique：用于设置对提取到的链接是否进行重复过滤。</p>
+<p>（8）restrict_xpaths：接收一个 XPath 表达式或一个 XPath 表达式列表，提取 XPath 表达式选中区域下的链接。</p>
+<p>（9）restrict_css：和 restrict_xpaths 使用一样，只是使用规则不一样。</p>
+<br>
+
+<h2 id="爬取网络数据"><a href="#爬取网络数据" class="headerlink" title="爬取网络数据"></a>爬取网络数据</h2><p>使用 CrawlSpider 爬取笔趣阁的数据，项目链接：<a target="_blank" rel="noopener" href="https://github.com/a-pin/crawlspider">a-pin&#x2F;crawlspider (github.com)</a></p>
+<p>实际上，还可以通过循环发起 Requset 请求调用 parse 方法实现爬取。</p>
+<br>
+
+<h1 id="分布式爬虫"><a href="#分布式爬虫" class="headerlink" title="分布式爬虫"></a>分布式爬虫</h1><p>大型数据采集任务需要设计分布式爬虫，为了使爬取的效率尽可能高，一般会采用多进程的形式。然而当这些进程分布到不同机器上时，如何统一分配采集任务、统一去重，成了程序员要面临的问题。下面就来了解分布式爬虫。</p>
+<br>
+
+<h2 id="分布式爬虫架构"><a href="#分布式爬虫架构" class="headerlink" title="分布式爬虫架构"></a>分布式爬虫架构</h2><p>在分布式爬虫架构中，请求队列由中央服务器统一维护，各爬虫进程也由中央服务器统一调用。如图所示，各节点可分别运行爬虫程序，然后由调度器统一管理。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">op1[节点1]---&gt;a[任务队列调度器]</span><br><span class="line">op2[节点2]---&gt;a[任务队列调度器]</span><br><span class="line">op3[节点3]---&gt;a[任务队列调度器]</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用-scrapy-redis-构建分布式爬虫"><a href="#使用-scrapy-redis-构建分布式爬虫" class="headerlink" title="使用 scrapy_redis 构建分布式爬虫"></a>使用 scrapy_redis 构建分布式爬虫</h2><p>scrapy_redis 是一个 Python 库，可以将 redis 作为多个 Scrapy 爬虫的一个共享队列。scrapy_redis 中包含 Scrapy 即插即用的组件，如调用器、管道等。</p>
+<br>
+
+<p>1、安装 redis</p>
+<p>首先需要安装 redis 数据库。redis 官方并不支持 Windows，但是可以从 github 上下载到 Windows 版本。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/MicrosoftArchive/redis/releases">Releases · microsoftarchive&#x2F;redis (github.com)</a></p>
+<p>解压后文件目录：</p>
+<img src="16.png" style="zoom:80%;" />
+
+<p>步骤一：进入安装目录后，使用如下命令直接启动：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\redis-server.exe redis.windows.conf</span><br></pre></td></tr></table></figure>
+
+<p>启动状态如图所示，redis 正在监听6379端口。</p>
+<img src="17.png" style="zoom:67%;" />
+
+<p>步骤二：保持上一个终端不关闭，打开新的终端，启动客户端</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli.exe</span><br></pre></td></tr></table></figure>
+
+<p>启动状态如图：</p>
+<img src="18.png" style="zoom:60%;" />
+
+<p>注意：由于 redis_server.exe 运行在终端上，我们只要把窗口关闭，redis 就不能再使用。可使用命令将 redis 安装成 Windows 服务。</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\redis-server --service-install redis.windows.conf --loglevel verbose</span><br></pre></td></tr></table></figure>
+
+<p>相应启动服务命令和停止服务命令为：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.\redis-server.exe --service-start  # 启动服务</span><br><span class="line">.\redis-server.exe --service-stop   # 停止服务</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>2、配置 scrapy_redis</p>
+<p>步骤一：安装 scrapy_redis 库：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scrapy_redis</span><br></pre></td></tr></table></figure>
+
+<p>步骤二：安装完毕后，从 scrapy_redis 中导入 RedisCrawlSpider：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scrapy_redis.spiders <span class="keyword">import</span> RedisCrawlSpider</span><br></pre></td></tr></table></figure>
+
+<p>接着，修改 spider 项目 BiqgSpider 爬虫类继承 RedisCrawlSpider，同时改 start_urls 为 redis_key。</p>
+<p>步骤三：在 settings.py 中添加配置：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Configure item pipelines</span></span><br><span class="line"><span class="comment"># See https://docs.scrapy.org/en/latest/topics/item-pipeline.html</span></span><br><span class="line">ITEM_PIPELINES = &#123;</span><br><span class="line">    <span class="string">&#x27;spider.pipelines.SpiderPipeline&#x27;</span>: <span class="literal">None</span>,</span><br><span class="line">    <span class="string">&#x27;spider.pipelines.BiqgPipeline&#x27;</span>: <span class="number">300</span>,</span><br><span class="line">    <span class="string">&#x27;scrapy_redis.pipelines.RedisPipeline&#x27;</span>: <span class="number">200</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 scrapy_redis 的调度器</span></span><br><span class="line">SCHEDULER = <span class="string">&quot;scrapy_redis.scheduler.Scheduler&quot;</span></span><br><span class="line"><span class="comment"># 使用 RFPDupeFilter 对去重</span></span><br><span class="line">DUPEFILTER_CLASS = <span class="string">&quot;scrapy_redis.dupefilter.RFPDupeFilter&quot;</span></span><br><span class="line"><span class="comment"># redis 服务器地址</span></span><br><span class="line">REDIS_URL = <span class="string">&quot;redis://localhost:6379&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>步骤四：将项目复制两份，在不同目录下启动。</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy crawl biqg</span><br></pre></td></tr></table></figure>
+
+<p>此时爬虫会暂停执行，等待链接输入。</p>
+<p>步骤五：打开 redis 客户端，输入待爬取链接，其中 redis_key 为 <code>biqg:start_urls</code></p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.\redis-cli.exe</span><br><span class="line">lpush biqg:start_urls https://www.bbiquge.net/book_133312/</span><br></pre></td></tr></table></figure>
+
+<p>步骤六：当向队列中添加一个链接时，就会有一个爬虫从队列中读取 key，然后继续执行。</p>
+<p>步骤七：由于在 settings.py 中启用了 redis 管道，因此会被优先执行，使提取的数据最终存入 redis。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/python/">python</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/数据采集/">数据采集</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Deployed by <a href="https://github.com/kaedea/notion-down" target="_blank">notion-down</a> and
+    Theme by <a href="https://github.com/kaedea/hexo-theme-hacker" target="_blank">hexo-theme-hacker</a>
+    </br>
+    
+    &copy; 2022 a-pin
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

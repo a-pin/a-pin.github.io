@@ -1,0 +1,591 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HTML多媒体与嵌入 | Apin | blogs</title>
+
+  
+  <meta name="author" content="a-pin">
+  
+
+  
+  <meta name="description" content="This is a blog website in order to record my study experiences!">
+  
+
+  
+  <meta name="keywords" content="blog,a-pin">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="HTML多媒体与嵌入"/>
+
+  <meta property="og:site_name" content="Apin"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Apin" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+  <link href="https://fonts.lug.ustc.edu.cn/css?family=Lato|Rubik" rel="stylesheet">
+  <script src="/js/pangu-407.min.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    pangu.autoSpacingPage();
+  });
+</script>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Apin</a>
+    </h1>
+    <p class="site-description">blogs</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>HTML多媒体与嵌入</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2021/02/18/多媒体与嵌入/" rel="bookmark">
+        <time class="entry-date published" datetime="2021-02-17T18:00:07.000Z">
+          2021-02-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+
+<script type="text/javascript">
+    function convertRemToPixels(rem) {    
+        return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    }
+    window.onscroll = function() {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > convertRemToPixels(40)) {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'visible';
+        } else {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'hidden';
+        }
+    }
+</script>
+
+
+<div id="toc" class="toc-article">
+      <div class="toc-content">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#html%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87"><span class="toc-text">html中的图片</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87"><span class="toc-text">添加图片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%87%E9%80%89%E6%96%87%E6%9C%AC"><span class="toc-text">备选文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%BD%E5%BA%A6%E5%92%8C%E9%AB%98%E5%BA%A6"><span class="toc-text">宽度和高度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E6%A0%87%E9%A2%98"><span class="toc-text">图片标题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E8%AF%B4%E5%9B%BE%E7%89%87"><span class="toc-text">解说图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87"><span class="toc-text">css背景图片</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E5%92%8C%E9%9F%B3%E9%A2%91%E5%86%85%E5%AE%B9"><span class="toc-text">视频和音频内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#web%E4%B8%AD%E7%9A%84%E9%9F%B3%E8%A7%86%E9%A2%91"><span class="toc-text">web中的音视频</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#video%E5%85%83%E7%B4%A0"><span class="toc-text">video元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0video"><span class="toc-text">添加video</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AA%E6%92%AD%E6%94%BE%E6%BA%90"><span class="toc-text">使用多个播放源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E5%AE%83video%E7%89%B9%E6%80%A7"><span class="toc-text">其它video特性</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8E%E5%AF%B9%E8%B1%A1%E5%88%B0iframe-%E5%85%B6%E5%AE%83%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF"><span class="toc-text">从对象到iframe-其它嵌入技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#iframe%E8%AF%A6%E8%A7%A3"><span class="toc-text">iframe详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%9A%90%E6%82%A3"><span class="toc-text">安全隐患</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#embed-%E5%92%8C-object-%E5%85%83%E7%B4%A0"><span class="toc-text">embed 和 object 元素</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%9F%A2%E9%87%8F%E5%9B%BE%E5%BD%A2"><span class="toc-text">添加矢量图形</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%9F%A2%E9%87%8F%E5%9B%BE%E5%BD%A2"><span class="toc-text">什么是矢量图形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SVG%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">SVG是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SVG%E7%9A%84%E6%B7%BB%E5%8A%A0"><span class="toc-text">SVG的添加</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F-img%E6%A0%87%E7%AD%BE"><span class="toc-text">快捷方式-img标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8html%E4%B8%AD%E5%BC%95%E7%94%A8svg%E4%BB%A3%E7%A0%81"><span class="toc-text">在html中引用svg代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8iframe%E5%B5%8C%E5%85%A5svg"><span class="toc-text">使用iframe嵌入svg</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E5%9B%BE%E7%89%87"><span class="toc-text">响应式图片</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E8%87%AA%E9%80%82%E5%BA%94%E5%9B%BE%E7%89%87"><span class="toc-text">为什么要用自适应图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%87%AA%E9%80%82%E5%BA%94%E5%9B%BE%E7%89%87"><span class="toc-text">创建自适应图片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E8%BE%A8%E7%8E%87%E5%88%87%E6%8D%A2-%E4%B8%8D%E5%90%8C%E7%9A%84%E5%B0%BA%E5%AF%B8"><span class="toc-text">分辨率切换-不同的尺寸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E8%BE%A8%E7%8E%87%E5%88%87%E6%8D%A2-%E4%B8%8D%E5%90%8C%E7%9A%84%E5%88%86%E8%BE%A8%E7%8E%87"><span class="toc-text">分辨率切换-不同的分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%8E%E6%9C%AF%E8%AE%BE%E8%AE%A1"><span class="toc-text">美术设计</span></a></li></ol></li></ol></li></ol>
+      </div>
+</div>
+<style>
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+
+
+        <p>在此特地声明本文是根据 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/html/Introduction_to_html">mozilla官方教学文档</a> 学习的个人学习笔记，借用了大量的图片和文本内容，存在相当多的相同，但不是copy。如需查看mozilla官方文档，请点击前文链接！！</p>
+<!--more-->
+
+<br>
+
+<p>本模块要探索怎样用HTML来让你的网页包含多媒体，包括可以包含图像的不同方式，以及怎样嵌入视频，甚至是整个其他的网页。</p>
+<br>
+
+<h1 id="html中的图片"><a href="#html中的图片" class="headerlink" title="html中的图片"></a>html中的图片</h1><p>深入使用<code>&lt;img&gt;</code>元素，包括使用<code>&lt;figure&gt;</code>添加说明文字，与CSS背景图片链接起来。</p>
+<br>
+
+<h2 id="添加图片"><a href="#添加图片" class="headerlink" title="添加图片"></a>添加图片</h2><p><code>&lt;img&gt;</code>是一个空元素，即不需要包含文本内容和闭合标签。最少使用一个src使<code>&lt;img&gt;</code>生效。src属性指向要引用的图片的路径。<br></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/example.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>不推荐使用绝对路径，这会给浏览器造成更多的工作，在 HTML基础 中有提及。</p>
+<blockquote>
+<p>在得到授权前不要把src属性指向其他人网站的图片，这侵犯了版权，这种行为被称为“盗链”。</p>
+</blockquote>
+<br>
+
+<h3 id="备选文本"><a href="#备选文本" class="headerlink" title="备选文本"></a>备选文本</h3><p>属性<code>alt</code>，它的值是图片的文字描述，用于在图片无法显示或不能被看到的情况，即<strong>替代文本</strong>。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/example.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;this is a picture&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>备选文本的意义：</p>
+<ul>
+<li>用户有视力障碍，通过屏幕阅读器浏览网页。</li>
+<li>浏览器不支持该图片类型。例如Lynx，一个纯文本浏览器。</li>
+<li>提供文字描述给搜索引擎使用。</li>
+<li>用户关闭图片显示以减少数据的传输。</li>
+</ul>
+<p>alt应该写些什么？这主要取决于图片在这里的目的。</p>
+<ul>
+<li><strong>装饰</strong>：只是用于装饰，不是内容的一部分，可以写一个空的，即<code>alt=&quot;&quot;</code>。实际上装饰性的图片应该在CSS中设定。</li>
+<li><strong>内容</strong>：如果在图片中提供了重要信息，就应该在alt中简要提供相同的信息。注意不要写冗余的信息，</li>
+<li><strong>链接</strong>：如果把图片放在<code>&lt;a&gt;</code>标签里，把图片变成链接，还应该提供无障碍的链接文本。</li>
+<li><strong>文本</strong>：你不应该将文本放在图片中，如果是文本需要特殊效果，可以使用CSS达成。<br></li>
+</ul>
+<p>即需要图片无法显示时，也可以提供一个可用的体验。</p>
+<br>
+
+<h3 id="宽度和高度"><a href="#宽度和高度" class="headerlink" title="宽度和高度"></a>宽度和高度</h3><p>你可以使用宽度和高度属性指定图片的宽度和高度。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/example.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;this is a picture&quot;</span> <span class="attr">width</span>=<span class="string">&quot;400&quot;</span> <span class="attr">height</span>=<span class="string">&quot;341&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在图片没有加载出来的时候，浏览器会为要显示的的图片留下一定的空间。<br>这可以使页面加载的更加丝滑，不会出现页面长度不停变化的情况。</p>
+<p>然而，你应该使用CSS改变尺寸而不是HTML。而且胡乱调整图片的尺寸，会出现图片模糊或扭曲等问题。</p>
+<br>
+
+<h3 id="图片标题"><a href="#图片标题" class="headerlink" title="图片标题"></a>图片标题</h3><p>使用<code>&lt;title&gt;</code>给图片添加进一步的支持信息。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/example.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;this is a picture&quot;</span> <span class="attr">title</span>=<span class="string">&quot;picture No.1&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当你鼠标停在图片上，会出现title信息。图片标题没必要包含主要信息，它有很多易访问性问题，即屏幕阅读器可能忽略图片标题，浏览器不会直接显示（除非鼠标停在图片上）。</p>
+<br>
+
+<h2 id="解说图片"><a href="#解说图片" class="headerlink" title="解说图片"></a>解说图片</h2><p>通过为图片搭配说明文字的方式来解说图片。</p>
+<p><strong>方法一</strong>：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;figure&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/example.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;this is a picture&quot;</span> <span class="attr">width</span>=<span class="string">&quot;400&quot;</span> <span class="attr">heigth</span>=<span class="string">&quot;341&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一张为了举例的不存在的图片<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>&lt;p&gt;</code>中包含你要说明的内容，这是一个方便使用CSS的风格。<br><br>但仍有一个问题，即从语义上讲，段落p和图片img没有联系。如果有10张图片以及搭配的说明文字，屏幕阅读器无法知道哪张图片应该匹配哪个说明。</p>
+<br>
+
+<p><strong>方法二</strong>：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://www.example.com/path/images.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;This is an inexistence picture to take an example&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">figcaption</span>&gt;</span>这是一张有一点特别的图片，只有聪明的人才能看到<span class="tag">&lt;/<span class="name">figcaption</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用HTML5的<code>&lt;figure&gt;</code>和<code>&lt;figcaption&gt;</code>元素——为图片提供了一个语义容器，在标题和图片之间建立清晰的联系。</p>
+<blockquote>
+<p>说明文本和alt是完全不同的东西，它们存在的目的不同，alt是为了在显示不了图片的时候提供图片有必要说明的信息。而说明文本是在图片之外，一直可以显示的附加信息。</p>
+</blockquote>
+<br>
+
+<p>figure 元素里不一定是一张图片，它可以包含任何一个独立内容单元（几张图片、一段代码、音视频、表格等）。而 figcaption 元素包裹的说明文字描述了 figure 元素的内容。</p>
+<ul>
+<li>用简单、易懂的方式表达意图</li>
+<li>可以置于页面线性流的某处</li>
+<li>为主要内容提供重要的补充说明</li>
+</ul>
+<br>
+
+<h2 id="css背景图片"><a href="#css背景图片" class="headerlink" title="css背景图片"></a>css背景图片</h2><p>使用CSS把图片嵌入网站中。CSS中<code>background-image</code>和其它<code>background-*</code>属性是用来放置背景图片的。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&quot;images/example.jpg&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相对于使用HTML插入图片，CSS可以更好地控制图片和设置图片的位置。<br><br>那为什么还要使用HTML插入图片？<br><br>这种CSS插入背景图片的方式只是为了装饰，这种方式插入的图片完全没有语义上的意义，没有备选文本，不能被屏幕阅读器识别。</p>
+<br>
+
+<h1 id="视频和音频内容"><a href="#视频和音频内容" class="headerlink" title="视频和音频内容"></a>视频和音频内容</h1><p>使用<code>&lt;video&gt;</code>和<code>&lt;audio&gt;</code>元素添加音视频，并为视频添加字幕。</p>
+<br>
+
+<h2 id="web中的音视频"><a href="#web中的音视频" class="headerlink" title="web中的音视频"></a>web中的音视频</h2><p>传统web技术不能再web中插入音视频，所以一些Flash和Silverlight的专利技术很受欢迎，但它们有一系列的问题，无法很好地支持CSS和HTML特性，安全问题和可行性问题。</p>
+<p>现在HTML5标准的提出，其中很多特性，包括<code>&lt;video&gt;</code>和<code>&lt;audio&gt;</code>标签，以及一些JavaScript和APIs可以用于控制音视频。</p>
+<br>
+
+<h3 id="video元素"><a href="#video元素" class="headerlink" title="video元素"></a>video元素</h3><p><code>&lt;video&gt;</code> 允许你轻松地嵌入一段视频</p>
+<br>
+
+<h4 id="添加video"><a href="#添加video" class="headerlink" title="添加video"></a>添加video</h4><p>嵌入一段视频：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;example.webm&quot;</span> <span class="attr">controls</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>你的浏览器不支持 HTML5 视频，可以点击 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;example.mp4&quot;</span>&gt;</span>链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span>观看<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其中的包围的属性和内容：</p>
+<ul>
+<li><code>src</code>：<br><br>指向你要嵌入的资源。</li>
+<li><code>controls</code>：<br><br>使用controls来包含浏览器提供的控件界面，你也可以使用合适的 JavaScript API 创建自己的界面。至少包含开始、停止以及调节音量的功能。</li>
+<li><code>&lt;video&gt;标签内的内容</code>：<br><br>后备内容——当浏览器不支持video标签的时候，就会显示这段内容。</li>
+</ul>
+<br>
+
+<h4 id="使用多个播放源"><a href="#使用多个播放源" class="headerlink" title="使用多个播放源"></a>使用多个播放源</h4><p>不同的浏览器对视频格式的支持不同，换个浏览器视频就不一定可以顺利播放。下面将介绍解决办法。<br></p>
+<br>
+
+<p><strong>媒体文件的内容</strong><br>像MP3、MP4、WebM这些术语叫<strong>容器格式</strong>，它们定义了构成媒体文件的音频轨道和视频轨道的存储结构，其中还包含描述这个媒体文件的元数据，以及用于编码的编码译码器等等。</p>
+<p>一个格式为WebM的电影包含视频轨道、音频轨道和文本轨道。其中视频轨道还包含一个主视频轨道和可选的Angle轨道；有音频轨道包含英语、西班牙语和英语评论的音频轨道；文字轨道包含英语和西班牙语的字母轨道，如图所示：<br><img src="/2021/02/18/%E5%A4%9A%E5%AA%92%E4%BD%93%E4%B8%8E%E5%B5%8C%E5%85%A5/1.png" alt="显示WebM具体内容的图片"><br>在编解码器（codec）编码文件时，容器中视频轨道和音频轨道使用不同的格式，视频轨道使用<strong>视频编解码器</strong>进行编码，音频轨道使用<strong>音频编解码器</strong>进行编码。<br><br>不同的浏览器支持不同的视频和音频格式，以及容器格式。</p>
+<p>例如：</p>
+<ul>
+<li>WebM容器通常包含Opus或Vorbis音频和VP8&#x2F;VP9视频；基本所有现代浏览器都支持。</li>
+<li>MP4容器通常包含ACC以及MP3音频和H.264视频；同样在所有现代浏览器都支持。</li>
+<li>老式的Ogg容器往往支持 Ogg Vorbis 音频和 Ogg Theora 视频；主要在Firefox 和 Chrome中支持，这个容器已经被更强大的WebM容器取代。</li>
+</ul>
+<blockquote>
+<p>音频播放器将会直接播放音频文件，例如 MP3 和 Ogg 文件，这些不需要容器。<br><br>  MP3文件实际上时存储在MPEG或MPEG-2容器中的<strong>MPEG-1音频层III</strong>（MPEG-1 Audio Layer III , MP3）<strong>音频轨道</strong>。</p>
+</blockquote>
+<br>
+
+<p><strong>浏览器支持的媒体文件</strong><br>上文所说的格式主要用于将视频和音频压缩成可管理的文件（原始的音频和视频文件非常大）。浏览器包含不同的codec，如Vorbis、H.264，将压缩的视频和音频转化成二进制数字。不同的编解码器和容器都有各自的优缺点，需要灵活选择合适的。</p>
+<p>浏览器不是支持所有的的codec，所以得使用几个不同格式的文件来兼容不同的浏览器；如果你使用的格式都得不到浏览器的支持，你的媒体文件就不会播放。</p>
+<p>要想你的媒体文件在不同平台和不同设备的浏览器都可以播放，这需要多种编码器组合使用，这是一个超麻烦的事，所以参考<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Containers#choosing_the_right_container" title="来自mozilla">Choosing the right container</a>来选择合适的容器格式；参考<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#choosing_a_video_codec" title="来自mozilla">Choosing a video codec</a>和<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#choosing_an_audio_codec" title="来自mozilla">Choosing an audio codec</a>来选择编码格式。</p>
+<p>对于一个浏览器，移动版和桌面版支持的格式可能不同，但它们都可以减轻媒体播放的处理负担。许多移动平台的浏览器能够借助<strong>底层系统的媒体播放器</strong>播放一些不支持的格式。</p>
+<p>嵌入一个多个源的媒体，例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;example.mp4&quot;</span> <span class="attr">type</span>=<span class="string">&quot;video/mp4&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;example.webm&quot;</span> <span class="attr">type</span>=<span class="string">&quot;video/webm&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>你的浏览器不支持 HTML 的视频。可点击<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;example.mp4&quot;</span>&gt;</span>链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span>观看<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><em>在上面例子中，src属性被移出video，而是放在单独标签<code>&lt;source&gt;</code>当中。浏览器会检查source标签，播放第一个与自身codec相匹配的媒体。</em><br><br>每个source标签中，<code>type</code>属性是可选的指定<strong>媒体类型</strong>的属性。浏览器可以通过检查这个属性跳过不支持的格式；如果没有指定type属性，浏览器会尝试加载每一个文件直达找到一个能正确播放的格式或者找不到正确格式。你应该在source标签中指定type，不然会消耗大量时间和资源。</p>
+<br>
+
+<h4 id="其它video特性"><a href="#其它video特性" class="headerlink" title="其它video特性"></a>其它video特性</h4><p>HTML5中，video 有许多其他的特性。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span> <span class="attr">width</span>=<span class="string">&quot;400&quot;</span> <span class="attr">height</span>=<span class="string">&quot;400&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">autoplay</span> <span class="attr">loop</span> <span class="attr">muted</span></span></span><br><span class="line"><span class="tag">    <span class="attr">poster</span>=<span class="string">&quot;poster.png&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;example.mp4&quot;</span> <span class="attr">type</span>=<span class="string">&quot;video/mp4&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;example.webm&quot;</span> <span class="attr">type</span>=<span class="string">&quot;video/webm&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>你的浏览器不支持 HTML5 视频。可点击<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;example.mp4&quot;</span>&gt;</span>链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span>观看<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>以下是新的特性：</p>
+<ul>
+<li>width 和 height<br>控制视频的大小。但视频会保持它原本的长宽比（纵横比），如果你设置的尺寸没有保持视频原始的长宽比，那么视频的边框将会拉伸，填充没有内容的部分，显示默认的背景颜色。</li>
+<li>autoplay<br>这个属性会使音频和视频的内容立即播放，即使<strong>页面</strong>的其他部分还没有加载完全。</li>
+<li>loop<br>这个属性使音频或视频文件循环播放。</li>
+<li>muted<br>使媒体播放时，默认关闭声音。</li>
+<li>poster<br>指向一个图像的URL，这张图片将会在视频播放前显示。通常用于预览或广告。</li>
+<li>preload<br>这个属性被用来缓冲较大的文件：<ul>
+<li>“none”: 不缓冲</li>
+<li>“auto”: 页面加载后缓存媒体文件</li>
+<li>“metadata”: 仅缓冲文件的元数据</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h1 id="从对象到iframe-其它嵌入技术"><a href="#从对象到iframe-其它嵌入技术" class="headerlink" title="从对象到iframe-其它嵌入技术"></a>从对象到iframe-其它嵌入技术</h1><p>在网页中嵌入其他各种内容类型的元素：<code>&lt;iframe&gt;</code>,<code>&lt;embed&gt;</code>,<code>&lt;object&gt;</code>。</p>
+<p>很久以前，很流行在网络上使用<strong>框架</strong>创建网站——网站的一小部分存储于单独的HTML页面中。这些被嵌入在一个称为<strong>框架集的主文档</strong>中，它允许您指定每个框架能够填充在屏幕上的区域。<br><br>一小段时间之后（20世纪90年代末，21世纪初），<strong>插件</strong>技术变得非常受欢迎，例如 Java Applet 和 Flash ——这些技术允许网络开发者将丰富的内容嵌入到网页中，例如视频和动画等，这些内容不能通过HTML单独实现。嵌入这些技术是通过诸如<code>&lt;object&gt;</code>和较少使用<code>&lt;embed&gt;</code>的元素来实现的，当时它们非常有用。由于许多问题，包括可访问性、安全性、文件大小等，它们已经过时了。<br><br>最后，<code>&lt;iframe&gt;</code>元素出现了（连同其他嵌入内容的方式，如<code>&lt;canvas&gt;</code>，<code>&lt;video&gt;</code>等），它提供了一种将整个web页嵌入到另一个网页的方法，看起来就像那个web页是另一个网页的一个<code>&lt;img&gt;</code>或其他元素一样。<code>&lt;iframe&gt;</code>现在经常被使用。<br></p>
+<h2 id="iframe详解"><a href="#iframe详解" class="headerlink" title="iframe详解"></a>iframe详解</h2><p><code>&lt;iframe&gt;</code>元素旨在允许你将其他Web文档嵌入到当前文档中，这很适合将第三方内容嵌入到你的网站。</p>
+<p>在一个网页中插入MDN词汇表：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;https://developer.mozilla.org/en-US/docs/Glossary&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">width</span>=<span class="string">&quot;100&quot;</span> <span class="attr">height</span>=<span class="string">&quot;500&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;0&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">allowfullscreen</span> <span class="attr">sandbox</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://developer.mozilla.org/en-US/docs/Glossary&quot;</span>&gt;</span>Fallback link for browsers that don&#x27;t support iframes<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>以下是iframe的基本属性：</p>
+<ul>
+<li><code>allowfullscreen</code><br><br>iframe可以通过 全屏API 设置为全屏模式。</li>
+<li><code>frameborder</code><br><br>如果设置为1，则会告诉浏览器在此框架和其他框架之间绘制边框，这是默认行为。0是删除边框。CSS可以更好实现相同的效果，<code>border: none;</code></li>
+<li><code>src</code><br><br>该指向嵌入文档的URL路径</li>
+<li><code>width</code> 和 <code>height</code><br><br>指定 iframe 的高度和宽度</li>
+<li><code>备选内容</code><br><br>在<code>&lt;iframe&gt;&lt;/iframe&gt;</code>标签之间包含备选内容，如果浏览器不支持 iframe ，就将显示备选内容。</li>
+<li><code>sandbox</code><br><br>该属性需要在较新版本的浏览器上工作，该属性可以提高安全性设置。</li>
+</ul>
+<blockquote>
+<p>为了提高速度，在主内容完成加载后，使用JavaScript设置iframe的src属性。可以使你的页面更快的被使用，并减少你的官方页面加载时间（重要SEO指标）。</p>
+</blockquote>
+<br>
+
+<h3 id="安全隐患"><a href="#安全隐患" class="headerlink" title="安全隐患"></a>安全隐患</h3><p>黑客试图恶意修改你的网页或欺骗人们做不想做的事情时，常把 iframe 作为共同的攻击目标。</p>
+<blockquote>
+<p>单击劫持：是一种常见的iframe攻击，黑客将隐藏的iframe嵌入到你的文档中（或将你的文档嵌入到他们自己的恶意网站），并使用它来捕获用户的交互。来误导用户或窃取敏感数据。</p>
+</blockquote>
+<br>
+
+<p>在你使用iframe时，应注意：</p>
+<ul>
+<li><strong>只在必要时嵌入</strong><br><br>只在完全需要时嵌入第三方内容。<br><br><em>“你怎么谨慎都不为过，如果你决定要做这件事，多检查一遍；如果是别人做的，在被证明是安全的之前，都假设这是危险的”</em><br>除了安全问题，还有知识产权问题。不要再网页上展示一些不属于你的东西。</li>
+<li><strong>使用HTTPS</strong><br><br>HTTPS相较于HTTP增加了加密内容。数据保密性更强，更加安全。<ol>
+<li>减少了远程内容在传输过程中被篡改的机会</li>
+<li>防止嵌入式内容访问你的父文档中的内容。<br>使用HTTPS需要一个证书，对于你来说可能是昂贵的。你可以使用HTTP为父文档提供服务，但是绝不能使用HTTP嵌入第三方内容（最好情况，是你的用户的web浏览器给他们出一个警告）。</li>
+</ol>
+</li>
+<li><strong>始终使用<code>sandbox</code>属性</strong><br>一个允许包含在其里的代码以适当的方式执行或者用于测试，但不能对其他代码库造成任何损害的容器称为沙盒。<br><br>要想提高网页的安全性，你应该给嵌入的内容仅能完成自己工作的权限。<br><br>默认情况下，你应该使用不带参数的 sandbox 属性强制执行所有可用的限制。<br><br>当然，你可以添加权限给沙盒——<code>sandbox=&quot;&quot;</code>属性值内。</li>
+<li><strong>配置CSP指令</strong><br>CSP 指 内容安全策略，它提供一组HTTP头，旨在提高HTML文档的安全性。<br><br>在<code>&lt;iframe&gt;</code>安全性方面，你可以将服务器设置为 发送适当的<code>X-Frame-Options</code>标题。这样做可以防止其他网站在其页面中嵌入你的内容。</li>
+</ul>
+<br>
+
+<h2 id="embed-和-object-元素"><a href="#embed-和-object-元素" class="headerlink" title="embed 和 object 元素"></a>embed 和 object 元素</h2><p>这两个元素是用来嵌入多种类型的外部内容的通用嵌入工具，包括java小程序、Flash、PDF这样的插件技术，甚至视频、SVG和图像的内容。</p>
+<blockquote>
+<p>插件 是一种对浏览器原生无法读取的内容提供访问权限的软件</p>
+</blockquote>
+<p>插件和这些嵌入方法真的是一种传统技术，提及它们主要是为了以防您在某些情况下遇到问题。由于一些关系，Flash已经不受欢迎，PDF更倾向于被链接而不是被嵌入，其他内容也有更优秀、更容易的元素处理。</p>
+<p>如果你需要嵌入插件内容：<br></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><code>&lt;ambed&gt;</code></th>
+<th><code>&lt;object&gt;</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>嵌入内容的位置</td>
+<td>src</td>
+<td>data</td>
+</tr>
+<tr>
+<td>嵌入内容的准确媒体类型</td>
+<td>type</td>
+<td>type</td>
+</tr>
+<tr>
+<td>由插件控制的框的高度和宽度（以CSS像素为单位）</td>
+<td>height<br>width</td>
+<td>height<br>width</td>
+</tr>
+<tr>
+<td>名称和值，将插件作为参数提供</td>
+<td>具有这些名称和值的 adhoc 属性</td>
+<td>单标签<code>&lt;param&gt;</code>元素，包含在内<code>&lt;object&gt;</code></td>
+</tr>
+<tr>
+<td>独立的HTML内容作为不可用资源的回退</td>
+<td>不支持</td>
+<td>包含在元素object之后的param</td>
+</tr>
+</tbody></table>
+<br>
+
+<p>使用<code>&lt;embed&gt;</code>元素嵌入Flash影片的示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">embed</span> <span class="attr">src</span>=<span class="string">&quot;whoosh.swf&quot;</span> <span class="attr">quality</span>=<span class="string">&quot;medium&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">bgcolor</span>=<span class="string">&quot;#ffffff&quot;</span> <span class="attr">width</span>=<span class="string">&quot;550&quot;</span> <span class="attr">height</span>=<span class="string">&quot;400&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">name</span>=<span class="string">&quot;whoosh&quot;</span> <span class="attr">align</span>=<span class="string">&quot;middle&quot;</span> <span class="attr">allowScriptAccess</span>=<span class="string">&quot;sameDomain&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">allowFullScreen</span>=<span class="string">&quot;false&quot;</span> <span class="attr">type</span>=<span class="string">&quot;application/x-shockwave-flash&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">pluginspage</span>=<span class="string">&quot;http://www.macromedia.com/go/getflashplayer&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>swf——基于矢量的Flash动画文件格式<br><br>相当复杂，工作量很大。Adobe Flash工具生成的HTML往往更糟糕，它使用嵌入object元素的embed元素来覆盖所有的基础。</p>
+<br>
+
+<p>使用<code>&lt;object&gt;</code>将PDF嵌入一个页面：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">object</span> <span class="attr">data</span>=<span class="string">&quot;example.pdf&quot;</span> <span class="attr">type</span>=<span class="string">&quot;application/pdf&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">width</span>=<span class="string">&quot;800&quot;</span> <span class="attr">height</span>=<span class="string">&quot;1200&quot;</span> <span class="attr">typemustmatch</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>You don&#x27;t have a PDF plugin.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">object</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>最好用链接指向它们，而不是将其嵌入到页面中，以便它可以在单独的页面阅读或下载。</p>
+<blockquote>
+<p>HTML和JavaScript可以轻松实现交互性，而不需要Java小程序或过时的ActiveX&#x2F;BHO技术。你可以使用 HTML5 来满足媒体需求、矢量图形SVG、以及复杂图像和动画画布。</p>
+</blockquote>
+<br>
+
+<h1 id="添加矢量图形"><a href="#添加矢量图形" class="headerlink" title="添加矢量图形"></a>添加矢量图形</h1><p>矢量图形拥有较小的文件尺寸，却高度可缩放，所以它们不会在镜头拉近或者放大图像时像素化。</p>
+<br>
+
+<h2 id="什么是矢量图形"><a href="#什么是矢量图形" class="headerlink" title="什么是矢量图形"></a>什么是矢量图形</h2><p>在网上，有两种类型的图片——位图和矢量图：</p>
+<ul>
+<li>位图使用像素网格来定义——一个位图文件精确的的包含了每个像素的位置和它的色彩信息。流行的位图格式包括Bitmap(.bmp)、PNG(.png)、JPEG(.jpg)和GIF(.gif)。</li>
+<li>矢量图使用算法来定义——一个矢量图文件包含了图形和路径的定义，电脑可以根据这些定义计算出当它们在屏幕上渲染时应该呈现的样子。SVG格式可以让我们创造用于Web的矢量图形。</li>
+</ul>
+<br>
+
+<p>下图左边是PNG，右边是SVG图像。<br><img src="/2021/02/18/%E5%A4%9A%E5%AA%92%E4%BD%93%E4%B8%8E%E5%B5%8C%E5%85%A5/2.png" alt="图片二"></p>
+<p>当你放大图片的时候，PNG明显模糊了，原因是PNG存储的是每个像素的位置和颜色，当PNG图片放大后，每个像素都会就被放大来填充更多的像素。而矢量图形是使用算法计算出图形的形状，会根据放大的倍数来调整算法中的值。<br><br>矢量图形相较于同样的位图，通常拥有更小的体积，因为它们仅需储存少量的算法，而不是逐个存储每个像素的信息。</p>
+<br>
+
+<h2 id="SVG是什么"><a href="#SVG是什么" class="headerlink" title="SVG是什么"></a>SVG是什么</h2><p>SVG是用于描述矢量图形的XML语言。它基本上是像HTML一样的标记，只是你有许多不同的元素来定义你要显示在图形中的形状，以及要应用于这些形状的效果。SVG用于标记图形，而不是内容。你可以使用<code>&lt;circle&gt;</code>,<code>&lt;rect&gt;</code>来创建简单图形——<code>&lt;feColorMatrix&gt;</code>使用变换矩阵转换颜色，<code>&lt;animate&gt;</code>矢量图形的动画部分，<code>&lt;mask&gt;</code>在图像顶部应用模板。</p>
+<p>使用以下代码创建一个圆和一个矩形：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">version</span>=<span class="string">&quot;1.1&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">baseProfile</span>=<span class="string">&quot;full&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">width</span>=<span class="string">&quot;300&quot;</span> <span class="attr">height</span>=<span class="string">&quot;200&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns</span>=<span class="string">&quot;http://www.w3.org/2000/svg&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">rect</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;black&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">&quot;150&quot;</span> <span class="attr">cy</span>=<span class="string">&quot;100&quot;</span> <span class="attr">r</span>=<span class="string">&quot;90&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;blue&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>对于一些简单的SVG，你可以手动编码；但对于一些复杂的图形，这会变得很复杂。为了创建SVG图像，大多数人使用矢量图形编辑器，如 Inkscape 或 Illustrator 。</p>
+<p>SVG的优点：</p>
+<ul>
+<li>矢量图象的文本可访问</li>
+<li>SVG可以很好的适应样式&#x2F;脚本，因为图像的每个组件都是可以通过CSS或JavaScript编写样式的元素</li>
+</ul>
+<p>SVG的缺点：</p>
+<ul>
+<li>SVG容易变得复杂，复杂的SVG文件会很大；复杂的SVG也会在浏览器中占用很长的处理时间</li>
+<li>SVG可能会比栅格图像更难创建</li>
+</ul>
+<p>因此，光栅图像更适合照片那样复杂精密的图像</p>
+<br>
+
+<h2 id="SVG的添加"><a href="#SVG的添加" class="headerlink" title="SVG的添加"></a>SVG的添加</h2><p>添加SVG到页面有许多方法。</p>
+<br>
+
+<h3 id="快捷方式-img标签"><a href="#快捷方式-img标签" class="headerlink" title="快捷方式-img标签"></a>快捷方式-img标签</h3><p>通过<code>&lt;img&gt;</code>元素嵌入SVG，你只需要按照预期的方式在 src 属性中引用它。如果你的SVG没有固定的纵横比，你还应该提供 height 和 width 属性。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span></span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">&quot;equilateral.svg&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">height</span>=<span class="string">&quot;87px&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">width</span>=<span class="string">&quot;100px&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>优点：</p>
+<ul>
+<li>快速，熟悉的图像语法与alt中提供的内置文本等效</li>
+<li>可以通过在<code>&lt;a&gt;</code>元素嵌套<code>&lt;img&gt;</code>，使图像轻松成为超链接</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>无法使用JS操纵图像</li>
+<li>如果要使用CSS控制SVG内容，必须在SVG代码中包含内联CSS样式（从SVG文件调用的外部样式不起作用）</li>
+<li>不能用CSS伪类来重设图像样式（如：<code>focus</code>）</li>
+</ul>
+<br>
+
+<p>下面是引用SVG的的另一个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;equilateral.png&quot;</span> <span class="attr">srcset</span>=<span class="string">&quot;equilateral.svg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在src属性中引用PNG，使用srcset属性引用SVG，较旧的浏览器将加载PNG，支持SVG的浏览器将加载SVG。</p>
+<br>
+
+<p>使用SVG作为CSS背景图像：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;fallback.png&quot;</span>) no-repeat center;</span><br><span class="line"><span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&quot;image.svg&quot;</span>);</span><br><span class="line"><span class="attribute">background-size</span>: contain;</span><br></pre></td></tr></table></figure>
+<p>旧版浏览器会加载PNG，而新版浏览器会加载SVG。和img方法一样，使用CSS背景图像插入SVG意味着它不能被JavaScript操作，会受到相同的CSS限制。</p>
+<br>
+
+<h3 id="在html中引用svg代码"><a href="#在html中引用svg代码" class="headerlink" title="在html中引用svg代码"></a>在html中引用svg代码</h3><p>你可以将SVG代码放在<code>&lt;svg&gt;</code>标签中，称之为SVG内联或内联SVG。</p>
+<p>示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">&quot;300&quot;</span> <span class="attr">height</span>=<span class="string">&quot;200&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">rect</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;green&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>优点：</p>
+<ul>
+<li>将 SVG内联 减少HTTP请求，可以减少加载时间</li>
+<li>为SVG元素分配class和id，并使用CSS修改样式，无论是在SVG中，还是HTML文档中的CSS样式规则</li>
+<li>内联SVG是唯一可以让你在SVG图像上使用CSS交互和CSS动画的方法</li>
+<li>可以将SVG标记包在<code>&lt;a&gt;</code>元素中，使其成为超链接</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>只能在一个地方使用该SVG，多次使用会导致 资源密集型维护</li>
+<li>浏览器不能像缓存普通图片一样缓存内联SVG</li>
+</ul>
+<br>
+
+<h3 id="使用iframe嵌入svg"><a href="#使用iframe嵌入svg" class="headerlink" title="使用iframe嵌入svg"></a>使用iframe嵌入svg</h3><p>在浏览器中打开SVG图像，就像打开网页一样。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;triangle.svg&quot;</span> <span class="attr">width</span>=<span class="string">&quot;500&quot;</span> <span class="attr">height</span>=<span class="string">&quot;500&quot;</span> <span class="attr">sandbox</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;triangle.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Triangle with three unequal sides&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>缺点：</p>
+<ul>
+<li>iframe有一个回退机制，如果浏览器不支持iframe，则只会显示回退</li>
+<li>只有当你的SVG和你当前的网页是同源的，你才能在页面上使用JS操纵SVG</li>
+</ul>
+<br>
+
+<h1 id="响应式图片"><a href="#响应式图片" class="headerlink" title="响应式图片"></a>响应式图片</h1><p>响应式图片是一种可以在不同屏幕尺寸和分辨率设备上都能良好工作以及具有其它特性的的图片。响应式图片奠定了响应式web设计的良好基础，它是响应式web设计的一部分。</p>
+<br>
+
+<h2 id="为什么要用自适应图片"><a href="#为什么要用自适应图片" class="headerlink" title="为什么要用自适应图片"></a>为什么要用自适应图片</h2><p>在一个网页中，有一张页首图片，并且在页首图片下，还有一张内容图片。页首图片的跨度可能是整个页面的宽度，而内容图片会适应内容纵列的某处。<br><br><img src="/2021/02/18/%E5%A4%9A%E5%AA%92%E4%BD%93%E4%B8%8E%E5%B5%8C%E5%85%A5/3.png" alt="图片3"><br><br>这个网页在宽屏设备上表现良好，例如笔记本电脑或台式电脑。</p>
+<p>但是，当你尝试在一个狭小的屏幕设备上查看本页面时，页眉这张图片占据了屏幕的一大部分的高度，你很难看到在第一张图片内容里的人。<br><br><img src="/2021/02/18/%E5%A4%9A%E5%AA%92%E4%BD%93%E4%B8%8E%E5%B5%8C%E5%85%A5/4.png" alt="图片4"><br></p>
+<ul>
+<li>有一个改进的方法，在狭窄的屏幕上，你可以显示一张图片的包含了重要细节的裁剪版本（<strong>美术设计问题</strong>）。<br></li>
+<li>在手机上显示网页，你没必要嵌入很大的图片。这是一个<strong>分辨率切换问题</strong>：位图有固定数量的像素宽和像素高，如果显示尺寸大于原始尺寸，一张较小的位图看起来会有颗粒感。<br><br>而且，没必要在比图片尺寸小的屏幕上显示一张大图，这会浪费带宽。理想的情况是根据访问网站时使用的设备，来提供不同的分辨率图片和不同尺寸的图片。同样的，有些设备有很高的分辨率，为了显示的更加优秀，可能需要超出你预料的更大的图像。</li>
+</ul>
+<p>响应式图像技术，通过让浏览器提供多个图像文件来解决上述问题。比如使用包含多个不同分辨率的图片（分辨率切换）；使用不同的图片以适应不同的空间分配（美术设计）。</p>
+<br>
+
+<h2 id="创建自适应图片"><a href="#创建自适应图片" class="headerlink" title="创建自适应图片"></a>创建自适应图片</h2><p>我们可以专注于HTML的<code>&lt;img&gt;</code>，使用HTML的响应式图片来解决这些问题。但是，网站页眉的图片仅仅是装饰性的，应该使用CSS的背景图片来实现。</p>
+<br>
+
+<h3 id="分辨率切换-不同的尺寸"><a href="#分辨率切换-不同的尺寸" class="headerlink" title="分辨率切换-不同的尺寸"></a>分辨率切换-不同的尺寸</h3><p>根据设备的不同，显示不同大小的图片。</p>
+<p>这是指定唯一资源文件的img：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;image.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;it&#x27;s a picture&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>我们可以使用两个新的属性——<code>srcset</code>和<code>sizes</code>——来提供更多额外的资源图像和提示，帮助浏览器选择正确的一个资源。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">srcset</span>=<span class="string">&quot;elva-fairy-320w.jpg 320w,</span></span></span><br><span class="line"><span class="string"><span class="tag">             elva-fairy-480w.jpg 480w,</span></span></span><br><span class="line"><span class="string"><span class="tag">             elva-fairy-800w.jpg 800w&quot;</span></span></span><br><span class="line"><span class="tag">     <span class="attr">sizes</span>=<span class="string">&quot;(max-width: 320px) 280px,</span></span></span><br><span class="line"><span class="string"><span class="tag">            (max-width: 480px) 440px,</span></span></span><br><span class="line"><span class="string"><span class="tag">            800px&quot;</span></span></span><br><span class="line"><span class="tag">     <span class="attr">src</span>=<span class="string">&quot;elva-fairy-800w.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Elva dressed as a fairy&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>srcset 和 sizes 属性 有不同的属性值，每个值都包含逗号分隔的列表。列表的每一部分由三个子部分组成。</p>
+<p><strong>srcset</strong> 定义了我们允许浏览器选择的图像集，以及每个图像的大小：</p>
+<ol>
+<li>一个<strong>文件名</strong>（elva-fairy-320w.jpg）</li>
+<li>一个<strong>空格</strong></li>
+<li>图像的<strong>固有宽度</strong>（以像素为单位，320w）——这里使用的单位是w，而不是px。这是图像的真实大小，你可以检查电脑上的图片文件找到。</li>
+</ol>
+<p><strong>sizes</strong> 定义了一组<strong>媒体条件</strong>（例如屏幕宽度）并且指明当某些媒体条件为真时，什么样的图片尺寸是最佳选择：</p>
+<ol>
+<li>一个<strong>媒体条件</strong>（(max-width: 480w)）。媒体条件描述了屏幕可能处于的状态，在这里，说的是“当可视窗口的宽度是480像素或更少”。</li>
+<li>一个<strong>空格</strong></li>
+<li>当媒体条件为真时，图像将填充的<strong>槽的宽度</strong>（440px）</li>
+</ol>
+<blockquote>
+<p>对于槽的宽度，你可以提供一个固定值（px, em）或者是一个相对于视窗的长度（vw）——不是百分比。<br><br>最后一个槽的宽度是没有媒体条件的，它是默认的，当没有任何一个媒体条件为真时，它就会生效。<br><br>当浏览器成功匹配第一个媒体条件的时候，剩下所有的东西都会被忽略，所以要注意媒体条件的顺序。</p>
+</blockquote>
+<p>当浏览器加载图片时：</p>
+<ol>
+<li>查看设备宽度</li>
+<li>检查 sizes 列表中哪个媒体文件是第一个为真</li>
+<li>查看给与该媒体的槽的大小</li>
+<li>加载 srcset 列表中引用的最接近所选的槽大小的图像</li>
+</ol>
+<p>如果浏览器以视窗宽度为 480px 来加载页面，那么<code>(max-width: 480px)</code>的媒体条件为真，因此440px的槽会被选择，又因为<code>elva-fairy-480w.jpg</code>的的固定宽度 480w 最接近 440px ，所以将被加载。<br><br>800px的照片大小为128KB而480px版本仅有63KB大小—节省了65KB。如果这是一个有很多图片的页面，使用这种技术会节省移动端用户的大量带宽。</p>
+<p>老旧的浏览器不支持这些特性，它会忽略这些特征，并继续正常加载 src 属性引用的图片。</p>
+<blockquote>
+<p>注意：在HTML中的<code>&lt;head&gt;</code>标签里，你将会找到这一行代码&#96;<meta name="viewport" content="width=device-width">：这行代码会强制的让手机浏览器采用它们真实可视窗口的宽度来加载网页。（有些手机浏览器会提供不真实的可视窗口的宽度，来加载比浏览器真实可视窗口宽度大的网页，然后再缩小加载的页面。）</p>
+</blockquote>
+<br>
+
+<h3 id="分辨率切换-不同的分辨率"><a href="#分辨率切换-不同的分辨率" class="headerlink" title="分辨率切换-不同的分辨率"></a>分辨率切换-不同的分辨率</h3><p>如果你想要图片支持 多种分辨率显示 且 图片的实际尺寸是相同的 ，你可以让浏览器通过 srcset 和 x 语法结合——一种简单的语法，来选择适当分辨率的图片。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">srcset</span>=<span class="string">&quot;elva-fairy-320w.jpg,</span></span></span><br><span class="line"><span class="string"><span class="tag">             elva-fairy-480w.jpg 1.5x,</span></span></span><br><span class="line"><span class="string"><span class="tag">             elva-fairy-640w.jpg 2x&quot;</span></span></span><br><span class="line"><span class="tag">     <span class="attr">src</span>=<span class="string">&quot;elva-fairy-640w.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;elva dressed as a fairy&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在这个例子中，下面的CSS会应用在图片上，所以它的宽度在屏幕上是320像素（也称为CSS像素）：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">320px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这种情况下，sizes 并不需要——浏览器只是计算出正在显示的显示器的分辨率，然后根据 srcset 引用最适合的图像。<br></p>
+<ul>
+<li>如果访问页面的设备具有低分辨率显示，一个设备像素表示一个CSS像素，elva-fairy-320w.jpg 会被加载（1x 是默认值，不需要写出来）</li>
+<li>如果设备具有高分辨率，两个或更多的设备像素表示一个CSS像素，elva-fairy-640w.jpg 会被加载。</li>
+</ul>
+<br>
+
+<h3 id="美术设计"><a href="#美术设计" class="headerlink" title="美术设计"></a>美术设计</h3><p>美术设计问题 涉及要更改显示的图像以适应不同的图像显示尺寸。<br><br>例如，如果在桌面浏览器上的一个网站上显示一张大的、横向的照片，照片中央有个人；然后当在移动端浏览器上浏览这个网站时，照片会缩小，这时照片上的人会变得非常小。<br><br>这种情况需要在移动端显示一个更小的肖像图。<code>&lt;picture&gt;</code>元素可以实现这个需求。</p>
+<p>这是原始图像：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;elva-800w.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Chris standing up holding his daughter Elva&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>让我们改用<code>&lt;picture&gt;</code>。就像<code>&lt;video&gt;</code>,<code>&lt;audio&gt;</code>，picture 元素包含了一些<code>&lt;source&gt;</code>元素，它使浏览器在不同的资源间做出选择，紧跟着的是最重要的元素是 img 。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">picture</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">media</span>=<span class="string">&quot;(max-width: 799px)&quot;</span> <span class="attr">srcset</span>=<span class="string">&quot;image-close-portrait.jpg&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">media</span>=<span class="string">&quot;(min-width: 800px)&quot;</span> <span class="attr">srcset</span>=<span class="string">&quot;image.jpg&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;image.jpg&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">picture</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>&lt;source&gt;</code>元素包含一个<code>media</code>属性，这个属性包含一个媒体条件——第一个条件返回真，那么就会显示这张图片。在这种情况下，如果视窗的宽度为799px或更少，第一个source元素的图片就会显示；如果视窗的宽度是800px或更大，就显示第二张图片。</li>
+<li><code>srcset</code>属性包含要显示图片的路径。 source 可以使用引用多个图像的srcset属性，还有sizes属性。所以你可以通过一个 picture 元素提供多个图片。</li>
+<li>在任何情况下，你都必须在<code>&lt;/picture&gt;</code>之前正确提供一个<code>&lt;img&gt;</code>元素以及它的src和alt属性，否则不会有图片显示。当媒体条件都不返回真的时候，它会提供图片；或者浏览器不支持 picture 元素时，它可以作为后备方案。</li>
+</ul>
+<blockquote>
+<p>你应该仅仅当在美术设计场景下使用media属性。当你使用media时，不要在sizes属性中也提供媒体条件。</p>
+</blockquote>
+<br>
+
+<p>现在有许多高质量的图像格式，但是浏览器对它们的支持参差不齐。因此，你可以在<code>type</code>属性中提供MIME类型，减少浏览器选择codec的时间，快速拒绝不支持的文件类型。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">picture</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">type</span>=<span class="string">&quot;image/svg+xml&quot;</span> <span class="attr">srcset</span>=<span class="string">&quot;pyramid.svg&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">type</span>=<span class="string">&quot;image/webp&quot;</span> <span class="attr">srcset</span>=<span class="string">&quot;pyramid.webp&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;pyramid.png&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">picture</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>你可以在 srcset 和 sizes 中使用逗号分割的列表。</p>
+<br>
+
+<p><strong>为什么我们不能使用 CSS 或 JavaScript 来做到这一效果?</strong><br>当浏览器开始加载一个页面, 它会在主解析器开始加载和解析页面的 CSS 和 JavaScript 之前先下载 (预加载) 任意的图片。这是一个非常有用的技巧，平均下来减少了页面加载时间的20%。<br><br>但是, 这对响应式图片一点帮助都没有, 所以需要类似 srcset的实现方法。<br><br>因为你不能先加载好 <code>&lt;img&gt;</code> 元素后, 再用 JavaScript 检测可视窗口的宽度，如果觉得大小不合适，再动态地加载小的图片替换已经加载好的图片。这样的话, 原始的图像已经被加载了, 然后你又加载了小的图像, 这样的做法对于响应式图像的理念来说，是很糟糕的，是一种多余的、浪费带宽资源的行为。</p>
+<br>
+
+<blockquote>
+<ul>
+<li>美术设计：当你想为不同布局提供不同剪裁的图片——比如在桌面布局上显示完整的、横向图片，而在手机布局上显示一张剪裁过的、突出重点的纵向图片，可以用 <code>&lt;picture&gt;</code> 元素来实现。</li>
+<li>分辨率切换：当你想要为窄屏提供更小的图片时，因为小屏幕不需要像桌面端显示那么大的图片；以及你想为高&#x2F;低分辨率屏幕提供不同分辨率的图片时，都可以通过 vector graphics (SVG images)、 srcset 以及 sizes 属性来实现。</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/web前端/">web前端</a>, <a href="/categories/web前端/mdn/">mdn</a>, <a href="/categories/web前端/mdn/HTML/">HTML</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Deployed by <a href="https://github.com/kaedea/notion-down" target="_blank">notion-down</a> and
+    Theme by <a href="https://github.com/kaedea/hexo-theme-hacker" target="_blank">hexo-theme-hacker</a>
+    </br>
+    
+    &copy; 2022 a-pin
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>客户端网页API | Apin | blogs</title>
+
+  
+  <meta name="author" content="a-pin">
+  
+
+  
+  <meta name="description" content="This is a blog website in order to record my study experiences!">
+  
+
+  
+  <meta name="keywords" content="blog,a-pin">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="客户端网页API"/>
+
+  <meta property="og:site_name" content="Apin"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Apin" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+  <link href="https://fonts.lug.ustc.edu.cn/css?family=Lato|Rubik" rel="stylesheet">
+  <script src="/js/pangu-407.min.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    pangu.autoSpacingPage();
+  });
+</script>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Apin</a>
+    </h1>
+    <p class="site-description">blogs</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>客户端网页API</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2021/02/18/客户端网页API/" rel="bookmark">
+        <time class="entry-date published" datetime="2021-02-17T18:00:07.000Z">
+          2021-02-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+
+<script type="text/javascript">
+    function convertRemToPixels(rem) {    
+        return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    }
+    window.onscroll = function() {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > convertRemToPixels(40)) {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'visible';
+        } else {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'hidden';
+        }
+    }
+</script>
+
+
+<div id="toc" class="toc-article">
+      <div class="toc-content">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web-API%E7%AE%80%E4%BB%8B"><span class="toc-text">Web API简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFAPI"><span class="toc-text">什么是API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API%E5%8F%AF%E4%BB%A5%E5%81%9A%E4%BB%80%E4%B9%88"><span class="toc-text">API可以做什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C"><span class="toc-text">API如何工作</span></a></li></ol></li></ol>
+      </div>
+</div>
+<style>
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+
+
+        <p>在此特地声明本文是根据 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/html/Introduction_to_html">mozilla官方教学文档</a> 学习的个人学习笔记，借用了大量的图片和文本内容，存在相当多的相同，但不是copy。如需查看mozilla官方文档，请点击前文链接！！</p>
+<!--more-->
+
+<br>
+
+<h1 id="Web-API简介"><a href="#Web-API简介" class="headerlink" title="Web API简介"></a>Web API简介</h1><p>API 是什么？它们如何工作？如何在代码中使用它们以及它们是如何组织的？我们也将看看不同主要类别的API以及它们的用途。</p>
+<br>
+
+<h2 id="什么是API"><a href="#什么是API" class="headerlink" title="什么是API"></a>什么是API</h2><p>应用程序接口（API，Application Programming Interface）是基于编程语言构建的结构，使开发人员更容易地创建复杂的功能。它们抽象了复杂的代码，并提供一些简单的接口规则直接使用。</p>
+<p>来看一个现实中的例子：如果你想在房子里用电，只要把电器的插头插入插座就可以，而不是直接把它连接到电线上。</p>
+<p><img src="/2021/02/18/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%BD%91%E9%A1%B5API/1.png"></p>
+<p>类似的，显示一些3D图形，使用以更高级语言编写的 API（例如 JavaScript 或 Python）将会比直接编写直接控制计算机的 GPU 或其他图形功能的低级代码（比如C或C++）来执行操作要容易得多。</p>
+<br>
+
+<p><strong>客户端JavaScript中的API</strong></p>
+<p>客户端 JavaScript 中有很多可用的 API —— 他们本身并不是 JavaScript 语言的一部分，却建立在 JavaScript 语言核心的顶部，为使用 JavaScript 代码提供额外的超强能力。他们通常分为两类：</p>
+<ul>
+<li>浏览器 API 内置于 Web 浏览器中，能从浏览器和电脑周边环境中提取数据，并用来做有用的复杂的事情 。例如 Geolocation API 提供了一些简单的 JavaScript 结构以获得位置数据，浏览器在后台使用了一些复杂的低级代码（C++ 等）与设备的 GPS 硬件通信来获取位置数据并把这些数据返回给您的代码中使用浏览器环境（这种复杂性通过 API 抽象出来）。</li>
+<li>第三方 API 缺省情况下不会内置于浏览器中，通常必须在 Web 中的某个地方获取代码和信息。例如 Twitter API 可以用来请求 Twitter 服务并返回特殊的信息。</li>
+</ul>
+<br>
+
+<p><strong>JavaScript，API和其他JavaScript工具之间的关系</strong></p>
+<p>如上所述，我们讨论了什么是客户端 JavaScript API，以及它们与 JavaScript 语言的关系。让我们回顾一下，使其更清晰，并提及其他 JavaScript 工具的适用位置：</p>
+<ul>
+<li>JavaScript：一种内置于浏览器的高级脚本语言，你可以用来实现 Web 页面&#x2F;应用中的功能。</li>
+<li>客户端 API：内置于浏览器的结构程序，位于 JavaScript 语言顶部，使你可以更容易的实现功能。</li>
+<li>第三方 API：置于第三方普通的结构程序（例如Twitter、Facebook），使你可以在自己的 Web 页面中使用那些平台的某些功能。</li>
+<li>JavaScript 库：通常是包含具有特定功能的一个或多个 JavaScript 文件，把这些文件关联到你的 Web 页以快速实现功能。</li>
+<li>JavaScript 框架：从库开始的下一步，JavaScript 框架视图把 HTML、CSS、JavaScript 和其他安装的技术打包在一起，然后用来从头编写一个完整的 Web 应用。</li>
+</ul>
+<br>
+
+<h2 id="API可以做什么"><a href="#API可以做什么" class="headerlink" title="API可以做什么"></a>API可以做什么</h2><p>在主流浏览器中有大量的可用 API，你可以在代码中做许多的事情，对此可以查看 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API">MDN API index page</a>。</p>
+<br>
+
+<p><strong>常见浏览器API</strong></p>
+<p>常见的浏览器API类别：</p>
+<ul>
+<li><strong>操作文档的 API</strong> 内置于浏览器中。例如 DOM API，它允许你操作 HTML 和 CSS，创建、移除以及修改 HTML，动态地将新样式应用到页面等。每当你看到一个弹出窗口出现在一个页面上，或者显示一些新的内容时，这都是 DOM 的行为。</li>
+<li><strong>从服务器获取数据的 API</strong> 用于更新网页的一部分——更新网页的一小部分而不从服务器重新加载整个页面将。包括的 API 有 XMLHttpRequest 和 Fetch API（Ajax）。</li>
+<li><strong>用于绘制和操作图形的 API</strong> 目前已被浏览器广泛支持，最流行的是允许你以编程方式更新包含在 HTML <code>&lt;canvas&gt;</code> 元素中的像素数据以创建2D和3D场景的 Canvas 和 WebGL。</li>
+<li><strong>音频和视频 API</strong>，例如 HTMLMediaElement、Web Audio API 和 WebRTC。它们可以使用多媒体来创建用于播放音频和视频的自定义 UI 控件，为视频添加字幕，或者添加效果到音轨，等等。</li>
+<li><strong>设备 API</strong> 是检索现代设备硬件中的数据的API。例如 Geolocation API。</li>
+<li><strong>客户端存储 API</strong> 可以用来创建一个应用程序来保存页面加载之间的状态，让设备在处于脱机状态时可用。</li>
+</ul>
+<br>
+
+<p><strong>常见第三方 API</strong></p>
+<p>第三方API种类繁多，下列是一些比较流行的第三方 API：</p>
+<ul>
+<li>Twitter API：在网站上展示您最近的推文等。</li>
+<li>Google Maps API：在网页上对地图进行操作。</li>
+<li>Facebook suite of API：可以将很多 Facebook 生态系统中的功能应用到你的 app。比如，它提供了通过 Facebook 账户登录、接受应用内支付、推送有针对性的广告活动等功能。</li>
+<li>YouTube API：可以将 Youtube 上的视频嵌入到网站中去，同时提供搜索 Youtube，创建播放列表等功能。</li>
+<li>Twilio API：为 app 提供了语音通话和视频聊天的框架，实现了发送短信息或多媒体信息等功能。</li>
+</ul>
+<br>
+
+<h2 id="API如何工作"><a href="#API如何工作" class="headerlink" title="API如何工作"></a>API如何工作</h2><p>不同的 JavaScript API 以不同的方式工作，但它们通常具有共同的特征和相似的主题。</p>
+<br>
+
+<p><strong>基于对象</strong></p>
+<p>API 使用一个或多个 JavaScript 对象在你的代码中进行交互，这些对象用作 API 使用的数据（对象属性）的容器以及 API 提供的功能（对象方法）。</p>
+<p>例如 Geolocation API，它由几个简单的对象组成：</p>
+<ul>
+<li>Geolocation：其中包含三种控制地理数据检索的方法</li>
+<li>Position：表示在给定的时间的相关设备的位置。 — 它包含一个当前位置的 Coordinates 对象。还包含了一个时间戳,这个时间戳表示获取到位置的时间。</li>
+<li>Coordinates：其中包含有关设备位置的大量有用数据，包括经纬度，高度，运动速度和运动方向等。</li>
+</ul>
+<br>
+
+<p><strong>有可识别的入口点</strong></p>
+<p>使用 API 时，应确保知道 API 入口点的位置。在 Geolocation API 中，入口点是 Navigator.geolocation 属性, 它返回浏览器的 Geolocation 对象，所有有用的地理定位方法都可用。</p>
+<p>DOM API 的功能往往挂在 Document 对象，或任何你想影响的 HTML 元素的实例，例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> em = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;em&#x27;</span>); <span class="comment">// 创建一个新的 em 元素</span></span><br><span class="line"><span class="keyword">var</span> para = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;p&#x27;</span>); <span class="comment">// 引用一个现有的 p 元素</span></span><br><span class="line">em.<span class="property">textContent</span> = <span class="string">&#x27;Hello there!&#x27;</span>; <span class="comment">// 给 em 元素添加文本</span></span><br><span class="line">para.<span class="title function_">appendChild</span>(em); <span class="comment">// 向 para 添加 em 子节点</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>使用事件来处理状态的变化</strong></p>
+<p>有些 Web API 包含一些事件，例如 XMLHttpRequest 对象的每一个实例都代表一个到服务器的 HTTP 请求，有很多方法可以使用。</p>
+<p>例如，在资源成功返回时触发 onload 事件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> requestURL = <span class="string">&#x27;https://xxx.xxX.XXX&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> request = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">request.<span class="title function_">open</span>(<span class="string">&#x27;GET&#x27;</span>, requestURL);</span><br><span class="line">request.<span class="property">responseType</span> = <span class="string">&#x27;json&#x27;</span>;</span><br><span class="line">request.<span class="title function_">send</span>();</span><br><span class="line"></span><br><span class="line">request.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> superHeroes = request.<span class="property">response</span>;</span><br><span class="line">  <span class="title function_">populateHeader</span>(superHeroes);</span><br><span class="line">  <span class="title function_">showHeroes</span>(superHeroes);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>前五行指定了我们要获取的资源的位置，使用 <code>XMLHttpRequest()</code> 构造函数创建请求对象的新实例，打开 HTTP 的 GET 请求以取得指定资源，指定响应以 JSON 格式发送，然后发送请求。</p>
+<p>然后 onload 处理函数指定我们如何处理响应，将包含 JSON 的响应保存在变量中，然后将其传递给两个不同的函数进行进一步的处理。</p>
+<br>
+
+<p><strong>在适当的地方有额外的安全机制</strong></p>
+<p>Web API 有着与 JavaScript 和其他 Web 技术相同的安全考虑，并且有时会有额外的安全机制。例如，一些更现代的 Web API 将只能在通过 HTTPS 提供的页面上工作。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/web前端/">web前端</a>, <a href="/categories/web前端/mdn/">mdn</a>, <a href="/categories/web前端/mdn/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Deployed by <a href="https://github.com/kaedea/notion-down" target="_blank">notion-down</a> and
+    Theme by <a href="https://github.com/kaedea/hexo-theme-hacker" target="_blank">hexo-theme-hacker</a>
+    </br>
+    
+    &copy; 2022 a-pin
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,835 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript第一步 | Apin | blogs</title>
+
+  
+  <meta name="author" content="a-pin">
+  
+
+  
+  <meta name="description" content="This is a blog website in order to record my study experiences!">
+  
+
+  
+  <meta name="keywords" content="blog,a-pin">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="JavaScript第一步"/>
+
+  <meta property="og:site_name" content="Apin"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Apin" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+  <link href="https://fonts.lug.ustc.edu.cn/css?family=Lato|Rubik" rel="stylesheet">
+  <script src="/js/pangu-407.min.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    pangu.autoSpacingPage();
+  });
+</script>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Apin</a>
+    </h1>
+    <p class="site-description">blogs</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>JavaScript第一步</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2021/03/18/JavaScript第一步/" rel="bookmark">
+        <time class="entry-date published" datetime="2021-03-17T18:00:07.000Z">
+          2021-03-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+
+<script type="text/javascript">
+    function convertRemToPixels(rem) {    
+        return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    }
+    window.onscroll = function() {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > convertRemToPixels(40)) {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'visible';
+        } else {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'hidden';
+        }
+    }
+</script>
+
+
+<div id="toc" class="toc-article">
+      <div class="toc-content">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFjs"><span class="toc-text">什么是js</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">广义的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js%E5%8F%AF%E4%BB%A5%E5%81%9A%E4%BB%80%E4%B9%88"><span class="toc-text">js可以做什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js%E5%81%9A%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-text">js做了什么</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%AD%E5%BA%94%E7%94%A8js"><span class="toc-text">在网页中应用js</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%A1%B5%E9%9D%A2%E6%B7%BB%E5%8A%A0js"><span class="toc-text">向页面添加js</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E9%83%A8javascript"><span class="toc-text">内部javascript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E9%83%A8javascript"><span class="toc-text">外部javascript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E8%81%94javascript%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-text">内联javascript处理器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E8%B0%83%E7%94%A8%E7%AD%96%E7%95%A5"><span class="toc-text">脚本调用策略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E9%83%A8js"><span class="toc-text">内部js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E9%83%A8js"><span class="toc-text">外部js</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#javascript%E5%88%9D%E4%BD%93%E9%AA%8C"><span class="toc-text">javascript初体验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E5%87%BA%E9%97%AE%E9%A2%98"><span class="toc-text">提出问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98"><span class="toc-text">解决问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E8%AE%BE%E7%BD%AE"><span class="toc-text">初始设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%8F%98%E9%87%8F"><span class="toc-text">添加变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0function"><span class="toc-text">函数function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5conditional"><span class="toc-text">条件语句conditional</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6event"><span class="toc-text">事件event</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%A8%E6%B8%B8%E6%88%8F%E5%8A%9F%E8%83%BD"><span class="toc-text">补全游戏功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AFloop"><span class="toc-text">循环loop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%85%E8%B0%88%E5%AF%B9%E8%B1%A1object"><span class="toc-text">浅谈对象object</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-text">注释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="toc-text">变量类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#number"><span class="toc-text">number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#string"><span class="toc-text">string</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#boolean"><span class="toc-text">boolean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#array"><span class="toc-text">array</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#object"><span class="toc-text">object</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E%E4%B8%8E%E8%B5%8B%E5%80%BC"><span class="toc-text">变量的声明与赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#var%E4%B8%8Elet%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">var与let的区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%92%8C%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-text">数字和操作符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97"><span class="toc-text">数字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-text">操作符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%A2%9E%E5%92%8C%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">自增和自减运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">赋值运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">比较运算符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="toc-text">基本知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95"><span class="toc-text">字符串方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6"><span class="toc-text">字符串长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E7%B4%A2%E7%89%B9%E5%AE%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E7%AC%A6"><span class="toc-text">检索特定字符串字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E5%92%8C%E6%8F%90%E5%8F%96%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">查找和提取子字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E5%A4%A7%E5%B0%8F%E5%86%99"><span class="toc-text">转换大小写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">替换字符串</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84"><span class="toc-text">创建数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%92%8C%E4%BF%AE%E6%94%B9%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0"><span class="toc-text">访问和修改数组元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%BE%97%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0"><span class="toc-text">获得数组元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95"><span class="toc-text">数组方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%95%B0%E7%BB%84%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-text">字符串和数组间的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%92%8C%E5%88%A0%E9%99%A4%E6%95%B0%E7%BB%84%E9%A1%B9"><span class="toc-text">添加和删除数组项</span></a></li></ol></li></ol></li></ol>
+      </div>
+</div>
+<style>
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+
+
+        <p>在此特地声明本文是根据 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/html/Introduction_to_html">mozilla官方教学文档</a> 学习的个人学习笔记，借用了大量的图片和文本内容，存在相当多的相同，但不是copy。如需查看mozilla官方文档，请点击前文链接！！</p>
+<!--more-->
+
+<br>
+
+<h1 id="什么是js"><a href="#什么是js" class="headerlink" title="什么是js"></a>什么是js</h1><p>本节将在一定高度俯瞰 JavaScript，使你熟悉 JavaScript 的定义和用途。</p>
+<ol>
+<li><p>解释型语言、编译型语言</p>
+<p> 编程语言可以分为解释型语言和编译型语言两种。</p>
+<ul>
+<li><p>在解释型语言中，代码自上而下运行，且实时返回运行结果。代码在执行之前，不需要将其转化为其他形式，将直接以文本格式被接受和处理。</p>
+</li>
+<li><p>在编译型语言中，首先要将代码转化（编译）成另一种形式才能运行。比如 C&#x2F;C++ 先被编译成汇编语言，再由链接器将汇编代码转化为二进制的格式运行。</p>
+</li>
+</ul>
+<p> JavaScript 是轻量级解释型语言。浏览器接收到 JavaScript 代码，并以代码自身的文本格式运行它。技术上，几乎所有 JavaScript 转换器都运用了一种叫做 即时编译（just-in-time compiling）的技术。当 JavaScript 源代码被执行时，它会被编译成二进制的格式，使代码运行速度更快。尽管如此，JavaScript 仍然是一门解释型语言，因为编译过程发生在代码运行中，而非之前。</p>
+</li>
+<li><p>服务器端代码、客户端代码</p>
+<ul>
+<li><p>客户端代码是在用户的电脑上运行的代码，在浏览一个网页时，它的客户端代码就会被下载，然后由浏览器来运行并展示。</p>
+</li>
+<li><p>服务端代码是在服务器上运行的代码，接着运行结果才由浏览器下载并展示出来。流行的服务器端 web 语言包括：PHP、Python、Ruby、ASP.NET 以及…JavaScript！</p>
+</li>
+</ul>
+<p> 它不仅适用于客户端 JavaScript，又适用于描述服务器端语言。两种情况的意义略有不同，但又有所关联，且两者（服务器端和客户端）经常协同作战。</p>
+<ul>
+<li><p>客户端 JavaScript 则在用户端浏览器中动态生成新内容，比如说创建一个新的 HTML 表格，用从服务器请求到的数据填充，然后在网页中向用户展示这个表格。</p>
+</li>
+<li><p>服务器端代码会在服务器上动态生成新内容，例如从数据库中提取信息。</p>
+</li>
+</ul>
+</li>
+<li><p>动态代码、静态代码</p>
+<ul>
+<li><p><strong>动态</strong>是指通过按需生成新内容来更新 web 页面 &#x2F; 应用，使得不同环境下显示不同内容。</p>
+</li>
+<li><p><strong>静态</strong>是指没有动态更新内容，所显示的内容不会改变。</p>
+</li>
+</ul>
+</li>
+</ol>
+<br>
+
+<h2 id="广义的定义"><a href="#广义的定义" class="headerlink" title="广义的定义"></a>广义的定义</h2><p>JavaScript 是一种脚本，一门编程语言，它可以在网页上实现复杂的功能，网页展现给你的不再是简单的静态信息，而是动态变化的信息。例如 实时的内容更新，交互式的地图，2D&#x2F;3D动画，滚动播放的视频等等。</p>
+<blockquote>
+<p>注：JavaScript 是区分大小写的，而且非常精确。</p>
+</blockquote>
+<p>JavaScript 是web前端的三支柱：</p>
+<ul>
+<li><strong>HTML</strong>是一种标记语言，用来结构化我们的网页内容并赋予内容含义。</li>
+<li><strong>CSS</strong>是一种样式规则语言，可将样式应用于HTML内容。</li>
+<li><strong>JavaScript</strong>是一种脚本语言，可以用来创建动态更新的内容。</li>
+</ul>
+<br>
+
+<p>这三层依次建立，秩序井然。以文本标签（text label）简单示例。</p>
+<ol>
+<li>首先用HTML标记文本，赋予它结构和目的： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>标签1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>加上CSS，添加样式： <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line"><span class="attribute">font-family</span>: sans-serif, <span class="string">&#x27;黑体&#x27;</span>;</span><br><span class="line"><span class="attribute">letter-spacing</span>: <span class="number">1px</span>;</span><br><span class="line"><span class="attribute">text-transform</span>: uppercase;</span><br><span class="line"><span class="attribute">text-align</span>: center;</span><br><span class="line"><span class="attribute">border</span>: <span class="number">2px</span> solid <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">200</span>, <span class="number">0.6</span>);</span><br><span class="line"><span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">200</span>, <span class="number">0.3</span>);</span><br><span class="line"><span class="attribute">color</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">200</span>, <span class="number">0.6</span>);</span><br><span class="line"><span class="attribute">box-shadow</span>: <span class="number">1px</span> <span class="number">1px</span> <span class="number">2px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">200</span>, <span class="number">0.4</span>);</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">10px</span>;</span><br><span class="line"><span class="attribute">padding</span>: <span class="number">3px</span> <span class="number">10px</span>;</span><br><span class="line"><span class="attribute">display</span>: inline-block;</span><br><span class="line"><span class="attribute">cursor</span>: pointer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>最后，加上一些 JavaScript 实现动态行为： <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> para = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;p&#x27;</span>);</span><br><span class="line"></span><br><span class="line">para.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, updateName);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">updateName</span>(<span class="params"></span>) &#123;</span><br><span class="line"><span class="keyword">let</span> name = <span class="title function_">prompt</span>(<span class="string">&#x27;输入一个新的名字：&#x27;</span>);</span><br><span class="line">para.<span class="property">textContent</span> = <span class="string">&#x27;标签1：&#x27;</span> + name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>结果如图：</p>
+<p><img src="/2021/03/18/JavaScript%E7%AC%AC%E4%B8%80%E6%AD%A5/1.png"></p>
+<br>
+
+<h2 id="js可以做什么"><a href="#js可以做什么" class="headerlink" title="js可以做什么"></a>js可以做什么</h2><p>客户端（client-side）JavaScript 语言的核心包含一些普遍的编程特性，可以做到如下的事：</p>
+<ul>
+<li>在变量中储存有用的值。比如上文的实例中，将客户的输入的值储存到 <code>name</code> 变量中。</li>
+<li>操作一段文本。在上文实例中，将字符串 “标签1：” 和 <code>name</code> 连结起来。</li>
+<li>运行代码以响应网页中发生的特定事件。上文实例中，用一个 <code>click</code> 来检测按钮的事件。</li>
+<li>以及更多等 ···</li>
+</ul>
+<p><strong>应用程序接口（ Application Programming Interfaces(API) ）</strong> 将为你的代码提供额外的超能力。API是已经建立好的一套代码组件，可以让开发者实现原本很难甚至无法实现的程序，就像现成的家具套件之于家具建设——不用从一钉一木开始。</p>
+<p>API通常分为两类：</p>
+<p><img src="/2021/03/18/JavaScript%E7%AC%AC%E4%B8%80%E6%AD%A5/2.png"></p>
+<p><strong>浏览器API</strong> 内建于 web 浏览器中，它们不仅可以将数据从周边计算机环境中筛选出来，还可以做实用的复杂工作。例如：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model">文档对象模型 API（ DOM(Document Object Model) API ）</a> 能通过创建、移除和修改 HTML，为页面动态应用新样式等手段来操作 HTML 和 CSS。比如当某个页面出现一个弹窗，或者显示了一些新内容（比如上文demo），这就是 DOM 在运行。</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Geolocation">地理位置 API（Geolocation API）</a> 获取地理信息。这就是为什么谷歌地图可以找到你的位置。</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API">画布（Canvas）</a> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGL_API">WebGL</a> API 可以创建生动的 2D 和 3D 图像。</li>
+<li>诸如 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLMediaElement">HTMLMediaElement</a> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API">WebRTC</a> 等 影音类API 让你可以利用多媒体做一些非常有趣的事。比如在网页中直接播放音乐和影片，或用自己的网络摄像头获取录像，然后在其他人的电脑上展示。</li>
+</ul>
+<p><strong>第三方 API</strong> 并没有默认嵌入浏览器中，一般要从网上取得它们的代码和信息。比如：</p>
+<ul>
+<li>Twitter API、新浪微博 API 可以在网站上展示最新推文之类。</li>
+<li>谷歌地图 API、高德地图 API 可以在网站嵌入定制的地图等等。</li>
+</ul>
+<br>
+
+<h2 id="js做了什么"><a href="#js做了什么" class="headerlink" title="js做了什么"></a>js做了什么</h2><p>JavaScript 最普遍的用处是通过 DOM API 动态修改 HTML 和 CSS 来更新用户界面（user interface）。浏览器在读取一个网页时，代码（html、css 和 js）将在一个运行环境（浏览器标签页）中得到执行。就像一间工厂，将原材料（代码）加工为一件产品（网页）。具体来讲，在 HTML 和 CSS 集合组装成一个网页后，浏览器的 JavaScript 引擎就会执行 JavaScript 代码。保证了当 JavaScript 开始运行之前，网页的结构和样式已经就位，否则 JavaScript 在 HTML 和 CSS 就位之前加载运行，就会引发错误。</p>
+<p><img src="/2021/03/18/JavaScript%E7%AC%AC%E4%B8%80%E6%AD%A5/3.png"></p>
+<blockquote>
+<p>每个浏览器标签页都是其自身用来运行代码的独立容器（运行环境）。大多数情况下，每个标签页中的代码完全独立运行，而且一个标签页中的代码不能直接影响另一个标签页中的代码，使不法分子无法从其他网站盗取信息。不过，以安全的方式在不同网站&#x2F;标签页中传送代码和数据的方法是存在的。</p>
+</blockquote>
+<br>
+
+<p>当浏览器执行到一段 js 代码时，通常会按从上往下的顺序执行这段代码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> para = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;p&#x27;</span>);</span><br><span class="line"></span><br><span class="line">para.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, updateName);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">updateName</span>(<span class="params"></span>) &#123;</span><br><span class="line"><span class="keyword">let</span> name = <span class="title function_">prompt</span>(<span class="string">&#x27;输入一个新的名字：&#x27;</span>);</span><br><span class="line">para.<span class="property">textContent</span> = <span class="string">&#x27;标签1：&#x27;</span> + name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里我们选定一个文本段落（第 1 行)，然后给它附上一个事件监听器（第 3 行），使得在它被点击时，updateName() 代码块（code block） （5 – 8 行）便会运行。updateName() （这类可以重复使用的代码块称为“函数”）向用户请求一个新名字，然后把这个名字插入到段落中以更新显示。</p>
+<p><strong>在引用对象之前，必须确保该对象已经存在。</strong>否则就会报错！</p>
+<br>
+
+<h1 id="在网页中应用js"><a href="#在网页中应用js" class="headerlink" title="在网页中应用js"></a>在网页中应用js</h1><br>
+
+<h2 id="向页面添加js"><a href="#向页面添加js" class="headerlink" title="向页面添加js"></a>向页面添加js</h2><p>CSS 使用 <code>&lt;link&gt;</code> 元素链接外部样式表，使用 <code>&lt;style&gt;</code> 元素向 HTML 嵌入内部样式表；JavaScript 只需要一个元素——<code>&lt;script&gt;</code>。</p>
+<br>
+
+<h3 id="内部javascript"><a href="#内部javascript" class="headerlink" title="内部javascript"></a>内部javascript</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="variable constant_">DOCTYPE</span> html&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-Hans&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>使用 JavaScript 的示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;DOMContentLoaded&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          · · ·</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>点我呀<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>内部 JavaScript 写在 <code>&lt;head&gt;</code> 元素中，被 <code>&lt;script&gt;</code> 元素包裹，适用于整个页面。</p>
+<br>
+
+<h3 id="外部javascript"><a href="#外部javascript" class="headerlink" title="外部javascript"></a>外部javascript</h3><p>.html 文件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="variable constant_">DOCTYPE</span> html&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-Hans&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>使用 JavaScript 的示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;script.js&quot;</span> <span class="attr">defer</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>         //注意这里外部js的链接</span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>点我呀<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>.js 文件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">createParagraph</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> para = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;p&#x27;</span>);</span><br><span class="line">  para.<span class="property">textContent</span> = <span class="string">&#x27;你点击了这个按钮！&#x27;</span>;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(para);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> buttons = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;button&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; buttons.<span class="property">length</span> ; i++) &#123;</span><br><span class="line">  buttons[i].<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, createParagraph);</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>在这里我们把 JavaScript 写进一个外部文件。这样做可以使代码更加有序，更易于复用，且没有了脚本的混合，HTML 也会更加易读。</p>
+<br>
+
+<h3 id="内联javascript处理器"><a href="#内联javascript处理器" class="headerlink" title="内联javascript处理器"></a>内联javascript处理器</h3><p>在有些时候，HTML 中存在一丝 JavaScript 代码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">createParagraph</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> para = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;p&#x27;</span>);</span><br><span class="line">    para.<span class="property">textContent</span> = <span class="string">&#x27;你点击了这个按钮！&#x27;</span>;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(para);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;createParagraph()&quot;</span>&gt;</span>点我啊<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>功能和之前的没有区别，只是在 <code>&lt;button&gt;</code> 元素中包含了一个内联的 <code>onclick</code> 处理器。不过，这会使 JavaScript 污染到 HTML，而且效率低下。</p>
+<br>
+
+<h2 id="脚本调用策略"><a href="#脚本调用策略" class="headerlink" title="脚本调用策略"></a>脚本调用策略</h2><p>要让脚本调用的时机符合预期，需要解决一系列的问题。这里看似简单，实际大有文章。最常见的问题就是：HTML 元素是按其在页面中出现的次序调用的，在使用 DOM 管理页面元素的情况下，如果 js 加载先于预操作的 HTML 元素，代码就会出错。在上文“内部”、“外部”示例中，JavaScript 调用位于文档头处、解析 HTML 文档体之前，是有一定隐患的，我们需要使用一些结构来避免错误发生。</p>
+<p>原先解决此问题的旧方法是：把脚本元素放在文档体的底端（<code>&lt;/body&gt;</code> 标签之前，与之相邻），这样脚本就可以在 HTML 解析完毕后加载了。但是这个方案也有（以及上后面的 DOMContentLoaded 方案）问题：只有在所有 HTML DOM 加载完成后才开始脚本的加载&#x2F;解析过程。对于有大量 JavaScript 代码的大型网站，可能会带来显著的性能损耗。</p>
+<h3 id="内部js"><a href="#内部js" class="headerlink" title="内部js"></a>内部js</h3><p>使用以下结构：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;DOMContentLoaded&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  . . .</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这是一个事件监听器，他监听浏览器的 “<code>DOMContentLoaded</code>“ 事件，即 HTML 文档体加载、解释完毕事件。事件触发时调用 “· · ·” 处的代码，从而避免了错误发生。</p>
+<h3 id="外部js"><a href="#外部js" class="headerlink" title="外部js"></a>外部js</h3><p>就像之前说的，为解决有大量 js 代码的大型网站的脚本调用。我们可以使用 <code>async</code> 和 <code>defer</code> 两个属性。</p>
+<p>async 属性会告知浏览器在遇到 <code>&lt;script&gt;</code> 元素时不要中断后续 HTML 内容的加载。当浏览器遇到 async 脚本时，浏览器不会阻塞页面渲染，而是直接下载然后运行。使脚本和 HTML 一起加载，让代码可以顺利执行。</p>
+<p>不过，这样脚本的运行次序无法控制，它只实现了脚本调用和页面渲染的并行，当有多个脚本共同作用时，页面加载就有可能出现问题。因此只有，当页面的脚本之间彼此独立，且不依赖于本页面的其它任何脚本时，async 是最理想的选择。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">&quot;js/vendor/jquery.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;js/script2.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;js/script3.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>例如，以上三个外部js文件的调用顺序是不确定的。jquery.js 可能在 script2 和 script3 之前或之后调用，如果这样，后两个脚本中依赖 jquery 的函数将产生错误，因为脚本运行时 jquery 尚未加载。</p>
+<blockquote>
+<p>注：“外部”示例中，async 属性可以解决调用顺序问题，无需使用 DOMContentLoaded 事件。</p>
+</blockquote>
+<p>defer 属性可以使脚本按照其在页面中出现的顺序加载和运行：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script defer src=<span class="string">&quot;js/vendor/jquery.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;js/script2.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;js/script3.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>第二个示例可确保 jquery.js 必定加载于 script2.js 和 script3.js 之前，同时 script2.js 必定加载于 script3.js 之前。</p>
+<blockquote>
+<p>脚本调用策略小结：</p>
+<ul>
+<li>如果脚本无需等待页面解析，且无依赖独立运行，那么应使用 async。</li>
+<li>如果脚本需要等待页面解析，且依赖于其他脚本，调用这些脚本时应使用 defer，将关联的脚本按所需顺序置于 HTML 中。</li>
+</ul>
+</blockquote>
+<br>
+
+<h1 id="javascript初体验"><a href="#javascript初体验" class="headerlink" title="javascript初体验"></a>javascript初体验</h1><p>接下来是一个全面的实践性项目——循环渐进地构建一个简易版“猜数字”游戏。</p>
+<br>
+
+<h2 id="提出问题"><a href="#提出问题" class="headerlink" title="提出问题"></a>提出问题</h2><hr>
+<p>我想让你开发一个猜数字游戏。游戏应随机选择一个 100 以内的自然数, 然后邀请玩家在 10 轮以内猜出这个数字。每轮后都应告知玩家的答案正确与否，如果出错了，则告诉他数字是低了还是高了。并且应显示出玩家前一轮所猜的数字。一旦玩家猜对，或者用尽所有机会，游戏将结束。游戏结束后，可以让玩家选择再次开始。</p>
+<hr>
+<p>看到这个要求，首先我们要做的是将其分解成简单的可操作的任务，尽可能从程序员的思维去思考：</p>
+<ol>
+<li>随机生成一个 100 以内的自然数。</li>
+<li>记录玩家当前的轮数。从 1 开始。</li>
+<li>为玩家提供一种猜测数字的方法。</li>
+<li>一旦有结果提交，先将其记录下来，以便用户可以看到他们先前的猜测。</li>
+<li>然后检查它是否正确。</li>
+<li>如果正确：<ol>
+<li>显示祝贺消息。</li>
+<li>阻止玩家继续猜测（这会使游戏混乱）。</li>
+<li>显示控件允许玩家重新开始游戏。</li>
+</ol>
+</li>
+<li>如果出错，并且玩家有剩余轮次：<ol>
+<li>告诉玩家他们错了。</li>
+<li>允许他们输入另一个猜测。</li>
+<li>轮数加 1。</li>
+</ol>
+</li>
+<li>如果出错，并且玩家没有剩余轮次：<ol>
+<li>告诉玩家游戏结束。</li>
+<li>阻止玩家继续猜测（这会使游戏混乱）。</li>
+<li>显示控件允许玩家重新开始游戏。</li>
+</ol>
+</li>
+<li>一旦游戏重启，确保游戏的逻辑和UI完全重置，然后返回步骤1。</li>
+</ol>
+<br>
+
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><p>接下来，我会尝试构建这个示例，从而探索 JavaScript 的功能。</p>
+<br>
+
+<h3 id="初始设置"><a href="#初始设置" class="headerlink" title="初始设置"></a>初始设置</h3><p>首先，建立一个 HTML 骨架 <a target="_blank" rel="noopener" href="https://github.com/a-pin/learning-area/blob/main/javascript/js1/first-splash/number-guessing-game-start.html">number-guessing-game-start.html</a>。</p>
+<p>我们可以在 HTML 底部的 <code>&lt;script&gt;</code> 元素中添加新的代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 开始编写 JavaScript 代码</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="添加变量"><a href="#添加变量" class="headerlink" title="添加变量"></a>添加变量</h3><p>先在 <code>&lt;script&gt;</code> 元素中添加以下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> randomNumber = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> guesses = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.guesses&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> lastResult = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.lastResult&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> lowOrHi = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.lowOrHi&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> guessSubmit = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.guessSubmit&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> guessField = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.guessField&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> guessCount = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> resetButton;</span><br></pre></td></tr></table></figure>
+
+<p><strong>变量</strong>本质上是值的容器。你可以使用关键字 <code>let</code> （旧代码中使用 <code>var</code>）和一个变量名创建变量。</p>
+<p><strong>常量</strong>用于存储不希望更改的数据，用关键字 <code>const</code> 创建。</p>
+<p>在示例中：</p>
+<ul>
+<li>用数学算法得到一个1~100的随机数，并赋值给一个变量（randomNumber）。</li>
+<li>接下来的三个常量均存储着一个引用，分别指向 HTML 结果段落中某个元素，用于在代码后面段落中插入值：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;guesses&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;lastResult&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;lowOrHi&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>接下来的两个常量存储对表单文本输入和提交按钮的引用，并用于控制以后提交猜测：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;guessField&quot;</span>&gt;</span>请猜数：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;guessField&quot;</span> <span class="attr">class</span>=<span class="string">&quot;guessField&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;确定&quot;</span> <span class="attr">class</span>=<span class="string">&quot;guessSubmit&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>倒数第二个变量存储一个计数器并初始化为1，最后一个变量存储对重置按钮的引用，这个按钮尚不存在（但稍后就有了）。</li>
+</ul>
+<br>
+
+<h3 id="函数function"><a href="#函数function" class="headerlink" title="函数function"></a>函数function</h3><p>接下来，在之前的代码中添加以下内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>.<span class="title function_">checkGuess</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&#x27;我是一个占位符&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>函数是可复用的代码块，一次编写反复运行。定义函数的方法很多，这里只介绍个最简单的方式：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">关键字 function + 函数名 + 一对花括号。（花括号内部是调用函数时要运行的所有代码）</span><br></pre></td></tr></table></figure>
+
+<p>当我们在 开发者工具 JavaScript 控制台，输入以下代码 <code>checkGuess();</code> 调用函数。</p>
+<br>
+
+<h3 id="条件语句conditional"><a href="#条件语句conditional" class="headerlink" title="条件语句conditional"></a>条件语句conditional</h3><p>替换 checkGuess() 函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">checkGuess</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> userGuess = <span class="title class_">Number</span>(guessField.<span class="property">value</span>);</span><br><span class="line">  <span class="keyword">if</span> (guessCount === <span class="number">1</span>) &#123;</span><br><span class="line">    guesses.<span class="property">textContent</span> = <span class="string">&#x27;上次猜的数：&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  guesses.<span class="property">textContent</span> += userGuess + <span class="string">&#x27; &#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (userGuess === randomNumber) &#123;</span><br><span class="line">    lastResult.<span class="property">textContent</span> = <span class="string">&#x27;恭喜你！猜对了&#x27;</span>;</span><br><span class="line">    lastResult.<span class="property">style</span>.<span class="property">backgroundColor</span> = <span class="string">&#x27;green&#x27;</span>;</span><br><span class="line">    lowOrHi.<span class="property">textContent</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    <span class="title function_">setGameOver</span>();</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (guessCount === <span class="number">10</span>) &#123;</span><br><span class="line">    lastResult.<span class="property">textContent</span> = <span class="string">&#x27;!!!GAME OVER!!!&#x27;</span>;</span><br><span class="line">    <span class="title function_">setGameOver</span>();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    lastResult.<span class="property">textContent</span> = <span class="string">&#x27;你猜错了！&#x27;</span>;</span><br><span class="line">    lastResult.<span class="property">style</span>.<span class="property">backgroundColor</span> = <span class="string">&#x27;red&#x27;</span>;</span><br><span class="line">    <span class="keyword">if</span>(userGuess &lt; randomNumber) &#123;</span><br><span class="line">      lowOrHi.<span class="property">textContent</span> = <span class="string">&#x27;你猜低了！&#x27;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(userGuess &gt; randomNumber) &#123;</span><br><span class="line">      lowOrHi.<span class="property">textContent</span> = <span class="string">&#x27;你猜高了&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  guessCount++;</span><br><span class="line">  guessField.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  guessField.<span class="title function_">focus</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第二行声明了一个 userGuess 变量，并将其设置为在文本字段中输入的值。我们还对这个值应用了内置的 Number() 方法，确保该值是一个数字。</li>
+<li>接下来的 条件代码块 可以让你根据某个条件的真假来选择性地运行代码。</li>
+</ul>
+<br>
+
+<h3 id="事件event"><a href="#事件event" class="headerlink" title="事件event"></a>事件event</h3><p><strong>事件</strong>就是浏览器中发生的事情，比如点击按钮、加载页面、播放视频等。</p>
+<p>侦听事件发生的结构称为<strong>事件监听器（Event Listener）</strong>；响应事件触发而运行的代码块被称为<strong>事件处理器（Event Handler）</strong>。</p>
+<p>现在，我们还无法使用 checkGuess() 函数，它还没有被调用。理想中，我们希望在点击“确认”按钮时调用它，为此，我们需要使用事件。</p>
+<p>在 <code>&lt;script&gt;</code> 元素中，checkGuess() 函数后添加以下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">guessSubmit.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, checkGuess);</span><br></pre></td></tr></table></figure>
+
+<p>这里为 guessSubmit 按钮添加了一个事件监听器。addEventListener() 方法包含两个参数，监听事件的类型和当事件发生时要执行的代码。</p>
+<br>
+
+<h3 id="补全游戏功能"><a href="#补全游戏功能" class="headerlink" title="补全游戏功能"></a>补全游戏功能</h3><p>保存以上代码，实例就可以工作了，但是不够完善。玩家猜对或游戏次数用完，就会出错。</p>
+<p>因此，定义游戏结束时应运行的 setGameOver() 函数并添加到代码最后面。：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setGameOver</span>(<span class="params"></span>) &#123;</span><br><span class="line">  guessField.<span class="property">disabled</span> = <span class="literal">true</span>;</span><br><span class="line">  guessSubmit.<span class="property">disabled</span> = <span class="literal">true</span>;</span><br><span class="line">  resetButton = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;button&#x27;</span>);</span><br><span class="line">  resetButton.<span class="property">textContent</span> = <span class="string">&#x27;开始新游戏&#x27;</span>;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(resetButton);</span><br><span class="line">  resetButton.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, resetGame);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>前两行通过将 disable 属性设置为 true 来禁用表单文本输入和按钮。</li>
+<li>接下来的三行创建一个新的 <code>&lt;button&gt;</code> 元素，设置它的文本为“开始新游戏”，并把它添加到当前 HTML 的底部。</li>
+<li>最后一行在新按钮上设置了一个事件监听器，当它被点击时，resetGame() 函数就会被调用。</li>
+</ul>
+<p>以下是定义的 resetGame() 函数，依然放在代码底部：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">resetGame</span>(<span class="params"></span>) &#123;</span><br><span class="line">  guessCount = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> resetParas = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.resultParas p&#x27;</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; resetParas.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    resetParas[i].<span class="property">textContent</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  resetButton.<span class="property">parentNode</span>.<span class="title function_">removeChild</span>(resetButton);</span><br><span class="line"></span><br><span class="line">  guessField.<span class="property">disabled</span> = <span class="literal">false</span>;</span><br><span class="line">  guessSubmit.<span class="property">disabled</span> = <span class="literal">false</span>;</span><br><span class="line">  guessField.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  guessField.<span class="title function_">focus</span>();</span><br><span class="line"></span><br><span class="line">  lastResult.<span class="property">style</span>.<span class="property">backgroundColor</span> = <span class="string">&#x27;white&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  randomNumber = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码将游戏中的一切重置为初始状态：</p>
+<ul>
+<li>将 guessCount 重置为 1。</li>
+<li>清除所有信息段落。</li>
+<li>删除重置按钮。</li>
+<li>启用表单元素，清空文本域并聚焦于此，准备接受新猜测的数字。</li>
+<li>删除 lastResult 段落的背景颜色。</li>
+<li>生成一个新的随机数，这样就可以猜测新的数字了。</li>
+</ul>
+<p><strong>一个猜数字游戏就完成了！</strong></p>
+<br>
+
+<h3 id="循环loop"><a href="#循环loop" class="headerlink" title="循环loop"></a>循环loop</h3><p>循环是一个非常重要的编程概念，它让你能够重复运行一段代码，直到满足某个条件为止。</p>
+<p>resetGame() 函数中：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> resetParas = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.resultParas p&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; resetParas.<span class="property">length</span> ; i++) &#123;</span><br><span class="line">  resetParas[i].<span class="property">textContent</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码通过 querySelectorAll() 方法创建了一个包含 <div class="resultParas"> 内所有段落的变量，然后通过循环迭代，删除每个段落的文本内容。</p>
+<br>
+
+<h3 id="浅谈对象object"><a href="#浅谈对象object" class="headerlink" title="浅谈对象object"></a>浅谈对象object</h3><p>JavaScript 中一切都是对象。对象是存储在单个分组中的相关功能的集合。</p>
+<p>在 <code>let resetButton</code> （脚本顶端部分）下方添加下面一行内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">guessField.<span class="title function_">focus</span>();</span><br></pre></td></tr></table></figure>
+
+<p>这一行通过 focus() 方法让光标在页面加载完毕时自动放置于 <code>&lt;input&gt;</code> 输入框内，为使用户能投入游戏提供一个良好的视觉线索。</p>
+<p>在本示例的特定情况下，创建了一个 guessField 常量来存储对 HTML 中的文本输入表单域的引用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> guessField = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.guessField&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>使用 document 对象的 querySelector() 方法获得引用。querySelector() 方法使用一个 CSS 选择器选中需要引用的元素。</p>
+<p>因为 guessField 现在包含一个指向 <code>&lt;input&gt;</code> 元素的引用，它现在就能够访问一系列的属性（存储于对象内部的基础变量）和方法（存储在对象内部的基础函数）。</p>
+<br>
+
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>注释分为两类：</p>
+<ul>
+<li>在双斜杠后添加单行注释，比如：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 我是一条注释</span></span><br></pre></td></tr></table></figure></li>
+<li>在 &#x2F;* 和 *&#x2F; 之间添加多行注释，比如：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">我也是</span></span><br><span class="line"><span class="comment">一条注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<br>
+
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>这一节开始学习 JavaScript 基础——变量。</p>
+<p>一个变量就是一个用于存放数值的容器。JavaScript 中的变量由两个重要特征：数值可变和存储任何数据——不只是字符串和数值，更复杂的数据有函数等。</p>
+<blockquote>
+<p>变量是用来存储数值的，那么有一个重要的概念需要区分。变量不是数值本身，它们仅仅是一个用于存储数值的容器。</p>
+</blockquote>
+<br>
+
+<h2 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h2><p>变量有不同的数据类型，这里将对其进行简短的介绍。</p>
+<p>JavaScript是一种“动态类型语言”，不需要指定变量将包含什么数据类型，即<strong>动态类型</strong>。</p>
+<p>例如，如果你声明一个变量并给它一个带引号的值，浏览器就会知道它是一个字符串：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myString = <span class="string">&#x27;Hello&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="number"><a href="#number" class="headerlink" title="number"></a>number</h3><p>数字，包含整数和浮点数。在 JavaScript 中，你不需要声明变量类型。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> age = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="string"><a href="#string" class="headerlink" title="string"></a>string</h3><p>字符串是文本的一部分。为变量赋值时，需要用<strong>单引号</strong>或<strong>双引号</strong>将值包裹起来；否则 JavaScript 会把这个字符串理解成别的变量名。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;Chris&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="boolean"><a href="#boolean" class="headerlink" title="boolean"></a>boolean</h3><p>Boolean 的值有两种：true或false。它们通常由于检测条件是否成立：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> test = <span class="number">6</span> &lt; <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="array"><a href="#array" class="headerlink" title="array"></a>array</h3><p>数组是一个单个对象，其中包含很多值，方括号括起来，并用逗号分隔:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myNameArray = [<span class="string">&#x27;Chris&#x27;</span>, <span class="string">&#x27;Bob&#x27;</span>, <span class="string">&#x27;Jim&#x27;</span>];</span><br><span class="line"><span class="keyword">let</span> myNumberArray = [<span class="number">10</span>,<span class="number">15</span>,<span class="number">40</span>];</span><br></pre></td></tr></table></figure>
+
+<p>当数组被定义后，您可以使用如下所示的语法来访问各自的值，例如下行:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myNameArray[<span class="number">0</span>]; <span class="comment">// should return &#x27;Chris&#x27;</span></span><br><span class="line">myNumberArray[<span class="number">2</span>]; <span class="comment">// should return 40</span></span><br></pre></td></tr></table></figure>
+
+<p>此处的方括号包含一个索引值，该值指定要返回的值的位置。</p>
+<br>
+
+<h3 id="object"><a href="#object" class="headerlink" title="object"></a>object</h3><p>在编程中，对象是现实生活中的模型的一种代码结构。比如，代表一个停车场的对象，并包含有关其宽度和长度的信息；或者代表一个人，并包含有关他们的名字，身高，体重，语言等。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dog = &#123; name : <span class="string">&#x27;Spot&#x27;</span>, breed : <span class="string">&#x27;Dalmatian&#x27;</span> &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>要检索存储在对象中的信息，可以使用以下语法:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dog.<span class="property">name</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="变量的声明与赋值"><a href="#变量的声明与赋值" class="headerlink" title="变量的声明与赋值"></a>变量的声明与赋值</h2><p>使用一个变量，首先就是声明它。声明一个变量的语法就是在 var 或 let 关键字之后加上这个变量的名字。</p>
+<p>在 JavaScript 控制台中，定义变量：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name;</span><br><span class="line"><span class="keyword">let</span> age;</span><br></pre></td></tr></table></figure>
+
+<p>以上两个变量并没有返回值，它们是空的容器。当你定义好变量后，你会得到一个 undefined 的返回值。</p>
+<br>
+
+<hr>
+<p><strong>关于变量命名的规则</strong>：<br>一般应当使用拉丁字符(0-9,a-z,A-Z)和下划线字符为变量命名。以下是一些限制： </p>
+<ul>
+<li>不应当使用规则之外的其他字符（因为它们可能引发错误，或对国际用户来说难以理解）。</li>
+<li>不要以下划线开头（以下划线开头的被某些 JavaScript 设计为特殊的含义）。</li>
+<li>不要以数字开头（将会引发一个错误）。</li>
+<li>一个可靠的命名约定叫做“小写驼峰命名法”，用来将多个单词组在一起，小写整个命名的第一个字母然后大写剩下单词的首字符。例如，finalOutputValue。</li>
+<li>让变量名直观，描述了所包含的数据。</li>
+<li>避免使用 JavaScript 的保留字给变量命名（保留字是组成JavaScript的实际语法的单词）。</li>
+</ul>
+<p>错误示例：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">_12</span><br><span class="line">var</span><br></pre></td></tr></table></figure>
+
+<hr>
+<br>
+
+<p>当你定义好一个变量后，你就能够给它赋值，第一次给变量赋值被称为变量的<strong>初始化</strong>。在控制台输入以下命令：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&#x27;Chris&#x27;</span>;</span><br><span class="line">age = <span class="number">24</span>;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到控制台返回变量的值。</p>
+<p>类似的，你可以将变量的声明和初始化结合在一起：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;Chris&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="var与let的区别"><a href="#var与let的区别" class="headerlink" title="var与let的区别"></a>var与let的区别</h2><p>“为什么我们需要两个关键字来定义变量?”，“为什么有 var 和 let 呢？”。</p>
+<p>原因是有些历史性的。最初创建 JavaScript 时，是只有 var 的。 在大多数情况下，这种方法可以接受， 但有时在工作方式上会有一些问题——它的设计会令人困惑或令人讨厌 。 因此，let 是在现代版本中的 JavaScript 创建的一个新的关键字，用于创建与 var 工作方式有些不同的变量，解决了过程中的问题。</p>
+<p>下面解释几个简单的差异：</p>
+<p>首先，如果你编写一个声明并初始化变量的多行 JavaScript 程序，你可以在初始化一个变量之后用 var 声明它，它仍然可以工作。 例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">myName = <span class="string">&#x27;Chris&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">logName</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">logName</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myName;</span><br></pre></td></tr></table></figure>
+
+<p>这是由于<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/var#%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87">变量的提升</a>。</p>
+<p>不过提升操作不再适用于 let ，因为初始化后再声明一个变量会使代码变得混乱和难以理解。</p>
+<p>其次，当你使用 var 时，可以根据需要多次声明相同名称的变量，而 let 不能。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myName = <span class="string">&#x27;Chris&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> myName = <span class="string">&#x27;Bob&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等价于</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myName = <span class="string">&#x27;Chris&#x27;</span>;</span><br><span class="line">myName = <span class="string">&#x27;Bob&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>我们没理由重新声明变量，这会使代码变得混乱。</p>
+<br>
+
+<h1 id="数字和操作符"><a href="#数字和操作符" class="headerlink" title="数字和操作符"></a>数字和操作符</h1><p>JavaScript 有一套可用的全功能的数学功能。</p>
+<br>
+
+<h2 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h2><p>我们使用不同的术语来描述不同类型的十进制数，例如：</p>
+<ul>
+<li><strong>整数</strong>：就是整数,例如 10, 400, 或者 -5.</li>
+<li><strong>浮点数</strong>：有小数点或小数位，例如 12.5，和 56.7786543。</li>
+<li><strong>双精度</strong>：双精度是一种特定类型的浮点数，它们具有比标准浮点数更高的精度。</li>
+</ul>
+<br>
+
+<h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><p>运算符的优先级，用于确定一个表达式的计算顺序。在你不能确定优先级时，可以通过使用括号显式声明运算符的优先级。</p>
+<p>下表列出了描述符的优先级，从最高到最低。</p>
+<p><strong>运算符优先级</strong></p>
+<table>
+<thead>
+<tr>
+<th>Operator type</th>
+<th>Individual operators</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>member</td>
+<td><code>. []</code></td>
+</tr>
+<tr>
+<td>call &#x2F; create instance</td>
+<td><code>() new</code></td>
+</tr>
+<tr>
+<td>negation&#x2F;increment</td>
+<td><code>! ~ - + ++ -- typeof void delete</code></td>
+</tr>
+<tr>
+<td>multiply&#x2F;divide</td>
+<td><code>* / %</code></td>
+</tr>
+<tr>
+<td>addition&#x2F;subtraction</td>
+<td><code>+ -</code></td>
+</tr>
+<tr>
+<td>bitwise shift</td>
+<td><code>&lt;&lt; &gt;&gt; &gt;&gt;&gt;</code></td>
+</tr>
+<tr>
+<td>relational</td>
+<td><code>&lt; &lt;= &gt; &gt;= in instanceof</code></td>
+</tr>
+<tr>
+<td>equality</td>
+<td><code>== != === !==</code></td>
+</tr>
+<tr>
+<td>bitwise-and</td>
+<td><code>&amp;</code></td>
+</tr>
+<tr>
+<td>bitwise-xor</td>
+<td><code>^</code></td>
+</tr>
+<tr>
+<td>bitwise-or</td>
+<td><code>|</code></td>
+</tr>
+<tr>
+<td>logical-and</td>
+<td><code>&amp;&amp;</code></td>
+</tr>
+<tr>
+<td>logical-or</td>
+<td>&#96;</td>
+</tr>
+<tr>
+<td>conditional</td>
+<td><code>?:</code></td>
+</tr>
+<tr>
+<td>assignment</td>
+<td><code>= += -= *= /= %= &lt;&lt;= &gt;&gt;= &gt;&gt;&gt;= &amp;= ^= |=</code></td>
+</tr>
+<tr>
+<td>comma</td>
+<td><code>,</code></td>
+</tr>
+</tbody></table>
+<br>
+
+<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><p>算术运算符是我们进行数学计算最基本的运算符：</p>
+<table>
+<thead>
+<tr>
+<th><strong>运算符</strong></th>
+<th><strong>名称</strong></th>
+<th><strong>作用</strong></th>
+<th><strong>示例</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加法</td>
+<td>两个数相加</td>
+<td>6 + 9</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减法</td>
+<td>从左边减去右边的数</td>
+<td>20 - 15</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法</td>
+<td>两个数相乘</td>
+<td>3 * 7</td>
+</tr>
+<tr>
+<td>&#x2F;</td>
+<td>除法</td>
+<td>用右边的数除左边的数</td>
+<td>10 &#x2F; 5</td>
+</tr>
+<tr>
+<td>%</td>
+<td>求余（取模）</td>
+<td>在你将左边的数分成同右边数字相同的若干整数部分后，返回剩下的余数</td>
+<td>8 % 3 &#x3D; 2</td>
+</tr>
+<tr>
+<td>**</td>
+<td>幂</td>
+<td>取底数的指数次方</td>
+<td>5 ** 5 &#x3D; 3125</td>
+</tr>
+</tbody></table>
+<p>参与到算术计算的数字被称为 操作数。</p>
+<br>
+
+<h3 id="自增和自减运算符"><a href="#自增和自减运算符" class="headerlink" title="自增和自减运算符"></a>自增和自减运算符</h3><p>有时候，您需要反复把一个变量加1或减1。这可以方便地使用增量（++）和递减（ – ）运算符来完成。 </p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num1 = <span class="number">4</span>;</span><br><span class="line">num1++;</span><br></pre></td></tr></table></figure>
+
+<p>执行此操作时，您会看到返回值为4，这是因为浏览器返回当前值，然后增加变量。</p>
+<p>为此，你可以——递增&#x2F;递减变量，然后返回值——将操作符放在变量的开头，而不是结束。 再次尝试上面的例子，但这次使用 ++num1 和 –num2。</p>
+<br>
+
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><p>赋值运算符是向变量分配值的运算符。</p>
+<p>|<strong>运算符</strong>|<strong>名称</strong>|<strong>作用</strong>|<strong>示例</strong>|<strong>等价于</strong>|<br>|- - -|- - -|- - -|- - -|- - -|<br>|+&#x3D;|加法赋值|返回右边的数值加上左边的变量|x +&#x3D; 3|x &#x3D; x + 3|<br>|-&#x3D;|减法赋值|返回左边的变量减去右边的数值|x -&#x3D; 3|x &#x3D; x - 3|<br>|*&#x3D;|乘法赋值|返回左边的变量乘以右边的数值|x *&#x3D; 3|x &#x3D; x * 3|<br>|&#x2F;&#x3D;|除法赋值|返回左边的变量除以右边的数值|x &#x2F;&#x3D; 3|x &#x3D; x &#x2F; 3|</p>
+<br>
+
+<h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><p>|<strong>运算符</strong>|<strong>名称</strong>|<strong>作用</strong>|<br>|- - -|- - -|- - -|<br>|&#x3D;&#x3D;&#x3D;|严格等于|测试左右值是否相同|<br>|!&#x3D;&#x3D;|严格不等于|测试左右值是否不相等|<br>|&lt;|小于|测试左值是否小于右值|<br>|&gt;|大于|测试左值是否大于右值|<br>|&lt;&#x3D;|小于或等于|测试左值是否小于或等于右值|<br>|&gt;&#x3D;|大于或等于|测试左值是否大于或等于右值|</p>
+<blockquote>
+<p>注：有些人可能使用 &#x3D;&#x3D; 或 !&#x3D; 来判断相等或不相等，这些都是 JavaScript 中的有效运算符，但是它们只判断测试值是否相同，而数据类型可能不同；严格版本会测试值和值的数据类型是否都相同。</p>
+</blockquote>
+<br>
+
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>HTML为我们的文本提供了结构和意义， CSS 允许我们精确地设计它的样式，JavaScript包含许多操作字符串的特性，创建定制的欢迎消息，在需要时显示正确的文本标签，将术语排序到所需的顺序，等等。</p>
+<br>
+
+<h2 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h2><p>创建一个字符串：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> string = <span class="string">&#x27;Hello,js!&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>你可以使用单引号或者双引号包裹字符串，但是必须使用同一种引号包裹字符串。否者就会出错，没有引号的任何字符串都被假定为变量名、属性名、保留字等。：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> badQuotes = <span class="string">&#x27;hello.js!&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>不过，在使用一种引号包裹字符串情况下，字符串中可以使用另一种引号。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> string = <span class="string">&#x27;Would you eat a &quot;fish supper&quot;?&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>连接字符串</strong>：使用加号（+）连接字符串。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> one = <span class="string">&#x27;Hello,&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> two = <span class="string">&#x27;js!&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> plus = one + two;</span><br></pre></td></tr></table></figure>
+
+<p><strong>数字与字符串之间的转换</strong>：</p>
+<ul>
+<li>Number 对象将把传递给它的任何东西转换成一个数字。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myString = <span class="string">&#x27;123&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> myNum = <span class="title class_">Number</span>(myString);</span><br><span class="line"><span class="keyword">typeof</span> myNum;</span><br></pre></td></tr></table></figure></li>
+<li>每个数字都有一个名为 toString() 的方法，它将把它转换成等价的字符串。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myNum = <span class="number">123</span>;</span><br><span class="line"><span class="keyword">let</span> myString = myNum.<span class="title function_">toString</span>();</span><br></pre></td></tr></table></figure></li>
+</ul>
+<br>
+
+<h2 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h2><p>除了基本的字符串语法，我们还可以使用字符串的内置方法。</p>
+<p><strong>把字符串当作对象</strong>，在 JavaScript 中，一切东西都可以被当作对象。一旦你的变量成为字符串对象实例，你就可以可以有大量的原型和方法编辑它。</p>
+<br>
+
+<h3 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h3><p>使用 <code>length</code> 属性获取字符串长度：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> browserTtype = <span class="string">&#x27;edge&#x27;</span>;</span><br><span class="line">browserType.<span class="property">length</span>;</span><br></pre></td></tr></table></figure>
+
+<p>结果会返回一个数字4。</p>
+<br>
+
+<h3 id="检索特定字符串字符"><a href="#检索特定字符串字符" class="headerlink" title="检索特定字符串字符"></a>检索特定字符串字符</h3><p>使用 方括号表示法 返回字符串中的任何字符。在方括号内的数字是要返回的字符的编号：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">browserType[<span class="number">0</span>];</span><br><span class="line">browserType[browserType.<span class="property">length</span>-<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="查找和提取子字符串"><a href="#查找和提取子字符串" class="headerlink" title="查找和提取子字符串"></a>查找和提取子字符串</h3><p>在一个字符串中是否包含另一个特定字符串，使用 <code>indexOf()</code> 方法完成：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browserType.<span class="title function_">indexOf</span>(<span class="string">&#x27;dge&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>结果返回 1，因为子字符串从 edge 的第二个字符开始。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browserType.<span class="title function_">indexOf</span>(<span class="string">&#x27;chrome&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>结果返回 -1，因为在主字符串中找不到子字符串。</p>
+<br>
+
+<p>当你知道子字符串的开始和结尾，<code>slice()</code> 可以提取这个子字符串。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browserType.<span class="title function_">slice</span>(<span class="number">0</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p>结果是 ed —— 第一个参数是开始提取的字符位置，第二个参数是开始不要提取的位置。</p>
+<p>其中，省略第二个参数可以省略。用以提取第一个参数之后的所有剩余字符。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browserType.<span class="title function_">slice</span>(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="转换大小写"><a href="#转换大小写" class="headerlink" title="转换大小写"></a>转换大小写</h3><p>字符串方法 <code>toLowerCase()</code> 和 <code>toUpperCase()</code> 可以将所有字符分别转换为小写或大写。 例如，如果要在将数据存储在数据库中之前对所有用户输入的数据进行规范化，这可能非常有用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> radData = <span class="string">&#x27;My NaMe Is MuD&#x27;</span>;</span><br><span class="line">radData.<span class="title function_">toLowerCase</span>();</span><br><span class="line">radData.<span class="title function_">toUpperCase</span>();</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="替换字符串"><a href="#替换字符串" class="headerlink" title="替换字符串"></a>替换字符串</h3><p>您可以使用 <code>replace()</code> 方法将字符串中的一个子字符串替换为另一个子字符串。</p>
+<p>它需要两个参数 —— 要被替换下的字符串和要被替换上的字符串。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browserType.<span class="title function_">replace</span>(<span class="string">&#x27;moz&#x27;</span>,<span class="string">&#x27;van&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>数组是一个包含了多个值的对象。数组对象可以存储在变量中，并且能用和其他任何类型的值完全相同的方式处理，区别在于我们可以单独访问列表中的每个值，并使用列表执行一些有用和高效的操作，如循环。 </p>
+<br>
+
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><br>
+
+<h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><p>数组由方括号构成，其中包含用逗号分隔的元素列表。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> shopping = [<span class="string">&#x27;bread&#x27;</span>, <span class="string">&#x27;milk&#x27;</span>, <span class="string">&#x27;cheese&#x27;</span>, <span class="string">&#x27;hummus&#x27;</span>, <span class="string">&#x27;noodles&#x27;</span>];</span><br></pre></td></tr></table></figure>
+
+<p>你可以将任何类型的元素存储在数组中 —— 字符串，数字，对象，另一个变量，甚至另一个数组。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> random = [<span class="string">&#x27;tree&#x27;</span>, <span class="number">795</span>, [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]];</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="访问和修改数组元素"><a href="#访问和修改数组元素" class="headerlink" title="访问和修改数组元素"></a>访问和修改数组元素</h3><p>你可以使用 括号表示法 访问数组中的元素，与 检索特定字符串字符 的方法相同。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shopping[<span class="number">0</span>];    <span class="comment">// returns &quot;bread&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>您还可以简单地为单个数组元素提供新值来修改数组中的元素。 例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shopping[<span class="number">0</span>] = <span class="string">&#x27;tahini&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="获得数组元素"><a href="#获得数组元素" class="headerlink" title="获得数组元素"></a>获得数组元素</h3><p>你可以通过使用 <code>length</code> 属性获取数组的长度，这与查找字符串的长度（以字符为单位）完全相同。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sequence.<span class="property">length</span>;    <span class="comment">// should return 7</span></span><br></pre></td></tr></table></figure>
+
+<p>对于每个元素，可以使用 console.log() 将其打印到浏览器控制台。</p>
+<br>
+
+<h2 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h2><br>
+
+<h3 id="字符串和数组间的转换"><a href="#字符串和数组间的转换" class="headerlink" title="字符串和数组间的转换"></a>字符串和数组间的转换</h3><p>通常，您会看到一个包含在一个长长的字符串中的原始数据，您可能希望将有用的项目分成更有用的表单，然后对它们进行处理，例如将它们显示在数据表中。为此，我们可以使用 字符串的 <code>split()</code> 方法。在其最简单的形式中，这需要一个参数——您要将字符串分隔的字符，并返回分隔符之间的子串，作为数组中的项。</p>
+<p>例如：</p>
+<ul>
+<li>首先，创建一个字符串：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myData = <span class="string">&#x27;Manchester,London,Liverpool,Birmingham,Leeds,Carlisle&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li>现在我们用每个逗号分隔它：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myArray = myData.<span class="title function_">split</span>(<span class="string">&#x27;,&#x27;</span>);</span><br></pre></td></tr></table></figure></li>
+<li>最后，尝试找到新数组的长度，并从中检索一些项目：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myArray.<span class="property">length</span>;</span><br><span class="line">myArray[<span class="number">0</span>]; <span class="comment">// the first item in the array</span></span><br><span class="line">myArray[myArray.<span class="property">length</span>-<span class="number">1</span>]; <span class="comment">// the last item in the array</span></span><br></pre></td></tr></table></figure></li>
+<li>您也可以使用 <code>join()</code> 方法进行相反的操作。 尝试以下：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myNewString = myArray.<span class="title function_">join</span>(<span class="string">&#x27;,&#x27;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>将数组转换为字符串的另一种方法是使用 <code>toString()</code> 方法。<code>toString()</code> 可以比 <code>join()</code> 更简单，因为它不需要一个参数，但更有限制。使用 <code>join()</code> 可以指定不同的分隔符。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dogNames = [<span class="string">&quot;Rocket&quot;</span>,<span class="string">&quot;Flash&quot;</span>,<span class="string">&quot;Bella&quot;</span>,<span class="string">&quot;Slugger&quot;</span>];</span><br><span class="line">dogNames.<span class="title function_">toString</span>(); <span class="comment">//Rocket,Flash,Bella,Slugger</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="添加和删除数组项"><a href="#添加和删除数组项" class="headerlink" title="添加和删除数组项"></a>添加和删除数组项</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myArray = [<span class="string">&#x27;Manchester&#x27;</span>, <span class="string">&#x27;London&#x27;</span>, <span class="string">&#x27;Liverpool&#x27;</span>, <span class="string">&#x27;Birmingham&#x27;</span>, <span class="string">&#x27;Leeds&#x27;</span>, <span class="string">&#x27;Carlisle&#x27;</span>];</span><br></pre></td></tr></table></figure>
+
+<p>首先，要在数组末尾添加或删除一个项目，我们可以使用  <code>push()</code> 和 <code>pop()</code>。</p>
+<ul>
+<li>使用 <code>push()</code> 添加一个或多个要添加到数组末尾的元素：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myArray.<span class="title function_">push</span>(<span class="string">&#x27;Cardiff&#x27;</span>);</span><br><span class="line">myArray.<span class="title function_">push</span>(<span class="string">&#x27;Bradford&#x27;</span>, <span class="string">&#x27;Brighton&#x27;</span>);</span><br></pre></td></tr></table></figure>
+当方法调用完成时，将返回数组的新长度。如果要将新数组长度存储在变量中，例如：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newLength = myArray.<span class="title function_">push</span>(<span class="string">&#x27;Bristol&#x27;</span>);</span><br><span class="line">newLength;</span><br></pre></td></tr></table></figure></li>
+<li>从数组中删除最后一个元素的话直接使用 <code>pop()</code> 就可以。例如：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myArray.<span class="title function_">pop</span>();</span><br></pre></td></tr></table></figure>
+当方法调用完成时，将返回已删除的项目：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> removedItem = myArray.<span class="title function_">pop</span>();</span><br><span class="line">removedItem;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><code>unshift()</code> 和 <code>shift()</code> 从功能上与 <code>push()</code> 和 <code>pop()</code> 完全相同，只是它们分别作用于数组的开始，而不是结尾。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/web前端/">web前端</a>, <a href="/categories/web前端/mdn/">mdn</a>, <a href="/categories/web前端/mdn/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Deployed by <a href="https://github.com/kaedea/notion-down" target="_blank">notion-down</a> and
+    Theme by <a href="https://github.com/kaedea/hexo-theme-hacker" target="_blank">hexo-theme-hacker</a>
+    </br>
+    
+    &copy; 2022 a-pin
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

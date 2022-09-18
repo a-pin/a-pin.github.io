@@ -1,0 +1,483 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS第一步 | Apin | blogs</title>
+
+  
+  <meta name="author" content="a-pin">
+  
+
+  
+  <meta name="description" content="This is a blog website in order to record my study experiences!">
+  
+
+  
+  <meta name="keywords" content="blog,a-pin">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="CSS第一步"/>
+
+  <meta property="og:site_name" content="Apin"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Apin" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+  <link href="https://fonts.lug.ustc.edu.cn/css?family=Lato|Rubik" rel="stylesheet">
+  <script src="/js/pangu-407.min.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    pangu.autoSpacingPage();
+  });
+</script>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Apin</a>
+    </h1>
+    <p class="site-description">blogs</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>CSS第一步</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2021/02/18/CSS第一步/" rel="bookmark">
+        <time class="entry-date published" datetime="2021-02-17T18:00:07.000Z">
+          2021-02-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+
+<script type="text/javascript">
+    function convertRemToPixels(rem) {    
+        return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    }
+    window.onscroll = function() {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > convertRemToPixels(40)) {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'visible';
+        } else {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'hidden';
+        }
+    }
+</script>
+
+
+<div id="toc" class="toc-article">
+      <div class="toc-content">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFcss"><span class="toc-text">什么是css</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E7%94%A8%E6%9D%A5%E5%B9%B2%E4%BB%80%E4%B9%88"><span class="toc-text">css用来干什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E8%AF%AD%E6%B3%95"><span class="toc-text">css语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E6%A8%A1%E5%9D%97"><span class="toc-text">css模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%94%AF%E6%8C%81"><span class="toc-text">浏览器支持</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%A7%8Bcss%E4%B9%8B%E6%97%85"><span class="toc-text">开始css之旅</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8Ehtml%E5%BC%80%E5%A7%8B"><span class="toc-text">从html开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0css%E8%AF%95%E8%AF%95"><span class="toc-text">添加css试试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E5%8C%96html%E5%85%83%E7%B4%A0"><span class="toc-text">样式化html元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%B1%BB%E5%90%8D"><span class="toc-text">使用类名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E5%85%83%E7%B4%A0%E5%9C%A8%E6%96%87%E6%A1%A3%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE%E7%A1%AE%E5%AE%9A%E6%A0%B7%E5%BC%8F"><span class="toc-text">根据元素在文档中的位置确定样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E7%8A%B6%E6%80%81%E7%A1%AE%E5%AE%9A%E6%A0%B7%E5%BC%8F"><span class="toc-text">根据状态确定样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8C%E9%80%89%E6%8B%A9%E7%AC%A6"><span class="toc-text">同时使用选择器和选择符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BAcss"><span class="toc-text">如何构建css</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8html%E4%B8%AD%E5%BA%94%E7%94%A8css"><span class="toc-text">在html中应用css</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F%E8%A1%A8"><span class="toc-text">外部样式表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E9%83%A8%E6%A0%B7%E5%BC%8F%E8%A1%A8"><span class="toc-text">内部样式表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F"><span class="toc-text">内联样式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%92%8C%E5%80%BC"><span class="toc-text">属性和值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E5%88%99"><span class="toc-text">@规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9F%E8%AE%B0%E5%B1%9E%E6%80%A7"><span class="toc-text">速记属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-text">注释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#css%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C"><span class="toc-text">css如何运行</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E6%98%AF%E6%80%8E%E4%B9%88%E5%B7%A5%E4%BD%9C%E7%9A%84"><span class="toc-text">css是怎么工作的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8EDOM"><span class="toc-text">关于DOM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8css%E5%88%B0DOM"><span class="toc-text">应用css到DOM</span></a></li></ol></li></ol>
+      </div>
+</div>
+<style>
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+
+
+        <p>在此特地声明本文是根据 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/html/Introduction_to_html">mozilla官方教学文档</a> 学习的个人学习笔记，借用了大量的图片和文本内容，存在相当多的相同，但不是copy。如需查看mozilla官方文档，请点击前文链接！！</p>
+<!--more-->
+
+<br>
+
+<p>CSS（层叠样式表）用于设置和布置网页——例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。<br><br>接下来，将为你掌握CSS准备一个良好的开端。</p>
+<br>
+
+<h1 id="什么是css"><a href="#什么是css" class="headerlink" title="什么是css"></a>什么是css</h1><p>在纯HTML页面中，浏览器可以解析页面并把它们显示出来。比如，标题部分看起来会比正常文本大，段落会另起一行并保持一定距离，链接通过下划线和不同颜色与其他文本区分开来，这些都是浏览器的默认样式。</p>
+<p>但是如果所有网站都是纯HTML的话，互联网就会非常枯燥也有可能影响到阅读效率。而CSS可以完全控制浏览器如何显示HTML元素，从而充分展示你喜欢的设计样式。</p>
+<br>
+
+<h2 id="css用来干什么"><a href="#css用来干什么" class="headerlink" title="css用来干什么"></a>css用来干什么</h2><p>CSS是用来指定文档如何展示给用户的一门语言——如网页的样式、布局等等。<br>一份文档是由标记语言组织起来的文本文件，而展示一份文档给用户实际上是将文档变成用户可用的文件，即浏览器都可以将文档在电脑屏幕等设备上进行可视化。</p>
+<p>CSS可以用于给文档添加样式，也可用于创建布局，甚至可以做一些特效——例如动画。</p>
+<blockquote>
+<p>注意：当我们在讨论CSS时，浏览器是user agent的主要形式。用户代理（user agent）代表一个人的计算机程序，例如，一个在 Web 上的 浏览器。</p>
+</blockquote>
+<br>
+
+<h2 id="css语法"><a href="#css语法" class="headerlink" title="css语法"></a>css语法</h2><p>CSS是一门基于规则的语言——你能定义用于你的网页中特定元素样式的一组规则。</p>
+<p>将主标题变红变大：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">5em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>语法由一个选择器起头，选择了我们将要用来添加样式的HTML元素。在上面代码中，选择的是一级标题。</p>
+<p>接着输入一对大括号<code>&#123;&#125;</code>。在大括号内部定义一个或多个形式为 <code>属性(property): 值(value);</code> 的声明。每个声明都指定了我们所选择元素的一个属性，之后跟一个我们想赋给这个属性的值。</p>
+<p>不同的CSS属性对应不同的合法值。例如 color 属性，可以接受许多颜色值；还有 font-size 属性，可以接受许多 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#numbers_lengths_and_percentages">size units</a> 值。</p>
+<p>在MDN上每个属性都有单独的页面，可以帮助你使用CSS。另外，当你想查找一个CSS特性的更多内容时，可以使用你的搜索引擎来搜索 <code>mdn css-feature-name</code> 。例如 “mdn color”和“mdn font-size”。</p>
+<br>
+
+<h2 id="css模块"><a href="#css模块" class="headerlink" title="css模块"></a>css模块</h2><p>CSS由许多 <em>模块(modules)</em> 构成，包含多个属性。</p>
+<p>你可以在MDN上浏览这些模块的参考内容，也可以查看 CSS规范。比如，我可以查找一下 MDN reference 的 Backgrounds and Borders 模块的相关内容，来了解<strong>它是用来做什么的</strong>、<strong>它还包括什么属性</strong>、<strong>它还有什么其它特性</strong>等。</p>
+<p>举个具体点的例子：如上文中的 Backgrounds and Borders 模块 — 你会发现 <code>background-color</code> 和 <code>border-color</code> 这两个属性在逻辑上相通。</p>
+<br>
+
+<p><strong>CSS规范</strong><br><br>所有的标准web技术（HTML、CSS、JS等）都被定义在一个巨大的文档中，称作 规范（specifications,即specs），它是由（W3C,WHATWG,ECMA或Khronos)这些规范化组织所发布的，其中定义了各种技术是如何工作的。</p>
+<p>CSS规范 旨在为工程师在用户代理(user agents)中实现对 CSS 各种特性的支持，而不是作为一本为Web开发者理解 CSS 内容的教程。</p>
+<p>CSS 也不例外——它是由W3C(万维网联盟)中的一个名叫 CSS Working Group 团体发展起来的。这个团体是由浏览器厂商和其他公司中对 CSS 感兴趣的人作为代表组成的。也有其他的人员，比如受邀专家，他们作为不从属于任何组织的独立声音加入团体。</p>
+<p>新的 CSS 特性被开发出来，或是因为某个浏览器热衷于开发新功能，或是因为Web设计人员与开发者要求增加一个新特性，又或是 CSS Working Group 内部的讨论决定。CSS 始终在发展，并伴随着新的特性。然而，有一件事情从始至终都未改变，那就是<strong>不让新的改变破坏旧的网站</strong>，即使是2000年建立的网站，如今也能正常访问！</p>
+<br>
+
+<h2 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h2><p><img src="/2021/02/18/CSS%E7%AC%AC%E4%B8%80%E6%AD%A5/1.png"></p>
+<p>当一个浏览器支持 CSS 后，我们就可以用它来进行Web开发了。这意味着我们写在 CSS 文件中的代码可以被指令执行，展示到荧幕中。</p>
+<p>让所有的浏览器都同时支持一个 CSS 新特性是不现实的，通常都会一个空档期——一些浏览器已经支持而另一些仍未支持。因此，查看新特性的实现状态(implementation status)是非常有用的。在 MDN 上的每个属性的页面中都标有它们对应的状态，你可以通过这种方法来查看你是否可以去使用它。</p>
+<br>
+
+<h1 id="开始css之旅"><a href="#开始css之旅" class="headerlink" title="开始css之旅"></a>开始css之旅</h1><p>在这部分内容中，我将会拿一个简单的HTML文档做例子，并且在里面使用CSS样式。</p>
+<br>
+
+<h2 id="从html开始"><a href="#从html开始" class="headerlink" title="从html开始"></a>从html开始</h2><p>先以HTML文档展开叙述。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>开始学习CSS<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我是一级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一个段落文本. 在文本中有一个 <span class="tag">&lt;<span class="name">span</span>&gt;</span>span element<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">并且还有一个 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://example.com&quot;</span>&gt;</span>链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span>.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是第二段. 包含了一个 <span class="tag">&lt;<span class="name">em</span>&gt;</span>强调<span class="tag">&lt;/<span class="name">em</span>&gt;</span> 元素.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>项目1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>项目2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>项目 <span class="tag">&lt;<span class="name">em</span>&gt;</span>三<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>将改HTML文档保存并在相同目录下创建文件 styles.css 。</p>
+<br>
+
+<h2 id="添加css试试"><a href="#添加css试试" class="headerlink" title="添加css试试"></a>添加css试试</h2><p>如果想使HTML文档遵循给定的CSS规则，其中有三种方式可以实现。</p>
+<p>其中利用最普遍最有效的是 在文档的开头链接CSS。为了把 styles.css 和 index.html 连接起来，可以在 HTML文档 中，<code>&lt;head&gt;</code>语句模块里面加上下面的代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;styles.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在 link 语句块里面，我们用属性 rel ，让浏览器知道有CSS文档存在，并利用属性 href 指定，寻找CSS文件的位置。</li>
+</ul>
+<br>
+
+<p>每个浏览器都自带一个包含默认样式的样式表，默认对任何页面都有效。当你不想使用默认样式时，你可以使用CSS更改默认样式——选定需更改的元素，加上一条CSS规则即可。</p>
+<p>在 styles.css 文件中添加CSS样式并观察显示的结果：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<p><img src="/2021/02/18/CSS%E7%AC%AC%E4%B8%80%E6%AD%A5/2.png"></p>
+<br>
+
+
+
+<p>同样，可以实现剔除无序列表<code>&lt;ul&gt;</code>自带的项目符号：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">list-style-type</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="样式化html元素"><a href="#样式化html元素" class="headerlink" title="样式化html元素"></a>样式化html元素</h2><p>通过上一节将大标题变成红色的例子，我们已经展示了我们可以选中并且样式化 HTML 元素。<br><br>我们通过触发<strong>元素选择器</strong>实现这一点——元素选择器，即直接匹配 HTML元素 的选择器。</p>
+<p>例如，若要样式化一个文档中所有的段落，只需使用选择器 p 。若要将所有段落变成绿色，你可以利用如下方式：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用逗号将不同选择器隔开，即可一次使用多个选择器。譬如，将所有段落、列表变成绿色：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>, <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="使用类名"><a href="#使用类名" class="headerlink" title="使用类名"></a>使用类名</h3><p>目前为止，我们通过HTML元素名规定样式。这样子会使所有的元素都一样，而实际上我们想要应用不同的样式到同一类型的元素上。</p>
+<p>你可以给HTML元素加个类名（class），再选中这个类名。</p>
+<p>这是一个列表：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>项目一<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;special&quot;</span>&gt;</span>项目二<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>项目 <span class="tag">&lt;<span class="name">em</span>&gt;</span>三<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在CSS中，选中这个 special 类，只需在选择器的开头加个英文句号（.）：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.special</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>上面的CSS规则中，special类不只局限于列表。而是所有special类的元素。</li>
+</ul>
+<p>在选择器中，元素选择器和类名可以一起出现：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-class">.special</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>即“选中每个 special类 的 li元素 ”。也就是说规定了 special类 的选择范围，不会随便选择其它元素的 special类。</li>
+</ul>
+<p>同样的，你可以这样：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-class">.special</span>,</span><br><span class="line"><span class="selector-tag">span</span><span class="selector-class">.special</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: orange;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="根据元素在文档中的位置确定样式"><a href="#根据元素在文档中的位置确定样式" class="headerlink" title="根据元素在文档中的位置确定样式"></a>根据元素在文档中的位置确定样式</h3><p>有时候，你希望某些内容根据它在文档中的位置而有所不同。CSS有许多选择器可以使用，这里介绍几种选择器。</p>
+<p>在我们HTML文档中有两个<code>&lt;em&gt;</code>元素——一个在段落中，另一个在列表项内。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>I am a level one heading<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is a paragraph of text. In the text is a <span class="tag">&lt;<span class="name">span</span>&gt;</span>span element<span class="tag">&lt;/<span class="name">span</span>&gt;</span> </span><br><span class="line">and also a <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://example.com&quot;</span>&gt;</span>link<span class="tag">&lt;/<span class="name">a</span>&gt;</span>.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is the second paragraph. It contains an <span class="tag">&lt;<span class="name">em</span>&gt;</span>emphasized<span class="tag">&lt;/<span class="name">em</span>&gt;</span> element.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Item <span class="tag">&lt;<span class="name">span</span>&gt;</span>one<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Item two<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Item <span class="tag">&lt;<span class="name">em</span>&gt;</span>three<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>仅选择嵌套在<code>&lt;li&gt;</code>元素内的<code>&lt;em&gt;</code>我们可以使用一个称为<strong>包含选择符</strong>的选择器，它只是单纯的在两个选择器之间加上一个空格。</p>
+<p>将以下规则添加到样式表:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span> <span class="selector-tag">em</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: rebeccapurple;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>该选择器将选择 li 内部的任何 em 元素（即 li 的后代）。</li>
+</ul>
+<p>另一个是 在HTML文档中设置直接出现在标题后面并且与标题具有相同层级的段落样式，为此需在两个选择器之间添加一个 “+” 号（成为 <strong>相邻选择符</strong>）。</p>
+<p>将这个规则添加到样式表中：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> + <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">200%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>这个规则只会修改与标题同级的下一个段落（只会修改一个段落）。</li>
+</ul>
+<p>而下面的规则是修改 下下个段落 ——上面那个规则要修改的下一个段落——而不是两个都修改。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> + <span class="selector-tag">p</span> + <span class="selector-tag">p</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">200%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="根据状态确定样式"><a href="#根据状态确定样式" class="headerlink" title="根据状态确定样式"></a>根据状态确定样式</h3><p>根据标签的状态确定样式。一个直观的例子就是当我们修改链接的样式时：当定位<code>&lt;a&gt;</code>标签后，对链接的修改取决于链接不同的状态——未访问的、访问过的、被鼠标悬停的、被键盘定位的或正在被点击。你可以使用CSS去定位这些不同的状态进行修饰。</p>
+<p>使没被访问的链接颜色为粉色，访问过的变为绿色：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: pink;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>类似的，改变链接被鼠标悬停时的样式，例如 移除下划线：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>你可以修改链接在任何时候都没有下划线，但一个好的网页需要让浏览者知道什么时链接。这样做会导致文档在添加CSS样式后，反而变得更加不清晰，不易浏览。实际上，我们使用CSS的目的之一就有使网页变得更加清晰明了。</p>
+<blockquote>
+<p><strong>注意</strong>：我们的网页应当让每一个访客都能够理解、使用，在这里总结为“无障碍”。</p>
+<p>一个朴素的HTML文档一般来说对任何人都是可以无障碍访问的，当我们使用CSS为它添加样式，不要破坏这种可访问性。</p>
+</blockquote>
+<br>
+
+<h3 id="同时使用选择器和选择符"><a href="#同时使用选择器和选择符" class="headerlink" title="同时使用选择器和选择符"></a>同时使用选择器和选择符</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> <span class="selector-tag">h1</span> + <span class="selector-tag">p</span> <span class="selector-class">.special</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: yellow;</span><br><span class="line">  <span class="attribute">background-color</span>: black;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<p><img src="/2021/02/18/CSS%E7%AC%AC%E4%B8%80%E6%AD%A5/3.png"></p>
+<br>
+
+<h1 id="如何构建css"><a href="#如何构建css" class="headerlink" title="如何构建css"></a>如何构建css</h1><p>这部分关于语言本身的结构，会提及到很多概念。如果在之后学习中对一些概念有问题的话，可以回到这一部分回顾一下。</p>
+<br>
+
+<h2 id="在html中应用css"><a href="#在html中应用css" class="headerlink" title="在html中应用css"></a>在html中应用css</h2><p>在文档中应用css的三种方法。</p>
+<br>
+
+<h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><p>在<strong>开始css之旅</strong>部分中，我们将外部样式表链接到页面。这是将css附加到文档中最常见和最有用的方法，因为这样可以将一个css应用到多个页面（有点类似于动态链接库了——最近有看一些二进制的内容）。在大多数情况下，一个站点的不同页面看起来几乎都是一样的，因此你可以使用相同的<strong>规则集</strong>来获得<strong>基本的外观</strong>。</p>
+<p>外部样式表是指将CSS编写在扩展名为<code>.css</code>的单独文件中，并将HTML<code>&lt;link&gt;</code>元素引用它的情况：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>My CSS experiment<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;styles.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>This is my first CSS example<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>CSS文件如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">    <span class="attribute">background-color</span>: yellow;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>link 元素的 href 属性需要引用你的文件系统中的一个文件。</p>
+<p>在上面的例子中，css文件和html文档在同一文件夹中，但你可以把css文件放在其他地方，并调整指定的路径以匹配：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Inside a subdirectory called styles inside the current directory --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;styles/style.css&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Inside a subdirectory called general, which is in a subdirectory called styles, inside the current directory --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;styles/general/style.css&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Go up one directory level, then inside a subdirectory called styles --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;../styles/style.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h3><p>内部样式表是指不使用外部css文件，而是将css放在html文件 <code>&lt;head&gt;</code> 标签里的 <code>style</code> 标签之中。</p>
+<p>比如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>My CSS experiment<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">      <span class="selector-tag">h1</span> &#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>: blue;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>: yellow;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span></span><br><span class="line"><span class="language-css">      &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">      <span class="selector-tag">p</span> &#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">      &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>This is my first CSS example<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>有的时候，这种方法会比较有用（比如你使用的内容管理系统不能直接编辑CSS文件），但该方法和外部样式表比起来更加低效。</p>
+<br>
+
+<h3 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h3><p>内联样式表存在于HTML元素的style属性之中。其特点是每个CSS表只影响一个元素：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>My CSS experiment<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">&quot;color: blue;background-color: yellow;border: 1px solid black;&quot;</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:red;&quot;</span>&gt;</span>This is my first CSS example<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>尽量别这么做！</strong>它难以维护，并且这种方法将文档结构和文档修饰混合起来了，这会使代码变得难以阅读和理解。</p>
+<p>但是在某些地方，内联样式更常见，甚至可取。它长时间被应用在HTML电子邮件中，以便与尽可能多的电子邮件客户端兼容。</p>
+<br>
+
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><p>为了样式化某些元素，我们会通过选择器来选中HTML文档中的这些元素。一般情况下，你的样式没有生效，就很有可能是你的选择器没有像你预想的那样选中元素。</p>
+<p>每个CSS规则都是以一个选择器或一组选择器为开始，去告诉浏览器这些规则应该应用到哪些元素上——在上文的教程中我们已经列举了一些不同的选择器。</p>
+<p>以下是有效的选择器或组合选择器的示例：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span></span><br><span class="line"><span class="selector-class">.manythings</span></span><br><span class="line"><span class="selector-id">#onething</span></span><br><span class="line">*</span><br><span class="line"><span class="selector-class">.box</span> <span class="selector-tag">p</span></span><br><span class="line"><span class="selector-class">.box</span> <span class="selector-tag">p</span><span class="selector-pseudo">:first</span>-child</span><br><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-class">.intro</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>专一性</strong><br>通常情况下，两个选择器可以选择相同的HTML元素。</p>
+<p>指向同一元素的选择器：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.special</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;special&quot;</span>&gt;</span>What color am I?<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>最后，这个段落会变成什么颜色？</strong><br>CSS语言有规则来控制在发生碰撞时哪条规则将获胜——这些规则称为<strong>级联规则</strong>和<strong>专用规则</strong>。</p>
+<p>在下面代码中，我们为p选择器定义了两个规则，但是段落最后是蓝色的。这是因为将其设置为蓝色的声明将出现在样式表的后面，而稍后的样式将覆盖以前的样式。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是，在我们同时使用了类选择器和元素选择器的例子中，类将获胜，使得段落变红。一个类被描述为比元素选择器更具体，或者具有更多的特异性，所以它获胜了。有时CSS可能不会像您预期的那样应用，因为样式表中的其他内容具有更高的特异性。</p>
+<br>
+
+<h2 id="属性和值"><a href="#属性和值" class="headerlink" title="属性和值"></a>属性和值</h2><p>在最基础的层面上，CSS由两个组成部分组成：</p>
+<ul>
+<li><strong>属性</strong>：人可读的标识符，指示你想要更改的样式特征。</li>
+<li><strong>值</strong>：每个指定的属性都有一个值，该值指示你希望如何更改这些样式特征。</li>
+</ul>
+<p>下面的图像突出显示单个属性和值。属性名为 color ，值为 blue 。</p>
+<p><img src="/2021/02/18/CSS%E7%AC%AC%E4%B8%80%E6%AD%A5/4.png"></p>
+<p>与值配对的属性称为CSS声明。CSS声明放在CSS声明块中。下一张图片显示了我们的CSS，并突出显示了声明块。</p>
+<p><img src="/2021/02/18/CSS%E7%AC%AC%E4%B8%80%E6%AD%A5/5.png"></p>
+<p>最后，CSS声明块与选择器配对，以生成CSS规则集（或CSS规则）。</p>
+<p><img src="/2021/02/18/CSS%E7%AC%AC%E4%B8%80%E6%AD%A5/6.png"></p>
+<blockquote>
+<p>在css中，<strong>属性</strong>和<strong>值</strong>是区分大小写的。<br><br>如果属性未知或某个值对给定属性无效，则声明视为无效，被浏览器的CSS引擎完全忽略。<br></p>
+</blockquote>
+<br>
+
+<p><strong>函数</strong></p>
+<p>虽然大多数值是相对简单的关键字或数值，但也有一些可能的值以函数的形式出现。</p>
+<p>这是一个 calc() 函数，它允许你在CSS中进行简单的计算：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;outer&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span>The inner box is 90% - 30px.<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.outer</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">5px</span> solid black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="built_in">calc</span>(<span class="number">90%</span> - <span class="number">30px</span>);</span><br><span class="line">  <span class="attribute">background-color</span>: rebeccapurple;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="/2021/02/18/CSS%E7%AC%AC%E4%B8%80%E6%AD%A5/7.png"></p>
+<p>一个函数由函数名和一些括号组成，其中放置了该函数的允许值。在上面的 calc() 示例中，我要求此框的宽度为包含块宽度的90%，减去30像素。这不是我们可以提前计算的东西，只是在CSS中输入值，因为我不知道90%会是什么。</p>
+<p>另一个例子是<code>&lt;transform&gt;</code>，例如<code>rotate()</code>：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: rebeccapurple;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0.8turn</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/02/18/CSS%E7%AC%AC%E4%B8%80%E6%AD%A5/8.png"></p>
+<br>
+
+<h2 id="规则"><a href="#规则" class="headerlink" title="@规则"></a>@规则</h2><p><code>@rules</code> 是一种特殊的规则，为CSS提供了一些关于如何表现的指导。</p>
+<p>有些 @rules 规则很简单，有规则名和值。例如，将额外的样式表导入主CSS样式表，可以使用 <code>@import</code>：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span> <span class="string">&#x27;styles2.css&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>另一个@规则是 <code>@media</code>，它允许你使用 媒体查询 来应用CSS——仅当某些条件成立（例如，当屏幕分辨率高于某一数量，或屏幕宽度大于某一宽度时）。</p>
+<p>在下面的CSS中，我们将给 <code>&lt;body&gt;</code> 元素一个粉红色的背景色。但是，我们随后使用 @media 创建样式表的一部分，该部分仅适用于视口大于30em的浏览器。如果浏览器的宽度大于30em，则背景色将为蓝色。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: pink;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">min-width</span>: <span class="number">30em</span>) &#123;</span><br><span class="line">    <span class="selector-tag">body</span> &#123;</span><br><span class="line">        <span class="attribute">background-color</span>: blue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这些教程中，你将遇到一些其他的规则 @rules</p>
+<p>查看是否可以将媒体查询添加到CSS中，该查询将根据视口宽度更改样式。更改浏览器窗口的宽度以查看结果。</p>
+<br>
+
+<h2 id="速记属性"><a href="#速记属性" class="headerlink" title="速记属性"></a>速记属性</h2><p>一些属性，如 <code>font</code>,<code>background</code>,<code>padding</code>,<code>border</code> 和 <code>margin</code> 等属性称为速记属性——这是因为它们允许你在一行中设置多个属性值，从而节省时间并使代码更整洁。</p>
+<p>例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span> <span class="number">15px</span> <span class="number">5px</span>;</span><br></pre></td></tr></table></figure>
+<p>和下面四行代码是等价的：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">padding-top</span>: <span class="number">10px</span>;</span><br><span class="line"><span class="attribute">padding-right</span>: <span class="number">15px</span>;</span><br><span class="line"><span class="attribute">padding-bottom</span>: <span class="number">15px</span>;</span><br><span class="line"><span class="attribute">padding-left</span>: <span class="number">5px</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这一行：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background</span>: red <span class="built_in">url</span>(<span class="string">bg-graphic.png</span>) <span class="number">10px</span> <span class="number">10px</span> repeat-x fixed;</span><br></pre></td></tr></table></figure>
+
+<p>与这五行代码是等价的：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background-color</span>: red;</span><br><span class="line"><span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">bg-graphic.png</span>);</span><br><span class="line"><span class="attribute">background-position</span>: <span class="number">10px</span> <span class="number">10px</span>;</span><br><span class="line"><span class="attribute">background-repeat</span>: repeat-x;</span><br><span class="line"><span class="attribute">background-attachment</span>: fixed;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>警告：速记允许忽略值，并且会将不包含值的部分重置为它们的初始值。这确保使用了一组合理的值。但是，如果你希望速记只更改传入的值，就会导致问题。</p>
+</blockquote>
+<br>
+
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>CSS中的注释以 ‘&#x2F;<em>‘ 开头，以 ‘</em>&#x2F;‘ 结尾。</p>
+<p>在下面的代码块中，注释标记了不同代码节的开始。当代码库变得更大时，这对于帮助您导航代码库非常有用——在代码编辑器中搜索注释可以高效地定位代码节。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Handle basic element styling */</span></span><br><span class="line"><span class="comment">/* -------------------------------------------------------------------------------------------- */</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: <span class="number">1em</span>/<span class="number">150%</span> Helvetica, Arial, sans-serif;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">1em</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">33em</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">min-width</span>: <span class="number">70em</span>) &#123;</span><br><span class="line">  <span class="comment">/* Let&#x27;s special case the global font size. On large screen or window,</span></span><br><span class="line"><span class="comment">     we increase the font size for better readability */</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">130%</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;<span class="attribute">font-size</span>: <span class="number">1.5em</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Handle specific elements nested in the DOM  */</span></span><br><span class="line"><span class="comment">/* -------------------------------------------------------------------------------------------- */</span></span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span>, <span class="selector-id">#id</span><span class="selector-pseudo">:first</span>-line &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span>&#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">1em</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> + <span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">padding-top</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在CSS中，像其它编程语言一样，测试中可以 注释掉 一段代码来禁用他们。</p>
+<blockquote>
+<p>空白是指实际空格、制表符和换行。和HTML相同，浏览器往往忽略CSS中的大部分空白，许多空白只是为了提高可读性。</p>
+</blockquote>
+<br>
+
+<h1 id="css如何运行"><a href="#css如何运行" class="headerlink" title="css如何运行"></a>css如何运行</h1><p>浏览器如何获取CSS、HTML和将它们加载成网页？</p>
+<br>
+
+<h2 id="css是怎么工作的"><a href="#css是怎么工作的" class="headerlink" title="css是怎么工作的"></a>css是怎么工作的</h2><p>当浏览器展示一个文件时，必须兼顾文件的内容和文件的样式信息。</p>
+<p>以下是浏览器处理文件的基本流程，不同的浏览器可能不同：</p>
+<ol>
+<li>浏览器载入HTML文件。</li>
+<li>将HTML文件转化为一个DOM（Document Object Model），DOM是文件在计算机内存中的表现形式。</li>
+<li>接下来，浏览器会拉取该HTML相关的大部分资源，比如嵌入到页面的图片、视频和CSS样式，而JavaScript则会稍后进行处理。</li>
+<li>浏览器拉取到CSS之后会进行解析，根据选择器的不同类型（比如element、class、id等）把他们分到不同的“桶”中。浏览器基于它找到的不同的选择器，将不同的规则应用在对应的DOM的节点中，并添加节点依赖的样式（这个中间步骤称为渲染树）。</li>
+<li>上述的规则应用于渲染树之后，渲染树会依照应该出现的结构进行布局。</li>
+<li>网页展示在屏幕上（称为 着色）。</li>
+</ol>
+<p><img src="/2021/02/18/CSS%E7%AC%AC%E4%B8%80%E6%AD%A5/9.png"></p>
+<br>
+
+<h2 id="关于DOM"><a href="#关于DOM" class="headerlink" title="关于DOM"></a>关于DOM</h2><p>一个DOM有一个树形结构，标记语言中的每一个元素、属性以及每一段文字都对应着结构树中的一个节点。</p>
+<p>节点由节点本身和其他DOM结点的关系定义，有些节点有父节点，有些节点有兄弟节点。</p>
+<p>对于DOM的理解会很大程度上帮助你设计、调试和维护你的CSS，因为DOM是你的CSS样式个文件内容的结合。</p>
+<p>下面是HTML代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  Let&#x27;s use:</span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>Cascading<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>Style<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>Sheets<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个DOM中，p 元素对应了父节点，它的子节点是一个 text 节点和三个对应了 span 元素的节点，span 节点同时是它们中的 text 节点的父节点。</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">P</span><br><span class="line">├─ &quot;Let&#x27;s use:&quot;</span><br><span class="line">├─ SPAN</span><br><span class="line">|  └─ &quot;Cascading&quot;</span><br><span class="line">├─ SPAN</span><br><span class="line">|  └─ &quot;Style&quot;</span><br><span class="line">└─ SPAN</span><br><span class="line">   └─ &quot;Sheets&quot;</span><br></pre></td></tr></table></figure>
+
+<p>浏览器生成以上的DOM树形结构并将它输出到浏览器。</p>
+<br>
+
+<h2 id="应用css到DOM"><a href="#应用css到DOM" class="headerlink" title="应用css到DOM"></a>应用css到DOM</h2><p>接下来，添加一些CSS到文件里加以渲染：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">  <span class="attribute">background-color</span>: lime;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器解析HTML创造DOM后，会解析CSS，并将CSS规则应用到元素上，然后渲染出图像到屏幕上。</p>
+<p><strong>当浏览器遇到无法解析的CSS代码会发生什么？</strong><br>浏览器不一定会解析所有的CSS——发生冲突、浏览器不支持。那么，当浏览器遇到无法解析的CSS选择器或声明的时候会发生什么？</p>
+<p>答案就是 浏览器什么都不会做，继续解析下一个CSS样式！</p>
+<ul>
+<li>如果你使用最新的CSS优化，浏览器遇到无法解析的规则也不会报错。<br></li>
+<li>当你为一个元素指定多个CSS样式的时候，浏览器会加载样式表中的最后的CSS代码进行渲染。（如此你可以为同一个元素指定多个CSS样式来解决有些浏览器不兼容新特性的问题）</li>
+</ul>
+<p>例如，在你想使用一个很新的CSS特性但是不是所有浏览器都支持的时候。一些老的浏览器不接收<code>calc()</code> 作为一个值（ CSS3 新增，为元素指定动态宽度、长度等，此处的动态是指计算之后得到一个确切的值）。</p>
+<p>如下，定义了 calc 实现动态宽度。老式的浏览器由于无法解析忽略这一行；新式的浏览器则会把这一行解析成像素值，并且覆盖第一行指定的宽度。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="built_in">calc</span>(<span class="number">100%</span> - <span class="number">50px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/web前端/">web前端</a>, <a href="/categories/web前端/mdn/">mdn</a>, <a href="/categories/web前端/mdn/CSS/">CSS</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Deployed by <a href="https://github.com/kaedea/notion-down" target="_blank">notion-down</a> and
+    Theme by <a href="https://github.com/kaedea/hexo-theme-hacker" target="_blank">hexo-theme-hacker</a>
+    </br>
+    
+    &copy; 2022 a-pin
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

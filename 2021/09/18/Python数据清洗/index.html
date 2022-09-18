@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python数据采集 | Apin | blogs</title>
+
+  
+  <meta name="author" content="a-pin">
+  
+
+  
+  <meta name="description" content="This is a blog website in order to record my study experiences!">
+  
+
+  
+  <meta name="keywords" content="blog,a-pin">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Python数据采集"/>
+
+  <meta property="og:site_name" content="Apin"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Apin" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+  <link href="https://fonts.lug.ustc.edu.cn/css?family=Lato|Rubik" rel="stylesheet">
+  <script src="/js/pangu-407.min.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    pangu.autoSpacingPage();
+  });
+</script>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Apin</a>
+    </h1>
+    <p class="site-description">blogs</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Python数据采集</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2021/09/18/Python数据清洗/" rel="bookmark">
+        <time class="entry-date published" datetime="2021-09-17T18:00:07.000Z">
+          2021-09-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+
+<script type="text/javascript">
+    function convertRemToPixels(rem) {    
+        return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    }
+    window.onscroll = function() {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > convertRemToPixels(40)) {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'visible';
+        } else {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'hidden';
+        }
+    }
+</script>
+
+
+<div id="toc" class="toc-article">
+      <div class="toc-content">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-text">数据清洗的意义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-text">数据清洗的内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据格式与存储类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Excel-%E6%95%B0%E6%8D%AE"><span class="toc-text">Excel 数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XML-%E6%95%B0%E6%8D%AE"><span class="toc-text">XML 数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-%E6%95%B0%E6%8D%AE"><span class="toc-text">JSON 数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSV-%E6%95%B0%E6%8D%AE"><span class="toc-text">CSV 数据</span></a></li></ol></li></ol>
+      </div>
+</div>
+<style>
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+
+
+        <p>本文是我阅读 Python 数据分析与大数据处理（朱春旭著）的学习记录，如有进一步学习需求可以自行购买阅读。</p>
+<!--more-->
+
+<p>[toc]</p>
+<br>
+
+<h1 id="数据清洗的意义"><a href="#数据清洗的意义" class="headerlink" title="数据清洗的意义"></a>数据清洗的意义</h1><p>随着计算机硬件成本的走低和互联网行业的发展，使数据的采集与收集越来越容易。人们通过对原始数据的积累和对数据的精确分析，利用这些数据创造了巨大的价值，但是海量的数据不是每一条都是有用的。</p>
+<p>对当前的总结，对未来的预测，都建立在精确的分析之上，精确分析的基础是精确的数据。对原始数据进行整理、标注，形成一份”干净“的数据，使其适合特定场景，这个过程就是数据清洗。</p>
+<br>
+
+<h1 id="数据清洗的内容"><a href="#数据清洗的内容" class="headerlink" title="数据清洗的内容"></a>数据清洗的内容</h1><p>数据清洗的目标，就是要去掉噪声数据，修正错误。需要进行清洗的数据包括以下几个方面。</p>
+<br>
+
+<p>1、重复数据</p>
+<p>主要是指在数据集中具有相同信息的数据。</p>
+<p>2、错误数据</p>
+<p>主要是指数据集中格式错误、范围错误、包含特殊字符、包含 ASCII 码的数据，以及二进制、表情符号、全角、半角或其它不可识别的数据。</p>
+<p>3、矛盾数据</p>
+<p>主要是指在数据集中对客观事实的不同维度的描述存在差异。</p>
+<p>4、缺失数据</p>
+<p>主要是指数据集中有一部分信息缺失。</p>
+<br>
+
+<h1 id="数据格式与存储类型"><a href="#数据格式与存储类型" class="headerlink" title="数据格式与存储类型"></a>数据格式与存储类型</h1><p>数据拥有不同种类的存储格式和类型，为了让计算机能方便地处理这些数据，人们根据数据地存储规律，开发了不同类型地、具有针对性地分析工具。</p>
+<br>
+
+<h2 id="Excel-数据"><a href="#Excel-数据" class="headerlink" title="Excel 数据"></a>Excel 数据</h2><p>Excel 是一种常见的数据分析与存储工具，其保存后的文件后缀名是 <code>.xls</code> 或 <code>xlsx</code>。Excel 保存的数据是行列形式的表结构数据，实际上是使用二进制进行存储的。</p>
+<img src="1.png" style="zoom:60%;" />
+
+<p>想要获取实际数据，在 Python 中引入专门的库来读取 <code>.xlsx</code> 类型的数据。</p>
+<img src="2.png" style="zoom:60%;" />
+
+<br>
+
+<h2 id="XML-数据"><a href="#XML-数据" class="headerlink" title="XML 数据"></a>XML 数据</h2><p>XML 的全称是 eXtensible Markup Language，是对 HTML 语言的扩展。用户可以根据自己的需要，创建合适的标签来表示不同类型的数据。XML 是完全面向数据本身的，可以表述树结构、图结构等，由于其高度的通用性，因此广泛应用于不同系统间的信息传输。在存储方面，XML 使用的是纯文本文档格式。</p>
+<p>在 Python 中，有多个库可以读取 XML 文档，例如导入 lxml 库使用 xml.etree.ElementTree 来读取文档。</p>
+<br>
+
+<h2 id="JSON-数据"><a href="#JSON-数据" class="headerlink" title="JSON 数据"></a>JSON 数据</h2><p>JSON 的全称是 JavaScript Object Notation，以键值对的形式存储数据，键值可以嵌套，因此可以存储树结构、图结构等。相对于 XML，JSON 是一种相对轻量级的存储方式。JSON 也是使用文本文档形式存储。</p>
+<p>在 Python 处理 JSON 数据比较容易，在项目中导入 json 包即可。</p>
+<br>
+
+<h2 id="CSV-数据"><a href="#CSV-数据" class="headerlink" title="CSV 数据"></a>CSV 数据</h2><p>CSV 的全称是 Comma-Separated Values，以逗号为分隔符存储表格数据。在存储上采用的是纯文本形式，可以使用文本编辑器直接打开。</p>
+<p>在 Python 中，需要导入 CSV 包才能正常解析。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/python/">python</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/数据清洗/">数据清洗</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Deployed by <a href="https://github.com/kaedea/notion-down" target="_blank">notion-down</a> and
+    Theme by <a href="https://github.com/kaedea/hexo-theme-hacker" target="_blank">hexo-theme-hacker</a>
+    </br>
+    
+    &copy; 2022 a-pin
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
