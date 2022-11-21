@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hexo 应用 hacker 主题要点 | Apin | blogs</title>
+
+  
+  <meta name="author" content="a-pin">
+  
+
+  
+  <meta name="description" content="This is a blog website in order to record my study experiences!">
+  
+
+  
+  <meta name="keywords" content="blog,a-pin">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="hexo 应用 hacker 主题要点"/>
+
+  <meta property="og:site_name" content="Apin"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Apin" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+  <link href="https://fonts.lug.ustc.edu.cn/css?family=Lato|Rubik" rel="stylesheet">
+  <script src="/js/pangu-407.min.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    pangu.autoSpacingPage();
+  });
+</script>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Apin</a>
+    </h1>
+    <p class="site-description">blogs</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>hexo 应用 hacker 主题要点</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/11/18/hexo应用hacker主题/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-11-17T18:00:07.000Z">
+          2022-11-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+
+<script type="text/javascript">
+    function convertRemToPixels(rem) {    
+        return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    }
+    window.onscroll = function() {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > convertRemToPixels(40)) {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'visible';
+        } else {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'hidden';
+        }
+    }
+</script>
+
+
+<div id="toc" class="toc-article">
+      <div class="toc-content">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-%E5%BA%94%E7%94%A8-hacker-%E4%B8%BB%E9%A2%98%E8%A6%81%E7%82%B9"><span class="toc-text">hexo 应用 hacker 主题要点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98"><span class="toc-text">图片显示问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2"><span class="toc-text">hexo 分类页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#excerpt"><span class="toc-text">excerpt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%B1%82%E5%88%86%E7%B1%BB"><span class="toc-text">多层分类</span></a></li></ol></li></ol>
+      </div>
+</div>
+<style>
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+
+
+        <p>此文章属于原创，如需使用请标明出处！</p>
+<h1 id="hexo-应用-hacker-主题要点"><a href="#hexo-应用-hacker-主题要点" class="headerlink" title="hexo 应用 hacker 主题要点"></a>hexo 应用 hacker 主题要点</h1><br>
+
+<h2 id="图片显示问题"><a href="#图片显示问题" class="headerlink" title="图片显示问题"></a>图片显示问题</h2><p>在更行 hexo3 后，markdown 文件中使用的相对路径在渲染的时候会强制转换为 web 上的绝对路径，导致图片无法正常显示。</p>
+<img src="%E6%9D%82%E8%AE%B0/1.png" style="zoom: 80%;" />
+
+<p>为了解决这个问题，可以使用图床存放图片；在这里，启动 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">Asset 文件夹</a>，渲染后图片与博客 html 页面位于同一目录下，通过配置 _config.yml 文件使图片相对路径在渲染成 html 代码时自动转化为绝对路径。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># 启动 Asset 文件夹</span></span><br><span class="line"></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># 自动转化图片的绝对路径</span></span><br></pre></td></tr></table></figure>
+
+<img src="%E6%9D%82%E8%AE%B0/2.png" style="zoom: 60%;" />
+
+<br>
+
+<h2 id="hexo-分类页面"><a href="#hexo-分类页面" class="headerlink" title="hexo 分类页面"></a>hexo 分类页面</h2><p><img src="/%E6%9D%82%E8%AE%B0/3.png" alt="3"></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: catagories</span><br><span class="line">date: 2021-10-23 23:47:43</span><br><span class="line">type: categories</span><br><span class="line"><span class="section">layout: &quot;categories&quot;</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<p>指定 layout 为 categories，渲染时就会使用 categories.ejs 进行渲染。</p>
+<p>如果不添加 layout 一项，hexo 就不会按照 theme 下的layout 模板进行渲染。</p>
+<br>
+
+<h2 id="excerpt"><a href="#excerpt" class="headerlink" title="excerpt"></a>excerpt</h2><p>Front-matter 是文件最上方以 <code>---</code> 分隔的区域，用于指定个别文件的变量，举例来说：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line"><span class="section">date: 2013/7/13 20:46:25</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>excerpt</code> 用于设置文章摘要，描述文章大致内容。</p>
+<p>对于文章 Front-matter 部分的内容，你在 hexo 主题的 layout 模板中，可以通过 [hexo 变量](<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/variables.html">变量 | Hexo</a>)访问以实现不同功能。</p>
+<p>例如，判断文章是否具有 excerpt 变量，即文章是否有摘要（是否显示文章全文）：</p>
+<p><img src="/%E6%9D%82%E8%AE%B0/3.png"></p>
+<p>可以解决主页错误显示文章全文的问题。</p>
+<br>
+
+<h2 id="多层分类"><a href="#多层分类" class="headerlink" title="多层分类"></a>多层分类</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (site.categories.length)&#123; %&gt;</span><br><span class="line">&lt;h2&gt;共计&amp;nbsp;&lt;%= site.categories.length %&gt;&amp;nbsp;个分类&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">&lt;div style=&quot;font-size: 1.8rem;&gt;</span><br><span class="line">  &lt;%- list_categories(site.categories, &#123;</span><br><span class="line">    show_count: false,</span><br><span class="line">    style: &#x27;list&#x27;,</span><br><span class="line">    depth: 0,</span><br><span class="line">    separator: &#x27;&#x27;</span><br><span class="line">  &#125;) %&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/hexo/">hexo</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Deployed by <a href="https://github.com/kaedea/notion-down" target="_blank">notion-down</a> and
+    Theme by <a href="https://github.com/kaedea/hexo-theme-hacker" target="_blank">hexo-theme-hacker</a>
+    </br>
+    
+    &copy; 2022 a-pin
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
