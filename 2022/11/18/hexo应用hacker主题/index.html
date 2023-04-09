@@ -129,16 +129,16 @@
 <h1 id="hexo-应用-hacker-主题要点"><a href="#hexo-应用-hacker-主题要点" class="headerlink" title="hexo 应用 hacker 主题要点"></a>hexo 应用 hacker 主题要点</h1><br>
 
 <h2 id="图片显示问题"><a href="#图片显示问题" class="headerlink" title="图片显示问题"></a>图片显示问题</h2><p>在更行 hexo3 后，markdown 文件中使用的相对路径在渲染的时候会强制转换为 web 上的绝对路径，导致图片无法正常显示。</p>
-<img src="%E6%9D%82%E8%AE%B0/1.png" style="zoom: 80%;" />
+<img src="1.png" style="zoom: 80%;" />
 
 <p>为了解决这个问题，可以使用图床存放图片；在这里，启动 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">Asset 文件夹</a>，渲染后图片与博客 html 页面位于同一目录下，通过配置 _config.yml 文件使图片相对路径在渲染成 html 代码时自动转化为绝对路径。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># 启动 Asset 文件夹</span></span><br><span class="line"></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># 自动转化图片的绝对路径</span></span><br></pre></td></tr></table></figure>
 
-<img src="%E6%9D%82%E8%AE%B0/2.png" style="zoom: 60%;" />
+<img src="2.png" style="zoom: 60%;" />
 
 <br>
 
-<h2 id="hexo-分类页面"><a href="#hexo-分类页面" class="headerlink" title="hexo 分类页面"></a>hexo 分类页面</h2><p><img src="/%E6%9D%82%E8%AE%B0/3.png" alt="3"></p>
+<h2 id="hexo-分类页面"><a href="#hexo-分类页面" class="headerlink" title="hexo 分类页面"></a>hexo 分类页面</h2><p><img src="/2022/11/18/hexo%E5%BA%94%E7%94%A8hacker%E4%B8%BB%E9%A2%98/3.png" alt="3"></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: catagories</span><br><span class="line">date: 2021-10-23 23:47:43</span><br><span class="line">type: categories</span><br><span class="line"><span class="section">layout: &quot;categories&quot;</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
 
 <p>指定 layout 为 categories，渲染时就会使用 categories.ejs 进行渲染。</p>
@@ -151,7 +151,7 @@
 <p>其中 <code>excerpt</code> 用于设置文章摘要，描述文章大致内容。</p>
 <p>对于文章 Front-matter 部分的内容，你在 hexo 主题的 layout 模板中，可以通过 [hexo 变量](<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/variables.html">变量 | Hexo</a>)访问以实现不同功能。</p>
 <p>例如，判断文章是否具有 excerpt 变量，即文章是否有摘要（是否显示文章全文）：</p>
-<p><img src="/%E6%9D%82%E8%AE%B0/3.png"></p>
+<p><img src="/2022/11/18/hexo%E5%BA%94%E7%94%A8hacker%E4%B8%BB%E9%A2%98/3.png"></p>
 <p>可以解决主页错误显示文章全文的问题。</p>
 <br>
 
