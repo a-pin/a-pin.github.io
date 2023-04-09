@@ -134,7 +134,7 @@
 <li>C(Controller)控制器：对用户的输入做出反应，管理用户和视图的交互，是连接模型和视图的枢纽(servlet&#x2F;service)；</li>
 </ul>
 <p>用户通过 View 操作软件，View 将请求传递给 Controller，Model 负责数据的管理，View 负责与用户交互，Controller 负责对用户的请求进行响应，同时，当数据更新时会传给 View 然后更新页面。</p>
-<p><img src="D:\MarkDown\未完成\JavaWeb-MVC与三层架构\4.png"></p>
+<p><img src="/2023/03/22/JavaWeb-MVC%E4%B8%8E%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/4.png"></p>
 <br>
 
 <h2 id="三层架构"><a href="#三层架构" class="headerlink" title="三层架构"></a>三层架构</h2><p>通常意义上的三层架构就是将整个业务应用划分为：表现层（UI）、业务逻辑层（BLL）、数据访问层（DAL）。</p>
@@ -148,20 +148,20 @@
 <h2 id="MVC与三层架构的联系"><a href="#MVC与三层架构的联系" class="headerlink" title="MVC与三层架构的联系"></a>MVC与三层架构的联系</h2><p>三层是基于业务逻辑来分的，而 MVC 是基于页面来分的；</p>
 <p>三层架构的分层模式是典型的上下关系，上层依赖于下层。但 MVC 作为表现模式是不存在上下关系的，而是相互协作关系；</p>
 <p>MVC模式和三层架构，是分别从两个不同的角度去设计的，但目的都是“解耦，分层，代码复用等”。</p>
-<p><img src="D:\MarkDown\未完成\JavaWeb-MVC与三层架构\5.jpg"></p>
+<p><img src="/2023/03/22/JavaWeb-MVC%E4%B8%8E%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/5.jpg"></p>
 <br>
 
 <h2 id="包结构"><a href="#包结构" class="headerlink" title="包结构"></a>包结构</h2><p>java 中的 Dao、Service、Controller三层体系：</p>
-<p><img src="D:\MarkDown\未完成\JavaWeb-MVC与三层架构\2.png"></p>
+<p><img src="/2023/03/22/JavaWeb-MVC%E4%B8%8E%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/2.png"></p>
 <p>几乎所有的业务逻辑，实际上最后就是对数据库表的操作，Dao 层面向数据库中的表，Service 进行事务、业务逻辑的具体实现，Controller 层对接收到的请求进行控制，然后负责调用 Service 层进行业务逻辑实现，Service 层将逻辑处理中需要对数据库表的操作交给 Dao 层进行数据操作，最后将处理结果逐层返回给前端，用户就可以看到最后的处理结果。</p>
-<p><img src="/JavaWeb-MVC%E4%B8%8E%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/1.png"></p>
+<p><img src="/2023/03/22/JavaWeb-MVC%E4%B8%8E%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/1.png"></p>
 <p>其中的 Bean 包中的类对应数据库中的表，列名等于属性名，此外，其中还包含各种 getter、setter、构造函数等方法；</p>
 <p>Dao 全称 Data Access Object（数据访问对象）主要负责访问数据库，对数据的 CRUD，获取结果集返回给 Service，不会涉及事务；</p>
 <p>其中的 Dao 包里面有 impl(实现)和接口，注意其中的 impl 不仅要实现接口，还可以继承 Util 类；</p>
 <p>Service 层主要负责业务逻辑的实现，实际就是对 Dao 层的增删改查操作的进一步封装，涉及到事务的操作；</p>
 <p>其中的 web，也就是 Controller 层，可以接受参数、调取 service 和页面跳转等；</p>
 <p>Controller 层主要用于对<strong>业务逻辑</strong>进行控制，控制用户输入，接收来自前端的请求，将需要执行的操作交给 Service 层进行处理，再将处理后的结果返回给前端；</p>
-<p><img src="D:\MarkDown\未完成\JavaWeb-MVC与三层架构\3.png"></p>
+<p><img src="/2023/03/22/JavaWeb-MVC%E4%B8%8E%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/3.png"></p>
 
       
     </div>
