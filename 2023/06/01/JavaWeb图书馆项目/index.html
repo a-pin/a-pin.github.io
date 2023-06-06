@@ -931,6 +931,7 @@
 <p><strong>业务流程：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line"></span><br><span class="line">A((开始)) --&gt;B(设计数据库)</span><br><span class="line"></span><br><span class="line">B --&gt; C[dao-service]</span><br><span class="line"></span><br><span class="line">C --调用多个dao--&gt; D[Servlet]</span><br><span class="line"></span><br><span class="line">D --接受用户请求/做出响应--&gt; E[HTML/JSP]</span><br><span class="line"></span><br><span class="line">E --&gt; F((结束))</span><br></pre></td></tr></table></figure>
 
+<p><img src="/2023/06/01/JavaWeb%E5%9B%BE%E4%B9%A6%E9%A6%86%E9%A1%B9%E7%9B%AE/11.png"></p>
 <p>由于项目大小有限，为简化项目结构，将界面操作功能的实现（service）与实体操作放在了一起。</p>
 <p>本项目后端实现为：JDBC+Tomcat+Beans+Dao+Servlet，即在 Tomcat 服务器测试运行项目，由 beans 存储数据交换中的实体，dao 负责有关 bean 实体的数据处理操作，servlet 负责处理请求和数据处理，JDBC 负责与 SQL 数据库的连接和访问。所有的组成部分共同实现了前后端的数据交换和动态页面。</p>
 <p>接下来，我将分阶段解释各个部分的功能。</p>
