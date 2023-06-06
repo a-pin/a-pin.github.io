@@ -1,0 +1,1075 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Javaweb图书馆项目 | Apin | blogs</title>
+
+  
+  <meta name="author" content="a-pin">
+  
+
+  
+  <meta name="description" content="This is a blog website in order to record my study experiences!">
+  
+
+  
+  <meta name="keywords" content="blog,a-pin">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Javaweb图书馆项目"/>
+
+  <meta property="og:site_name" content="Apin"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Apin" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+  <link href="https://fonts.lug.ustc.edu.cn/css?family=Lato|Rubik" rel="stylesheet">
+  <script src="/js/pangu-407.min.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    pangu.autoSpacingPage();
+  });
+</script>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Apin</a>
+    </h1>
+    <p class="site-description">blogs</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Javaweb图书馆项目</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2023/06/01/JavaWeb图书馆项目/" rel="bookmark">
+        <time class="entry-date published" datetime="2023-06-01T04:00:07.000Z">
+          2023-06-01
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+
+<script type="text/javascript">
+    function convertRemToPixels(rem) {    
+        return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    }
+    window.onscroll = function() {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > convertRemToPixels(40)) {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'visible';
+        } else {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'hidden';
+        }
+    }
+</script>
+
+
+<div id="toc" class="toc-article">
+      <div class="toc-content">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaWeb%E5%9B%BE%E4%B9%A6%E9%A6%86%E9%A1%B9%E7%9B%AE"><span class="toc-text">JavaWeb图书馆项目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF"><span class="toc-text">前端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSP"><span class="toc-text">JSP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E7%A8%8B%E5%BA%8F"><span class="toc-text">脚本程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSP-%E5%A3%B0%E6%98%8E"><span class="toc-text">JSP 声明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSP-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">JSP 表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSP-%E6%8C%87%E4%BB%A4"><span class="toc-text">JSP 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSP-%E8%A1%8C%E4%B8%BA"><span class="toc-text">JSP 行为</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSP-%E9%9A%90%E5%90%AB%E5%AF%B9%E8%B1%A1"><span class="toc-text">JSP 隐含对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E6%B5%81%E8%AF%AD%E5%8F%A5"><span class="toc-text">控制流语句</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSTL-%E6%A0%87%E7%AD%BE%E5%BA%93"><span class="toc-text">JSTL 标签库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A0%87%E7%AD%BE"><span class="toc-text">核心标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A0%87%E7%AD%BE"><span class="toc-text">格式化标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL-%E6%A0%87%E7%AD%BE"><span class="toc-text">SQL 标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#XML-%E6%A0%87%E7%AD%BE"><span class="toc-text">XML 标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSTL-%E5%87%BD%E6%95%B0"><span class="toc-text">JSTL 函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EL-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">EL 表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bootstrap-%E6%A1%86%E6%9E%B6"><span class="toc-text">Bootstrap 框架</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E6%A0%BC%E7%B3%BB%E7%BB%9F"><span class="toc-text">网格系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"><span class="toc-text">字体图标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95"><span class="toc-text">下拉菜单</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E6%9D%BF"><span class="toc-text">面板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E6%A0%8F"><span class="toc-text">导航栏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%80%81%E6%A1%86"><span class="toc-text">模态框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95"><span class="toc-text">表单</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC"><span class="toc-text">表格</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="toc-text">应用实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF"><span class="toc-text">后端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JDBC"><span class="toc-text">JDBC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat"><span class="toc-text">Tomcat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Servlet"><span class="toc-text">Servlet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dao"><span class="toc-text">dao</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bean"><span class="toc-text">bean</span></a></li></ol></li></ol></li></ol>
+      </div>
+</div>
+<style>
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+
+
+        <p>文章若有侵犯版权，请联系作者，我将迅速修改！</p>
+<!-- more -->
+
+<h1 id="JavaWeb图书馆项目"><a href="#JavaWeb图书馆项目" class="headerlink" title="JavaWeb图书馆项目"></a>JavaWeb图书馆项目</h1><p>项目目录结构：</p>
+<p><img src="/2023/06/01/JavaWeb%E5%9B%BE%E4%B9%A6%E9%A6%86%E9%A1%B9%E7%9B%AE/10.png"></p>
+<br>
+
+<h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><p>关于前端，采用了 JSP 页面实现前后端数据的交互。</p>
+<p>其次，为了页面的动态变化，采用了 bootstrap 框架，引用以下三个文件：</p>
+<ul>
+<li>jquery.min.js——引用 jQuery 文件，bootstrap 是基于 jQuery 的，所以要添加 jQuery 文件的引用。</li>
+<li>bootstrap.min.css——bootstrap 的核心 CSS 样式文件。</li>
+<li>bootstrap.min.js——bootstrap 的核心 JavaScript 文件。</li>
+</ul>
+<p>**bootstrap 中的 js 插件依赖于 jQuery **，因此一定要先引入 jquery.js 文件，才能用 bootstrap 插件，不然就会报错，效果显示不出来。</p>
+<br>
+
+<h3 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h3><p>JSP 全称 Java Server Pages，是一种动态网页开发技术。它使用 JSP 标签在 HTML 网页中插入 Java 代码。</p>
+<p>JSP 是一种 Java servlet，主要用于实现 Java web 应用程序的用户界面部分。</p>
+<p>JSP 通过网页表单获取用户输入数据、访问数据库及其他数据源，然后动态地创建网页。</p>
+<br>
+
+<h4 id="脚本程序"><a href="#脚本程序" class="headerlink" title="脚本程序"></a>脚本程序</h4><p>脚本程序可以包含任意量的Java语句、变量、方法或表达式。</p>
+<p>语法格式：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;% 代码片段 %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>其等价的XML语句：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:scriptlet&gt;   </span><br><span class="line">  代码片段</span><br><span class="line">&lt;/jsp:scriptlet&gt;</span><br></pre></td></tr></table></figure>
+
+<p>任何文本、HTML标签、JSP元素必须写在脚本程序的外面。</p>
+<br>
+
+<h4 id="JSP-声明"><a href="#JSP-声明" class="headerlink" title="JSP 声明"></a>JSP 声明</h4><p>一个声明语句可以声明一个或多个变量、方法，供后面的 Java 代码使用。在 JSP 文件中，您必须先声明这些变量和方法然后才能使用它们。</p>
+<p>JSP 声明的语法格式：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%! declaration; [ declaration; ]+ ... %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者，您也可以编写与其等价的XML语句，就像下面这样：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:declaration&gt;</span><br><span class="line">  代码片段</span><br><span class="line">&lt;/jsp:declaration&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="JSP-表达式"><a href="#JSP-表达式" class="headerlink" title="JSP 表达式"></a>JSP 表达式</h4><p>将表达式的值转化成 String，然后插显示出来。</p>
+<p>语法格式：</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="meta">%</span>= 表达式 <span class="meta">%</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>其等价的XML语句：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">jsp:expression</span>&gt;</span>   </span><br><span class="line">  表达式</span><br><span class="line"><span class="tag">&lt;/<span class="name">jsp:expression</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="JSP-指令"><a href="#JSP-指令" class="headerlink" title="JSP 指令"></a>JSP 指令</h4><p>JSP 指令用来设置整个 JSP 页面相关的属性，如网页的编码方式和脚本语言。</p>
+<p>语法格式如下：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ directive attribute=<span class="string">&quot;value&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>指令可以有多个属性，它们以键值对的形式存在，并用逗号隔开。</p>
+<p>JSP 中的三种指令标签：</p>
+<table>
+<thead>
+<tr>
+<th align="left">指令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&lt;%@ page … %&gt;</td>
+<td>定义网页依赖属性，为容器提供当前页面的使用说明，比如脚本语言、error 页面、缓存需求等等</td>
+</tr>
+<tr>
+<td align="left">&lt;%@ include … %&gt;</td>
+<td>包含其他文件</td>
+</tr>
+<tr>
+<td align="left">&lt;%@ taglib … %&gt;</td>
+<td>引入标签库的定义</td>
+</tr>
+</tbody></table>
+<br>
+
+<h4 id="JSP-行为"><a href="#JSP-行为" class="headerlink" title="JSP 行为"></a>JSP 行为</h4><p>JSP 行为标签使用 XML 语法结构来控制 servlet 引擎。它能够动态插入一个文件，重用 JavaBean 组件，引导用户去另一个页面，为 Java 插件产生相关的 HTML 等等。</p>
+<p>行为标签只有一种语法格式，它严格遵守 XML 标准。语法格式如下：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:action_name attribute=<span class="string">&quot;value&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>行为标签基本上是一些预先就定义好的函数，下表是一些可用的 JSP 行为标签：</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>语法</strong></th>
+<th align="left"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">jsp:include</td>
+<td align="left">用于在当前页面中包含静态或动态资源</td>
+</tr>
+<tr>
+<td align="left">jsp:useBean</td>
+<td align="left">寻找和初始化一个JavaBean组件</td>
+</tr>
+<tr>
+<td align="left">jsp:setProperty</td>
+<td align="left">设置 JavaBean组件的值</td>
+</tr>
+<tr>
+<td align="left">jsp:getProperty</td>
+<td align="left">将 JavaBean组件的值插入到 output中</td>
+</tr>
+<tr>
+<td align="left">jsp:forward</td>
+<td align="left">从一个JSP文件向另一个文件传递一个包含用户请求的request对象</td>
+</tr>
+<tr>
+<td align="left">jsp:plugin</td>
+<td align="left">用于在生成的HTML页面中包含Applet和JavaBean对象</td>
+</tr>
+<tr>
+<td align="left">jsp:element</td>
+<td align="left">动态创建一个XML元素</td>
+</tr>
+<tr>
+<td align="left">jsp:attribute</td>
+<td align="left">定义动态创建的XML元素的属性</td>
+</tr>
+<tr>
+<td align="left">jsp:body</td>
+<td align="left">定义动态创建的XML元素的主体</td>
+</tr>
+<tr>
+<td align="left">jsp:text</td>
+<td align="left">用于封装模板数据</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意：在 jsp 标签中没有用于重定向的标签。</p>
+</blockquote>
+<br>
+
+<h4 id="JSP-隐含对象"><a href="#JSP-隐含对象" class="headerlink" title="JSP 隐含对象"></a>JSP 隐含对象</h4><p>JSP 支持九个自动定义的变量，即隐含对象。</p>
+<p>简介如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>对象</strong></th>
+<th align="left"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">request</td>
+<td align="left"><strong>HttpServletRequest</strong> 类的实例</td>
+</tr>
+<tr>
+<td align="left">response</td>
+<td align="left"><strong>HttpServletResponse</strong> 类的实例</td>
+</tr>
+<tr>
+<td align="left">out</td>
+<td align="left"><strong>PrintWriter</strong> 类的实例，用于把结果输出至网页上</td>
+</tr>
+<tr>
+<td align="left">session</td>
+<td align="left"><strong>HttpSession</strong> 类的实例</td>
+</tr>
+<tr>
+<td align="left">application</td>
+<td align="left">**ServletContext ** 类的实例，与应用上下文有关</td>
+</tr>
+<tr>
+<td align="left">config</td>
+<td align="left">**ServletConfig ** 类的实例</td>
+</tr>
+<tr>
+<td align="left">pageContext</td>
+<td align="left"><strong>PageContext</strong> 类的实例，提供对JSP页面所有对象以及命名空间的访问</td>
+</tr>
+<tr>
+<td align="left">page</td>
+<td align="left">类似于 Java 类中的 this 关键字</td>
+</tr>
+<tr>
+<td align="left">Exception</td>
+<td align="left"><strong>Exception</strong> 类的对象，代表发生错误的 JSP 页面中对应的异常对象</td>
+</tr>
+</tbody></table>
+<br>
+
+<h4 id="控制流语句"><a href="#控制流语句" class="headerlink" title="控制流语句"></a>控制流语句</h4><p>JSP 提供对 Java 语言的全面支持。你可以在 JSP 程序中使用 Java API 甚至建立 Java 代码块，包括判断语句和循环语句等等。</p>
+<p><strong>判断语句</strong></p>
+<p>If…else 块，例如：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;%! <span class="type">int</span> <span class="variable">day</span> <span class="operator">=</span> <span class="number">3</span>; %&gt; </span><br><span class="line">&lt;html&gt; </span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;IF...ELSE Example&lt;/title&gt;</span><br><span class="line">&lt;/head&gt; </span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;% <span class="keyword">if</span> (day == <span class="number">1</span> | day == <span class="number">7</span>) &#123; %&gt;      </span><br><span class="line">  &lt;p&gt; Today is weekend&lt;/p&gt;</span><br><span class="line">&lt;% &#125; <span class="keyword">else</span> &#123; %&gt;      </span><br><span class="line">  &lt;p&gt; Today is not weekend&lt;/p&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line">&lt;/body&gt; </span><br><span class="line">&lt;/html&gt; </span><br></pre></td></tr></table></figure>
+
+<p>switch…case 块与 if…else 块有很大的不同：</p>
+<ul>
+<li>使用 <code>out.println()</code>；</li>
+<li>整个都装在脚本程序的标签中；</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;%! <span class="type">int</span> <span class="variable">day</span> <span class="operator">=</span> <span class="number">3</span>; %&gt; </span><br><span class="line">&lt;html&gt; </span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;SWITCH...CASE Example&lt;/title&gt;&lt;/head&gt; </span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;%  </span><br><span class="line"><span class="keyword">switch</span>(day) &#123; </span><br><span class="line"><span class="keyword">case</span> <span class="number">0</span>:    </span><br><span class="line">  out.println(<span class="string">&quot;It\&#x27;s Sunday.&quot;</span>);    </span><br><span class="line">  <span class="keyword">break</span>; </span><br><span class="line"><span class="keyword">case</span> <span class="number">1</span>:    </span><br><span class="line">  out.println(<span class="string">&quot;It\&#x27;s Monday.&quot;</span>);    </span><br><span class="line">  <span class="keyword">break</span>; </span><br><span class="line"><span class="keyword">case</span> <span class="number">2</span>:    </span><br><span class="line">  out.println(<span class="string">&quot;It\&#x27;s Tuesday.&quot;</span>);    </span><br><span class="line">  <span class="keyword">break</span>; </span><br><span class="line"><span class="keyword">case</span> <span class="number">3</span>:    </span><br><span class="line">  out.println(<span class="string">&quot;It\&#x27;s Wednesday.&quot;</span>);    </span><br><span class="line">  <span class="keyword">break</span>; </span><br><span class="line"><span class="keyword">case</span> <span class="number">4</span>:    </span><br><span class="line">  out.println(<span class="string">&quot;It\&#x27;s Thursday.&quot;</span>);    </span><br><span class="line">  <span class="keyword">break</span>; </span><br><span class="line"><span class="keyword">case</span> <span class="number">5</span>:    </span><br><span class="line">  out.println(<span class="string">&quot;It\&#x27;s Friday.&quot;</span>);    </span><br><span class="line">  <span class="keyword">break</span>; </span><br><span class="line"><span class="keyword">default</span>:    </span><br><span class="line">  out.println(<span class="string">&quot;It&#x27;s Saturday.&quot;</span>); </span><br><span class="line">&#125; </span><br><span class="line">%&gt;</span><br><span class="line">&lt;/body&gt; </span><br><span class="line">&lt;/html&gt; </span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>循环语句</strong></p>
+<p>在 JSP 程序中可以使用 Java 的三个基本循环类型：for，while，和 do…while。</p>
+<p>for 循环，例如：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;%! <span class="type">int</span> fontSize; %&gt; </span><br><span class="line">&lt;html&gt; </span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;FOR LOOP Example&lt;/title&gt;</span><br><span class="line">&lt;/head&gt; </span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;%<span class="keyword">for</span> ( fontSize = <span class="number">1</span>; fontSize &lt;= <span class="number">3</span>; fontSize++)&#123; %&gt;   </span><br><span class="line">  &lt;font color=<span class="string">&quot;green&quot;</span> size=<span class="string">&quot;&lt;%= fontSize %&gt;&quot;</span>&gt;    </span><br><span class="line">  JSP Tutorial   </span><br><span class="line">  &lt;/font&gt;&lt;br /&gt;</span><br><span class="line">&lt;%&#125;%&gt;</span><br><span class="line">&lt;/body&gt; </span><br><span class="line">&lt;/html&gt; </span><br></pre></td></tr></table></figure>
+
+<p>while 循环，例如：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;%! <span class="type">int</span> fontSize; %&gt; </span><br><span class="line">&lt;html&gt; </span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;WHILE LOOP Example&lt;/title&gt;</span><br><span class="line">&lt;/head&gt; </span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;%<span class="keyword">while</span> ( fontSize &lt;= <span class="number">3</span>)&#123; %&gt;   </span><br><span class="line">  &lt;font color=<span class="string">&quot;green&quot;</span> size=<span class="string">&quot;&lt;%= fontSize %&gt;&quot;</span>&gt;    </span><br><span class="line">  JSP Tutorial   </span><br><span class="line">  &lt;/font&gt;&lt;br /&gt;</span><br><span class="line">&lt;%fontSize++;%&gt;</span><br><span class="line">&lt;%&#125;%&gt;</span><br><span class="line">&lt;/body&gt; </span><br><span class="line">&lt;/html&gt; </span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="JSTL-标签库"><a href="#JSTL-标签库" class="headerlink" title="JSTL 标签库"></a>JSTL 标签库</h3><p>JSP 标准标签库（JSTL）是一个 JSP 标签集合，它封装了 JSP 应用的通用核心功能。</p>
+<p>根据 JSTL 标签所提供的功能，可以将其分为5个类别：</p>
+<ul>
+<li><strong>核心标签</strong></li>
+<li><strong>格式化标签</strong></li>
+<li><strong>SQL 标签</strong></li>
+<li><strong>XML 标签</strong></li>
+<li><strong>JSTL 函数</strong></li>
+</ul>
+<blockquote>
+<p>如果要使用 JSTL 标签库，我们首先要做的就是引入相应的 jar 包，下载 <a target="_blank" rel="noopener" href="http://archive.apache.org/dist/jakarta/taglibs/standard/binaries/">jakarta-taglibs-standard-1.1.2.zip</a>，将 standard.jar 和 jstl.jar 文件拷贝到 <strong>&#x2F;WEB-INF&#x2F;lib&#x2F;</strong> 下。如果使用 IDEA 开发 JSP 应用，在项目结构中的模块选项，选择添加 JSTL 标签库依赖。</p>
+<p><img src="/2023/06/01/JavaWeb%E5%9B%BE%E4%B9%A6%E9%A6%86%E9%A1%B9%E7%9B%AE/9.png"></p>
+</blockquote>
+<p>有时候我们在 jsp 页面上要嵌套大量的 Java 代码，会使源码复杂且难以维护，所以我们就可以利用 JSTL 标签库解决这个问题。</p>
+<br>
+
+<h4 id="核心标签"><a href="#核心标签" class="headerlink" title="核心标签"></a>核心标签</h4><p>核心标签库是最常用的 JSTL 标签。引用核心标签库的语法如下：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;c&quot;</span> </span><br><span class="line">           uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/core&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;c:out&gt;</code></td>
+<td>用于在 JSP 中显示数据，就像 &lt;%&#x3D; … &gt;</td>
+</tr>
+<tr>
+<td><code>&lt;c:set&gt;</code></td>
+<td>用于保存数据</td>
+</tr>
+<tr>
+<td><code>&lt;c:remove&gt;</code></td>
+<td>用于删除数据</td>
+</tr>
+<tr>
+<td><code>&lt;c:catch&gt;</code></td>
+<td>用来处理产生错误的异常情况，并将错误信息存储起来</td>
+</tr>
+<tr>
+<td><code>&lt;c:if&gt;</code></td>
+<td>与我们在一般程序中用的 if 一样</td>
+</tr>
+<tr>
+<td><code>&lt;c:redirect&gt;</code></td>
+<td>重定向至一个新的URL</td>
+</tr>
+<tr>
+<td><code>&lt;c:url&gt;</code></td>
+<td>使用可选的参数来创造一个URL</td>
+</tr>
+</tbody></table>
+<br>
+
+<h4 id="格式化标签"><a href="#格式化标签" class="headerlink" title="格式化标签"></a>格式化标签</h4><p>格式化标签用来格式化并输出文本、日期、时间、数字。引用格式化标签库的语法如下：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;fmt&quot;</span></span><br><span class="line">  				 uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/fmt&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;fmt:formatNumber&gt;</code></td>
+<td>使用指定的格式或精度格式化数字</td>
+</tr>
+<tr>
+<td><code>&lt;fmt:formatDate&gt;</code></td>
+<td>解析一个代表着日期或时间的字符串</td>
+</tr>
+<tr>
+<td><code>&lt;fmt:message&gt;</code></td>
+<td>显示资源配置文件信息</td>
+</tr>
+</tbody></table>
+<br>
+
+<h4 id="SQL-标签"><a href="#SQL-标签" class="headerlink" title="SQL 标签"></a>SQL 标签</h4><p>JSTL SQL 标签库提供了与关系型数据库（Oracle，MySQL等）进行交互的标签。引用 SQL 标签库的语法如下：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;sql&quot;</span></span><br><span class="line">           uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/sql&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;sql:setDataSource&gt;</code></td>
+<td>指定数据源</td>
+</tr>
+<tr>
+<td><code>&lt;sql:query&gt;</code></td>
+<td>运行SQL查询语句</td>
+</tr>
+<tr>
+<td><code>&lt;sql:update&gt;</code></td>
+<td>运行SQL更新语句</td>
+</tr>
+<tr>
+<td><code>&lt;sql:param&gt;</code></td>
+<td>将SQL语句中的参数设置为指定值</td>
+</tr>
+</tbody></table>
+<br>
+
+<h4 id="XML-标签"><a href="#XML-标签" class="headerlink" title="XML 标签"></a>XML 标签</h4><p>JSTL XML 标签库提供了创建和操作 XML 文档的标签。引用 XML 标签库的语法如下：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;x&quot;</span> </span><br><span class="line">           uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/xml&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在使用xml标签前，你必须将 XML 和 XPath 的相关包拷贝至你的 <code>&lt;Tomcat 安装目录&gt;\lib</code> 下:</p>
+<ul>
+<li><p>XercesImpl.jar</p>
+<p>下载地址：<a target="_blank" rel="noopener" href="http://www.apache.org/dist/xerces/j/">http://www.apache.org/dist/xerces/j/</a></p>
+</li>
+<li><p>xalan.jar</p>
+<p>下载地址：<a target="_blank" rel="noopener" href="http://xml.apache.org/xalan-j/index.html">http://xml.apache.org/xalan-j/index.html</a></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">标签</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>&lt;x:out&gt;</code></td>
+<td align="left">与&lt;%&#x3D; … &gt;,类似，不过只用于XPath表达式</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;x:parse&gt;</code></td>
+<td align="left">解析 XML 数据</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;x:set&gt;</code></td>
+<td align="left">设置XPath表达式</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;x:if&gt;</code></td>
+<td align="left">判断XPath表达式，若为真，则执行本体中的内容，否则跳过本体</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;x:param&gt;</code></td>
+<td align="left">将XSL转换应用在XML文档中</td>
+</tr>
+</tbody></table>
+<br>
+
+<h4 id="JSTL-函数"><a href="#JSTL-函数" class="headerlink" title="JSTL 函数"></a>JSTL 函数</h4><p>JSTL 包含一系列标准函数，大部分是通用的字符串处理函数。引用 JSTL 函数库的语法如下：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;fn&quot;</span></span><br><span class="line">           uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/functions&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>fn.contains()</code></td>
+<td>测试输入的字符串是否包含指定的子串</td>
+</tr>
+<tr>
+<td><code>fn.endsWith()</code></td>
+<td>测试输入的字符串是否以指定的后缀结尾</td>
+</tr>
+<tr>
+<td><code>fn.indexOf()</code></td>
+<td>返回指定字符串在输入字符串中出现的位置</td>
+</tr>
+<tr>
+<td><code>fn.join()</code></td>
+<td>将数组的元素合成一个字符串然后输出</td>
+</tr>
+</tbody></table>
+<br>
+
+<h3 id="EL-表达式"><a href="#EL-表达式" class="headerlink" title="EL 表达式"></a>EL 表达式</h3><p>为了简化 JSP 页面，JSP 2.0（目前最新） 新增了 EL（Expression Language）表达式语言。EL 提供了更为简洁、方便的形式来访问变量和参数。</p>
+<br>
+
+<p><strong>EL 语法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;EL表达式&#125;</span><br></pre></td></tr></table></figure>
+
+<p>EL 表达式语法以 <code>$&#123;</code> 开头，以 <code>&#125;</code> 结束，中间为合法的表达式。</p>
+<p>示例：</p>
+<p><code>$&#123;param.name&#125;</code> 表示获取参数 name 的值，等同于 <code>&lt;%= request.getParameter(&#39;name&#39;) %&gt;</code>。</p>
+<br>
+
+<p><strong>EL 运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>运算符</th>
+<th>示例</th>
+<th>注意</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>算术运算符</td>
+<td>+（加）、-（减）、*（乘）、&#x2F; 或 div（除）、% 或 mod（求余）</td>
+<td>${5+2}</td>
+<td>EL 中的加法（+）无法进行字符串间的连接运算</td>
+</tr>
+<tr>
+<td>比较运算符</td>
+<td>&#x3D;&#x3D; 或 eq（等于）、!&#x3D; 或 ne（不等于）、&lt; 或 lt（小于）、&gt; 或 gt（大于）、&lt;&#x3D; 或 le（大于等于）、&gt;&#x3D; 或 ge（大于等于）</td>
+<td>${3&gt;8}</td>
+<td>返回值为 Boolean 值</td>
+</tr>
+<tr>
+<td>逻辑运算符</td>
+<td>&amp;&amp; 或 and（与）、|| 或 or（或）、! 或 not（非）</td>
+<td>${2&gt;1&amp;&amp;3&lt;4}</td>
+<td>返回值为 Boolean 值</td>
+</tr>
+<tr>
+<td>其它运算符</td>
+<td><code>.</code> 和 <code>[]</code> 用来访问 JavaBean 中的属性和隐式对象的数据<br /><code>empty</code> 用来判断 EL 表达式中的对象或者变量是否为空<br /><code>$&#123;条件表达式?表达式1:表达式2&#125;</code> 条件运算符</td>
+<td>${empty cart?”购物车为空”:cart}</td>
+<td>无</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>优先级</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>[] .</td>
+</tr>
+<tr>
+<td>2</td>
+<td>()</td>
+</tr>
+<tr>
+<td>3</td>
+<td>-（负）、not、! 、empty</td>
+</tr>
+<tr>
+<td>4</td>
+<td>* 、 &#x2F; 、 div 、% 、mod</td>
+</tr>
+<tr>
+<td>5</td>
+<td>+、-（减）</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&lt;、&gt;、&lt;&#x3D;、&gt;&#x3D;、lt、gt、le、ge</td>
+</tr>
+<tr>
+<td>7</td>
+<td>&#x3D;&#x3D;、!-、eq、ne</td>
+</tr>
+<tr>
+<td>8</td>
+<td>&amp;&amp;、and</td>
+</tr>
+<tr>
+<td>9</td>
+<td>||、or</td>
+</tr>
+<tr>
+<td>10</td>
+<td>${A?B:C}</td>
+</tr>
+</tbody></table>
+<br>
+
+<p><strong>禁用 EL 表达式</strong></p>
+<p>禁用 EL 表达式的 3 种方法：</p>
+<ul>
+<li><p>禁用单个 EL 表达式</p>
+<p>在 EL 表达式前加 <code>\</code>，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\$&#123;2+3&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>禁用当前页面的 EL 表达式</p>
+<p>将 page 指令中的 isELIgnored 属性设置为 true，如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page isELIgnored=&quot;true&quot; %&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>禁用整个 Web 应用的 EL 表达式</p>
+<p>在 web.xml 中配置 <code>&lt;el-ignored&gt;</code> 元素，如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">jsp-property-group</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>*jsp<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-ignored</span>&gt;</span>false<span class="tag">&lt;/<span class="name">el-ignored</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">jsp-propery-group</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<br>
+
+<p><strong>EL 内置对象</strong></p>
+<p>为了显示方便，EL 表达式语言提供了许多内置对象，可以通过不同的内置对象来输出不同的内容。EL 表达式内置对象如下：</p>
+<table>
+<thead>
+<tr>
+<th>内置对象</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pageScope</td>
+<td>获取 page 范围的变量</td>
+</tr>
+<tr>
+<td>requestScope</td>
+<td>获取 request 范围的变量</td>
+</tr>
+<tr>
+<td>sessionScope</td>
+<td>获取 session 范围的变量</td>
+</tr>
+<tr>
+<td>applicationScope</td>
+<td>获取 application 范围的变量</td>
+</tr>
+<tr>
+<td>param</td>
+<td>相当于 request.getParameter(String name)，获取单个参数的值</td>
+</tr>
+<tr>
+<td>paramValues</td>
+<td>相当于 request.getParameterValues(String name)，获取参数集合中的变量值</td>
+</tr>
+<tr>
+<td>header</td>
+<td>相当于 request.getHeader(String name)，获取 HTTP 请求头信息</td>
+</tr>
+<tr>
+<td>headerValues</td>
+<td>相当于 request.getHeaders(String name)，获取 HTTP 请求头数组信息</td>
+</tr>
+<tr>
+<td>initParam</td>
+<td>相当于 application.getInitParameter(String name)，获取 web.xml 文件中的参数值</td>
+</tr>
+<tr>
+<td>cookie</td>
+<td>相当于 request.getCookies()，获取 cookie 中的值</td>
+</tr>
+<tr>
+<td>pageContext</td>
+<td>表示当前 JSP 页面的 pageContext 对象</td>
+</tr>
+</tbody></table>
+<p>从以上表格可以看出，EL 表达式可以输出 4 种属性范围的内容。如果在不同的属性范围中设置了同一个属性名称，则按照 page、request、session、application 的顺序依次查找。我们也可以指定要取出哪一个范围的变量，例如：<code>$&#123;pagesScope.name&#125;</code>，表示取出 page 范围的 name 变量。</p>
+<br>
+
+<h3 id="Bootstrap-框架"><a href="#Bootstrap-框架" class="headerlink" title="Bootstrap 框架"></a>Bootstrap 框架</h3><p>Bootstrap 是一个用于快速开发 Web 应用程序和网站的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的。</p>
+<p>在<a target="_blank" rel="noopener" href="http://getbootstrap.com/">官网</a>上下载 Bootstrap 的最新版本，包含 Bootstrap CSS、JavaScript 和字体的预编译的压缩版本。</p>
+<br>
+
+<h4 id="网格系统"><a href="#网格系统" class="headerlink" title="网格系统"></a>网格系统</h4><p>Bootstrap 包含了一个响应式的、移动设备优先的、不固定的网格系统，可以随着设备或视口大小的增加而适当地扩展到 12 列。</p>
+<p><img src="/2023/06/01/JavaWeb%E5%9B%BE%E4%B9%A6%E9%A6%86%E9%A1%B9%E7%9B%AE/1.png"></p>
+<ul>
+<li>行必须放在 <code>.container</code> class 内，以便获得适当的对齐（alignment）和内边距（padding）。</li>
+<li>使用行（row）来创建列的水平组。</li>
+<li>内容应该放在列中，且唯有列可以是行的直接子元素。</li>
+<li>预定义的网格类，比如 <code>.row</code> 和 <code>.col-xs-4</code>，可用于快速创建网格布局。LESS 混合类可用于更多语义布局。</li>
+<li>网格系统是通过指定想要横跨的十二个可用的列来创建的。例如，创建三个相等的列，则使用三个 <code>.col-xs-4</code>。</li>
+</ul>
+<p>下表总结了 Bootstrap 网格系统如何跨多个设备工作：</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">超小设备手机（&lt;768px）</th>
+<th align="left">小型设备平板电脑（≥768px）</th>
+<th align="left">中型设备台式电脑（≥992px）</th>
+<th align="left">大型设备台式电脑（≥1200px）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">网格行为</td>
+<td align="left">一直是水平的</td>
+<td align="left">以折叠开始，断点以上是水平的</td>
+<td align="left">以折叠开始，断点以上是水平的</td>
+<td align="left">以折叠开始，断点以上是水平的</td>
+</tr>
+<tr>
+<td align="left">最大容器宽度</td>
+<td align="left">None (auto)</td>
+<td align="left">750px</td>
+<td align="left">970px</td>
+<td align="left">1170px</td>
+</tr>
+<tr>
+<td align="left">Class 前缀</td>
+<td align="left"><strong>.col-xs-</strong></td>
+<td align="left"><strong>.col-sm-</strong></td>
+<td align="left"><strong>.col-md-</strong></td>
+<td align="left"><strong>.col-lg-</strong></td>
+</tr>
+<tr>
+<td align="left">列数量和</td>
+<td align="left">12</td>
+<td align="left">12</td>
+<td align="left">12</td>
+<td align="left">12</td>
+</tr>
+<tr>
+<td align="left">最小列宽</td>
+<td align="left">Auto</td>
+<td align="left">60px</td>
+<td align="left">78px</td>
+<td align="left">95px</td>
+</tr>
+<tr>
+<td align="left">间隙宽度</td>
+<td align="left">30px （一个列的每边分别 15px）</td>
+<td align="left">30px （一个列的每边分别 15px）</td>
+<td align="left">30px （一个列的每边分别 15px）</td>
+<td align="left">30px （一个列的每边分别 15px）</td>
+</tr>
+<tr>
+<td align="left">可嵌套</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+</tr>
+<tr>
+<td align="left">偏移量</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+</tr>
+<tr>
+<td align="left">列排序</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+</tr>
+</tbody></table>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/* 基本的网络结构 */</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-*-*&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-*-*&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>      </span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/* 偏移列 */</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-6 col-md-offset-3&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">/* 嵌套列 */</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-9&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h4</span>&gt;</span>第二列 - 分为四个盒子<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-6&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-6&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-6&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-6&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;glyphicon glyphicon-search&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> <code>glyphicon</code> class 表示使用字体图标，<code>glyphicon-search</code> 特指字体图标中的一个。</p>
+<blockquote>
+<p>自定义字体图标的样式：</p>
+<p>​	在父元素中定义 style 属性，并设置相应规则。</p>
+<p>例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-primary btn-lg&quot;</span> <span class="attr">style</span>=<span class="string">&quot;font-size: 60px&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;glyphicon glyphicon-user&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> User</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>同理，可以设置字体图标的颜色（color）和阴影（text-shadow）等。</p>
+</blockquote>
+<br>
+
+<h4 id="下拉菜单"><a href="#下拉菜单" class="headerlink" title="下拉菜单"></a>下拉菜单</h4><p>基本格式：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;dropdown&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">class</span>=<span class="string">&quot;dropdown-toggle&quot;</span> <span class="attr">data-toggle</span>=<span class="string">&quot;dropdown&quot;</span>&gt;</span></span><br><span class="line">        菜单名</span><br><span class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;dropdown-menu&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;dropdown-header&quot;</span>&gt;</span>下拉菜单标题<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>Java<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>数据挖掘<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>数据通信/网络<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;divider&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;dropdown-header&quot;</span>&gt;</span>下拉菜单标题<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>分离的链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="2.png" style="zoom:80%;" />
+
+<p>如果需要使用下拉菜单，只需要在 class <code>.dropdown</code> 引用插件即可。</p>
+<p>在 class 为 dropdown 的元素内添加菜单主体：</p>
+<ul>
+<li>触发器：始终显示，需设置 <code>href=&quot;#&quot; data-toggle=&quot;dropdown&quot;</code>，点击显示菜单。</li>
+<li>菜单内容：由 class 为 <code>dropdown-menu</code> 的 ul 元素包裹，li 是菜单中的每一个项。另外，你可以通过 class 给下拉菜单添加额外内容和效果，例如，标题（.dropdown-header）和分割线（.divider）等。</li>
+</ul>
+<br>
+
+<h4 id="面板"><a href="#面板" class="headerlink" title="面板"></a>面板</h4><img src="3.png" style="zoom: 50%;" />
+
+<p>面板组件（Panels），用于把 DOM 组件插入到一个盒子中。创建一个基本的面板，只需要向 <code>&lt;div&gt;</code> 元素添加 class <code>.panel</code> 和 class <code>.panel-default</code> 即可。</p>
+<p>基本结构如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel panel-default&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel-heading&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel-body&quot;</span>&gt;</span></span><br><span class="line">        这是一个基本的面板</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>面板分为两个部分，首部和主体。</p>
+ <br>
+
+<h4 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h4><p>导航栏可以在应用或网站中作为导航页头的响应式基础组件。</p>
+<p>基本结构：</p>
+<ul>
+<li>向 <code>&lt;nav&gt;</code> 标签添加 class <code>.navbar</code>、<code>navbar-default</code>，包裹整个导航栏。</li>
+<li>向 <code>&lt;div&gt;</code> 元素添加一个标题 class <code>.navbar-header</code>，作为导航栏标题。</li>
+<li>除了导航条 <code>navbar-nav</code>，在导航栏中还可以添加表单（navbar-form）、按钮（navbar-btn）、文本（navbar-text）等。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">&quot;navbar navbar-default&quot;</span> <span class="attr">role</span>=<span class="string">&quot;navigation&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container-fluid&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;navbar-header&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;navbar-brand&quot;</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>菜鸟教程<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;nav navbar-nav&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;active&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>iOS<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>SVN<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;dropdown&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">class</span>=<span class="string">&quot;dropdown-toggle&quot;</span> <span class="attr">data-toggle</span>=<span class="string">&quot;dropdown&quot;</span>&gt;</span></span><br><span class="line">                    Java</span><br><span class="line">                    <span class="tag">&lt;<span class="name">b</span> <span class="attr">class</span>=<span class="string">&quot;caret&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;dropdown-menu&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>jmeter<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>EJB<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>Jasper Report<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;divider&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>分离的链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;divider&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>另一个分离的链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/06/01/JavaWeb%E5%9B%BE%E4%B9%A6%E9%A6%86%E9%A1%B9%E7%9B%AE/4.png"></p>
+<br>
+
+<h4 id="模态框"><a href="#模态框" class="headerlink" title="模态框"></a>模态框</h4><p>模态框（Modal）是覆盖在父窗体上的子窗体，可提供信息、交互等。</p>
+<p>基本结构：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 触发模态框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#register&quot;</span> <span class="attr">data-toggle</span>=<span class="string">&quot;modal&quot;</span>&gt;</span>注册<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 模态框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;modal fade&quot;</span> <span class="attr">id</span>=<span class="string">&quot;register&quot;</span> <span class="attr">tabindex</span>=<span class="string">&quot;-1&quot;</span> <span class="attr">role</span>=<span class="string">&quot;dialog&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;modal-dialog&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;modal-content&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;modal-header&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;close&quot;</span> <span class="attr">data-dismiss</span>=<span class="string">&quot;modal&quot;</span>&gt;</span><span class="symbol">&amp;times;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;modal-title&quot;</span>&gt;</span>注册用户<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;modal-body&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">			&lt;div class=&quot;modal-footer&quot;&gt;</span></span><br><span class="line"><span class="comment">			&lt;/div&gt;</span></span><br><span class="line"><span class="comment">			--&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span>  <span class="comment">&lt;!-- /.modal-content --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>  <span class="comment">&lt;!-- /.modal --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：在触发元素中，其中需要包含的属性，第一个是 <strong>data-toggle</strong>，指以什么<strong>事件触发</strong>，相当于告诉浏览器你是一个什么组件；第二个是 <strong>data-target</strong>，指事件的<strong>设置目标</strong>，相当于告诉浏览器你要操作那个元素。</p>
+<p>一起使用就是代表 data-target 所指的元素以 data-toggle 指定的形式显示。</p>
+<ul>
+<li><p>在模态框组件的根标签上，class <code>.modal</code> 用来把 <code>&lt;div&gt;</code> 的内容识别为模态框；class <code>.fade</code> 实现内容的淡入淡出。</p>
+</li>
+<li><p>关于模态框关闭按钮：**class&#x3D;”close”<strong>，是一个 CSS class，为模态窗口的关闭按钮设置样式；</strong>data-dismiss&#x3D;”modal”**，是一个自定义的 HTML5 data 属性，用于实现关闭模态窗口。例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-default&quot;</span> <span class="attr">data-dismiss</span>=<span class="string">&quot;modal&quot;</span>&gt;</span>关闭<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<img src="5.png" style="zoom:67%;" />
+
+<br>
+
+<h4 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h4><p>垂直表单：</p>
+<ul>
+<li>默认为垂直元素，<code>&lt;form&gt;</code> 元素中 class 属性为空。</li>
+<li>把标签和控件放在一个带有 class <code>.form-group</code> 的 <code>&lt;div&gt;</code> 中，这是获取最佳间距所必须的。</li>
+<li>向所以的文本元素 <code>&lt;input&gt;</code>、<code>&lt;textarea&gt;</code> 和 <code>&lt;select&gt;</code> 添加 class <code>.form-control</code>。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;name&quot;</span>&gt;</span>名称<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入名称&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;inputfile&quot;</span>&gt;</span>文件输入<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">id</span>=<span class="string">&quot;inputfile&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;help-block&quot;</span>&gt;</span>这里是块级帮助文本的实例。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span>请打勾</span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-default&quot;</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="6.jpg" style="zoom:67%;" />
+
+<p>内联表单：</p>
+<p>它的所有元素是内联的，向左对齐的，标签是并排的，向 <code>&lt;form&gt;</code> 标签添加 class <code>.form-inline</code>。</p>
+<ul>
+<li>使用 class <code>.sr-only</code>（screen reader only），可以隐藏内联表单的标签。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot;form-inline&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">&quot;sr-only&quot;</span> <span class="attr">for</span>=<span class="string">&quot;name&quot;</span>&gt;</span>名称<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入名称&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">&quot;sr-only&quot;</span> <span class="attr">for</span>=<span class="string">&quot;inputfile&quot;</span>&gt;</span>文件输入<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">id</span>=<span class="string">&quot;inputfile&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span>请打勾</span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-default&quot;</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="7.jpg" style="zoom:67%;" />
+
+<p>水平表单：</p>
+<ul>
+<li>向父 <code>&lt;form&gt;</code> 元素添加 class <code>.form-horizontal</code>。</li>
+<li>把标签和控件放在一个带有 class <code>.form-group</code> 的 <code>&lt;div&gt;</code> 中。</li>
+<li>向所以的文本元素 <code>&lt;input&gt;</code>、<code>&lt;textarea&gt;</code> 和 <code>&lt;select&gt;</code> 添加 class <code>.form-control</code>。</li>
+<li>向标签添加 class <code>.control-label</code>。</li>
+<li>需要给水平布局的元素分配宽度，即网格系统的列数量。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot;form-horizontal&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;firstname&quot;</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-2 control-label&quot;</span>&gt;</span>名字<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-10&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">id</span>=<span class="string">&quot;firstname&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入名字&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;lastname&quot;</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-2 control-label&quot;</span>&gt;</span>姓<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-10&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">id</span>=<span class="string">&quot;lastname&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入姓&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-offset-2 col-sm-10&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span>请记住我</span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-offset-2 col-sm-10&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-default&quot;</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><p>基本结构：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">&quot;table&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">caption</span>&gt;</span>基本的表格布局<span class="tag">&lt;/<span class="name">caption</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>名称<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>城市<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Tanmay<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Bangalore<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Sachin<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Mumbai<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在 class 属性添加特定属性值，条纹表格（table-striped）、边框表格（table-bordered）、悬停表格（table-hover，当指针悬停在行上时会出现浅灰色背景）、精简表格（table-condensed）。</li>
+<li>响应式表格，通过把任意的 <code>.table</code> 包在 <code>.table-responsive</code> class 内，可以让表格水平滚动以适应小型设备。</li>
+</ul>
+<br>
+
+<h3 id="应用实例"><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h3><p>和 java 中的导包是一样的，将你需要的类导入 jsp 页面。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">&quot;java.util.*&quot;</span> pageEncoding=<span class="string">&quot;UTF-8&quot;</span> %&gt;</span><br><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">&quot;com.libweb.dao.AdminDao&quot;</span> %&gt;</span><br><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">&quot;com.libweb.bean.BookBean&quot;</span> %&gt;</span><br><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">&quot;com.libweb.bean.AdminBean&quot;</span> %&gt;</span><br><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">&quot;com.libweb.dao.BookDao&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>&lt;% ... %&gt;</code> 标签中插入 java 语句：</p>
+<ul>
+<li><p>B&#x2F;S 架构中，客户端与服务器连接，在服务端就会自动创建一个 session 对象。</p>
+<p>  <code>session.setAttribute(“name”,value)</code> 设置 session 中的属性，可以是一个具体值，也可以是一个引用值；<code>session.getAttribute(“name”)</code> 获得 session 对象属性。</p>
+<p>  例如，当用户已登录系统后，你可以在 session 中存储了一个用户信息对象，此后你可以随时从 session 中将这个对象取出来进行一些操作，比如进行身 份验证等等。</p>
+</li>
+<li><p>接下来的是创建一个 AdminDao、AdminBean 和 BookDao，供后面使用。</p>
+</li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">    <span class="type">AdminBean</span> <span class="variable">admin</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AdminBean</span>();</span><br><span class="line">    <span class="type">String</span> <span class="variable">aid</span> <span class="operator">=</span> (String) session.getAttribute(<span class="string">&quot;aid&quot;</span>);</span><br><span class="line">    <span class="type">AdminDao</span> <span class="variable">admindao</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AdminDao</span>();</span><br><span class="line">    admin = admindao.get_AidInfo2(aid);</span><br><span class="line">    <span class="type">BookDao</span> <span class="variable">bookdao</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BookDao</span>();</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>首先创建了一个表格，通过 Bootstrap 实现了边框表格和悬停表格；</p>
+<p>嵌入 java 语句，创建泛型类型为 BookBean 的数组集合，调用 BookDao 的 <code>get_ListInfo()</code> 方法将书籍信息对象赋给 bookdata；</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;table id=<span class="string">&quot;data_list&quot;</span> class=<span class="string">&quot;table table-hover table-bordered&quot;</span>&gt;</span><br><span class="line">    &lt;thead&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;图书号&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;图书名称&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;作者名称&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;出版社&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;操作&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/thead&gt;</span><br><span class="line"></span><br><span class="line">    &lt;%</span><br><span class="line">    ArrayList&lt;BookBean&gt; bookdata = (ArrayList&lt;BookBean&gt;) request.getAttribute(<span class="string">&quot;data&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (bookdata == <span class="literal">null</span>) &#123;</span><br><span class="line">        bookdata = (ArrayList&lt;BookBean&gt;) bookdao.get_ListInfo();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (BookBean bean : bookdata) &#123;</span><br><span class="line">    %&gt;</span><br><span class="line"></span><br><span class="line">    &lt;tbody&gt;</span><br><span class="line">        &lt;td&gt;&lt;%= bean.getCard() %&gt;</span><br><span class="line">        &lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;%= bean.getName() %&gt;</span><br><span class="line">        &lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;%= bean.getAutho() %&gt;</span><br><span class="line">        &lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;%= bean.getPress() %&gt;</span><br><span class="line">        &lt;/td&gt;</span><br><span class="line">        &lt;td&gt;</span><br><span class="line">            &lt;button type=<span class="string">&quot;button&quot;</span> class=<span class="string">&quot;btn btn-danger btn-xs&quot;</span></span><br><span class="line">                    onclick=<span class="string">&quot;deletebook(&lt;%= bean.getBid() %&gt;)&quot;</span>&gt;删除</span><br><span class="line">            &lt;/button&gt;</span><br><span class="line">        &lt;/td&gt;</span><br><span class="line">    &lt;/tbody&gt;</span><br><span class="line">    &lt;%&#125; %&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">deletebook</span>(<span class="params">bid</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">let</span> con = <span class="title function_">confirm</span>(<span class="string">&quot;是否删除?&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (con == <span class="literal">true</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            location.<span class="property">href</span> = <span class="string">&quot;DeleteServlet?bid=&quot;</span> + bid;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在表格主体内，通过 JSP 表达式将书本信息显示在表格，添加一个按钮，可以传值给 JS 函数；</p>
+<p>设置URL，<code>location.href = &quot;DeleteServlet?bid=&quot; + bid;</code>，调用 Servlet 处理类并传入一个参数。</p>
+<p><strong>类似的，可以提交表单给 Servlet 类处理，由 Servlet 容器与数据库等进行交互。</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot;form-horizontal&quot;</span> <span class="attr">action</span>=<span class="string">&quot;SelectServlet&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>class</code>：表单类，由 bootstrap CSS 提供样式；</li>
+<li><code>action</code>：发送表单数据的目的地；</li>
+<li><code>method</code>：发送表单数据的方法；</li>
+</ul>
+<br>
+
+<h2 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h2><p>一般使用 JSP 技术开发 Web应用，后端可以分为以下四个部分：</p>
+<p><strong>Bean：</strong>存放数据。存放来自于数据库的数据；存放来自客户端的数据（表单提交），存数据的中介作用。</p>
+<p><strong>Dao：</strong>数据访问对象，主要做的事情就是对数据库单表进行增删改操作，以及其他的操作。</p>
+<p><strong>Service:</strong> 对应界面上的操作，增删改查，处理数据，至于业务涉及到几个 dao，就调用几个 dao。</p>
+<p><strong>Servlet：</strong></p>
+<ul>
+<li><p>接受用户请求，进行处理（<code>doget</code>&#x2F;<code>dopost</code>）调用 service，得到数据。</p>
+<p><code>doGet/doPost(HttpServletRequest request, HttpServletResponse response)</code></p>
+</li>
+<li><p>做出响应（HTML）：通过 <code>PrintWriter out = response.getWriter();</code> 可以 out 输出 HTML 代码。</p>
+</li>
+</ul>
+<p><strong>业务流程：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line"></span><br><span class="line">A((开始)) --&gt;B(设计数据库)</span><br><span class="line"></span><br><span class="line">B --&gt; C[dao-service]</span><br><span class="line"></span><br><span class="line">C --调用多个dao--&gt; D[Servlet]</span><br><span class="line"></span><br><span class="line">D --接受用户请求/做出响应--&gt; E[HTML/JSP]</span><br><span class="line"></span><br><span class="line">E --&gt; F((结束))</span><br></pre></td></tr></table></figure>
+
+<p>由于项目大小有限，为简化项目结构，将界面操作功能的实现（service）与实体操作放在了一起。</p>
+<p>本项目后端实现为：JDBC+Tomcat+Beans+Dao+Servlet，即在 Tomcat 服务器测试运行项目，由 beans 存储数据交换中的实体，dao 负责有关 bean 实体的数据处理操作，servlet 负责处理请求和数据处理，JDBC 负责与 SQL 数据库的连接和访问。所有的组成部分共同实现了前后端的数据交换和动态页面。</p>
+<p>接下来，我将分阶段解释各个部分的功能。</p>
+<br>
+
+<h3 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h3><p>Sun 公司于1996年提供了一套访问数据的标准 Java 类库，即 JDBC。</p>
+<p>JDBC 的全称是 Java 数据库连接（Java Database connect），它是一套用于执行 SQL 语句的 Java API。应用程序可通过这套 API 连接到关系数据库，并使用 SQL 语句来完成对数据的查询、更新和删除等操作。</p>
+<p><img src="/2023/06/01/JavaWeb%E5%9B%BE%E4%B9%A6%E9%A6%86%E9%A1%B9%E7%9B%AE/10.jpg"></p>
+<p>从上图可知，应用程序使用 JDBC 访问特定的数据库时，需要与不同的数据库驱动进行连接，而且每个不同的数据库厂商提供的数据库驱动都不是不一样的。为了使应用程序与数据库建立真正连接，JDBC 向上提供访问数据库的 API，向下封装与各种数据库服务器通信的细节。</p>
+<p>根据上文，JDBC 的实现包括三部分：</p>
+<ul>
+<li><p>JDBC 驱动器 API：由 Sun 公司负责制定，其中最主要的接口是 <code>java.sql.Driver</code>，这是一个所有 JDBC 驱动程序都必须实现的接口；</p>
+</li>
+<li><p>JDBC 驱动器：由数据库厂商创建的数据库驱动，实现了 JDBC 驱动器 API，负责与特定的数据库连接，以及处理通信细节；</p>
+</li>
+<li><p>JDBC 驱动管理器：负责注册特定的 JDBC 驱动器，主要通过 <code>java.sql.DriverManager</code> 类实现；</p>
+</li>
+</ul>
+<p>例如，自定义的数据库工具类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.libweb.dbUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.DriverManager;</span><br><span class="line"><span class="keyword">import</span> java.sql.PreparedStatement;</span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DbUtil</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">pwd</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://localhost:3306/books?serverTimezone=UTC&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//加载驱动程序</span></span><br><span class="line">    <span class="comment">//静态代码块，在类装载进内存时执行一次</span></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//建立与数据库的连接，并返回 Connection 对象</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title function_">getConn</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            conn = DriverManager.getConnection(url, username, pwd);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> conn;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//关闭数据库连接，释放资源，包括释放 ResultSet、Statement 和 Connection</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">CloseDB</span><span class="params">(ResultSet rs, PreparedStatement stm, Connection conn)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (rs != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                rs.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (stm != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                stm.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (conn != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                conn.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：在项目结构中，添加库文件 <code>mysql-connector-java-x.x.xx.jar</code>，即 MySQL 提供的 JDBC 驱动包，用 JDBC 连接 MySQL 数据库时必须使用该 jar 包。</p>
+<p><img src="/2023/06/01/JavaWeb%E5%9B%BE%E4%B9%A6%E9%A6%86%E9%A1%B9%E7%9B%AE/9.png"></p>
+<br>
+
+<h3 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h3><p>在市场上有许多 Web 应用服务器支持 Servlet，Tomcat 就是其中一个。</p>
+<p>Apache Tomcat 是一款 Java Servlet 和 Java Server Pages 技术的开源软件实现，可以作为测试 Servlet 的独立服务器，而且可以集成到 Apache Web 应用服务器。</p>
+<blockquote>
+<p>注意：电脑上安装 Tomcat，需要创建并设置 CATALINA_HOME 环境变量。</p>
+<p>通过运行 startup.bat 脚本启动服务器，接下来可以在服务器的资源目录下放置资源文件（html）并在浏览器中渲染和访问。</p>
+</blockquote>
+<br>
+
+<h3 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h3><p>Java Servlet 是运行在 Web 服务器或应用服务器上的程序，它是作为来自 Web 浏览器或其他 HTTP 客户端的请求和 HTTP 服务器上的数据库或应用程序之间的中间层。</p>
+<p>Servlet 可以使用 <strong>javax.servlet</strong> 和 <strong>javax.servlet.http</strong> 包创建。</p>
+<p>使用 Servlet，你可以收集来自网页表单的用户输入，呈现来自数据库或者其他源的记录，还可以动态创建网页。</p>
+<p>下图显示 servlet 在 web 应用程序中的位置：</p>
+<p><img src="/2023/06/01/JavaWeb%E5%9B%BE%E4%B9%A6%E9%A6%86%E9%A1%B9%E7%9B%AE/8.jpg"></p>
+<p>Java Servlet 是运行在带有支持 Java Servlet 规范的解释器的 web 服务器上的 Java 类。</p>
+<p>可以使用 <strong>javax.servlet</strong> 和 <strong>javax.servlet.http</strong> 包创建，它是 Java 企业版的标准组成部分，Java 企业版是支持大型开发项目的 Java 类库的扩展版本。</p>
+<p>Java Servlet 就像任何其他的 Java 类一样已经被创建和编译。在您安装 Servlet 包并把它们添加到您的计算机上的 Classpath 类路径中之后，您就可以通过 JDK 的 Java 编译器或任何其他编译器来编译 Servlet。</p>
+<br>
+
+<p><strong>Servlet 生命周期</strong></p>
+<p>Servlet 生命周期可被定义为创建直到毁灭的整个过程：</p>
+<ul>
+<li>Servlet 初始化后调用 <code>init()</code> 方法；</li>
+<li>Servlet 调用 <code>service()</code> 方法来处理客户端的请求；</li>
+<li>Servlet 销毁前调用 <code>destroy()</code> 方法；</li>
+<li>最后，Servlet 由 JVM 的垃圾回收器进行回收；</li>
+</ul>
+<p>init 方法：在第一次创建 Servlet 时被调用，在后续每次用户请求时不再调用。init() 方法简单地创建或加载一些数据，这些数据将被用于 Servlet 的整个生命周期。</p>
+<blockquote>
+<p>当用户调用一个 Servlet 时，就会创建一个 Servlet 实例，每一个用户请求都会产生一个新的线程，适当的时候移交给 doGet 或 doPost 方法。</p>
+</blockquote>
+<p>service 方法：Servlet 容器（即 Web 服务器）调用 service() 方法来处理来自客户端的请求，在适当的时候调用 doGet、doPost、doPut 或 doDelete 方法，并把格式化的响应写回给客户端。</p>
+<blockquote>
+<p>你不用对 service() 方法做任何动作，只需要根据来自客户端的请求类型来重写 doGet() 或 doPost() 即可。</p>
+</blockquote>
+<p>destroy 方法：只会被调用一次，在 Servlet 生命周期结束时被调用，例如，在 destroy 方法中执行关闭数据库连接、写入 Cookie 列表到外存等操作。</p>
+<br>
+
+<p><strong>实例分析</strong></p>
+<p>实现添加书籍功能的 AddBookServlet 类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.libweb.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Servlet implementation class AddBookServlet</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@WebServlet(&quot;/AddBookServlet&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AddBookServlet</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> <span class="number">1L</span>;    <span class="comment">//用作Serializable类中的版本控件</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">AddBookServlet</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//处理方法为post的表单</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        <span class="comment">//设置编码类型</span></span><br><span class="line">        request.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">        response.setContentType(<span class="string">&quot;text/html;charset = UTF-8&quot;</span>);</span><br><span class="line">        <span class="comment">//获取要添加的图书信息</span></span><br><span class="line">        <span class="comment">//得到图书号参数</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">card</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;card&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">autho</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;autho&quot;</span>);</span><br><span class="line">        <span class="comment">//出版社</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">press</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;press&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">BookDao</span> <span class="variable">bookdao</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BookDao</span>();</span><br><span class="line">        <span class="comment">//调用函数，存入图书</span></span><br><span class="line">        bookdao.addBook(card, name, autho, press);</span><br><span class="line">        response.sendRedirect(<span class="string">&quot;admin_book.jsp&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> Servlet3.0 提供了注解（annotation），我们可以不用再 web.xml 里面配置 servlet，只需要加上 @WebServlet 注解就可以修改该 servlet 的属性了。</p>
+<p>web.xml 可以配置的 servlet 属性，在 @WebServlet 中都可以配置。</p>
+<p>在 web.xml 中：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>AddBookServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.libweb.servlet.AddBookServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>AddBookServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/AddBookServlet<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>用了 @WebServlet 注解后，只需要在原来的 Servlet 类上面加上 <code>@WebServlet(&quot;/AddBookServlet&quot;)</code>；</p>
+<br>
+
+<h3 id="dao"><a href="#dao" class="headerlink" title="dao"></a>dao</h3><p>dao 层叫数据访问层，属于一种比较底层，比较基础的操作类，具体到对于某个表的增删改查；</p>
+<p>由于需实现的服务大多只涉及一个实体类，为简化项目结构，将 dao 类需实现的基本方法（例如，addBook）和 service 中的服务方法（例如，get_ListInfo）一起放在 dao 类中； </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.libweb.dao;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BookDao</span> &#123;</span><br><span class="line">    <span class="comment">/* 添加图书信息，传入所有的信息 */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addBook</span><span class="params">(String card, String name, String autho, String press)</span> &#123;</span><br><span class="line">        <span class="comment">//连接数据库</span></span><br><span class="line">        <span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> DbUtil.getConn();</span><br><span class="line">        <span class="comment">//SQL</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;insert into book(card,name,autho,press) values(?,?,?,?)&quot;</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">rs</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">PreparedStatement</span> <span class="variable">stm</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//预编译SQL，减少sql执行</span></span><br><span class="line">            stm = conn.prepareStatement(sql);</span><br><span class="line">            <span class="comment">//添加</span></span><br><span class="line">            stm.setString(<span class="number">1</span>, card);</span><br><span class="line">            stm.setString(<span class="number">2</span>, name);</span><br><span class="line">            stm.setString(<span class="number">3</span>, autho);</span><br><span class="line">            stm.setString(<span class="number">4</span>, press);</span><br><span class="line">            <span class="comment">//执行更新</span></span><br><span class="line">            rs = stm.executeUpdate();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            DbUtil.CloseDB(<span class="literal">null</span>,stm,conn);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取所有的图书信息，返回的是ArrayList数组形式</span></span><br><span class="line">    <span class="keyword">public</span> ArrayList&lt;BookBean&gt; <span class="title function_">get_ListInfo</span><span class="params">()</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//获取单个图书的信息，根据传入的bid来查找，返回一个BookBean数据类型</span></span><br><span class="line">    <span class="keyword">public</span> BookBean <span class="title function_">get_BookInfo</span><span class="params">(<span class="type">int</span> bid)</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除图书信息，根据传入的bid作为条件</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">deleteBook</span><span class="params">(<span class="type">int</span> bid)</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//用户查找图书，根据输入的名称，使用like进行模糊查询，然后返回一个ArrayList数组类型</span></span><br><span class="line">    <span class="keyword">public</span> ArrayList&lt;BookBean&gt; <span class="title function_">getLikeList</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isBorrowed</span><span class="params">(<span class="type">int</span> bid)</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//还书功能的函数，根据传入的hid借阅记录id，讲status字段的值改为0，并将还书日期改变为当前日期</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">borrowBook2</span><span class="params">(<span class="type">int</span> hid)</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>每个方法都需要执行 SQL 语句变更数据库，注意最后需要关闭连接以节省资源；</p>
+<br>
+
+<h3 id="bean"><a href="#bean" class="headerlink" title="bean"></a>bean</h3><p>bean 是实体类，即一个载体，其主要职责是存储和管理系统内部的信息，它总是和数据库之类的（持久层数据）联系在一起。</p>
+<p>共三类 Bean，AdminBean、BookBean 和 HistoryBean。每个类都包含属性和相应的 set 和 get 方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.libweb.bean;</span><br><span class="line"></span><br><span class="line"><span class="comment">//图书的数据表的bean</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BookBean</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> bid;<span class="comment">//图书id</span></span><br><span class="line">    <span class="keyword">private</span> String name;<span class="comment">//图书名称</span></span><br><span class="line">    <span class="keyword">private</span> String card;<span class="comment">//图书号</span></span><br><span class="line">    <span class="keyword">private</span> String autho;<span class="comment">//作者</span></span><br><span class="line">    <span class="keyword">private</span> String press;<span class="comment">//出版社</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getBid</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> bid;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setBid</span><span class="params">(<span class="type">int</span> bid)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.bid = bid;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/项目/">项目</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/记录/">记录</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Deployed by <a href="https://github.com/kaedea/notion-down" target="_blank">notion-down</a> and
+    Theme by <a href="https://github.com/kaedea/hexo-theme-hacker" target="_blank">hexo-theme-hacker</a>
+    </br>
+    
+    &copy; 2023 a-pin
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
