@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android开发学习 | Apin | blogs</title>
+
+  
+  <meta name="author" content="a-pin">
+  
+
+  
+  <meta name="description" content="This is a blog website in order to record my study experiences!">
+  
+
+  
+  <meta name="keywords" content="blog,a-pin">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Android开发学习"/>
+
+  <meta property="og:site_name" content="Apin"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Apin" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+  <link href="https://fonts.lug.ustc.edu.cn/css?family=Lato|Rubik" rel="stylesheet">
+  <script src="/js/pangu-407.min.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    pangu.autoSpacingPage();
+  });
+</script>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Apin</a>
+    </h1>
+    <p class="site-description">blogs</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Android开发学习</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2023/05/18/Android开发学习/" rel="bookmark">
+        <time class="entry-date published" datetime="2023-05-18T01:00:07.000Z">
+          2023-05-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+
+<script type="text/javascript">
+    function convertRemToPixels(rem) {    
+        return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    }
+    window.onscroll = function() {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > convertRemToPixels(40)) {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'visible';
+        } else {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'hidden';
+        }
+    }
+</script>
+
+
+<div id="toc" class="toc-article">
+      <div class="toc-content">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Android%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0"><span class="toc-text">Android开发学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E5%B1%80%E5%92%8C%E6%8E%A7%E4%BB%B6"><span class="toc-text">布局和控件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%85%E4%B8%AD"><span class="toc-text">居中</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E4%BB%B6%E5%B1%85%E4%B8%AD"><span class="toc-text">控件居中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%B1%85%E4%B8%AD"><span class="toc-text">文本居中</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TextView-%E7%BB%84%E5%90%88%E5%9B%BE%E7%89%87"><span class="toc-text">TextView 组合图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-Button-%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6"><span class="toc-text">设置 Button 点击事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RecyclerView"><span class="toc-text">RecyclerView</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E4%B8%8D%E5%8F%AF%E8%A7%81"><span class="toc-text">内容不可见</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Item-%E9%95%BF%E5%AE%BD%E9%94%99%E8%AF%AF"><span class="toc-text">Item 长宽错误</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Activity"><span class="toc-text">Activity</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%9B%9E%E4%BC%A0"><span class="toc-text">数据回传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0-Fragment"><span class="toc-text">添加 Fragment</span></a></li></ol></li></ol></li></ol>
+      </div>
+</div>
+<style>
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+
+
+        <p>此文章属于原创，如需使用请标明出处！</p>
+<!-- more -->
+
+<h1 id="Android开发学习"><a href="#Android开发学习" class="headerlink" title="Android开发学习"></a>Android开发学习</h1><p>记录我在学习开发 Android 时遇到的问题和解决方法，以及对一些小知识点进行汇总。</p>
+<p>Android Studio 为程序构建了基本结构：</p>
+<img src="1.png" style="zoom: 50%;" />
+
+<ul>
+<li>manifests：整个程序的配置文件；</li>
+<li>java：存放程序的代码文件；</li>
+<li>res：存放程序的资源文件；</li>
+<li>build.gradle：程序或模块的 gradle 构建脚本等；</li>
+</ul>
+<br>
+
+<h2 id="布局和控件"><a href="#布局和控件" class="headerlink" title="布局和控件"></a>布局和控件</h2><p>在 Android Studio 开发程序，所有的界面布局都可以在 layout 目录下的XML布局文件中定义。</p>
+<p>Android 常见界面布局：</p>
+<ul>
+<li>线性布局 LinearLayout；</li>
+<li>相对布局 RelativeLayout；</li>
+<li>表格布局 TableLayout；</li>
+<li>帧布局 FrameLayout；</li>
+</ul>
+<p>Android 常见界面控件：</p>
+<ul>
+<li>TextView；</li>
+<li>EditText；</li>
+<li>Button；</li>
+<li>ImageView；</li>
+<li>RadioButton（单选）；</li>
+<li>CheckBox（多选）；</li>
+<li>Toast（轻量信息提醒）；</li>
+<li>ListView（列表形式展示数据内容）；</li>
+<li>RecyclerView（对 ListView 的扩展）；</li>
+</ul>
+<br>
+
+<h3 id="居中"><a href="#居中" class="headerlink" title="居中"></a>居中</h3><br>
+
+<h4 id="控件居中"><a href="#控件居中" class="headerlink" title="控件居中"></a>控件居中</h4><p><strong>LinearLayout</strong></p>
+<p>（1）<code>android:layout_gravity=&quot;center_horizontal&quot;</code> 表示该布局在父布局里水平居中，此时其父布局必须拥有 <code>android:orientation=&quot;vertical&quot;</code> 属性；</p>
+<p>（2）<code>android:layout_gravity=&quot;center_vertical&quot;</code> 表示该布局在父布局里垂直居中，此时其父布局必须应设置成 <code>android:orientation=&quot;horizontal&quot;</code> 属性（默认为该属性）；</p>
+<p>线性布局中不同时存在水平居中和垂直居中。</p>
+<p><strong>RelativeLayout</strong></p>
+<p>属性值为 true 或 false；</p>
+<p>（1）<code>android:layout_centerHrizontal</code> 控件在父布局中 水平居中；</p>
+<p>（2）<code>android:layout_centerVertical</code> 控件在父布局中 垂直居中；</p>
+<p>（3）<code>android:layout_centerInparent</code> 控件相对于父元素完全居中；</p>
+<br>
+
+<h4 id="文本居中"><a href="#文本居中" class="headerlink" title="文本居中"></a>文本居中</h4><p><code>android:gravitu=&quot;center&quot;</code> 文字在控件的中心；</p>
+<br>
+
+<h3 id="TextView-组合图片"><a href="#TextView-组合图片" class="headerlink" title="TextView 组合图片"></a>TextView 组合图片</h3><p>当你想把文本和图片组合在一起显示，而且不想繁杂的设置图片位置，可以使用 TextView 的 <code>android:drawableXxx=&quot;@drawable/xxx&quot;</code>，便捷的在文本标签的四周添加一张图片；</p>
+<p>例如：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:drawableTop</span>=<span class="string">&quot;@drawable/qq_icon&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:text</span>=<span class="string">&quot;用QQ注册&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">style</span>=<span class="string">&quot;@style/tvOne&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="2.png" style="zoom:60%;" />
+
+<br>
+
+<h3 id="设置-Button-点击事件"><a href="#设置-Button-点击事件" class="headerlink" title="设置 Button 点击事件"></a>设置 Button 点击事件</h3><p>（1）在布局文件中指定 <code>onClick</code> 属性的值；</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">    <span class="attr">...</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:onClick</span>=<span class="string">&quot;click&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在 Activity 中定义专门的方法实现 Button 控件的点击事件；</p>
+<p>（2）</p>
+<p>使用匿名内部类；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">btn.setOnClickListener(<span class="keyword">new</span> <span class="title class_">View</span>.OnClickListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onClick</span><span class="params">(View view)</span> &#123;</span><br><span class="line">        <span class="comment">//实现点击事件的代码</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>向 <code>setOnClickListener()</code> 方法传递一个匿名内部类。</p>
+<p>（3）使用 Activity 实现 OnClickListener 接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Activity</span> <span class="keyword">extends</span> <span class="title class_">AppCompatActivity</span> <span class="keyword">implements</span> <span class="title class_">View</span>.OnClickListener&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">            btn.setOnClickListener(<span class="built_in">this</span>);  <span class="comment">//设置 Button 控件的点击监听事件</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onClick</span><span class="params">(View view)</span> &#123;</span><br><span class="line">        <span class="comment">//实现点击事件的代码</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果界面上的 Button 控件较多，建议使用第三种方式实现控件点击事件。</p>
+<br>
+
+<h3 id="RecyclerView"><a href="#RecyclerView" class="headerlink" title="RecyclerView"></a>RecyclerView</h3><br>
+
+<h4 id="内容不可见"><a href="#内容不可见" class="headerlink" title="内容不可见"></a>内容不可见</h4><p>布局 Layout XML 文件内容如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">androidx.recyclerview.widget.RecyclerView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">&quot;@+id/lv&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>实际上，不管是使用 ListView 还是 RecyclerView，你都会发现列表视图的内容没有正确显示。</p>
+<p>经过测试，发现这是布局的问题，而不是 Java 代码的问题：</p>
+<p>我在 RecyclerView 的外面套了一层 LinearLayout 作为父容器，而 LinearLayout 默认方向是 Horizontal（横向），会与 RecyclerView 的垂直布局产生冲突，从而导致 RecyclerView 的内容无法显示。</p>
+<p>因此，解决办法就是在 LinearLayout 的属性中设置方向为垂直方向：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:orientation=&quot;vertical&quot;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>当然你也可以选择不在 RecyclerView 外面套一层 LinearLayout。</p>
+</blockquote>
+<p>到目前为止，你已经可以成功解决 ListView 的显示问题，而 RecyclerView 还需要进一步的设置：为 RecyclerView 设置一个 LayoutManager：</p>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rv_list.setAdapter(rightAdapter);</span><br><span class="line">rv_list.setLayoutManager(<span class="keyword">new</span> <span class="title class_">LinearLayoutManager</span>(getActivity()));</span><br></pre></td></tr></table></figure>
+
+<p>最后，你就可以解决 RecyclerView 内容不显示的问题了！</p>
+<img src="3.png" style="zoom:80%;" />
+
+<br>
+
+<h4 id="Item-长宽错误"><a href="#Item-长宽错误" class="headerlink" title="Item 长宽错误"></a>Item 长宽错误</h4><p>注意在上面的项目中，实际效果应该是如下图所示：</p>
+<img src="4.png" style="zoom:60%;" />
+
+<p>之所以会出现 Item 高度过长的问题，是应为我在 Item 布局文件中，将 RelativeLayout 布局的 <code>layout_width</code> 和 <code>layout_height</code> 设置为了 <code>match_parent</code>。</p>
+<p>因此我们要注意 Item 布局的特殊性，它作为列表中的一项，应该将<strong>高度</strong>设置为 <code>wrap_content</code>，以防出现 Item 的不正常显示。当然具体问题具体分析，不过一般情况都是这样的。</p>
+<p>修改后的部分布局代码如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">               <span class="attr">...</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">              <span class="attr">...</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">              <span class="attr">...</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">              <span class="attr">...</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h2><p>Android 中的四大组件分别是 Activity、Service、ContentProvider 和 BroadcastReceiver。其中，Activity 是一个负责与用户交互的组件。每个Android 应用程序中都会用 Activity 来显示界面以及处理界面上一些控件的事情。</p>
+<br>
+
+<h3 id="数据回传"><a href="#数据回传" class="headerlink" title="数据回传"></a>数据回传</h3><p>如果项目中的 appcompat 库是1.3.0或更高的版本，你会发现 <code>startActivityForResult()</code> 方法已经被放弃了，现在更建议使用 Activity Result API 来实现在两个 Activity 之间交换数据的功能。</p>
+<blockquote>
+<p>注意：registerForActivityResult 只能在 onCreate() 中注册。onstart() 之后就不能注册了。</p>
+<p>registerForActivityResult() 方法不要放在 setOnClickListener() 里面，要放在 onCreate 里。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ActivityResultLauncher</span> <span class="variable">launcher</span> <span class="operator">=</span> registerForActivityResult(<span class="keyword">new</span> <span class="title class_">ActivityResultContracts</span>.StartActivityForResult(), <span class="keyword">new</span> <span class="title class_">ActivityResultCallback</span>&lt;ActivityResult&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onActivityResult</span><span class="params">(ActivityResult result)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(result.getResultCode()==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> result.getData().getIntExtra(<span class="string">&quot;count&quot;</span>,<span class="number">0</span>);</span><br><span class="line">            totalCount += count;</span><br><span class="line">            tv_count.setText(<span class="string">&quot;摘到&quot;</span>+totalCount+<span class="string">&quot;个&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>两个参数：</p>
+<ul>
+<li>第一个参数，需要传入 ActivityResultContract，指返回数据的类型；</li>
+<li>第二个参数，需要传入一个回调 ActivityResultCallback，数据返回时调用这个方法获取并处理数据；</li>
+</ul>
+</li>
+<li><p>返回值：它返回一个 ActivityResultLauncher 对象；</p>
+</li>
+<li><p>用法：调用 ActivityResultLauncher 的 <code>launch()</code> 方法可以跳转到另一个 Activity 或者发起权限请求；</p>
+</li>
+</ol>
+<blockquote>
+<p>注意：使用 startActivityForResult() 方法，可以传入 requestCode 用于区分请求来源；而 Activity Result API 不存在这个参数，实际上也不需要这个 requestCode 参数；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="type">ActivityResultLauncher</span> <span class="variable">actionViewLauncher</span> <span class="operator">=</span> registerForActivityResult(...);</span><br><span class="line"><span class="keyword">private</span> <span class="type">ActivityResultLauncher</span> <span class="variable">actionDialLauncher</span> <span class="operator">=</span> registerForActivityResult(...);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">firstButton.setOnClickListener &#123;</span><br><span class="line">       <span class="type">Intent</span> <span class="variable">intent</span> <span class="operator">=</span> Intent(Intent.ACTION_VIEW);</span><br><span class="line">       actionViewLauncher.launch(intent);</span><br><span class="line">&#125;</span><br><span class="line">secondButton.setOnClickListener &#123;</span><br><span class="line">       <span class="type">Intent</span> <span class="variable">intent</span> <span class="operator">=</span> Intent(Intent.ACTION_DIAL);</span><br><span class="line">       actionDialLauncher.launch(intent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>给每个需要数据回传的控件创建一个 ActivityResultLauncher 实例可以完美解决定位请求来源的问题，而且一切都更加简单和清晰。</p>
+</blockquote>
+<br>
+
+<h3 id="添加-Fragment"><a href="#添加-Fragment" class="headerlink" title="添加 Fragment"></a>添加 Fragment</h3><p>Fragment（碎片）是一种嵌入在 Activity 中的 UI 片段，它可以用来描述 Activity 中的一部分布局（相当于控件容器）。</p>
+<p>在 Activity 中添加 Fragment 有两种方法：</p>
+<ol>
+<li><p><strong>在布局文件中添加 Fragment</strong></p>
+<p> 使用 <code>&lt;fragment&gt;&lt;/fragment&gt;</code> 标签，必须指定其 <code>android:name</code> 属性，其属性值为 Fragment 类的路径全名称。</p>
+<p> 示例如下：</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">fragment</span></span></span><br><span class="line"><span class="tag">              <span class="attr">android:id</span>=<span class="string">&quot;@+id/right_frag&quot;</span></span></span><br><span class="line"><span class="tag">              <span class="attr">android:name</span>=<span class="string">&quot;com.itcast.menu.RightFragment&quot;</span></span></span><br><span class="line"><span class="tag">              <span class="attr">android:layout_width</span>=<span class="string">&quot;0dp&quot;</span></span></span><br><span class="line"><span class="tag">              <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">              <span class="attr">android:layout_weight</span>=<span class="string">&quot;3&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">2. **在 Activity 中动态加载 Fragment**</span><br><span class="line"></span><br><span class="line">    在 Activity 运行时，可以将 Fragment 动态添加到 Activity 中，具体步骤如下：</span><br><span class="line"></span><br><span class="line">    （1）创建 Fragment 对象；</span><br><span class="line"></span><br><span class="line">    （2）获取 FragmentManager（Fragment 管理器）的实例；</span><br><span class="line"></span><br><span class="line">    （3）开启 FragmentTransaction（事务）；</span><br><span class="line"></span><br><span class="line">    （4）向 Acticity 的布局容器中添加 Fragment；</span><br><span class="line"></span><br><span class="line">    （5）通过 `commit()` 方法提交事务；</span><br><span class="line"></span><br><span class="line">    示例代码如下：</span><br><span class="line"></span><br><span class="line">    ```java</span><br><span class="line">    public void switchData(List<span class="tag">&lt;<span class="name">FoodBean</span>&gt;</span> list)&#123;</span><br><span class="line">        rightFragment = new RightFragment().getInstance(list);  //创建 Fragment 对象</span><br><span class="line">        fragmentManager = getFragmentManager();</span><br><span class="line">        fragmentTransaction = fragmentManager.beginTransaction();  //开启事务</span><br><span class="line">        fragmentTransaction.replace(R.id.right_frag,rightFragment);  //添加 Fragment</span><br><span class="line">        fragmentTransaction.commit();  //提交事务</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<blockquote>
+<p><strong>注意</strong>：如果 Fragment 是静态无变化的，只需要在布局文件中添加标签和创建相应的 Fragment 类，就可以显示 Fragment。</p>
+<p>如果你还需要与该 Fragment 进行通信或者控制该Fragment的行为，你可以在 Activity 中获取 Fragment 对象（确保布局加载完成），并对其进行操作（允许不进行操作）。虽然你可以不获取 Fragment，但可能会导致应用程序出现错误或不可预测的行为。</p>
+<p>因此，在添加静态 Fragment 后，建议在 Activity 中获取 Fragment 对象，并在必要时与 Fragment 进行交互，以确保应用程序正常运行并提供正确的用户体验。</p>
+</blockquote>
+<blockquote>
+<p><strong>注意</strong>：添加动态 Fragment 时，虽然通过事务改变 Fragment，但是动态 Fragment 会需要有一个初始状态，即动态 Fragment 的 <code>android:name</code> 属性是必须的。</p>
+</blockquote>
+<br>
+
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Android/">Android</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/记录/">记录</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Deployed by <a href="https://github.com/kaedea/notion-down" target="_blank">notion-down</a> and
+    Theme by <a href="https://github.com/kaedea/hexo-theme-hacker" target="_blank">hexo-theme-hacker</a>
+    </br>
+    
+    &copy; 2023 a-pin
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
