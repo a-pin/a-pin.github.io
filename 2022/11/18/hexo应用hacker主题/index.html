@@ -108,12 +108,13 @@
             document.getElementsByClassName('toc-article')[0].style.visibility = 'hidden';
         }
     }
+
 </script>
 
 
-<div id="toc" class="toc-article">
+<div id="toc" class="toc-article" style="overflow-y: scroll; height: 80%;">
       <div class="toc-content">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-%E5%BA%94%E7%94%A8-hacker-%E4%B8%BB%E9%A2%98%E8%A6%81%E7%82%B9"><span class="toc-text">hexo 应用 hacker 主题要点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98"><span class="toc-text">图片显示问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2"><span class="toc-text">hexo 分类页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#excerpt"><span class="toc-text">excerpt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%B1%82%E5%88%86%E7%B1%BB"><span class="toc-text">多层分类</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-%E5%BA%94%E7%94%A8-hacker-%E4%B8%BB%E9%A2%98%E8%A6%81%E7%82%B9"><span class="toc-text">hexo 应用 hacker 主题要点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98"><span class="toc-text">图片显示问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2"><span class="toc-text">hexo 分类页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#excerpt"><span class="toc-text">excerpt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%B1%82%E5%88%86%E7%B1%BB"><span class="toc-text">多层分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TOC-%E4%BD%BF%E7%94%A8%E6%BB%9A%E8%BD%AE"><span class="toc-text">TOC 使用滚轮</span></a></li></ol></li></ol>
       </div>
 </div>
 <style>
@@ -155,10 +156,18 @@
 <p>可以解决主页错误显示文章全文的问题。</p>
 <br>
 
-<h2 id="多层分类"><a href="#多层分类" class="headerlink" title="多层分类"></a>多层分类</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (site.categories.length)&#123; %&gt;</span><br><span class="line">&lt;h2&gt;共计&amp;nbsp;&lt;%= site.categories.length %&gt;&amp;nbsp;个分类&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">&lt;div style=&quot;font-size: 1.8rem;&gt;</span><br><span class="line">  &lt;%- list_categories(site.categories, &#123;</span><br><span class="line">    show_count: false,</span><br><span class="line">    style: &#x27;list&#x27;,</span><br><span class="line">    depth: 0,</span><br><span class="line">    separator: &#x27;&#x27;</span><br><span class="line">  &#125;) %&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="多层分类"><a href="#多层分类" class="headerlink" title="多层分类"></a>多层分类</h2><p>hexo 软件根目录下 themes\hexo-theme-hacker\layout\components 中的 categories.ejs 文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (site.categories.length)&#123; %&gt;</span><br><span class="line">&lt;h2&gt;共计&amp;nbsp;&lt;%= site.categories.length %&gt;&amp;nbsp;个分类&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">&lt;div style=&quot;font-size: 1.8rem;&gt;</span><br><span class="line">  &lt;%- list_categories(site.categories, &#123;</span><br><span class="line">    show_count: false,</span><br><span class="line">    style: &#x27;list&#x27;,</span><br><span class="line">    depth: 0,</span><br><span class="line">    separator: &#x27;&#x27;</span><br><span class="line">  &#125;) %&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
 
 <br>
 
+<h2 id="TOC-使用滚轮"><a href="#TOC-使用滚轮" class="headerlink" title="TOC 使用滚轮"></a>TOC 使用滚轮</h2><p>由于 Linux 学习这一篇文章过长，导致 TOC 悬浮目录无法正常显示，只能显示一部分目录；如图：</p>
+<img src="4.png" style="zoom:50%;" />
+
+<p>可以使用 CSS 为 TOC 的 div 添加上下滚轮（overflow-y: scroll），并设置其长度为 80%，要不然会默认全部显示使滚轮失去效用；</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;toc&quot;</span> <span class="attr">class</span>=<span class="string">&quot;toc-article&quot;</span> <span class="attr">style</span>=<span class="string">&quot;overflow-y: scroll; height: 80%;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toc-content&quot;</span>&gt;</span></span><br><span class="line">        &lt;%- toc(post.content, &#123;list_number: theme.toc.list_number&#125;) %&gt;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
 
       
     </div>
