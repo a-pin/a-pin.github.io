@@ -162,7 +162,7 @@
 <br>
 
 <h2 id="TOC-使用滚轮"><a href="#TOC-使用滚轮" class="headerlink" title="TOC 使用滚轮"></a>TOC 使用滚轮</h2><p>由于 Linux 学习这一篇文章过长，导致 TOC 悬浮目录无法正常显示，只能显示一部分目录；如图：</p>
-<img src="hexo应用hacker主题/4.png" style="zoom:50%;" />
+<img src="4.png" style="zoom:50%;" />
 
 <p>可以使用 CSS 为 TOC 的 div 添加上下滚轮（overflow-y: auto），auto 可以让滚轮只在需要的时候显示；<br>并设置其最大长度为 80%，既使 TOC 适应内容，不出现大量空白，也可以防止默认全部显示使滚轮失去效用；</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;toc&quot;</span> <span class="attr">class</span>=<span class="string">&quot;toc-article&quot;</span> <span class="attr">style</span>=<span class="string">&quot;overflow-y: auto; max-height: 80%;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toc-content&quot;</span>&gt;</span></span><br><span class="line">        &lt;%- toc(post.content, &#123;list_number: theme.toc.list_number&#125;) %&gt;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
