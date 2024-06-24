@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HarmonyOS开发低代码 | Apin | blogs</title>
+
+  
+  <meta name="author" content="a-pin">
+  
+
+  
+  <meta name="description" content="This is a blog website in order to record my study experiences!">
+  
+
+  
+  <meta name="keywords" content="blog,a-pin">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="HarmonyOS开发低代码"/>
+
+  <meta property="og:site_name" content="Apin"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Apin" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+  <link href="https://fonts.lug.ustc.edu.cn/css?family=Lato|Rubik" rel="stylesheet">
+  <script src="/js/pangu-407.min.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    pangu.autoSpacingPage();
+  });
+</script>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Apin</a>
+    </h1>
+    <p class="site-description">blogs</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>HarmonyOS开发低代码</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2024/04/26/HarmonyOS开发低代码/" rel="bookmark">
+        <time class="entry-date published" datetime="2024-04-26T09:00:07.000Z">
+          2024-04-26
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+
+<script type="text/javascript">
+    function convertRemToPixels(rem) {    
+        return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    }
+    window.onscroll = function() {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > convertRemToPixels(40)) {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'visible';
+        } else {
+            document.getElementsByClassName('toc-article')[0].style.visibility = 'hidden';
+        }
+    }
+
+</script>
+
+
+<div id="toc" class="toc-article" style="overflow-y: auto; max-height: 80%;">
+      <div class="toc-content">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%9F%E5%AD%90%E5%8C%96%E6%9C%8D%E5%8A%A1"><span class="toc-text">原子化服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%8D%A1%E7%89%87"><span class="toc-text">服务卡片</span></a></li></ol>
+      </div>
+</div>
+<style>
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+
+
+        <p>低代码开发具有丰富的 UI 界面编辑功能，遵循 HarmonyOS eTS 开发规范，通过可视化界面开发方式快速构建布局，可有效降低用户的时间成本，提升用户构建 UI 界面的效率；</p>
+<p>新建项目，并选择 Empty Ability，打开低代码模式的开关：</p>
+<img src="1.png" style="zoom: 40%;" />
+
+<p>其中，visual 文件是低代码提供的，位于 supervisual 目录下，与 ets 目录下的 ets 文件相对应；</p>
+<img src="2.png" style="zoom:35%;" />
+
+<p>不过，处于低代码模式下，不需要在 ets 文件的 build 方法中编写代码，只需要设计 visual 文件；</p>
+<p>状态变量、事件方法需要在 ets 文件中声明；</p>
+<p>新建页面：</p>
+<img src="3.png" style="zoom:50%;" />
+
+<p>media query 的功能一般用于开发者根据设备的大致类型或特定的特征和设备参数，例如屏幕分辨率、横竖屏，来修正应用的样式，显示相应情况下的应用样式；</p>
+<br>
+
+<h1 id="原子化服务"><a href="#原子化服务" class="headerlink" title="原子化服务"></a>原子化服务</h1><p>原子化服务是 HarmonyOS 提供的一种全新的应用形态，具有独立入口，用户可通过点击、碰一碰、扫一扫等方式直接触发，无需显式安装，由程序框架后台静默安装后即可使用，可为用户提供便捷服务；</p>
+<p>原子化服务基于鸿蒙系统 API 开发，支持运行在 1+8+N 设备上，供用户在合适的场景、合适的设备上便捷使用；</p>
+<p>原子化服务是支撑可分可合，自由流转的轻量化程序实体，帮助开发者的服务更快触达用户；具备以下特点：</p>
+<ul>
+<li>触手可及：在服务中心发现并使用；</li>
+<li>服务直达：无需安装卸载，秒开体验；</li>
+<li>服务卡片：支持用户无需打开原子化服务，便可以获取到服务中重要信息的展示和动态变化；</li>
+<li>自由流转：支持运行在多设备上，可以按需跨端迁移，多设备协同；</li>
+</ul>
+<p>开发总体要求：</p>
+<ul>
+<li>免安装的 HAP 包不能超过 10MB；</li>
+<li>Project Type 字段选择 “Atomic Service”；</li>
+<li>保持免安装属性；</li>
+<li>HAP 包必须包含 FA；</li>
+</ul>
+<p>设计图如下：</p>
+<img src="5.png" style="zoom:45%;" />
+
+<p>总的来看，手机和平板的设计都是由三部分组成，第一部分是文本，第二部分是图片加文本，第三部分是文本加列表；</p>
+<p>其中，针对 UI 效果在手机和平板上的差异，需要使用 media query 功能；</p>
+<br>
+
+<h1 id="服务卡片"><a href="#服务卡片" class="headerlink" title="服务卡片"></a>服务卡片</h1><p>服务卡片是 FA 的一种界面展示形式，将 FA 的重要信息或操作前置到卡片，以达到服务直达，减少体验层级的目的；</p>
+<p>卡片常用于嵌入到其他应用（当前只支持系统应用）中作为其界面的一部分显示，并支持拉起页面，发送消息等基础的交互功能；</p>
+<p>创建低代码的服务卡片页面：</p>
+<img src="6.png" style="zoom: 50%;" />
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/HarmonyOS/">HarmonyOS</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/HarmonyOS/">HarmonyOS</a><a href="/tags/低代码/">低代码</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Deployed by <a href="https://github.com/kaedea/notion-down" target="_blank">notion-down</a> and
+    Theme by <a href="https://github.com/kaedea/hexo-theme-hacker" target="_blank">hexo-theme-hacker</a>
+    </br>
+    
+    &copy; 2024 a-pin
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
