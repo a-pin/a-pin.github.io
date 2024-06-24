@@ -6058,7 +6058,7 @@
 <li><p>getty.target 的默认设置值：</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">After=getty@tty1.service getty@tty2.service getty@tty3.service getty@tty4.service getty@tty5.service getty@tty6.service</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>执行 <a href="mailto:&#x67;&#101;&#x74;&#x74;&#121;&#x40;&#x74;&#116;&#x79;&#x31;&#46;&#x73;&#101;&#x72;&#x76;&#x69;&#99;&#x65;">&#x67;&#101;&#x74;&#x74;&#121;&#x40;&#x74;&#116;&#x79;&#x31;&#46;&#x73;&#101;&#x72;&#x76;&#x69;&#99;&#x65;</a> 时，getty@.service 的 %I 就是 tty1，执行脚本就会变成 <code>/sbin/agetty --noclear tty1</code>；</p>
+<p>执行 <a href="mailto:&#103;&#x65;&#x74;&#x74;&#121;&#x40;&#x74;&#116;&#121;&#x31;&#x2e;&#x73;&#x65;&#114;&#x76;&#x69;&#x63;&#x65;">&#103;&#x65;&#x74;&#x74;&#121;&#x40;&#x74;&#116;&#121;&#x31;&#x2e;&#x73;&#x65;&#114;&#x76;&#x69;&#x63;&#x65;</a> 时，getty@.service 的 %I 就是 tty1，执行脚本就会变成 <code>/sbin/agetty --noclear tty1</code>；</p>
 <p>因此我们可以用一个配置文件来启动多个 tty，同理可以让同一个 unit 使用不同的配置文件；</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExecStart=/usr/sbin/vsftpd /etc/vsftpd/%i.conf</span><br></pre></td></tr></table></figure>
 
@@ -6998,7 +6998,7 @@
     Theme by <a href="https://github.com/kaedea/hexo-theme-hacker" target="_blank">hexo-theme-hacker</a>
     </br>
     
-    &copy; 2023 a-pin
+    &copy; 2024 a-pin
     
   </p>
 </footer>
